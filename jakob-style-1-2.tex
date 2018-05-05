@@ -1,0 +1,175 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{/home/jakob/schule/vorlagen/jakob-style-1-2}[2017/07/31 v1.3  Jakob Bosse]
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%			Initial Code Part				%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand*{\jbpage}[1]{\gdef\@page{#1~}}
+\newcommand*{\jbpageof}[1]{\gdef\@pageof{~#1~}}
+\newcommand*{\jbpartmark}[1]{\gdef\@partmark{#1}}
+\newcommand*{\jbsectionmark}[1]{\gdef\@secmark{#1~}}
+\newcommand{\jbgeo}{2.7cm}
+\gdef\@jbcthead{~}
+\gdef\@jbname{~}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%				Declaration of Options				%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\DeclareOption{de}{\jbpage{Seite} \jbpageof{von} \jbpartmark{Teil} \jbsectionmark{Kapitel} \PassOptionsToPackage{ngerman}{babel}}
+\DeclareOption{en}{\jbpage{Page} \jbpageof{of} \jbpartmark{Part} \jbsectionmark{Section} \PassOptionsToPackage{english}{babel}}
+\DeclareOption{notitle}{\gdef\@jbname{Jakob Bosse}	\newcommand*{\jbcustomhead}[1]{\gdef\@jbcthead{#1~}}}
+\DeclareOption{nofoot}{\gdef\@jbname{Jakob Bosse}\AtEndOfPackage{\fancyfoot{} \renewcommand{\footrulewidth}{0pt}} }
+\DeclareOption{krand}{\newcommand{\jbgeo}{5cm}}
+
+\PassOptionsToPackage{bottom=2.5cm, top=2.5cm, inner=3.5cm,outer=\jbgeo, includeheadfoot,headheight=15.6pt}{geometry}
+\PassOptionsToPackage{hidelinks}{hyperref}
+\PassOptionsToPackage{nobottomtitles*}{titlesec}
+\ProcessOptions\relax{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%			Executing Options					%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%			Package loading Part				%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\RequirePackage{ifxetex}
+\ifxetex
+ % \RequirePackage{fontspec}
+  \RequirePackage{xltxtra}
+  \defaultfontfeatures{Ligatures=TeX} % To support LaTeX quoting style
+\else
+  \RequirePackage[T1]{fontenc} 
+  \RequirePackage[utf8]{inputenc}
+  \RequirePackage{uniinput}
+\fi
+
+\RequirePackage{lmodern}
+\RequirePackage{geometry}
+\RequirePackage{fancyhdr}
+\RequirePackage{titlesec}
+\RequirePackage{lastpage}
+\RequirePackage{hyperref}
+\RequirePackage{graphicx}
+\RequirePackage{outlines}
+\RequirePackage{csquotes}
+\RequirePackage{textcomp}
+\RequirePackage{babel}
+\RequirePackage{subfig}
+\RequirePackage{wrapfig}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%			Main Code Part					%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\newcommand*{\subtitle}[1]{\gdef\@subtitle{#1}}
+\newcommand*{\nl}{\\[.3\baselineskip]}
+%----------------------------------------------------------------------------------------------------
+%			Titel Seite
+%-------------------------------------------------------------------------------------------------
+\renewcommand{\maketitle}{  \thispagestyle{empty}% Create the command for including the title page in the document
+\begingroup 
+\hbox{ % Horizontal box
+\parbox[b][\textheight][s]{2cm}{
+\includegraphics[width=0.17\textwidth]{/home/jakob/schule/vorlagen/logo.png} \\ [3\baselineskip]\bigskip\
+\normalfont\centering \fontsize{35}{35}\scshape \\J\\a\\k\\o\\b\\[1\baselineskip] B\\o\\s\\s\\e\\
+}
+\hspace*{0.03\textwidth} % Whitespace to the left of the title page
+\rule{1pt}{\textheight} % Vertical line
+\hspace*{0.05\textwidth} % Whitespace between the vertical line and title page text
+\parbox[b]{0.75\textwidth}{ % Paragraph box which restricts text to less than the width of the page
+
+{\normalfont \huge \scshape \@subtitle}\\[5\baselineskip] % Subtitle
+{\fontsize{35}{35}\normalfont \scshape \@title } \\[14\baselineskip]
+\vfill
+{\normalfont\LARGE \scshape  \@date}% Date
+
+\vspace{0.2\textheight} % Whitespace between the title block and the publisher
+%{\noindent The Publisher \includegraphics[width=0.02\textheight]{/home/jakob/schule/Vorlagen/logo.png}}\\[\baselineskip] % Publisher and logo
+}}
+\endgroup
+\newpage
+}
+
+
+%---------------------------------------------------------------------------------------
+%			\"Uberschriften
+%---------------------------------------------------------------------------------------
+%%%%\titleformat{cmd}[shape]{format}{label}{sep}{before-code}[after-code]%%%%
+\renewcommand{\bottomtitlespace}{.23\textheight}
+\titleformat
+	{\part}
+	[block]
+	{ \normalfont}
+	{\rule[-5pt]{1.5pt}{35pt}\quad \fontsize{35}{50} \scshape \@partmark ~\thepart \titleline{\titlerule[1.5pt]} }
+	{24pt}
+	{ \huge \scshape \filcenter}
+
+\titleformat
+	{\section}
+	[block]
+	{\normalfont }
+	{\titleline{\titlerule[.6pt]} \small \scshape \@secmark \thesection \quad \rule[-2pt]{.8pt}{20pt}}
+	{8pt}
+	{\Large \scshape \filcenter \quad}
+	[{\titlerule[.6pt]}]
+\titlespacing*{\section}{0pc}{*9}{*3}[1pc]
+
+\titleformat
+	{\subsection}
+	[block]
+	{\normalfont}
+	{\small \scshape \thesubsection \quad \rule[-3pt]{.4pt}{20pt}}
+	{0pt}
+	{\Large \scshape \filcenter\quad}
+	[{\titlerule[.5pt]}]
+
+\titleformat
+	{\subsubsection}
+	[block]
+	{\normalfont}
+	{\footnotesize \scshape \thesubsubsection \quad \rule[-3pt]{.4pt}{18pt}}
+	{0pt}
+	{\large \scshape \filcenter\quad}
+	[\titlerule]
+
+\titleformat*
+	{\paragraph}
+	{\scshape \large}
+
+\titleformat*
+	{\subparagraph}
+	{\scshape}
+
+
+%------------------------------------------------------------
+%		 Header Footer
+%-----------------------------------------------------------
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE]{\slshape \nouppercase{\rightmark}}
+\fancyhead[RO]{\slshape \nouppercase{\rightmark}\@jbcthead}
+\fancyhead[RE]{\scshape \footnotesize \@jbname~\includegraphics[width=0.03\textwidth]{/home/jakob/schule/vorlagen/logo_lq.png}}
+\fancyhead[LO]{\includegraphics[width=0.03\textwidth]{/home/jakob/schule/vorlagen/logo_lq.png}~\scshape \footnotesize \@jbname}
+\fancyfoot[C]{\slshape \@page~\thepage~\@pageof~\pageref{LastPage}}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{0.6pt}
+
+
+\parskip1.3ex
+\parindent0pt
+
+%------------------------------------------------------------------------------------
+%			Fals benötigt, kann folgendes hinzugefügt werden 
+%----------------------------------------------------------------------------------
+
+% Hurenkinder und Schusterjungen verhindern
+\clubpenalty10000
+\widowpenalty10000
+%\displaywidowpenalty=10000
+%--------------------------------------------------
+
+\endinput
