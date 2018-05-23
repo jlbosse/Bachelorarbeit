@@ -1,0 +1,76 @@
+% ------------------------------------------------------------------------------
+% Langugage Settings
+% ------------------------------------------------------------------------------
+\usepackage[ngerman]{babel} % Language hyphenation and typographical rules
+\usepackage[utf8]{inputenc}
+
+
+% ------------------------------------------------------------------------------
+% % Packages and settings for graphics
+% ------------------------------------------------------------------------------
+\usepackage{graphicx}
+
+
+% ------------------------------------------------------------------------------
+% % Bibliography
+% ------------------------------------------------------------------------------
+\usepackage[backend=bibtex, style=numeric, doi=false]{biblatex}
+\addbibresource{literature.bib}
+
+
+
+% ------------------------------------------------------------------------------
+% % Packages and Settings for math specific stuff
+% ------------------------------------------------------------------------------
+\usepackage{dsfont}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+% Making Beweis, Satz, etc deutsch und wie sie aussehen sollen
+\newtheoremstyle{mystyle}%
+{9pt}{9pt}%Space above and below 9pt ist gut
+{\addtolength{\@totalleftmargin}{2em}
+   \addtolength{\linewidth}{-2em}
+   \parshape 1 2em \linewidth}% Body style
+{1em}%Heading indent amount
+{\sffamily\bfseries}{}% Heading font and punctuation after it
+{\newline}%Space after heading (\newline = linebreak)
+{}
+%{\thmname{#1} \thmnumber{(#2)} \itshape \thmnote{ #3}}% und der spannende Teil
+
+\theoremstyle{mystyle}
+\newtheorem{theorem}{Satz}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Korollar}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{scolium}{Scolium}   %% And a not so common one.
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Bemerkung}
+% \newenvironment{proof}{{\sc Beweis:}}{~\hfill QED}
+\newenvironment{AMS}{}{}
+\newenvironment{keywords}{}{}
+
+
+% ------------------------------------------------------------------------------
+% % Headings and spacing
+% ------------------------------------------------------------------------------
+\usepackage{parskip}
+\usepackage{ulem}
+
+% subsubsection unterstreichen. Muss schöner gehen!
+\newcommand\subsectionuline{%
+  \bgroup\markoverwith{\textcolor{black}{\rule[-0.5ex]{2pt}{0.4pt}}}%
+  \ULon%
+}
+\addtokomafont{subsubsection}{\subsectionuline}
+
+
+% ------------------------------------------------------------------------------
+% % Other stuff
+% ------------------------------------------------------------------------------
+\usepackage{todonotes}
+\usepackage{hyperref}
+
+% ordentlich gesetztes Differential
+\renewcommand*\d{\mathop{}\!\mathrm{d}}

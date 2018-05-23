@@ -7,6 +7,12 @@
 % % Modified March, 2002
 % %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass{scrartcl}
+\usepackage{thesisstyle}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % % Title and author(s)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \title{Berechnen der Wellenfrontmenge der massiven Zweipunktfunktion mittels Shearlets}
@@ -14,115 +20,80 @@
                   Georg-August Universitt Göttingen}
         }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\documentclass{scrartcl}
-\usepackage[ngerman]{babel} % Language hyphenation and typographical rules
-\usepackage[utf8]{inputenc}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% %
-% % The next command allows your in import encapsulated
-% % postscript files, .epsf or .eps files, which
-% % contain vector graphic image data.
-% %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage{graphicx}
-\usepackage{dsfont}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage[backend=bibtex, style=numeric, doi=false]{biblatex}
-\addbibresource{literature.bib}
-
-
-\usepackage{parskip}
-\usepackage{todonotes}
-\usepackage{ulem}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% % We use newtheorem to define theorem-like structures
-% %
-% % Here are some common ones. . .
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newtheorem{theorem}{Satz}
-\newtheorem{lemma}{Lemma}
-\newtheorem{corrolary}{Korollar}
-\newtheorem{proposition}{Proposition}
-\newtheorem{scolium}{Scolium}   %% And a not so common one.
-\newtheorem{definition}{Definition}
-\newenvironment{proof}{{\sc Beweis:}}{~\hfill QED}
-\newenvironment{AMS}{}{}
-\newenvironment{keywords}{}{}
-
-\renewcommand*\d{\mathop{}\!\mathrm{d}}
-
-
-\newcommand\subsectionuline{%
-  \bgroup\markoverwith{\textcolor{black}{\rule[-0.5ex]{2pt}{0.4pt}}}%
-  \ULon%
-}
-\addtokomafont{subsubsection}{\subsectionuline}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% %   The first thanks indicates your affiliation
-% %
-% %  Just the name here.
-% %
-% % Your mailing address goes at the end.
-% %
-% % \thanks is also how you indicate grant support
-% %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 \begin{document}
 \newpage
 \maketitle
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % abstract, keywords and Subject classification are optional.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{abstract}
     Im folgenden werden wir die Wellenfrontmenge der massiven Zweipunktfunktionen
     mittels der Methoden von \textcite{Kutyniok2008} ausrechnen.
 \end{abstract}
 
 
-%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % % Here is the start of the Text
-%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % Section 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Allgemeines Gelaber über Shearlets} % (fold)
 \label{sec:allgemeines_gelaber_ueber_shearlets}
 
-% section allgemeines_gelaber_über_shearlets (end)
-
 \begin{theorem}[$\mathcal{S}_f(a,s,t)$ misst $WF(f)$]
 \label{thm:main_theorem}
-    Sei $\mathcal{D} = \mathcal{D}_1 \cup \mathcal{D}_2$ wobei \\
-    $\mathcal{D}_1 = \left\{
-        (t_0, s_0) \in \mathbb{R}^2 \times [-1,1] \big|
-        |\mathcal{S}_f (a, s, t)| = O(a^k) \textrm{gleichmäßig} \forall k \in \mathbb{N} in einer
-        Umgebung von (t_0, s_0)
-    \right\}$
+    Sei $\mathcal{D} = \mathcal{D}_1 \cup \mathcal{D}_2$ wobei
+    $\mathcal{D}_1$ = \{
+        $(t_0, s_0) \in \mathbb{R}^2 \times [-1,1] \big|$
+        $|\mathcal{S}_f (a, s, t)| = O(a^k)$ gleichmäßig $\forall k \in \mathbb{N}
+        , \forall t \in U$ Umgebung von $(t_0, s_0)$
+    \}
+    und $\mathcal{D}_2$ analog für $\psi^{(v)}$
+
+    Dann gilt $WF(f)^c = \mathcal{D}$
 \end{theorem}
 
 \todo{diesen Satz richtig hin schreiben und ordentlich setzen}
 \todo{Stil und Nummerierung für Sätze, Propositionen etc. anpassen}
 
-\begin{corrolary}
+\begin{corollary}[WF(f) misst $sing ~supp (\psi)$]
+Sei $\mathcal{R} =$ \{
+    $t_0 \in \mathcal{R}^2 \big|$ $|\mathcal{S}_f(a,s,t)| = O(a^k)$
+    $\forall k \in \mathbb{N}, \forall t \in U$ Umgebung von $t_0$
+    \}
+
+    Dann gilt $sing ~supp (\psi)^c = \mathcal{R}$
+\end{corollary}
+
+\begin{remark}[Träger von $\psi$]
 \label{cor:psi_hat}
 Im Fourierraum ist $\hat{\psi}_{ast}$ gegeben durch
 
 \begin{equation}
-    \psi_{ast}{(\xi_1, \xi_2)} = a^{\frac{3}{4}}e^{-i\xi \cdot t}\hat\psi_1(a \xi_1) \hat\psi_{2}\left(a^{\frac{1}{2}}\left(\frac{\xi_2}{\xi_1}-s\right)\right)
+    \hat \psi_{ast}{(\xi_1, \xi_2)} = a^{\frac{3}{4}}e^{-i\xi \cdot t}\hat\psi_1(a \xi_1) \hat\psi_{2}\left(a^{\frac{1}{2}}\left(\frac{\xi_2}{\xi_1}-s\right)\right)
 \end{equation}
 
 und es gilt
 
 \begin{equation}
 \label{eq:supp_psi}
-    supp(\psi) \subset \left\{\xi \in  \hat{\mathbb{R}}^2 ~\Big| ~|\xi_1| \in \left[\frac{1}{2} , 2\right], \left|\frac{\xi_2}{\xi_1} - s\right| \leq \sqrt{a} \right\}
+    supp(\hat \psi) \subset \left\{\xi \in  \hat{\mathbb{R}}^2 ~\Big| ~|\xi_1| \in \left[\frac{1}{2} , 2\right], \left|\frac{\xi_2}{\xi_1} - s\right| \leq \sqrt{a} \right\}
 \end{equation}
 
-\end{corrolary}
+\end{remark}
+% section allgemeines_gelaber_über_shearlets (end)
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % Section 2
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Allgemeine Ausdrücke für $\left<\psi_{ast}, f\right>$}
+\label{sec:<psi_ast,f>}
 
 Zunächst werden wir zwei verschiedene Ausdrücke für $\left<\psi_{ast}, f\right>$
 im Fourierraum herleiten, welche sich im dann folgenden als nützlich erweisen werden.
@@ -304,6 +275,9 @@ wobei sich die Integrationsbereiche aus den Forderungen an den Träger von $\psi
 % section ausdrücke_für_ (end)
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % Section 3
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Berechnen von $WF(G_F)$} % (fold)
 \label{sec:berechnen_von_}
 
@@ -318,7 +292,17 @@ vernünfitg vereinfacht wird und welche Eigenschaften von¸$\psi$ wie eingehen.}
 \todo{Hier schon die Ergebnisse als Satz angeben, und dann Beweis hinschreiben?}
 \todo{Bemerkung einfügen, warum dass auch ziemlich unmöglich ist}
 
-\subsubsection*{$s=1, t' = 0 = x'$}
+Das allgemeine Vorgehen wird dabei folgendes sein: Die Ausdrücke in \eqref{eq:psi_ast_gf_1}
+und \eqref{eq:psi_ast_gf_2} genau anstarren, um zu sehen für welche Werte von
+$(t',x')$ und $s$ potentiell interessante Dinge geschehen, also z.B. Terme im Nenner
+weg fallen, oder die Phase konstant wird. Dann werden diese Werte von $(t',x')$ und
+$s$ eingesetzt und alles so weit vereinfacht und genähert -- im Rahmen des Erlaubten, ohne
+das Verhalten für $a \rightarrow 0$ zu ändern --, bis die $a$-Abhängigkeit abgelesen
+werden kann. Entscheidende Zutaten sind dabei der beschränkte Träger von $\hat \psi$
+und der schnelle Abfall von $\psi$.
+
+
+\subsubsection*{Fall $s=1, t' = 0 = x'$}
 Nach \eqref{eq:psi_ast_gf_2} erhalten wir mit $s=1, t' = 0 = x'$
 
 \begin{align*}
@@ -376,7 +360,7 @@ Wir dürfen uns also des Lebesgueschen Konvergenzsatzes bedienen und schreiben
 Für $s = -1$ erhalten wir genau das selbe Ergebniss, da ja der $\omega^2 (1-s^2)$-Term
 im Nenner genauso wieder verschwindet.
 
-\subsubsection*{$s \neq \pm 1, t' = 0 = x'$}
+\subsubsection*{Fall $s \neq \pm 1, t' = 0 = x'$}
 In diesem Fall verschwindet der $\omega^2 (1-s^2)$-Term im Nenner nicht und
 dementsprechend folgt
 
@@ -433,7 +417,7 @@ Damit können wir folgende Abschätzung treffen:
 \end{equation*}
 
 
-\subsubsection*{$s \neq \pm 1, (t', s') \neq 0$}
+\subsubsection*{Fall $s \neq \pm 1, (t', s') \neq 0$}
 In diesem Fall benutzen wir wieder die erste Substitution \eqref{eq:psi_ast_gf_1}
 und klammern wie schon in den beiden vorigen Teilen die höchste negative
 Potenz von $a$ im Nenner aus.
@@ -498,7 +482,7 @@ fallend. Damit können wir schließlich abschätzen
 \end{align}
 
 
-\subsubsection*{$s = 1, (t', s') \neq 0$}
+\subsubsection*{Fall $s = 1, (t', s') \neq 0$}
 Auch in diesem Fall nutzen wir wieder den ersten Ausdruck für
 $\left< \hat\psi_{a1t}, \hat G_F \right>$ aus \eqref{eq:psi_ast_gf_1} und sorgen
 wir auch bisher jedes Mal dafür, dass wir im Nenner nur noch positive Potenzen von
@@ -545,47 +529,84 @@ Weiter geht's:
     \d \omega
 \end{align}
 
-und um hier weiter zu kommen, schauen wir uns $\hat f_a$ und seine Fourierinverse
-$f_a$ einmal genauer an. Es gilt $\psi_2(0) = 1$, da nach Konstruktion
-$\Vert \psi_2 \Vert_1 = 1$. Außerdem können wir $\psi_2$ so wählen, dass es
-auf einer ganzen offenen Umgebung von 0 konstant 1 ist. Durch geschicktes addieren
-einer 0 können wir nun schreiben
+und um hier weiter zu kommen, schauen wir uns $\hat f_a$ genauer an. Sei dazu
+$\Psi_2(\omega) := \int_{-\infty}^\omega \psi_2(\omega ') \d \omega '
+    -  \int_{\omega}^{+ \infty} \psi_2(\omega ') \d \omega '$ eine
+Stammfunktion von $\psi_2$. Dies ist offenbar $C^\infty$ und beschränkt, da
+ $\hat \psi_2 \in C^\infty_c$. Mithilfe von Fourieridentitäten und Substitution können wir nun weiter rechnen:
 
-\begin{equation*}
-    \hat f_a (\omega) =
-    \int \frac{\hat \psi_2 \left(\frac{k}{\omega}\right) - 1}{2k\omega}
-    e^{ik\frac{x'}{\sqrt{a}}} \d k
-    + \int \frac{1}{2k\omega}
-    e^{ik\frac{x'}{\sqrt{a}}} \d k
-\end{equation*}
+\begin{align*}
+    \hat f_a (\omega) &=
+    \int \frac{\hat \psi_2\left(\frac{k}{\omega}\right)}{2k\omega}
+    e^{i k \frac{x'}{\sqrt{a}}}
+    \d \omega \\
+    &\stackrel{i)}{=}
+    \int \frac{\hat \psi_2 (k)}{2k}e^{ik\frac{x' \omega}{\sqrt{a}}}
+    \d \omega \\
+    &\stackrel{ii)}{=} \frac{i}{2}  \Psi_2\left(\frac{x' \omega}{\sqrt{a}}\right)
+\end{align*}
 
-wobei das Symbol des ersten Terms glatt ist, da $\psi_2 (0) = 0$. Der zweite Term
-wird also für $a^{-\frac{1}{2}} \rightarrow \infty$ dominieren. Für diesen gilt:
-\todo{Diese Argument verfeinern, oder mindestens raus finden, warum es denn
-zulässig ist.}
-
-\begin{equation*}
-    \int \frac{e^{ik\frac{x'}{\sqrt{a}}}}{2k\omega} \d k
-    = \frac{2 \pi i}{2 \omega} \mathrm{sgn}\left(\frac{x'}{\sqrt{a}}\right)
-\end{equation*}
-
-als Hauptwertintegral. Bedenkend dass $\psi_1 \in \mathcal{S} (\mathbb{R})$ und
-$\hat \psi_1 = 0$ in einer Umgebung von $0$ sowie
-$\mathrm{sgn}\left(\frac{x'}{\sqrt{a}}\right) = \mathrm{sgn}\left(x'\right)$  für $a>0$
-können wir also schließlich abschätzen
+Hier wurde in $i)$ einfach $k \rightarrow \omega k$ substituiert und im Schritt $ii)$
+wurde genutzt, dass $f(x) = \mathrm{sgn}(x) \leftrightarrow \hat f(k) \sim \frac{1}{k}$.
+Nun stecken wir diese Erkenntnisse in unseren vorigen Ausdruck und erhalten
 
 \begin{align}
-    \lim_{a \rightarrow 0}\left< \hat\psi_{a1t}, \hat G_F \right>
-    &= \lim_{a \rightarrow 0} a^\frac{3}{4} C \int \frac{\mathrm{sgn}(x')
-    ~\hat \psi_1(\omega)}{\omega}
-    e^{-i\omega \frac{t'-x}{a}} \d \omega
+ \left< \hat\psi_{a1t}, \hat G_F \right>
+    &=
+    \frac{i a^\frac{3}{4}}{2} \int \Psi_2\left(\frac{x' \omega}{\sqrt{a}}\right)
+    ~\hat \psi_1(\omega)
+    ~ e^{-i \omega \left(\frac{t'-x'}{a}\right)}
+    \d \omega \d k
     \nonumber \\
     &\sim O\left(a^\frac{3}{4}\right) \kern 1em \textrm{ ; für } t'=x'
     \nonumber \\
     &\sim O\left(a^k\right) ~ \forall k \in \mathbb{N} \kern 1em \textrm{;   andernfalls}
 \end{align}
 
-wobei in $C$ alle irrelevanten Vorfaktoren gesammelt wurden.
+Im letzten Schritt wurde wieder genutzt, dass
+$\Psi_2\left(\frac{x' \omega}{\sqrt{a}}\right) ~\hat \psi_1(\omega) \in \mathcal{S}(\mathbb{R})$
+ist, und demnach eine schnell fallende Fouriertransformierte hat.
+
+% Es gilt $\psi_2(0) = 1$, da nach Konstruktion
+% $\Vert \psi_2 \Vert_1 = 1$. Außerdem können wir $\psi_2$ so wählen, dass es
+% auf einer ganzen offenen Umgebung von 0 konstant 1 ist. Durch geschicktes addieren
+% einer 0 können wir nun schreiben
+
+% \begin{equation*}
+%     \hat f_a (\omega) =
+%     \int \frac{\hat \psi_2 \left(\frac{k}{\omega}\right) - 1}{2k\omega}
+%     e^{ik\frac{x'}{\sqrt{a}}} \d k
+%     + \int \frac{1}{2k\omega}
+%     e^{ik\frac{x'}{\sqrt{a}}} \d k
+% \end{equation*}
+
+% wobei das Symbol des ersten Terms glatt ist, da $\psi_2 (0) = 0$. Der zweite Term
+% wird also für $a^{-\frac{1}{2}} \rightarrow \infty$ dominieren. Für diesen gilt:
+% \todo{Diese Argument verfeinern, oder mindestens raus finden, warum es denn
+% zulässig ist.}
+
+% \begin{equation*}
+%     \int \frac{e^{ik\frac{x'}{\sqrt{a}}}}{2k\omega} \d k
+%     = \frac{2 \pi i}{2 \omega} \mathrm{sgn}\left(\frac{x'}{\sqrt{a}}\right)
+% \end{equation*}
+
+% als Hauptwertintegral. Bedenkend dass $\psi_1 \in \mathcal{S} (\mathbb{R})$ und
+% $\hat \psi_1 = 0$ in einer Umgebung von $0$ sowie
+% $\mathrm{sgn}\left(\frac{x'}{\sqrt{a}}\right) = \mathrm{sgn}\left(x'\right)$  für $a>0$
+% können wir also schließlich abschätzen
+
+% \begin{align}
+%     \lim_{a \rightarrow 0}\left< \hat\psi_{a1t}, \hat G_F \right>
+%     &= \lim_{a \rightarrow 0} a^\frac{3}{4} C \int \frac{\mathrm{sgn}(x')
+%     ~\hat \psi_1(\omega)}{\omega}
+%     e^{-i\omega \frac{t'-x}{a}} \d \omega
+%     \nonumber \\
+%     &\sim O\left(a^\frac{3}{4}\right) \kern 1em \textrm{ ; für } t'=x'
+%     \nonumber \\
+%     &\sim O\left(a^k\right) ~ \forall k \in \mathbb{N} \kern 1em \textrm{;   andernfalls}
+% \end{align}
+
+% wobei in $C$ alle irrelevanten Vorfaktoren gesammelt wurden.
 
 Das analoge Ergebnis erhält man auch für $s=-1$ und $t' = -x'$
 % section berechnen_von_ (end)
