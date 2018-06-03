@@ -1,0 +1,94 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % Berechnen der Wellenfrontmenge von Delta_m
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Die Wellenfrontmenge von $\Delta_m$} % (fold)
+\label{sec:die_wellenfrontmenge_von_delta_m}
+
+Die massive Zweipunktfunktion ist die Fouriertransformierte der 1$m$-Massenschale positiver Energie:
+\todo{Quelle dafür zitiesfdren...}
+
+\begin{equation}
+    \Delta_m (t,x) = \int \delta (\omega^2-k^2-m^2)
+                    \Theta(\omega)e^{-i\omega t + i k x} \d \omega \d k
+\end{equation}
+
+woraus sich $\hat \Delta_m$ direkt zu $\delta (\omega^2-k^2-m^2)\Theta(\omega)$
+ablesen lässt.
+
+\begin{figure}[h]
+\centering
+\input{images/delta_m.pgf}
+\caption{Die Träger von $\hat\Delta_m$ und $\hat\psi_{ast}$. Es ist zu sehen, dass für $a \rightarrow 0$ und $s \neq \pm 1$ die Träger schließlich disjunkt sind}
+\label{fig:delta_m}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % Teil 2
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection*{Fall $s \neq \pm 1$}
+Hier gibt es nicht viel zu tun, denn für a klein genug gilt
+$supp (\hat \Delta_m) \cap supp (\hat \psi_{ast}) = \varnothing$ wie man Abb. \ref{fig:delta_m} entnehmen kann.
+Also gilt $\left< \psi_{ast}, \Delta_m\right> = 0 = O(a^k)~ \forall k$ für $a$ klein genug. Dies gilt für alle $(t', x') \in \mathbb{R}^2$
+
+\todo{hier noch blöde Abschätzerei machen, warum das tatsächlich gilt, oder stehen lassen. Oder im Kapitel Shearlets ne Bemerkung machen, warum wir in immer engeren Kegeln landen?}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % Teil3
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection*{Fall $s=1$}
+\paragraph*{Intuition}
+Für $s=-1$ schneidet die Diagonale  $supp (\hat \psi_{ast})$ auf der ganzen Länge. Der Betrag von $\hat\psi_{ast}$ skaliert mit $a^{\frac{3}{4}}$ und die Länge von $supp (\hat \psi_{ast})$ mit $a^{-1}$. Also erwarten wir schlimmstenfalls $\left< \hat \psi_{a1t}, \hat\Delta_m\right> = O(a^-{\frac{1}{4}})$. Aber nur wenn die Wellenfronten von $e^{-i\omega t'+i k x'}$ parallel zu der Singularität und damit der Diagonalen liegen. Andernfalls erwarten wir, dass die immer schneller werdenden Oszillationen der Phase sich gegenseitig auslöschen/wegheben.
+
+\paragraph*{Fleißige Analysis}
+\begin{align}
+    \left<\hat \psi_{a1t} ,\hat \Delta_m\right> &=
+        a^\frac{3}{4} \int \hat \psi_1(a\omega)
+        \hat\psi_2\left(a^{-\frac{1}{2}} \left(\tfrac{k}{\omega}-1\right)\right)
+        \delta (\omega^2 - k^2 - m^2) \theta(\omega)
+        e^{-i\omega t' + ikx'} d \omega \d k \nonumber \\[2ex]
+        & \kern 2em \underline{\textrm{Nullstellen von $\delta$}:}
+        \nonumber \\
+        & \kern 2em \omega^2 - k^2 - m^2 = 0 \Leftrightarrow k = \pm \sqrt{\omega^2-m^2}
+        \nonumber \\
+        & \kern 2em \Rightarrow \frac{\d k}{\d \omega} = \frac{\omega}{\sqrt{\omega^2-m^2}}; \textrm{   wobei nur ,,+'' in $supp (\hat \psi_2)$ liegt}
+        \nonumber \\[2ex]
+        &= a^\frac{3}{4} \int \hat\psi_1(a \omega)
+        \hat\psi_2\left(a^{-\frac{1}{2}} \left(\tfrac{\sqrt{\omega^2-m^2}}{\omega}-1\right)\right)
+        e^{-i\omega t' + i \sqrt{\omega^2-m^2}x'}
+        \d \omega \nonumber \\
+        &= a^\frac{3}{4} a^{-1} \int \hat\psi_1(\omega)
+        \hat\psi_2
+        \underbrace{
+        \left(
+            a^{-\frac{1}{2}} \left(\tfrac{\sqrt{a\omega^2-m^2}}{\omega}-1\right)
+        \right)}_{= \frac{a^\frac{3}{2}m^2}{2 \omega^2} + O\left(a^\frac{7}{2}\right)}
+        e^{-i\frac{\omega}{a} t' + i \sqrt{\frac{\omega^2}{a^2}-m^2}x'}
+        \d \omega \nonumber
+\end{align}
+Der Integrand lässt sich nun durch $\hat \psi_1(\omega) \left\lVert \hat\psi_2\right\lVert_\infty$ majorisieren und wir dürfen Lebesgue verwenden um Integral und Grenzwert $a \rightarrow 0$ zu vertauschen
+
+\begin{align}
+ &= a^{-\frac{1}{4}} \int \hat \psi_1(\omega) \hat \psi_2 (0)
+    e^{-i\omega \left(\frac{t'-x'}{a}\right)} \nonumber \\
+&= a^{-\frac{1}{4}} \hat \psi_2 (0) \psi_1\left(\frac{t'-x'}{a}\right) \nonumber \\
+& \sim O\left(a^{-\frac{1}{4}}\right); \textrm{\kern  1em falls } x' = t' \nonumber \\
+& \sim O\left(a^k\right) ~ \forall k ;\textrm{\kern  1em sonst} \nonumber
+\end{align}
+
+Das analoge Ergebnis erhält man mit gleicher Rechnung auch für $s=-1$ und $t' = -x'$
+Dies bestätigt das intuitiv erwartete Ergebnis. Insgesamt erhalten wir also für die Wellenfrontmenge:
+
+\begin{table}[h]
+\centering
+\label{my-label}
+\begin{tabular}{l|cccc}
+        & \multicolumn{1}{l}{$(t', x') = (0, 0)$} & \multicolumn{1}{l}{$t' = x'$} & \multicolumn{1}{l}{$t' = -x'$} & \multicolumn{1}{l}{$t' \neq \pm x'$} \\ \hline
+s = 1   & $a^{-\frac{1}{4}}$    & $a^{-\frac{1}{4}}$    & $a^k$  & $a^k$    \\
+s = -1  & $a^{-\frac{1}{4}}$    & $a^k$    & $a^{-\frac{1}{4}}$  & $a^k$    \\
+$s \neq \pm 1$  & $a^k$         & $a^k$    & $a^k$               & $a^k$    \\
+\end{tabular}
+\caption{Konvergenzordnung von $\mathcal{S}_{\Delta_m} (a,s,(t',x'))$ im Limit $a \rightarrow 0$ für alle interessanten Kombinationen von $s$ und $(t',x')$}
+\end{table}
+
+% section die_wellenfrontmenge_von_ (end)

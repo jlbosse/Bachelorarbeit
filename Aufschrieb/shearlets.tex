@@ -1,0 +1,148 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % Section 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Allgemeines Gelaber über Shearlets} % (fold)
+\label{sec:allgemeines_gelaber_ueber_shearlets}
+
+\begin{theorem}[$\mathcal{S}_f(a,s,t)$ misst $WF(f)$]
+\label{thm:main_theorem}
+    Sei $\mathcal{D} = \mathcal{D}_1 \cup \mathcal{D}_2$ wobei
+    $\mathcal{D}_1$ = \{
+        $(t_0, s_0) \in \mathbb{R}^2 \times [-1,1] \big|$
+        $|\mathcal{S}_f (a, s, t)| = O(a^k)$ gleichmäßig $\forall k \in \mathbb{N}
+        , \forall t \in U$ Umgebung von $(t_0, s_0)$
+    \}
+    und $\mathcal{D}_2$ analog für $\psi^{(v)}$
+
+    Dann gilt $WF(f)^c = \mathcal{D}$
+\end{theorem}
+
+\todo{diesen Satz richtig hin schreiben und ordentlich setzen}
+\todo{Stil und Nummerierung für Sätze, Propositionen etc. anpassen}
+
+\begin{corollary}[WF(f) misst $sing ~supp (\psi)$]
+Sei $\mathcal{R} =$ \{
+    $t_0 \in \mathcal{R}^2 \big|$ $|\mathcal{S}_f(a,s,t)| = O(a^k)$
+    $\forall k \in \mathbb{N}, \forall t \in U$ Umgebung von $t_0$
+    \}
+
+    Dann gilt $sing ~supp (\psi)^c = \mathcal{R}$
+\end{corollary}
+
+\begin{remark}[Träger von $\psi$]
+
+\begin{figure}[h]
+\centering
+\input{images/supp_psi.pgf}
+\caption{Der Träger von $\hat \psi_{ast}$ für verschiedene $a, s$. Man sieht gut,
+wie $supp (\hat \psi_{ast})$ für kleinere $a$ in immer kleineren Kegeln liegt.}
+\end{figure}
+
+\label{cor:psi_hat}
+Im Fourierraum ist $\hat{\psi}_{ast}$ gegeben durch
+
+\begin{equation}
+    \hat \psi_{ast}{(\xi_1, \xi_2)} = a^{\frac{3}{4}}e^{-i\xi \cdot t}\hat\psi_1(a \xi_1) \hat\psi_{2}\left(a^{-\frac{1}{2}}\left(\frac{\xi_2}{\xi_1}-s\right)\right)
+\end{equation}
+
+und es gilt
+
+\begin{equation}
+\label{eq:supp_psi}
+    supp(\hat \psi) \subset \left\{\xi \in  \hat{\mathbb{R}}^2 ~\Big| ~|\xi_1| \in \left[\frac{1}{2 a} , \frac{2}{a}\right], \left|\frac{\xi_2}{\xi_1} - s\right| \leq \sqrt{a} \right\}
+\end{equation}
+
+\end{remark}
+
+
+
+% section allgemeines_gelaber_über_shearlets (end)
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % Section 2
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Zwei nützliche Substitionen für  $\left<\psi_{ast}, f\right>$}
+\label{sec:substitutionen}
+
+Zunächst werden wir zwei verschiedene Ausdrücke für $\left<\psi_{ast}, f\right>$
+im Fourierraum herleiten, welche sich im dann folgenden als nützlich erweisen werden.
+
+Sei also $\psi$ ein Shearlet wie in Korollar \ref{cor:psi_hat}. Sei $f$ die zu
+analysierende fouriertransformierbare Funktion (oder Distribution) in
+$\mathcal{D} \prime (\mathbb{R}^2)$. Dann ist $\mathcal{S}_f (ast)$ gegeben durch
+
+\begin{align*}
+\left< \psi_{ast}, f \right> &= \left<\hat\psi_{ast}, \hat f\right> \\
+ &= \int a^\frac{3}{4} e^{-i \xi \cdot t} \hat \psi_1(a \xi_1)
+    \hat \psi_2 \left(a^{-\frac{1}{2}} \left(\frac{\xi_2}{\xi_1} - s\right)\right)
+    \hat f (\xi) \d \xi
+\end{align*}
+
+\todo{etnscheiden, was mit dem fehlenden Faktor $\frac{1}{(2 \pi)^n}$ geschieht}
+und nach "`entscheren"' und "`deskalieren"', also der Substitution
+
+\begin{equation*}
+\begin{aligned}[c]
+a \xi_1 &= k_1\\
+a^{-\frac{1}{2}} \left(\frac{\xi_2}{\xi_1} - s\right) &=\frac{k_2}{k_1}\\
+\end{aligned}
+\qquad\Longleftrightarrow\qquad
+\begin{aligned}[c]
+\xi_1 &= \frac{k_1}{a}\\
+\xi_2 &= \frac{k_1 s}{a} + a^{-\frac{1}{2}} k_2\\
+\end{aligned}
+\end{equation*}
+
+\begin{equation*}
+\Rightarrow
+\d \xi_1 \d \xi_2 = a^{-\frac{3}{2}} \d k_1 \d k_2
+\end{equation*}
+
+ergibt sich folgendes für $\left<\psi_{ast}, f\right>$:
+
+\begin{equation}
+\label{eq:psi_ast_f_1}
+    =  \iint a^{-\frac{3}{4}}~\hat \psi_1(k_1) ~\hat \psi_2 \left(\tfrac{k_2}{k_1}\right)
+    ~\hat f \left(\tfrac{k_1}{a}, \tfrac{k_1 s}{a} + \tfrac{k_2}{\sqrt{a}}\right)
+    ~e^{-i\frac{k_1}{a}(t_1+t_2 s) - i \frac{k_2 t_2}{\sqrt(a)}}
+    \d k_1 \d k_2
+\end{equation}
+
+\todo{herausfinden, wie die Gleichungen auch Kapitelnummern erhalten}
+
+Alternativ kann auch folgende Substitution
+
+\begin{equation*}
+\begin{aligned}[c]
+a \xi_1 &= k_1\\
+a^{-\frac{1}{2}} \left(\frac{\xi_2}{\xi_1} - s\right) &= k_2\\
+\end{aligned}
+\qquad\Longleftrightarrow\qquad
+\begin{aligned}[c]
+\xi_1 &= \frac{k_1}{a}\\
+\xi_2 &= \left( a^\frac{1}{2} k_2 +s \right) \frac{k_1}{a}\\
+\end{aligned}
+\end{equation*}
+
+\begin{equation*}
+\Rightarrow
+\d \xi_1 \d \xi_2 = a^{-\frac{3}{2}} k_1 \d k_1 \d k_2
+\end{equation*}
+
+gewählt werden, wodurch alle Parameter aus den Argumenten von $\psi_1, \psi_2$
+verschwinden und sich
+
+\begin{align}
+\label{eq:psi_ast_f_2}
+    =  \iint a^{-\frac{3}{4}}~ k_1~ \hat \psi_1(k_1)~ \hat \psi_2 (k_2)~
+    \hat f \left(\tfrac{k_1}{a}, k_1 \left(a^{-\frac{1}{2}}k_2 + s a^{-1}\right)\right)
+    ~e^{-i k_1 \left(\frac{t_1+s t_2}{a} + \frac{k_2 t_2}{\sqrt{a}}\right)}
+    \d k_1 \d k_2
+\end{align}
+
+ergibt. Dabei ist zu beachten, dass diese Substitution zulässig ist, obwohl sie
+die Oriertierung \emph{nicht} erhält und \emph{nicht} keine Bijektion ist. Aber
+der kritische Bereich, nämlich $\xi_1 = 0$, liegt nicht im Träger von $\psi$.
+
+\todo{Grafik basteln, die $supp ~\psi$ vor und nach der Substitution zeigt.}

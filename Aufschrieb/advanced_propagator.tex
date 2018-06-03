@@ -1,0 +1,435 @@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % Section 3
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Berechnen von $WF(G_F)$} % (fold)
+\label{sec:berechnen_von_}
+
+\subsection{Ausdrücke für $\left< \psi_{ast}, G_F\right>$} % (fold)
+\label{sec:psiast_gf}
+
+Ab jetzt werden wir der Namenskonvention der Physiker in der SRT folgen und unsere
+Ortsraumvariablen mit $x = (t, x)$ und unsere Impulsraumvariablen mit $\xi = (\omega, k)$
+bezeichnen sowie konsequenterweise das Minkowskiskalarprodukt $x \cdot \xi = \omega t - k x$
+verwenden. Des weiteren wird der Verschiebungsparameter mit  $t = (t', x')$ bezeichnet.
+
+Die massive skalare Zweipunktfunktion bzw. der Feynmanpropagator im Impulsraum ist dann
+gegeben durch (\textcite{Schwartz2014}, (6.34))
+
+\begin{equation}
+\label{eq:gf}
+    \hat G_F(\omega, k) = \frac{1}{m^2 - \omega^2 + k^2 - i 0^+}
+\end{equation}
+
+Setzen wir dies in unsere Ausdrücke für $\left< \psi_{ast}, f\right>$ aus \eqref{eq:psi_ast_f_1}
+bzw. \eqref{eq:psi_ast_f_2} ergibt sich, unter Verwendung des Minkowskiskalaprodukts,
+
+\begin{align}
+\left< \hat\psi_{ast}, \hat G_F \right> &=
+    \int \hat \psi_{ast}(\omega, t) ~\hat G_F(\omega, t) ~\d \omega \d k
+    \nonumber \\
+    &=
+    a^{\frac{3}{4}} \iint \frac{
+        \hat \psi_1 (a \omega)
+        ~\hat \psi_2 \left(a^{-\frac{1}{2}}\frac{k}{\omega} - s\right)
+        ~ e^{-i\omega t' + i k x'}
+    }
+    {
+        m^2 - \omega^2 + k^2 - i 0^+
+    }
+    \d \omega \d k
+    \nonumber \\
+    &=
+    a^{-\frac{3}{4}} \iint \frac{
+        \hat\psi_1(\omega)
+        ~\hat \psi_2\left(\tfrac{k}{w}\right)
+        ~e^{-i \omega \frac{t' - sx'}{a} + ik \frac{x'}{\sqrt{a}}}
+    }
+    {
+        m^2 - \left(\frac{\omega}{a}\right)^2
+        + \left(\frac{\omega s}{a} + \frac{k}{\sqrt{a}}\right)^2 - i0^+
+    }
+    \d \omega \d k \nonumber \\
+    &=
+    a^{-\frac{3}{4}}
+    \kern -2em \iint
+    \limits_{
+    \substack{
+        \omega \in [-2, -\frac{1}{2}]\cup[\frac{1}{2},2] \\
+        \left|\frac{k}{2}-s\right| \leq \sqrt{ax}
+        }
+    }
+    \kern -1.5em
+    \frac{
+        \hat\psi_1(\omega)
+        ~\hat \psi_2\left(\tfrac{k}{\omega}\right)
+        ~e^{-i \omega \frac{t' - sx'}{a} + ik \frac{x'}{\sqrt{a}}}
+    }
+    {
+        m^2 + a^{-2} \omega^2 (s^2 - 1) + a^{-\frac{3}{2}} 2 s \omega k + a^{-1} k  - i0^+
+    }
+    \d \omega \d k
+    \label{eq:psi_ast_gf_1}
+\end{align}
+
+\todo{Integral hübsch machen. Größeres Integralzeichen?}
+
+und mit der anderen Substitution analog
+
+\begin{align}
+    \left< \hat\psi_{ast}, \hat G_F \right>
+    &=
+    a^{-\frac{3}{4}}
+    \kern -1em
+    \iint \limits_{\substack{
+        |\omega|~ \in~ [\frac{1}{2},2] \\
+        k ~\in~ [-1,1]
+        }
+    }
+    \kern -1em
+    \frac{
+        \omega ~\hat \psi_1(\omega) ~\hat \psi_2(k)
+        e^{-i \omega \left(\frac{t' - sx'}{a} + \frac{kx'}{\sqrt{a}}\right)}
+    }
+    {
+        m^2 - \omega^2(a^{-2}(1-s^2)-a^{-1}k^2 - 2 k s a^{-\frac{3}{2}})
+    }
+    \d \omega \d k
+    \label{eq:psi_ast_gf_2}
+\end{align}
+
+wobei sich die Integrationsbereiche aus den Forderungen an den Träger von $\psi$
+(vgl. \eqref{eq:supp_psi}) ergeben.
+
+
+
+
+Nach Satz \eqref{thm:main_theorem} genügt es zu bestimmen, an welchen Punkten
+$(t', x')$ und in welche Richtungen $s$ $\mathcal{S}_f(a,s,(t',x'))$ nicht schnell-fallend
+in $a^{-1}$ ist, um die Wellenfrontmenge zu bestimmen. Da wir keine explizite
+erzeugende Funktion $\psi$ angegeben haben, werden wir uns dabei Argumente bedienen,
+die alleine auf den allgemeinen Eigenschaften von $\psi_{ast}$ beruhen, aber nicht
+einer expliziten Form.
+\todo{In Textform beschreiben, was die grobe Strategie ist, also wie der Integrand
+vernünfitg vereinfacht wird und welche Eigenschaften von¸$\psi$ wie eingehen.}
+\todo{Hier schon die Ergebnisse als Satz angeben, und dann Beweis hinschreiben?}
+\todo{Bemerkung einfügen, warum dass auch ziemlich unmöglich ist}
+
+Das allgemeine Vorgehen wird dabei folgendes sein: Die Ausdrücke in \eqref{eq:psi_ast_gf_1}
+und \eqref{eq:psi_ast_gf_2} genau anstarren, um zu sehen für welche Werte von
+$(t',x')$ und $s$ potentiell interessante Dinge geschehen, also z.B. Terme im Nenner
+weg fallen, oder die Phase konstant wird. Dann werden diese Werte von $(t',x')$ und
+$s$ eingesetzt und alles so weit vereinfacht und genähert -- im Rahmen des Erlaubten, ohne
+das Verhalten für $a \rightarrow 0$ zu ändern --, bis die $a$-Abhängigkeit abgelesen
+werden kann. Entscheidende Zutaten sind dabei der beschränkte Träger von $\hat \psi$
+und der schnelle Abfall von $\psi$.
+
+
+\subsubsection*{Fall $s=1, t' = 0 = x'$}
+Nach \eqref{eq:psi_ast_gf_2} erhalten wir mit $s=1, t' = 0 = x'$
+
+\begin{align*}
+    \left< \hat\psi_{a10}, \hat G_F \right>
+    &=
+    \int a^{-\frac{3}{4}} \frac{
+        \omega ~\hat \psi_1(\omega) ~\hat \psi_2(k)
+    }
+    {
+        m^2+\omega^2 (a^{-1}k^2 + a^{-\frac{3}{2}}2 k )
+    }
+    \d \omega \d k \\
+    &=
+    \int a^{\frac{3}{4}} \frac{
+        \omega ~\hat \psi_1(\omega) ~\hat \psi_2(k)
+    }
+    {
+        a^\frac{3}{2} m^2+\omega^2 (a^\frac{1}{2}k^2 + 2 k )
+    }
+    \d \omega \d k
+\end{align*}
+
+Da aber $|\omega| \in [\frac{1}{2},2]$ und $k \in [-1,1]$ ist, ist für hinreichend
+kleine $a$ (und für genau die interessieren wir uns ja)
+
+\begin{equation*}
+    \left|
+        \frac{\omega ~\hat \psi_1(\omega) ~\hat \psi_2(k)}{k \omega^2}
+    \right|
+    \geq
+    \left|
+        \frac{\omega ~\hat \psi_1(\omega) ~\hat \psi_2(k)}
+        {a^\frac{3}{2}m^2+a^\frac{1}{2}\omega^2 k+2k \omega^2}
+    \right|
+\end{equation*}
+
+eine integrierbare (im Sinne des Cauchy-Hauptwertes) Majorante für den Integranden.
+
+\todo{Warum ist Cauchy-Hauptwert hier erlaubt? Weiter ausführe, warum es diese Majorante tut?}
+
+Wir dürfen uns also des Lebesgueschen Konvergenzsatzes bedienen und schreiben
+
+\begin{equation}
+    \lim_{a \rightarrow 0} \left< \hat\psi_{a10}, \hat G_F \right> =
+    a^\frac{3}{4} \int \frac{
+    \omega ~\hat \psi_1(\omega) ~\hat \psi_2(k)
+    }
+    {
+    2k \omega^2
+    }
+    \d \omega \d k
+    \sim O(a^\frac{3}{4})
+\end{equation}
+
+Für $s = -1$ erhalten wir genau das selbe Ergebniss, da ja der $\omega^2 (1-s^2)$-Term
+im Nenner genauso wieder verschwindet.
+
+\subsubsection*{Fall $s \neq \pm 1, t' = 0 = x'$}
+In diesem Fall verschwindet der $\omega^2 (1-s^2)$-Term im Nenner nicht und
+dementsprechend folgt
+
+\begin{align*}
+    \left< \hat\psi_{as0}, \hat G_F \right>
+    &=
+    \int a^{-\frac{3}{4}} \frac{
+        \omega ~\hat \psi_1(\omega) ~\hat \psi_2(k)
+    }
+    {
+        m^2-\omega^2 ((1-s^2) - a^{-1}k^2 - a^{-\frac{3}{2}}2 k )
+    }
+    \d \omega \d k \\
+    &=
+    \int a^{\frac{5}{4}} \frac{
+        \omega ~\hat \psi_1(\omega) ~\hat \psi_2(k)
+    }
+    {
+        a^2 m^2+\omega^2 (s^2-1) + a \omega^2 k^2 + a^\frac{1}{2}2 \omega^2 k s
+    }
+    \d \omega \d k
+\end{align*}
+
+Analog zum vorigen Teil ist, diesmal sogar ohne den Cauchy-Hauptwert bemühen zu
+müssen,
+
+\todo{Überall wo es sein muss $\lim_{a \rightarrow 0}$ dazu schreiben, oder sagen
+dass der Limit überall impliziert ist}
+
+\begin{equation*}
+    \left|
+        \frac{2 \omega ~\hat \psi_1(\omega) ~\hat \psi_2(k)}{\omega^2 (1-s^2)}
+    \right|
+    \geq
+    \left|
+        \frac{
+        \omega ~\hat \psi_1(\omega) ~\hat \psi_2(k)
+    }
+    {
+        a^2 m^2+\omega^2 (s^2-1) + a \omega^2 k^2 + a^\frac{1}{2}2 \omega^2 k s
+    }
+    \right|
+\end{equation*}
+
+dass eine integrierbare Majorante ist (in der Tat ja sogar in $C_c^\infty (\mathbb{R}^2)$)
+Damit können wir folgende Abschätzung treffen:
+
+\begin{equation*}
+    \lim_{a \rightarrow 0} \left< \hat\psi_{as0}, \hat G_F \right> =
+    a^\frac{5}{4} \int \frac{2 \omega ~\hat \psi_1(\omega) ~\hat \psi_2(k)}
+    {\omega^2 (1-s^2)}
+    \d \omega \d k
+    \sim O(a^\frac{5}{4})
+\end{equation*}
+
+
+\subsubsection*{Fall $s \neq \pm 1, (t', s') \neq 0$}
+In diesem Fall benutzen wir wieder die erste Substitution \eqref{eq:psi_ast_gf_1}
+und klammern wie schon in den beiden vorigen Teilen die höchste negative
+Potenz von $a$ im Nenner aus.
+
+\begin{align}
+\Rightarrow ~
+    \left< \hat\psi_{ast}, \hat G_F \right>
+    &=
+    a^\frac{5}{4} \int \frac{
+        \hat \psi_1 (\omega) ~\hat \psi_2 \left(\frac{k}{\omega}\right)
+        ~ e^{-i \omega \left(\frac{t'-sx'}{a}\right) + i k \frac{x'}{\sqrt{a}}}
+    }
+    {
+        a^2 m^2 - \omega^2 (1-s^2) + a^\frac{1}{2} s \omega k +a k^2
+    }
+    \d \omega \d k
+\end{align}
+
+und da immer noch $0 \notin supp(\psi_1)$ gilt ist ein weiteres mal eine integrierbare Majorante gegeben durch
+
+\begin{equation}
+    2\frac{\hat \psi_1 (\omega)~\hat\psi_2 \left(\frac{k}{\omega}\right)}
+    {\omega^2(s^2-1)}
+\end{equation}
+
+In der Tat ist sogar
+
+\begin{equation}
+    \hat f(\omega, k) := \frac{\hat \psi_1 (\omega)~\hat\psi_2 \left(\frac{k}{\omega}\right)}
+    {\omega^2(s^2-1)}
+    \in C_c^\infty (\hat{\mathbb{R}}^2)
+\end{equation}
+
+da $\psi_1$ und $\psi_2$ getragen sind. Demnach ist die Fourierinverse von
+$\hat f$, $f := \mathcal{F}^{-1}(\hat f) \in \mathcal{S}(\mathbb{R}^2)$, also schnell
+fallend. Damit können wir schließlich abschätzen
+
+\begin{align}
+    \left| \left< \hat\psi_{ast}, \hat G_F \right> \right|
+    &=
+    a^\frac{5}{4} \left|  \int \hat f(\omega, k)
+    ~e^{-i \omega \left(\frac{t'-sx'}{a}\right) + ik \frac{x'}{\sqrt{a}}}
+    \d \omega \d k
+    \right|
+    \nonumber \\
+    &=
+    a^\frac{5}{4} \left| f \left(\frac{t'-sx}{a}, \frac{x'}{\sqrt{a}}\right) \right|
+    \leq
+    a^\frac{5}{4} C_k\left(
+    1 + \left\lVert \substack{(t'-sx')/a \\ x'/\sqrt{a}} \right\rVert
+    \right)^{-k}
+    \nonumber \\
+    &\leq
+    a^\frac{5}{4} \frac{C_k}{2} a^{\frac{k}{2}} \left\lVert
+    \substack{(t'-sx') \\ x'} \right\rVert^{-k}
+    \sim O\left(a^\frac{5/2+k}{2}\right) ~~ \forall k \in \mathbb{N}
+    \nonumber \\[1em]
+    \Rightarrow
+     \left| \left< \hat\psi_{ast}, \hat G_F \right> \right|
+     &\sim
+     O\left(a^k\right) ~~ \forall k \in \mathbb{N}
+\end{align}
+
+
+\subsubsection*{Fall $s = 1, (t', x') \neq 0$}
+Auch in diesem Fall nutzen wir wieder den ersten Ausdruck für
+$\left< \hat\psi_{a1t}, \hat G_F \right>$ aus \eqref{eq:psi_ast_gf_1} und sorgen
+wir auch bisher jedes Mal dafür, dass wir im Nenner nur noch positive Potenzen von
+$a$ und einen von $a$ unabhängigen Term haben. Dann sieht das ganze so aus:
+
+\begin{equation*}
+    \left< \hat\psi_{a1t}, \hat G_F \right>
+    =
+    a^\frac{3}{4} \int \frac{\hat \psi_1(\omega)
+    ~\hat\psi_2 \left(\frac{k}{\omega}\right)
+    ~ e^{-i \omega \left(\frac{t'-x'}{a}\right) + i k \frac{x'}{\sqrt{a}}}
+    }
+    {
+        a^\frac{3}{2} m^2 + a^\frac{1}{2} k^2 + 2 \omega k
+    }
+    \d \omega \d k
+\end{equation*}
+
+wo wir im $\lim_{a \rightarrow 0}$ wieder doe $a$-Potenzen im Nenner weg fallen lassen
+und auch dieses Mal dafür wieder den Cauchy-Hauptwert bemühen müssen, um den
+Lebesgueschen Konvergenzsatz benutzen zu dürfen.
+Weiter geht's:
+
+\begin{align}
+    &=
+    a^\frac{3}{4} \int \frac{
+    \hat \psi_1(\omega)
+    ~\hat\psi_2 \left(\frac{k}{\omega}\right)
+    ~ e^{-i \omega \left(\frac{t'-x'}{a}\right) + i k \frac{x'}{\sqrt{a}}}
+    }
+    {
+    2\omega k
+    } \d \omega \d k \nonumber \\
+    &= a^\frac{3}{4} \int
+    \underbrace{\left\{ \int \frac{\hat \psi_2\left(\frac{k}{\omega}\right)
+        ~e^{ik\frac{x'}{\sqrt{a}}}
+        }
+        {
+            2 k \omega
+        }
+        \d k
+        \right\}}_{=: \hat f_a (\omega)}
+    \hat \psi_1(\omega) e^{-i \omega \left(\frac{t'-x'}{a}\right)}
+    \d \omega
+\end{align}
+
+und um hier weiter zu kommen, schauen wir uns $\hat f_a$ genauer an. Sei dazu
+$\Psi_2(\omega) := \int_{-\infty}^\omega \psi_2(\omega ') \d \omega '
+    -  \int_{\omega}^{+ \infty} \psi_2(\omega ') \d \omega '$ eine
+Stammfunktion von $\psi_2$. Dies ist offenbar $C^\infty$ und beschränkt, da
+ $\hat \psi_2 \in C^\infty_c$. Mithilfe von Fourieridentitäten und Substitution können wir nun weiter rechnen:
+
+\begin{align*}
+    \hat f_a (\omega) &=
+    \int \frac{\hat \psi_2\left(\frac{k}{\omega}\right)}{2k\omega}
+    e^{i k \frac{x'}{\sqrt{a}}}
+    \d \omega \\
+    &\stackrel{i)}{=}
+    \int \frac{\hat \psi_2 (k)}{2k}e^{ik\frac{x' \omega}{\sqrt{a}}}
+    \d \omega \\
+    &\stackrel{ii)}{=} \frac{i}{2}  \Psi_2\left(\frac{x' \omega}{\sqrt{a}}\right)
+\end{align*}
+
+Hier wurde in $i)$ einfach $k \rightarrow \omega k$ substituiert und im Schritt $ii)$
+wurde genutzt, dass $f(x) = \mathrm{sgn}(x) \leftrightarrow \hat f(k) \sim \frac{1}{k}$.
+Nun stecken wir diese Erkenntnisse in unseren vorigen Ausdruck und erhalten
+
+\begin{align}
+ \left< \hat\psi_{a1t}, \hat G_F \right>
+    &=
+    \frac{i a^\frac{3}{4}}{2} \int \Psi_2\left(\frac{x' \omega}{\sqrt{a}}\right)
+    ~\hat \psi_1(\omega)
+    ~ e^{-i \omega \left(\frac{t'-x'}{a}\right)}
+    \d \omega \d k
+    \nonumber \\
+    &\sim O\left(a^\frac{3}{4}\right) \kern 1em \textrm{ ; für } t'=x'
+    \nonumber \\
+    &\sim O\left(a^k\right) ~ \forall k \in \mathbb{N} \kern 1em \textrm{;   andernfalls}
+\end{align}
+
+Im letzten Schritt wurde wieder genutzt, dass
+$\Psi_2\left(\frac{x' \omega}{\sqrt{a}}\right) ~\hat \psi_1(\omega) \in \mathcal{S}(\mathbb{R})$
+ist, und demnach eine schnell fallende Fouriertransformierte hat.
+
+% Es gilt $\psi_2(0) = 1$, da nach Konstruktion
+% $\Vert \psi_2 \Vert_1 = 1$. Außerdem können wir $\psi_2$ so wählen, dass es
+% auf einer ganzen offenen Umgebung von 0 konstant 1 ist. Durch geschicktes addieren
+% einer 0 können wir nun schreiben
+
+% \begin{equation*}
+%     \hat f_a (\omega) =
+%     \int \frac{\hat \psi_2 \left(\frac{k}{\omega}\right) - 1}{2k\omega}
+%     e^{ik\frac{x'}{\sqrt{a}}} \d k
+%     + \int \frac{1}{2k\omega}
+%     e^{ik\frac{x'}{\sqrt{a}}} \d k
+% \end{equation*}
+
+% wobei das Symbol des ersten Terms glatt ist, da $\psi_2 (0) = 0$. Der zweite Term
+% wird also für $a^{-\frac{1}{2}} \rightarrow \infty$ dominieren. Für diesen gilt:
+% \todo{Diese Argument verfeinern, oder mindestens raus finden, warum es denn
+% zulässig ist.}
+
+% \begin{equation*}
+%     \int \frac{e^{ik\frac{x'}{\sqrt{a}}}}{2k\omega} \d k
+%     = \frac{2 \pi i}{2 \omega} \mathrm{sgn}\left(\frac{x'}{\sqrt{a}}\right)
+% \end{equation*}
+
+% als Hauptwertintegral. Bedenkend dass $\psi_1 \in \mathcal{S} (\mathbb{R})$ und
+% $\hat \psi_1 = 0$ in einer Umgebung von $0$ sowie
+% $\mathrm{sgn}\left(\frac{x'}{\sqrt{a}}\right) = \mathrm{sgn}\left(x'\right)$  für $a>0$
+% können wir also schließlich abschätzen
+
+% \begin{align}
+%     \lim_{a \rightarrow 0}\left< \hat\psi_{a1t}, \hat G_F \right>
+%     &= \lim_{a \rightarrow 0} a^\frac{3}{4} C \int \frac{\mathrm{sgn}(x')
+%     ~\hat \psi_1(\omega)}{\omega}
+%     e^{-i\omega \frac{t'-x}{a}} \d \omega
+%     \nonumber \\
+%     &\sim O\left(a^\frac{3}{4}\right) \kern 1em \textrm{ ; für } t'=x'
+%     \nonumber \\
+%     &\sim O\left(a^k\right) ~ \forall k \in \mathbb{N} \kern 1em \textrm{;   andernfalls}
+% \end{align}
+
+% wobei in $C$ alle irrelevanten Vorfaktoren gesammelt wurden.
+
+Das analoge Ergebnis erhält man auch für $s=-1$ und $t' = -x'$
+% section berechnen_von_ (end)

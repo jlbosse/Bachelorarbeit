@@ -6,10 +6,21 @@
 
 
 % ------------------------------------------------------------------------------
-% % Packages and settings for graphics
+% % Packages and settings for graphics and plots
 % ------------------------------------------------------------------------------
 \usepackage{graphicx}
+\usepackage{pgfplots}
+\usepackage{pgf}
+\usepackage{import}
 
+\newcommand\inputpgf[2]{{
+\let\pgfimageWithoutPath\pgfimage
+\renewcommand{\pgfimage}[2][]{\pgfimageWithoutPath[##1]{#1/##2}}
+\input{#1/#2}
+}}
+
+\let\pgfimageWithoutPath\pgfimage
+\renewcommand{\pgfimage}[2][]{\pgfimageWithoutPath[#1]{images/#2}}
 
 % ------------------------------------------------------------------------------
 % % Bibliography
@@ -51,6 +62,18 @@
 \newenvironment{AMS}{}{}
 \newenvironment{keywords}{}{}
 
+% hübsche große Hüte
+\usepackage{scalerel,stackengine}
+\stackMath
+\newcommand\rwhat[1]{%
+\savestack{\tmpbox}{\stretchto{%
+  \scaleto{%
+    \scalerel*[\widthof{\ensuremath{#1}}]{\kern.1pt\mathchar"0362\kern.1pt}%
+    {\rule{0ex}{\textheight}}%WIDTH-LIMITED CIRCUMFLEX
+  }{\textheight}%
+}{2.4ex}}%
+\stackon[-6.9pt]{#1}{\tmpbox}%
+}
 
 % ------------------------------------------------------------------------------
 % % Headings and spacing

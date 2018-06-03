@@ -1,0 +1,41 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % Berechnen der Wellenfrontmenge von Delta_m
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\section{\texorpdfstring{Die Wellenfrontmenge von $\Delta_m^2$}
+    {Wellenfrontmenge von delta m}} % (fold)
+\label{sec:die_wellenfrontmenge_von_delta_m_2_}
+
+\subsection{\texorpdfstring{$\hat\Delta^{\ast 2}$ berechnen}
+    {delta-ast-hat berechnen}}
+Bevor wir die Wellenfrontmenge von $\Delta_m^2$ berechnen können, benötigen wir einen Ausdruck dafür, oder besser noch einen für die Fouriertransformierte davon. Gemäß dem Faltungssatz gilt $\rwhat{\Delta_m^2} = \rwhat \Delta_m * \rwhat \Delta_m = \rwhat\Delta_m^{*2}$. Wir müssen also die Faltung von $\rwhat \Delta_m$ mit sich selber ausrechnen.
+
+\begin{figure}
+    \centering
+    \begin{minipage}{0.5\textwidth}
+        \centering
+        \resizebox{\textwidth}{!}{\input{images/mass_shell_convolution.pgf}} %
+        \caption{Das zu berechnende Integral aus \eqref{eq:mass_shell_convolution} visualisiert}
+        \label{fig:mass_shell_convolution}
+    \end{minipage}\hfill
+    \begin{minipage}{0.5\textwidth}
+        \centering
+        \resizebox{\textwidth}{!}{\input{images/schulgeometrie.pgf}}
+        \caption{Die Kreuzungstelle bei $k_{0+}'$ von ganz nah angeschaut}
+        \label{fig:schulgeometrie}
+    \end{minipage}
+\end{figure}
+
+\begin{equation}
+    \rwhat{\Delta_m^{* 2}} (\omega, k)
+    = \int \theta(\omega') \delta(\omega'^2-k'^2-m^2)\theta(\omega-\omega')
+      \delta((\omega-\omega')^2-(k-k')^2-m^2) \d \omega' \d k'
+\label{eq:mass_shell_convolution}
+\end{equation}
+
+An Abbildung \ref{fig:mass_shell_convolution} sehen wir schon, dass das Faltungsintegral nur dann ungleich null ist, wenn $(\omega, k)$ in der 2$m$-Massenschale liegen. Es ist also insbesondere $\omega > 0$.
+Da $\Delta_m$ Poincare-invariant ist, sind $\Delta_m^2$ und $\rwhat{\Delta_m^{*2}}$ es auch. Es genügt also $\rwhat{\Delta_m^{*2}}$ für $k=0$ und positive $\omega$ zu berechnen. Alle anderen Werte holen wir uns dann aus der Poincare-Invarianz.
+
+\todo{Wie erklärt man das besser, ohne an Anschaulichkeit oder Rigorosität zu verlieren}
+Um nun das Integral über zwei sich schneidende lineare\footnote{Linear in dem Sinne, dass die Distribution entlang einer Linie getragen ist. Nicht das es eine lineare Distribution ist} $\delta$-Distributionen zu berechnen bedienen wir uns eines Physikertricks und stellen uns die $\delta$-Distribution als Grenzwert einer $\frac{1}{h}$-hohen und $h$ breiten Rechtecksfunktion vor.
+% section die_wellenfrontmenge_von_delta_m_2_ (end)
