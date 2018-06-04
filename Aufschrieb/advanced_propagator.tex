@@ -143,7 +143,7 @@ Nach \eqref{eq:psi_ast_gf_2} erhalten wir mit $s=1, t' = 0 = x'$
         \omega ~\hat \psi_1(\omega) ~\hat \psi_2(k)
     }
     {
-        a^\frac{3}{2} m^2+\omega^2 (a^\frac{1}{2}k^2 + 2 k )
+        a^{\frac{3}{2}} m^2+\omega^2 (a^{\frac{1}{2}}k^2 + 2 k )
     }
     \d \omega \d k
 \end{align*}
@@ -158,7 +158,7 @@ kleine $a$ (und für genau die interessieren wir uns ja)
     \geq
     \left|
         \frac{\omega ~\hat \psi_1(\omega) ~\hat \psi_2(k)}
-        {a^\frac{3}{2}m^2+a^\frac{1}{2}\omega^2 k+2k \omega^2}
+        {a^{\frac{3}{2}}m^2+a^{\frac{1}{2}}\omega^2 k+2k \omega^2}
     \right|
 \end{equation*}
 
@@ -170,14 +170,14 @@ Wir dürfen uns also des Lebesgueschen Konvergenzsatzes bedienen und schreiben
 
 \begin{equation}
     \lim_{a \rightarrow 0} \left< \hat\psi_{a10}, \hat G_F \right> =
-    a^\frac{3}{4} \int \frac{
+    a^{\frac{3}{4}} \int \frac{
     \omega ~\hat \psi_1(\omega) ~\hat \psi_2(k)
     }
     {
     2k \omega^2
     }
     \d \omega \d k
-    \sim O(a^\frac{3}{4})
+    \sim O(a^{\frac{3}{4}})
 \end{equation}
 
 Für $s = -1$ erhalten wir genau das selbe Ergebniss, da ja der $\omega^2 (1-s^2)$-Term
@@ -202,7 +202,7 @@ dementsprechend folgt
         \omega ~\hat \psi_1(\omega) ~\hat \psi_2(k)
     }
     {
-        a^2 m^2+\omega^2 (s^2-1) + a \omega^2 k^2 + a^\frac{1}{2}2 \omega^2 k s
+        a^2 m^2+\omega^2 (s^2-1) + a \omega^2 k^2 + a^{\frac{1}{2}}2 \omega^2 k s
     }
     \d \omega \d k
 \end{align*}
@@ -223,7 +223,7 @@ dass der Limit überall impliziert ist}
         \omega ~\hat \psi_1(\omega) ~\hat \psi_2(k)
     }
     {
-        a^2 m^2+\omega^2 (s^2-1) + a \omega^2 k^2 + a^\frac{1}{2}2 \omega^2 k s
+        a^2 m^2+\omega^2 (s^2-1) + a \omega^2 k^2 + a^{\frac{1}{2}}2 \omega^2 k s
     }
     \right|
 \end{equation*}
@@ -233,10 +233,10 @@ Damit können wir folgende Abschätzung treffen:
 
 \begin{equation*}
     \lim_{a \rightarrow 0} \left< \hat\psi_{as0}, \hat G_F \right> =
-    a^\frac{5}{4} \int \frac{2 \omega ~\hat \psi_1(\omega) ~\hat \psi_2(k)}
+    a^{\frac{5}{4}} \int \frac{2 \omega ~\hat \psi_1(\omega) ~\hat \psi_2(k)}
     {\omega^2 (1-s^2)}
     \d \omega \d k
-    \sim O(a^\frac{5}{4})
+    \sim O(a^{\frac{5}{4}})
 \end{equation*}
 
 
@@ -249,12 +249,12 @@ Potenz von $a$ im Nenner aus.
 \Rightarrow ~
     \left< \hat\psi_{ast}, \hat G_F \right>
     &=
-    a^\frac{5}{4} \int \frac{
+    a^{\frac{5}{4}} \int \frac{
         \hat \psi_1 (\omega) ~\hat \psi_2 \left(\frac{k}{\omega}\right)
         ~ e^{-i \omega \left(\frac{t'-sx'}{a}\right) + i k \frac{x'}{\sqrt{a}}}
     }
     {
-        a^2 m^2 - \omega^2 (1-s^2) + a^\frac{1}{2} s \omega k +a k^2
+        a^2 m^2 - \omega^2 (1-s^2) + a^{\frac{1}{2}} s \omega k +a k^2
     }
     \d \omega \d k
 \end{align}
@@ -281,22 +281,22 @@ fallend. Damit können wir schließlich abschätzen
 \begin{align}
     \left| \left< \hat\psi_{ast}, \hat G_F \right> \right|
     &=
-    a^\frac{5}{4} \left|  \int \hat f(\omega, k)
+    a^{\frac{5}{4}} \left|  \int \hat f(\omega, k)
     ~e^{-i \omega \left(\frac{t'-sx'}{a}\right) + ik \frac{x'}{\sqrt{a}}}
     \d \omega \d k
     \right|
     \nonumber \\
     &=
-    a^\frac{5}{4} \left| f \left(\frac{t'-sx}{a}, \frac{x'}{\sqrt{a}}\right) \right|
+    a^{\frac{5}{4}} \left| f \left(\frac{t'-sx}{a}, \frac{x'}{\sqrt{a}}\right) \right|
     \leq
-    a^\frac{5}{4} C_k\left(
+    a^{\frac{5}{4}} C_k\left(
     1 + \left\lVert \substack{(t'-sx')/a \\ x'/\sqrt{a}} \right\rVert
     \right)^{-k}
     \nonumber \\
     &\leq
-    a^\frac{5}{4} \frac{C_k}{2} a^{\frac{k}{2}} \left\lVert
+    a^{\frac{5}{4}} \frac{C_k}{2} a^{\frac{k}{2}} \left\lVert
     \substack{(t'-sx') \\ x'} \right\rVert^{-k}
-    \sim O\left(a^\frac{5/2+k}{2}\right) ~~ \forall k \in \mathbb{N}
+    \sim O\left(a^{\frac{5/2+k}{2}}\right) ~~ \forall k \in \mathbb{N}
     \nonumber \\[1em]
     \Rightarrow
      \left| \left< \hat\psi_{ast}, \hat G_F \right> \right|
@@ -314,12 +314,12 @@ $a$ und einen von $a$ unabhängigen Term haben. Dann sieht das ganze so aus:
 \begin{equation*}
     \left< \hat\psi_{a1t}, \hat G_F \right>
     =
-    a^\frac{3}{4} \int \frac{\hat \psi_1(\omega)
+    a^{\frac{3}{4}} \int \frac{\hat \psi_1(\omega)
     ~\hat\psi_2 \left(\frac{k}{\omega}\right)
     ~ e^{-i \omega \left(\frac{t'-x'}{a}\right) + i k \frac{x'}{\sqrt{a}}}
     }
     {
-        a^\frac{3}{2} m^2 + a^\frac{1}{2} k^2 + 2 \omega k
+        a^{\frac{3}{2}} m^2 + a^{\frac{1}{2}} k^2 + 2 \omega k
     }
     \d \omega \d k
 \end{equation*}
@@ -331,7 +331,7 @@ Weiter geht's:
 
 \begin{align}
     &=
-    a^\frac{3}{4} \int \frac{
+    a^{\frac{3}{4}} \int \frac{
     \hat \psi_1(\omega)
     ~\hat\psi_2 \left(\frac{k}{\omega}\right)
     ~ e^{-i \omega \left(\frac{t'-x'}{a}\right) + i k \frac{x'}{\sqrt{a}}}
@@ -339,7 +339,7 @@ Weiter geht's:
     {
     2\omega k
     } \d \omega \d k \nonumber \\
-    &= a^\frac{3}{4} \int
+    &= a^{\frac{3}{4}} \int
     \underbrace{\left\{ \int \frac{\hat \psi_2\left(\frac{k}{\omega}\right)
         ~e^{ik\frac{x'}{\sqrt{a}}}
         }
@@ -376,12 +376,12 @@ Nun stecken wir diese Erkenntnisse in unseren vorigen Ausdruck und erhalten
 \begin{align}
  \left< \hat\psi_{a1t}, \hat G_F \right>
     &=
-    \frac{i a^\frac{3}{4}}{2} \int \Psi_2\left(\frac{x' \omega}{\sqrt{a}}\right)
+    \frac{i a^{\frac{3}{4}}}{2} \int \Psi_2\left(\frac{x' \omega}{\sqrt{a}}\right)
     ~\hat \psi_1(\omega)
     ~ e^{-i \omega \left(\frac{t'-x'}{a}\right)}
     \d \omega \d k
     \nonumber \\
-    &\sim O\left(a^\frac{3}{4}\right) \kern 1em \textrm{ ; für } t'=x'
+    &\sim O\left(a^{\frac{3}{4}}\right) \kern 1em \textrm{ ; für } t'=x'
     \nonumber \\
     &\sim O\left(a^k\right) ~ \forall k \in \mathbb{N} \kern 1em \textrm{;   andernfalls}
 \end{align}

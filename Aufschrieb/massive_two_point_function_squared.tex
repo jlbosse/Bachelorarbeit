@@ -28,7 +28,7 @@ Bevor wir die Wellenfrontmenge von $\Delta_m^2$ berechnen können, benötigen wi
 
 \begin{equation}
     \rwhat{\Delta_m^{* 2}} (\omega, k)
-    = \int \theta(\omega') \delta(\omega'^2-k'^2-m^2)\theta(\omega-\omega')
+    = \int \theta(\omega') \delta(\omega^{\prime 2}-k^{\prime2}-m^2)\theta(\omega-\omega')
       \delta((\omega-\omega')^2-(k-k')^2-m^2) \d \omega' \d k'
 \label{eq:mass_shell_convolution}
 \end{equation}
@@ -55,36 +55,63 @@ Aus Abb. \ref{fig:schulgeometrie} lesen wir ab:
 außerdem gilt
 
 \begin{equation}
-    \omega' = \sqrt{k'^2 + m^2}
+    \omega' = \sqrt{k{\prime 2} + m^2}
     ~~\Longrightarrow~~
-    \frac{\d \omega'}{\d k'} = \frac{k'}{\sqrt{k'^2+m^2}}
+    \frac{\d \omega'}{\d k'} = \frac{k'}{\sqrt{k^{\prime 2}+m^2}}
     \label{eq:schulgeometrie3}
 \end{equation}
 
-Wenn wir nun \eqref{eq:schulgeometrie2} und \eqref{eq:schulgeometrie3} sowie die vorhergehden Gedanken kombinieren erhalten wir
+Wenn wir nun \eqref{eq:schulgeometrie2} und \eqref{eq:schulgeometrie3} sowie die vorhergehenden Gedanken kombinieren erhalten wir
 
-\begin{align}
-    \rwhat{\Delta_m}^{*2} (\omega, 0) &= C \frac{
+\begin{dmath}
+    \rwhat{\Delta_m}^{*2} (\omega, 0) = C \frac{
         \left.\left(\d \omega'/\d k'\right)^2\right|_{k'_0} +1
     }
     {
         \left. \d \omega' / \d k'\right|_{k'_0}
     }
+    \Theta(\omega^2-(2m)^2)
     =
     C \frac{
         \sqrt{k_0^{\prime 2}+m^2}(2 k_0^{\prime 2}+m^2)
     }{
         2 k'_0 (k_0^2+m^2)
-    }
-    \nonumber \\
-    &=
+    }\Theta(\dots)
+    =
     C \frac{\sqrt{\frac{1}{4} \omega^2 -m^2+m^2} (\omega^2-4m^2+m^2)}
     {\sqrt{\omega^2-4m^2}(\frac{1}{4}\omega^2-m^2+m^2)}
-    \nonumber \\
-    &=
-    C \frac{\omega^2-3m^2}{\omega \sqrt{\omega^2-4m^2}}
+    \Theta(\dots)
     =
-    2 \frac{\omega^2-3m^2}{\omega \sqrt{\omega^2-4m^2}}
+    C \frac{\omega^2-3m^2}{\omega \sqrt{\omega^2-4m^2}}\Theta(\dots)
+    \stackrel{C=2}{=}
+    2 \frac{\omega^2-3m^2}{\omega \sqrt{\omega^2-4m^2}}\Theta(\dots)
     \nonumber
-\end{align}
+\end{dmath}
+
+\todo{\texttt{breqn}-Package ausprobieren!}
+
+Jetzt erhalten wir $\rwhat{\Delta_m}^{*2}(\omega, k)$ noch aus der Poincare-Invarianz:
+
+\begin{dmath}
+    \rwhat{\Delta_m}^{*2}(\omega, k)
+    \stackrel{(\omega,k) \sim (\sqrt{\omega^2-k^2},0)}{=}
+    \rwhat{\Delta_m}^{*2}(\sqrt{\omega^2-k^2},0)
+    = 2 \frac{\omega^2-k^2-3m^2}
+              {\sqrt{\omega^2-k^2}\sqrt{\omega^2-k^2-4m^2}}
+              \Theta(\omega^2-k^2-4m^2)
+\end{dmath}
+
+Es ist zu beachten, dass die Heaviside-Funktion genau bei der ersten Nullstelle der zweiten Wurzel im Nenner abschneidet und alle weiteren Nullstellen sowohl des Nenners als auch des Zählers außerhalb der $2m$-Massenschale und damit außerhalb des Trägers der Heaviside-Funktion liegen.
+
+
+
+
+
+
+
+
+
+
+
+
 % section die_wellenfrontmenge_von_delta_m_2_ (end)

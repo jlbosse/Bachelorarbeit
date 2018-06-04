@@ -4,7 +4,16 @@
 \usepackage[ngerman]{babel} % Language hyphenation and typographical rules
 \usepackage[utf8]{inputenc}
 
+% ----------------------------------------------------------------------------
+% pretty fonts
+% ----------------------------------------------------------------------------
+\usepackage[sc]{mathpazo} % Use the Palatino font
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\linespread{1.05} % Line spacing - Palatino needs more space between lines
+\usepackage{microtype} % Slightly tweak font spacing for aesthetics
 
+
+%
 % ------------------------------------------------------------------------------
 % % Packages and settings for graphics and plots
 % ------------------------------------------------------------------------------
@@ -30,9 +39,9 @@
 
 
 
-% ------------------------------------------------------------------------------
+% -----------------------------------------------------------------------------
 % % Packages and Settings for math specific stuff
-% ------------------------------------------------------------------------------
+% ----------------------------------------------------------------------------
 \usepackage{dsfont}
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -62,6 +71,9 @@
 \newenvironment{AMS}{}{}
 \newenvironment{keywords}{}{}
 
+\usepackage[mathpazo]{flexisym}
+\usepackage{breqn}
+
 % hübsche große Hüte
 \usepackage{scalerel,stackengine}
 \stackMath
@@ -75,9 +87,10 @@
 \stackon[-6.9pt]{#1}{\tmpbox}%
 }
 
-% ------------------------------------------------------------------------------
-% % Headings and spacing
-% ------------------------------------------------------------------------------
+
+
+% ------------------------------------------------------------------------------% % Headings and spacing
+% -----------------------------------------------------------------------------
 \usepackage{parskip}
 \usepackage{ulem}
 
