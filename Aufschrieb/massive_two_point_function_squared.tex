@@ -37,5 +37,54 @@ An Abbildung \ref{fig:mass_shell_convolution} sehen wir schon, dass das Faltungs
 Da $\Delta_m$ Poincare-invariant ist, sind $\Delta_m^2$ und $\rwhat{\Delta_m^{*2}}$ es auch. Es genügt also $\rwhat{\Delta_m^{*2}}$ für $k=0$ und positive $\omega$ zu berechnen. Alle anderen Werte holen wir uns dann aus der Poincare-Invarianz.
 
 \todo{Wie erklärt man das besser, ohne an Anschaulichkeit oder Rigorosität zu verlieren}
-Um nun das Integral über zwei sich schneidende lineare\footnote{Linear in dem Sinne, dass die Distribution entlang einer Linie getragen ist. Nicht das es eine lineare Distribution ist} $\delta$-Distributionen zu berechnen bedienen wir uns eines Physikertricks und stellen uns die $\delta$-Distribution als Grenzwert einer $\frac{1}{h}$-hohen und $h$ breiten Rechtecksfunktion vor.
+Um nun das Integral über zwei sich schneidende lineare\footnote{Linear in dem Sinne, dass die Distribution entlang einer Linie getragen ist. Nicht das es eine lineare Distribution ist} $\delta$-Distributionen zu berechnen bedienen wir uns eines Physikertricks und stellen uns die $\delta$-Distribution als Grenzwert ($h \rightarrow 0$) einer $\frac{1}{h}$-hohen und $h$ breiten Rechtecksfunktion vor. Dann ist das Integral über die sich schneidenden Rechteckfunktionen proportional zu der Schnittfläche und damit zu $l \cdot h$ in Abb. \ref{fig:schulgeometrie}. Außerdem schneiden sich die beiden Hyperbeln für $\omega \rightarrow +\infty$ in einem rechten Winkel, das Faltungsintegral ergibt also 2.
+
+Aus Abb. \ref{fig:schulgeometrie} lesen wir ab:
+
+\begin{align}
+    \tan(\alpha) &= \frac{\d \omega'}{\d k'}
+    ~~\textrm{ und }~~
+    \frac{h}{l} = \sin (2 \alpha) \nonumber \\
+    \Rightarrow l &=
+    \frac{h}{\sin\left(2 \arctan \left(\frac{\d \omega'}{\d k'}\right)\right)}
+    = \frac{h \left(\left(\frac{\d \omega'}{\d k'}\right)^2+1\right)}
+           {2 \frac{\d \omega'}{\d k'}}
+    \label{eq:schulgeometrie2}
+\end{align}
+
+außerdem gilt
+
+\begin{equation}
+    \omega' = \sqrt{k'^2 + m^2}
+    ~~\Longrightarrow~~
+    \frac{\d \omega'}{\d k'} = \frac{k'}{\sqrt{k'^2+m^2}}
+    \label{eq:schulgeometrie3}
+\end{equation}
+
+Wenn wir nun \eqref{eq:schulgeometrie2} und \eqref{eq:schulgeometrie3} sowie die vorhergehden Gedanken kombinieren erhalten wir
+
+\begin{align}
+    \rwhat{\Delta_m}^{*2} (\omega, 0) &= C \frac{
+        \left.\left(\d \omega'/\d k'\right)^2\right|_{k'_0} +1
+    }
+    {
+        \left. \d \omega' / \d k'\right|_{k'_0}
+    }
+    =
+    C \frac{
+        \sqrt{k_0^{\prime 2}+m^2}(2 k_0^{\prime 2}+m^2)
+    }{
+        2 k'_0 (k_0^2+m^2)
+    }
+    \nonumber \\
+    &=
+    C \frac{\sqrt{\frac{1}{4} \omega^2 -m^2+m^2} (\omega^2-4m^2+m^2)}
+    {\sqrt{\omega^2-4m^2}(\frac{1}{4}\omega^2-m^2+m^2)}
+    \nonumber \\
+    &=
+    C \frac{\omega^2-3m^2}{\omega \sqrt{\omega^2-4m^2}}
+    =
+    2 \frac{\omega^2-3m^2}{\omega \sqrt{\omega^2-4m^2}}
+    \nonumber
+\end{align}
 % section die_wellenfrontmenge_von_delta_m_2_ (end)
