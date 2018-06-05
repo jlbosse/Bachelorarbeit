@@ -1,6 +1,6 @@
-% ------------------------------------------------------------------------------
+% -----------------------------------------------------------------------------
 % Langugage Settings
-% ------------------------------------------------------------------------------
+% -----------------------------------------------------------------------------
 \usepackage[ngerman]{babel} % Language hyphenation and typographical rules
 \usepackage[utf8]{inputenc}
 
@@ -13,12 +13,13 @@
 \usepackage{microtype} % Slightly tweak font spacing for aesthetics
 
 
-%
-% ------------------------------------------------------------------------------
+
+% -----------------------------------------------------------------------------
 % % Packages and settings for graphics and plots
-% ------------------------------------------------------------------------------
+% -----------------------------------------------------------------------------
 \usepackage{graphicx}
 \usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
 \usepackage{pgf}
 \usepackage{import}
 
@@ -31,10 +32,11 @@
 \let\pgfimageWithoutPath\pgfimage
 \renewcommand{\pgfimage}[2][]{\pgfimageWithoutPath[#1]{images/#2}}
 
-% ------------------------------------------------------------------------------
+% -----------------------------------------------------------------------------
 % % Bibliography
-% ------------------------------------------------------------------------------
-\usepackage[backend=bibtex, style=numeric, doi=false]{biblatex}
+% -----------------------------------------------------------------------------
+\usepackage[backend=biber, style=numeric, doi=false]{biblatex}
+\usepackage{csquotes}
 \addbibresource{literature.bib}
 
 
@@ -71,8 +73,15 @@
 \newenvironment{AMS}{}{}
 \newenvironment{keywords}{}{}
 
+%Sectionnumber in Equation Number
+\numberwithin{equation}{section}
+
+% schöne lange Formel mit breqn
 \usepackage[mathpazo]{flexisym}
 \usepackage{breqn}
+
+% Sachen durchstreichen
+\usepackage{cancel}
 
 % hübsche große Hüte
 \usepackage{scalerel,stackengine}
@@ -87,11 +96,34 @@
 \stackon[-6.9pt]{#1}{\tmpbox}%
 }
 
+% Tolle custom-Gleichungstags
+\makeatletter
+\newcommand{\owntag}[2][\relax]{% \owntag[short label]{tag}
+  \ifx#1\relax\relax\def\owntag@name{#2}\else\def\owntag@name{#1}\fi% base label
+  \refstepcounter{equation}\tag{\theequation, #2}%
+  \expandafter\ltx@label\expandafter{eq:\owntag@name}%
+  \edef\@currentlabel{\theequation, #2}\expandafter\ltx@label\expandafter{Eq:\owntag@name}%
+  \def\@currentlabel{#2}\expandafter\ltx@label\expandafter{tag:\owntag@name}%
+}
+\makeatother
+%% Usage example:
+% --------------------------------------------------------------------
+% \begin{align}
+%     F=ma \owntag[newton]{Newton}% with optional argument
+% \end{align}
+
+% My equation is \eqref{Eq:newton}. The equation number by itself is
+% \eqref{eq:newton} and the tag is \eqref{tag:newton}.
+% -------------------------------------------------------------------
+
+% ordentlicher Laplace operator
+\newcommand*\Laplace{\mathop{}\!\mathbin\bigtriangleup}
+\newcommand*\DAlambert{\mathop{}\!\mathbin\Box}
 
 
 % ------------------------------------------------------------------------------% % Headings and spacing
 % -----------------------------------------------------------------------------
-\usepackage{parskip}
+%\usepackage{parskip} %parskip doesn't work together with scrartcl
 \usepackage{ulem}
 
 % subsubsection unterstreichen. Muss schöner gehen!

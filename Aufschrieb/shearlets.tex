@@ -1,8 +1,27 @@
+%!TEX root = main.tex
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % % Section 1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Allgemeines Gelaber über Shearlets} % (fold)
 \label{sec:allgemeines_gelaber_ueber_shearlets}
+
+\begin{proposition}[$\psi_{ast}$ fällt schnell ab]
+\label{prop:shearlets_decay_rapidly}
+Sei $\psi \in L^2(\mathbb{R}^2)$ ein Shearlet wie definiert und $M$ so ne Trafomatrix. Dann gilt für alle $k \in  \mathbb{N}$, dass es eine konstante $C_k$ gibt s.d. für alle $x \in \mathbb{R}^2$ gilt
+
+\begin{dmath*}
+    \left| \psi_{ast}(x) \right|
+    \leq
+    C_k \left| \det M \right|^{-\frac{1}{2}}\left(1+|M^{-1}(x-t)|^2\right)^{-k}
+    = C_k a^{-\frac{3}{4}}\left(1+a^{-2}\left(x_1-t_1\right)^2
+        + 2 a^{-2}s\left(x_1-t_1\right)\left(x_2-t_2\right)
+        + a^{-1}\left(1+a^{-1}s^2\right)\left(x_2-t_2\right)^2
+    \right)^{-k}
+\end{dmath*}
+
+Und insbesondere ist $C_k = \frac{15}{2}\frac{\sqrt{a} + s}{a^2}\left(\Vert \hat\psi \Vert_\infty + \Vert \Laplace^k \hat\psi \Vert_\infty\right)$
+
+\end{proposition}
 
 \begin{theorem}[$\mathcal{S}_f(a,s,t)$ misst $WF(f)$]
 \label{thm:main_theorem}
@@ -62,7 +81,7 @@ und es gilt
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % % Section 2
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Zwei nützliche Substitionen für  $\left<\psi_{ast}, f\right>$}
+\section{\texorpdfstring{Zwei nützliche Substitionen für  $\left<\psi_{ast}, f\right>$}{zwei nützliche Substitutionen}}
 \label{sec:substitutionen}
 
 Zunächst werden wir zwei verschiedene Ausdrücke für $\left<\psi_{ast}, f\right>$
@@ -101,13 +120,14 @@ a^{-\frac{1}{2}} \left(\frac{\xi_2}{\xi_1} - s\right) &=\frac{k_2}{k_1}\\
 
 ergibt sich folgendes für $\left<\psi_{ast}, f\right>$:
 
-\begin{equation}
-\label{eq:psi_ast_f_1}
+\begin{align}
+\owntag[substitution1]{Substitution 1}
+    \left<\psi_{ast},f\right>
     =  \iint a^{-\frac{3}{4}}~\hat \psi_1(k_1) ~\hat \psi_2 \left(\tfrac{k_2}{k_1}\right)
     ~\hat f \left(\tfrac{k_1}{a}, \tfrac{k_1 s}{a} + \tfrac{k_2}{\sqrt{a}}\right)
     ~e^{-i\frac{k_1}{a}(t_1+t_2 s) - i \frac{k_2 t_2}{\sqrt(a)}}
     \d k_1 \d k_2
-\end{equation}
+\end{align}
 
 \todo{herausfinden, wie die Gleichungen auch Kapitelnummern erhalten}
 
@@ -134,7 +154,8 @@ gewählt werden, wodurch alle Parameter aus den Argumenten von $\psi_1, \psi_2$
 verschwinden und sich
 
 \begin{align}
-\label{eq:psi_ast_f_2}
+\owntag[substitution2]{Substitution 2}
+    \left<\psi_{ast},f\right>
     =  \iint a^{-\frac{3}{4}}~ k_1~ \hat \psi_1(k_1)~ \hat \psi_2 (k_2)~
     \hat f \left(\tfrac{k_1}{a}, k_1 \left(a^{-\frac{1}{2}}k_2 + s a^{-1}\right)\right)
     ~e^{-i k_1 \left(\frac{t_1+s t_2}{a} + \frac{k_2 t_2}{\sqrt{a}}\right)}
@@ -142,7 +163,7 @@ verschwinden und sich
 \end{align}
 
 ergibt. Dabei ist zu beachten, dass diese Substitution zulässig ist, obwohl sie
-die Oriertierung \emph{nicht} erhält und \emph{nicht} keine Bijektion ist. Aber
-der kritische Bereich, nämlich $\xi_1 = 0$, liegt nicht im Träger von $\psi$.
+die Oriertierung \emph{nicht} erhält und \emph{keine} Bijektion ist. Aber
+der kritische Bereich, nämlich $\xi_1 = 0$, liegt nicht im Träger von $\rwhat{\psi}$.
 
 \todo{Grafik basteln, die $supp ~\psi$ vor und nach der Substitution zeigt.}

@@ -1,14 +1,17 @@
+%!TEX root = main.tex
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % % Berechnen der Wellenfrontmenge von Delta_m
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
+
 \section{\texorpdfstring{Die Wellenfrontmenge von $\Delta_m^2$}
     {Wellenfrontmenge von delta m}} % (fold)
 \label{sec:die_wellenfrontmenge_von_delta_m_2_}
 
+Bevor wir die Wellenfrontmenge von $\Delta_m^2$ berechnen können, benötigen wir einen Ausdruck dafür, oder besser noch einen für die Fouriertransformierte davon.
+
 \subsection{\texorpdfstring{$\hat\Delta^{\ast 2}$ berechnen}
     {delta-ast-hat berechnen}}
-Bevor wir die Wellenfrontmenge von $\Delta_m^2$ berechnen können, benötigen wir einen Ausdruck dafür, oder besser noch einen für die Fouriertransformierte davon. Gemäß dem Faltungssatz gilt $\rwhat{\Delta_m^2} = \rwhat \Delta_m * \rwhat \Delta_m = \rwhat\Delta_m^{*2}$. Wir müssen also die Faltung von $\rwhat \Delta_m$ mit sich selber ausrechnen.
+ Gemäß dem Faltungssatz gilt $\rwhat{\Delta_m^2} = \rwhat \Delta_m * \rwhat \Delta_m = \rwhat\Delta_m^{*2}$. Wir müssen also die Faltung von $\rwhat \Delta_m$ mit sich selber ausrechnen.
 
 \begin{figure}
     \centering
@@ -37,7 +40,7 @@ An Abbildung \ref{fig:mass_shell_convolution} sehen wir schon, dass das Faltungs
 Da $\Delta_m$ Poincare-invariant ist, sind $\Delta_m^2$ und $\rwhat{\Delta_m^{*2}}$ es auch. Es genügt also $\rwhat{\Delta_m^{*2}}$ für $k=0$ und positive $\omega$ zu berechnen. Alle anderen Werte holen wir uns dann aus der Poincare-Invarianz.
 
 \todo{Wie erklärt man das besser, ohne an Anschaulichkeit oder Rigorosität zu verlieren}
-Um nun das Integral über zwei sich schneidende lineare\footnote{Linear in dem Sinne, dass die Distribution entlang einer Linie getragen ist. Nicht das es eine lineare Distribution ist} $\delta$-Distributionen zu berechnen bedienen wir uns eines Physikertricks und stellen uns die $\delta$-Distribution als Grenzwert ($h \rightarrow 0$) einer $\frac{1}{h}$-hohen und $h$ breiten Rechtecksfunktion vor. Dann ist das Integral über die sich schneidenden Rechteckfunktionen proportional zu der Schnittfläche und damit zu $l \cdot h$ in Abb. \ref{fig:schulgeometrie}. Außerdem schneiden sich die beiden Hyperbeln für $\omega \rightarrow +\infty$ in einem rechten Winkel, das Faltungsintegral ergibt also 2.
+Um nun das Integral über zwei sich schneidende lineare\footnote{Linear in dem Sinne, dass die Distribution entlang einer Linie getragen ist. Nicht das es eine lineare Distribution ist} $\delta$-Distributionen zu berechnen bedienen wir uns eines Physikertricks und stellen uns die $\delta$-Distribution als Grenzwert ($h \rightarrow 0$) einer $\frac{1}{h}$-hohen und $h$-breiten Rechtecksfunktion vor. Dann ist das Integral über die sich schneidenden Rechteckfunktionen proportional zu der Schnittfläche und damit zu $l \cdot h$ in Abb. \ref{fig:schulgeometrie}. Außerdem schneiden sich die beiden Hyperbeln für $\omega \rightarrow +\infty$ in einem rechten Winkel, das Faltungsintegral ergibt hier also 2.
 
 Aus Abb. \ref{fig:schulgeometrie} lesen wir ab:
 
@@ -104,7 +107,139 @@ Jetzt erhalten wir $\rwhat{\Delta_m}^{*2}(\omega, k)$ noch aus der Poincare-Inva
 Es ist zu beachten, dass die Heaviside-Funktion genau bei der ersten Nullstelle der zweiten Wurzel im Nenner abschneidet und alle weiteren Nullstellen sowohl des Nenners als auch des Zählers außerhalb der $2m$-Massenschale und damit außerhalb des Trägers der Heaviside-Funktion liegen.
 
 
+\begin{figure}
+    \centering
+    \begin{minipage}{0.55\textwidth}
+        \centering
+        \resizebox{\textwidth}{!}{\input{images/delta_m2.pgf}} %
+        \caption{Plot von $\hat{\Delta_m}^{*2}$ und $\hat{\Delta_m}$.
+        Je weiter wir uns von der 2m-Massenschale wegbewegen, desto konstanter
+        wird $\hat{\Delta_m}^{*2}$ und ist singulär genau auf der $2m$-Massenschale}
+        \label{fig:delta_2m}
+    \end{minipage}\hfill
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \resizebox{\textwidth}{!}{\input{images/delta_m2_k0.pgf}}
+        \caption{Plot von $\left.\hat{\Delta_m}^{*2}\right|_{k=0}$ um das asymptotische Verhalten für $\omega \rightarrow 0$ und $\omega \rightarrow \infty$ zu verdeutlichen}
+        \label{fig:delta_2m_k0}
+    \end{minipage}
+\end{figure}
 
+\subsection{\dots und nun zur Wellenfrontmenge} % (fold)
+\label{sec:dots_und_nun_zur_wellenfrontmenge}
+
+Mit diesen Ausdrücken für $\rwhat{\Delta_m}^{*2}$ können wir uns nun der Wellenfrontmenge widmen.
+
+\subsubsection*{\texorpdfstring{Fall $|s|>1$}{Fall s>1}}
+Genau wie im Fall $s \neq 1$ bei der massiven Zweipunktfunktion (vgl. \ref{sec:die_wellenfrontmenge_von_delta_m}) ist hier nichts zu tun, da für $a$ klein genug wieder
+
+\begin{align*}
+    supp (\hat\psi_{ast}) \cap supp (\rwhat{\Delta_m}^{*2}) = \varnothing
+    \Rightarrow
+    \left\langle\hat\psi_{ast}, \rwhat{\Delta_m}^{*2}\right\rangle = 0
+\end{align*}
+
+gilt.
+
+\subsubsection*{\texorpdfstring{Fall $s<1$}{Fall s<1}}
+Hier bedienen wir uns direkt bei \eqref{Eq:substitution2} und schreiben
+
+\begin{dmath*}
+    \left\langle \rwhat{\psi}_{ast},\rwhat{\Delta_m}^{*2}\right\rangle
+    =
+    2 a^{-\frac{3}{4}} \int \frac{
+    \hat\psi_1(\omega)~\hat\psi_2(k) \left(
+        \omega^2 a^{-2} - \omega^2\left(a^{-\frac{1}{2}}k+sa^{-1}\right)^2
+            -3m^2
+            \right)
+    }
+    {
+        \sqrt{\omega^2 a^{-2}-\omega^2\left(a^{-\frac{1}{2}} k +s^{-1}\right)^2}
+        \sqrt{\omega^2 a^{-2}-\omega^2\left(
+            a^{-\frac{1}{2}} k +sa^{-1}\right)^2
+            -4m^2
+             }
+    }
+    \cdot
+    \Theta \left(\omega^2-k^2-4m^2\right)
+      e^{-i \omega \left(\frac{t'-sx'}{a}+k \frac{x'}{\sqrt{a}}\right)}
+    \omega \d \omega \d k
+%    =
+    \kern -4em \underset{\Delta s := 1-s^2 > 0}{=} \kern -1.5em
+     2 a^{-\frac{3}{4}} \int \frac{
+        \hat\psi_1(\omega)~ \hat\psi_2(k) \cancel{a^{-2}} \left(
+        \omega^2 \left(\Delta s - 2 a^{\frac{1}{2}} k s - ak^2
+                \right) - 3a^2m^2
+        \right)
+     e^{\dots} \Theta(\dots) \cancel{\omega}
+     }
+     {
+        \cancel{\omega} \cancel{a^{-2}}
+        \sqrt{\Delta s -2a^{\frac{1}{2}}ks - ak^2}
+            \sqrt{\Delta s \omega^2 -2a^{\frac{1}{2}} \omega^2 k s
+                    - a\omega^2k^2-4 a^2 m^2}
+     }
+     \d \omega \d k
+\end{dmath*}
+
+Für hinreichend kleine $a$ können wir den Integrand nun majorisieren
+
+\begin{dmath*}
+    \left|
+    2 \frac{
+        \hat\psi_1(\omega) ~\hat\psi_2(k) \omega^2 \Delta s \Theta(\dots)}
+    {
+        \sqrt{\Delta s} \sqrt{\Delta s \omega^2}
+    }
+    \right|
+    \geq
+    \left|
+    \frac{
+        \hat\psi_1(\omega)~ \hat\psi_2(k) \left(
+        \omega^2 \left(\Delta s - 2 a^{\frac{1}{2}} k s - ak^2
+                \right) - 3a^2m^2
+        \right)
+         \Theta(\dots)
+     }
+     {
+        \sqrt{\Delta s -2a^{\frac{1}{2}}ks - ak^2}
+            \sqrt{\Delta s \omega^2 -2a^{\frac{1}{2}} \omega^2 k s
+                    - a\omega^2k^2-4 a^2 m^2}
+     }
+    \right|
+\end{dmath*}
+
+und dürfen also Lebesgue verwenden und schreiben
+
+\begin{dmath*}
+    \lim_{a \rightarrow 0} \int \dots ~\d \omega \d k
+    = \int \lim_{a \rightarrow 0} \dots ~\d \omega \d k
+    = 2 a^{-\frac{3}{4}} \int
+    \frac{\hat\psi_1(\omega) ~\hat\psi_2(k) ~\omega^{\cancel{2}}
+        ~\cancel{\Delta s} ~\Theta(\dots)
+    }
+    {
+        \cancel{\sqrt{\Delta s}}\cancel{\sqrt{\Delta s}}\cancel{\omega}
+    }
+    e^{-i \omega \left(\frac{t'-sx'}{a} + k \frac{x'}{\sqrt{a}}\right)}
+    \d \omega \d k
+    \underset{k\rightarrow \frac{k}{\omega}}{=}
+    2 a^{-\frac{3}{4}} \int
+    \hat\psi_1(\omega) ~\hat\psi_2\left(\tfrac{k}{\omega}\right)
+    e^{-i\omega \frac{t'-sx'}{a} + ik \frac{x'}{\sqrt{a}}}
+    \d \omega \d k \\
+    =
+    2 a^{-\frac{3}{4}} \psi \left(\frac{t'-sx'}{a}, \frac{x'}{a}\right)
+\end{dmath*}
+
+Und da Shearlets nach Proposition \ref{prop:shearlets_decay_rapidly} schnell abfallen erhalten wir schließlich
+
+\begin{dmath*}
+    \left\langle \psi_{ast},\Delta_m^{2}\right\rangle
+    \sim O(a^k) ~\forall k \in \mathbb{N} \condition{falls $(t',x') \neq 0$}
+    \sim O(a^{-\frac{3}{4}}) \condition{falls (t',x') = 0}
+\end{dmath*}
+% section dots_und_nun_zur_wellenfrontmenge (end)
 
 
 
