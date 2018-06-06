@@ -1,5 +1,5 @@
 % $ biblatex auxiliary file $
-% $ biblatex bbl format version 2.8 $
+% $ biblatex bbl format version 2.9 $
 % Do not modify the above lines!
 %
 % This is an auxiliary file used by the 'biblatex' package.
@@ -18,7 +18,7 @@
 
 
 \refsection{0}
-  \sortlist[entry]{nty/global/}
+  \datalist[entry]{nty/global//global/global}
     \entry{Schwartz2014}{book}{}
       \name{author}{1}{}{%
         {{hash=b99376f6279719f28e65b9875e400fc4}{%
@@ -35,6 +35,8 @@
       }
       \strng{namehash}{b99376f6279719f28e65b9875e400fc4}
       \strng{fullhash}{b99376f6279719f28e65b9875e400fc4}
+      \strng{bibnamehash}{b99376f6279719f28e65b9875e400fc4}
+      \strng{authorbibnamehash}{b99376f6279719f28e65b9875e400fc4}
       \strng{authornamehash}{b99376f6279719f28e65b9875e400fc4}
       \strng{authorfullhash}{b99376f6279719f28e65b9875e400fc4}
       \field{sortinit}{S}
@@ -45,7 +47,7 @@
       \field{title}{Quantum Field Theory and the Standard Model -}
       \field{year}{2014}
     \endentry
-  \endsortlist
+  \enddatalist
 \endrefsection
 \endinput
 

@@ -250,9 +250,8 @@ Und da Shearlets nach Proposition \ref{prop:shearlets_decay_rapidly} schnell abf
     =
     2 a^{-\frac{3}{4}} \int
     \frac{
-        \hat\psi_1(\omega)~\hat\psi_2(k)
-        \left(
-            \omega^2\left(
+        \hat\psi_1(\omega)\,\hat\psi_2(k)
+        \left(\omega^2\left(
             a^{-2}\cancel{(1-s^2)}-2a^{-\frac{3}{2}} k s -a^{-1}k^2
             \right)
             -3m^2
@@ -260,21 +259,133 @@ Und da Shearlets nach Proposition \ref{prop:shearlets_decay_rapidly} schnell abf
     }
     {
         \sqrt{
-        \omega^2\left(a^{-2}\cancel{(1-s^2)}-2a^{-\frac{3}{2}} k s -a^{\frac{1}{2}}k^2\right)
+            \omega^2\left(a^{-2}\cancel{(1-s^2)}-2a^{-\frac{3}{2}} k s -a^{\frac{1}{2}}k^2\right)
         }
         \sqrt{
-        \omega^2\left(a^{-2}\cancel{(1-s^2)}-2a^{-\frac{3}{2}}k s  -a^{\frac{1}{2}}k^2\right) - 4m^2
+            \omega^2\left(a^{-2}\cancel{(1-s^2)}-2a^{-\frac{3}{2}}k s  -a^{\frac{1}{2}}k^2\right) - 4m^2
         }
     }
     \cdot
     \Theta\left(
-        \omega^2\left(a^{-2}\cancel{(1-s^2)}-2a^{-\frac{3}{2}} -a^{\frac{1}{2}}k^2\right) - 4m^2\right)
+            \omega^2\left(a^{-2}\cancel{(1-s^2)}-2a^{-\frac{3}{2}} -a^{\frac{1}{2}}k^2\right) - 4m^2
+        \right)
     e^{-i\omega\left(\frac{t'-sx'}{a}+k \frac{x'}{\sqrt a}\right)}
     \cdot
     \omega \d \omega \d k
+    =
+    2 a^{-\frac{3}{4}} \int
+    \frac{
+        \hat\psi_1(\omega)\,\hat\psi_2(k)\,\cancel{a^{-\frac{3}{4}}}
+        \left(
+            2 \omega^2k-a^{\frac{1}{2}}\omega^2k^2-a^{\frac{3}{2}}3m^2
+        \right)
+    }
+    {
+        \cancel{a^{-\frac{3}{4}}}
+        \sqrt{2 k-a^{\frac{1}{2}}k^2}
+        \sqrt{2 \omega^2k-a^{\frac{1}{2}}\omega^2k^2-a^{\frac{3}{4}}4m^2}
+    }
+    \cdot
+    \Theta\left(2 \omega^2k-a^{\frac{1}{2}}\omega^2k^2-a^{\frac{3}{4}}4m^2
+          \right)
+    \cdot
+    e^{-i\omega\left(\frac{t'+x'}{a}+k \frac{x'}{\sqrt a}\right)}
+    \d \omega \d k
+    =
+    2 a^{-\frac{3}{4}} \int
+    \underbrace{
+    \left\{
+        \int \frac{
+            \hat\psi_2(k)\
+            \left(
+                2 \omega^2k-a^{\frac{1}{2}}\omega^2k^2-a^{\frac{3}{2}}3m^2
+            \right)
+            \Theta(\dots)
+            e^{-i\omega k \frac{x'}{\sqrt a}}
+        }
+        {
+            \sqrt{2 k-a^{\frac{1}{2}}k^2}
+            \sqrt{2 \omega^2k-a^{\frac{1}{2}}\omega^2k^2-a^{\frac{3}{4}}4m^2}
+        }
+        \d k
+    \right\}
+    }_{=: ~\hat{f}_a(\omega)}
+    \cdot
+    \hat\psi_1(\omega)
+    e^{-i\omega\left(\frac{t'+x'}{a}\right)}
+    \d \omega
+    =
+    2 a^{-\frac{3}{4}} \int
+    \hat f_a(\omega)\, \hat\psi_1(\omega)
+    e^{-i\omega\left(\frac{t'+x'}{a}\right)}
+    \d \omega
+\end{dmath*}
+
+Nun müssen wir also $\hat f_a(\omega)$ genauer betrachten: $\hat\psi_2(k) \in C^\infty_c(\mathbb{\hat R})$. $\Theta$ schneidet genau bei der ersten Nullstelle des Nenners ab. Deshalb verschieben wir durch eine Substitution $l \rightarrow k'$ den Intgegrationsbereich genau so, dass diese Nullstelle bei $k' = 0$ liegt.
+
+Sei also $k_0 := \frac{\omega-\sqrt{\omega^2 - 4a^2m^2}}{\sqrt{a}\omega}$ die relevante Nullstelle des Nenners am Integrationsbereich.
+% (denn
+% \begin{equation*}
+% 2 \omega^2k-a^{\frac{1}{2}}\omega^2k^2-a^{\frac{3}{4}}4m^2
+% =
+%  -a^{\frac{1}{2}}\left(k-\frac{\omega-\sqrt{\omega^2-4a^2m^2}}{\sqrt a \omega}\right)\left(k-\frac{\omega+\sqrt{\omega^2-4a^2m^2}}{\sqrt a \omega}\right)
+% \end{equation*}).
+Dann ist die $a$-Abhängigkeit von $k_0$ in erster Näherung gegeben durch $0 < k_0 = \frac{2m^2}{\omega^2}a^{\frac{3}{2}} + O\left(a^{\frac{7}{2}}\right) =: c_\omega a^{\frac{3}{2}} + O\left(a^{\frac{7}{2}}\right)$
+und mit $k=k'-k_0$ gelten folgende Ausdrücke für den Nenner und den Zähler:
+
+\underline{Zähler}
+
+\begin{dmath*}
+    2 \omega^2k-a^{\frac{1}{2}}\omega^2k^2-a^{\frac{3}{2}}3m^2
+    =
+    2\omega^2(k'-k_0)-a^{\frac{1}{2}}\omega^2(k'+k_0)^2-a^{\frac{3}{2}}3m^2
+\end{dmath*}
+
+\underline{Nenner}
+\begin{dmath*}
+    \sqrt{2 k-a^{\frac{1}{2}}k^2}
+    \sqrt{2 \omega^2k-a^{\frac{1}{2}}\omega^2k^2-a^{\frac{3}{4}}4m^2}
+    =
+    \sqrt{2-a^{\frac{1}{2}}(k'+k_0)} \sqrt{k'+k_0}
+    \cdot
+    \underbrace{
+    \sqrt{
+            -a^{\frac{1}{2}}\omega^2\left(k'-\tfrac{2\sqrt{\omega^2-4a^2m^2}}
+                    {\sqrt a \omega}\right)
+        }
+    }_{= \sqrt{2-a^{\frac{1}{2}}\omega^2 k' + O\left(a^{\frac{3}{2}}\right)}}
+    \sqrt{k'}
+\end{dmath*}
+
+Nun ist es an der Zeit für das alte Spiel von "`finde eine integrierbare Majorante, um Lebesgue verwenden und alle Terme mit positiver $a$-Potenz wegschmeißen zu dürfen\footnote{so lange sie in einer Summe mit mindestens einem Term \emph{ohne} positive $a$-Potenz auftauchen}"'
+
+\begin{dmath*}
+    \left|
+    \frac{
+        2\, \hat\psi_2(k'+k_0)\, \omega^2 (k'+k_0) - a^{\frac{1}{2}}\omega^2(k'+k_0)^2
+        -a^{\frac{3}{2}}3m^2
+    }
+    {
+        \sqrt{k'} \sqrt{k'+k_0} \sqrt{2-a^{\frac{1}{2}}(k'+k_0)}
+        \sqrt{2-a^{\frac{1}{2}}\omega^2 k' + O\left(a^{\frac{3}{2}}\right)}
+    }
+    \Theta(k')
+    \right|
+    \leq
+    \frac{\textrm{const}~ \omega^2 k'}{
+     \sqrt{k'}\sqrt{k'+k_0}\sqrt{2}\sqrt{2-a^{\frac{1}{2}}\omega^2k'}
+     }
+    \Theta(k')
+    \leq
+    \frac{\textrm{const} \sqrt{k'}}{\sqrt{k'} \sqrt{\omega^2}}\Theta(k')
+    \leq
+    \frac{\textrm{const}}{\sqrt{k'}}\Theta(k')
 \end{dmath*}
 
 % section dots_und_nun_zur_wellenfrontmenge (end)
+
+
+
 
 
 
