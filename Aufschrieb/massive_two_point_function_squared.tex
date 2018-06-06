@@ -126,6 +126,8 @@ Es ist zu beachten, dass die Heaviside-Funktion genau bei der ersten Nullstelle 
     \end{minipage}
 \end{figure}
 
+\todo{spacing der figures anpassen. Monster hässliche Hüte korrigieren...}
+
 \subsection{\dots und nun zur Wellenfrontmenge} % (fold)
 \label{sec:dots_und_nun_zur_wellenfrontmenge}
 
@@ -134,11 +136,12 @@ Mit diesen Ausdrücken für $\rwhat{\Delta_m}^{*2}$ können wir uns nun der Well
 \subsubsection*{\texorpdfstring{Fall $|s|>1$}{Fall s>1}}
 Genau wie im Fall $s \neq 1$ bei der massiven Zweipunktfunktion (vgl. \ref{sec:die_wellenfrontmenge_von_delta_m}) ist hier nichts zu tun, da für $a$ klein genug wieder
 
-\begin{align*}
+\begin{align}
+\label{eq:delta_m2_s>1}
     supp (\hat\psi_{ast}) \cap supp (\rwhat{\Delta_m}^{*2}) = \varnothing
     \Rightarrow
     \left\langle\hat\psi_{ast}, \rwhat{\Delta_m}^{*2}\right\rangle = 0
-\end{align*}
+\end{align}
 
 gilt.
 
@@ -235,17 +238,19 @@ und dürfen also Lebesgue verwenden und schreiben
 
 Und da Shearlets nach Proposition \ref{prop:shearlets_decay_rapidly} schnell abfallen erhalten wir schließlich
 
-\begin{dmath*}
+\begin{dmath}
+\label{eq:delta_m2_s<1}
     \left\langle \psi_{ast},\Delta_m^{2}\right\rangle
     = 2 a^{-\frac{3}{4}} \psi \left(\frac{t'-sx'}{a}, \frac{x'}{a}\right)
-    \sim O(a^k) ~\forall k \in \mathbb{N} \condition{falls $(t',x') \neq 0$}
+    \sim O(a^k) ~\forall k \hiderel \in \mathbb{N} \condition{falls $(t',x') \neq 0$}
     \sim O(a^{-\frac{3}{4}}) \condition{falls (t',x') = 0}
-\end{dmath*}
+\end{dmath}
 
 \subsubsection*{\texorpdfstring{Fall $s = -1$}{Fall s = 1}}
 % Bevor die folgenden Formelmonster allzu abschreckend werden, erklären wir hier kurz die Strategie. Für $s=1$ liegt der Träger des Shearlets ja genau auf der Diagonalen (vgl. Abb. \ref{fig:supp_psi_hat}) und damit schließich auf der Singularität von $\rwhat{\Delta_m}^{*2}$ welche sich asymptotisch an die Diagonale schmiegt. Die Strategie wird nun sein, durch Variablentransformation den Integrationsbereich so zu verzerren, dass die
 
-\begin{dmath*}
+\begin{dmath}
+\label{eq:psi_ast_delta_m2}
     \left\langle \hat\psi_{ast},\rwhat{\Delta_m}^{*2} \right\rangle
     =
     2 a^{-\frac{3}{4}} \int
@@ -259,15 +264,15 @@ Und da Shearlets nach Proposition \ref{prop:shearlets_decay_rapidly} schnell abf
     }
     {
         \sqrt{
-            \omega^2\left(a^{-2}\cancel{(1-s^2)}-2a^{-\frac{3}{2}} k s -a^{\frac{1}{2}}k^2\right)
+            \omega^2\left(a^{-2}\cancel{(1-s^2)}-2a^{-\frac{3}{2}} k s -a^{-1}k^2\right)
         }
         \sqrt{
-            \omega^2\left(a^{-2}\cancel{(1-s^2)}-2a^{-\frac{3}{2}}k s  -a^{\frac{1}{2}}k^2\right) - 4m^2
+            \omega^2\left(a^{-2}\cancel{(1-s^2)}-2a^{-\frac{3}{2}}k s  -a^{-1}k^2\right) - 4m^2
         }
     }
     \cdot
     \Theta\left(
-            \omega^2\left(a^{-2}\cancel{(1-s^2)}-2a^{-\frac{3}{2}} -a^{\frac{1}{2}}k^2\right) - 4m^2
+            \omega^2\left(a^{-2}\cancel{(1-s^2)}-2a^{-\frac{3}{2}} -a^{-1}k^2\right) - 4m^2
         \right)
     e^{-i\omega\left(\frac{t'-sx'}{a}+k \frac{x'}{\sqrt a}\right)}
     \cdot
@@ -275,22 +280,22 @@ Und da Shearlets nach Proposition \ref{prop:shearlets_decay_rapidly} schnell abf
     =
     2 a^{-\frac{3}{4}} \int
     \frac{
-        \hat\psi_1(\omega)\,\hat\psi_2(k)\,\cancel{a^{-\frac{3}{4}}}
+        \hat\psi_1(\omega)\,\hat\psi_2(k)\,\cancel{a^{-\frac{3}{2}}}
         \left(
             2 \omega^2k-a^{\frac{1}{2}}\omega^2k^2-a^{\frac{3}{2}}3m^2
         \right)
     }
     {
-        \cancel{a^{-\frac{3}{4}}}
+        \cancel{a^{-\frac{3}{2}}} \cancel{\omega}
         \sqrt{2 k-a^{\frac{1}{2}}k^2}
-        \sqrt{2 \omega^2k-a^{\frac{1}{2}}\omega^2k^2-a^{\frac{3}{4}}4m^2}
+        \sqrt{2 \omega^2k-a^{\frac{1}{2}}\omega^2k^2-a^{\frac{3}{2}}4m^2}
     }
     \cdot
-    \Theta\left(2 \omega^2k-a^{\frac{1}{2}}\omega^2k^2-a^{\frac{3}{4}}4m^2
+    \Theta\left(2 \omega^2k-a^{\frac{1}{2}}\omega^2k^2-a^{\frac{3}{2}}4m^2
           \right)
     \cdot
     e^{-i\omega\left(\frac{t'+x'}{a}+k \frac{x'}{\sqrt a}\right)}
-    \d \omega \d k
+    \cancel{\omega} \d \omega \d k
     =
     2 a^{-\frac{3}{4}} \int
     \underbrace{
@@ -305,7 +310,7 @@ Und da Shearlets nach Proposition \ref{prop:shearlets_decay_rapidly} schnell abf
         }
         {
             \sqrt{2 k-a^{\frac{1}{2}}k^2}
-            \sqrt{2 \omega^2k-a^{\frac{1}{2}}\omega^2k^2-a^{\frac{3}{4}}4m^2}
+            \sqrt{2 \omega^2k-a^{\frac{1}{2}}\omega^2k^2-a^{\frac{3}{2}}4m^2}
         }
         \d k
     \right\}
@@ -319,9 +324,9 @@ Und da Shearlets nach Proposition \ref{prop:shearlets_decay_rapidly} schnell abf
     \hat f_a(\omega)\, \hat\psi_1(\omega)
     e^{-i\omega\left(\frac{t'+x'}{a}\right)}
     \d \omega
-\end{dmath*}
+\end{dmath}
 
-Nun müssen wir also $\hat f_a(\omega)$ genauer betrachten: $\hat\psi_2(k) \in C^\infty_c(\mathbb{\hat R})$. $\Theta$ schneidet genau bei der ersten Nullstelle des Nenners ab. Deshalb verschieben wir durch eine Substitution $l \rightarrow k'$ den Intgegrationsbereich genau so, dass diese Nullstelle bei $k' = 0$ liegt.
+Nun müssen wir also $\hat f_a(\omega)$ genauer betrachten: $\hat\psi_2(k) \in C^\infty_c(\mathbb{\hat R})$. $\Theta$ schneidet genau bei der ersten Nullstelle des Nenners ab. Deshalb verschieben wir durch eine Substitution $k \rightarrow k'$ den Intgegrationsbereich genau so, dass diese Nullstelle bei $k' = 0$ liegt.
 
 Sei also $k_0 := \frac{\omega-\sqrt{\omega^2 - 4a^2m^2}}{\sqrt{a}\omega}$ die relevante Nullstelle des Nenners am Integrationsbereich.
 % (denn
@@ -331,20 +336,27 @@ Sei also $k_0 := \frac{\omega-\sqrt{\omega^2 - 4a^2m^2}}{\sqrt{a}\omega}$ die re
 %  -a^{\frac{1}{2}}\left(k-\frac{\omega-\sqrt{\omega^2-4a^2m^2}}{\sqrt a \omega}\right)\left(k-\frac{\omega+\sqrt{\omega^2-4a^2m^2}}{\sqrt a \omega}\right)
 % \end{equation*}).
 Dann ist die $a$-Abhängigkeit von $k_0$ in erster Näherung gegeben durch $0 < k_0 = \frac{2m^2}{\omega^2}a^{\frac{3}{2}} + O\left(a^{\frac{7}{2}}\right) =: c_\omega a^{\frac{3}{2}} + O\left(a^{\frac{7}{2}}\right)$
-und mit $k=k'-k_0$ gelten folgende Ausdrücke für den Nenner und den Zähler:
+und mit $k'=k-k_0$ gelten folgende Ausdrücke für den Nenner und den Zähler:
 
 \underline{Zähler}
 
 \begin{dmath*}
     2 \omega^2k-a^{\frac{1}{2}}\omega^2k^2-a^{\frac{3}{2}}3m^2
     =
-    2\omega^2(k'-k_0)-a^{\frac{1}{2}}\omega^2(k'+k_0)^2-a^{\frac{3}{2}}3m^2
+    2\omega^2(k'+k_0)-a^{\frac{1}{2}}\omega^2(k'+k_0)^2-a^{\frac{3}{2}}3m^2
+    =
+    2 \omega^2 k' + 2 \omega^2 \frac{2m^2}{\omega^2} a^{\frac{3}{2}}
+        + 2 \omega^2 O\left(a^{\frac{7}{2}}\right) - a^{\frac{1}{2}} \omega^2(k'+k_0)^2
+        -a^{\frac{3}{2}}3m^2
+    =
+    2 \omega^2k'+a^{\frac{3}{2}}m^2-a^{\frac{1}{2}}\omega^2(k'+k_0)^2
+        + O\left(a^{\frac{7}{2}}\right)
 \end{dmath*}
 
 \underline{Nenner}
 \begin{dmath*}
     \sqrt{2 k-a^{\frac{1}{2}}k^2}
-    \sqrt{2 \omega^2k-a^{\frac{1}{2}}\omega^2k^2-a^{\frac{3}{4}}4m^2}
+    \sqrt{2 \omega^2k-a^{\frac{1}{2}}\omega^2k^2-a^{\frac{3}{2}}4m^2}
     =
     \sqrt{2-a^{\frac{1}{2}}(k'+k_0)} \sqrt{k'+k_0}
     \cdot
@@ -362,8 +374,10 @@ Nun ist es an der Zeit für das alte Spiel von "`finde eine integrierbare Majora
 \begin{dmath*}
     \left|
     \frac{
-        2\, \hat\psi_2(k'+k_0)\, \omega^2 (k'+k_0) - a^{\frac{1}{2}}\omega^2(k'+k_0)^2
-        -a^{\frac{3}{2}}3m^2
+        \hat\psi_2(k'+k_0) \left(
+        2 \omega^2 k' + a^{\frac{3}{2}}m^2-a^{-\frac{1}{2}}(k'+k_0)^2
+            + O \left(a^{\frac{7}{2}}\right)
+        \right)
     }
     {
         \sqrt{k'} \sqrt{k'+k_0} \sqrt{2-a^{\frac{1}{2}}(k'+k_0)}
@@ -372,15 +386,127 @@ Nun ist es an der Zeit für das alte Spiel von "`finde eine integrierbare Majora
     \Theta(k')
     \right|
     \leq
-    \frac{\textrm{const}~ \omega^2 k'}{
-     \sqrt{k'}\sqrt{k'+k_0}\sqrt{2}\sqrt{2-a^{\frac{1}{2}}\omega^2k'}
-     }
-    \Theta(k')
+    \frac{\textrm{const}}{\sqrt{k'}}
+    \frac{
+        \cancel{2}\omega^2 k' + a^{\frac{3}{2}}m^2
+        -a^{\frac{1}{2}} \omega^2 (k'+k_0)^2 + O\left(a^{\frac{7}{2}}\right)
+    }
+    {
+        \sqrt{k' + k_0}\cancel{\sqrt{2}} \cancel{\sqrt{2}}
+    }
     \leq
-    \frac{\textrm{const} \sqrt{k'}}{\sqrt{k'} \sqrt{\omega^2}}\Theta(k')
+    \frac{\textrm{const}}{\sqrt{k'}}
+    \left(
+        \frac{\omega^2 k'}{\sqrt{k'}}
+        - \frac{a^{\frac{1}{2}}\omega^2(k'+k_0)^2}{\sqrt{k'+k_0}}
+        + \frac{a^{\frac{3}{2}}m^2}{\sqrt{k'+k_0}}
+        + \frac{O\left(a^{\frac{7}{2}}\right)}{\sqrt{k_0}}
+    \right)
+    =
+    \frac{\textrm{const}}{\sqrt{k'}}
+    \Bigg(
+        \omega^2 \sqrt{k'} - a^{\frac{1}{2}}\omega^2 (k'+k_0)^{\frac{3}{2}}
+        + \underbrace{\frac{a^{\frac{3}{2}}m^2}
+                    {\sqrt{\frac{2m^2}{\omega^2}a^{\frac{3}{2}}+O(a^{\frac{7}{2}})}}}_{O\left(a^{\frac{3}{4}}\right)}
+        + \dots
+    \Bigg)
     \leq
     \frac{\textrm{const}}{\sqrt{k'}}\Theta(k')
 \end{dmath*}
+
+Der letzte Ausdruck ist eine integrierbare Majorante und in den Abschätzungen wurde u.a. verwendet, das $\hat\psi_2$ kompakt getragen und beschränkt ist. In "`const'" wurden immer notwendige aber letzten Endes irrelevante Vorfaktoren gesammelt wie z.B. $\Vert \hat\psi_2\Vert_\infty$.
+
+Der Integrand für $\hat f_a$ konvergiert punktweise (vgl. \eqref{eq:psi_ast_delta_m2})
+
+\begin{dmath}
+\frac{
+        \hat\psi_2(k)\
+        \left(
+            2 \omega^2k-a^{\frac{1}{2}}\omega^2k^2-a^{\frac{3}{2}}3m^2
+        \right)
+        \Theta(\dots)
+        e^{-i\omega k \frac{x'}{\sqrt a}}
+    }
+    {
+        \sqrt{2 k-a^{\frac{1}{2}}k^2}
+        \sqrt{2 \omega^2k-a^{\frac{1}{2}}\omega^2k^2-a^{\frac{3}{2}}4m^2}
+    }
+    \rightarrow
+    \hat \psi_2(k) \omega \Theta(k) e^{-i\omega k \frac{x'}{\sqrt{a}}}
+\end{dmath}
+
+und wir können also schreiben
+
+\todo{Tief in uns drinnen, wissen wir alle, dass die Behauptung mit dem $O(x^{-1})$ stimmt, müssen wir sie also wirklich noch zeigen?}
+
+\begin{dmath*}
+    \hat f_a(\omega) \rightarrow \hat f_0(\omega)
+    =
+    \int \omega\, \hat\psi_2(k)\, \Theta(k)\, e^{-i\omega k \frac{x'}{\sqrt{a}}} \d k
+    = \omega (\hat\psi_2 \cdot \Theta)^\vee (-\omega x'/\sqrt a)
+    = \omega \left(\hat\psi_2^\vee * \Theta^\vee \right)(-\omega x'/\sqrt a)
+    = \omega \left(\psi_2 * \left(\delta + \frac{i}{x}\right)
+             \right)(-\omega x'/\sqrt a)
+    = \omega \bigg[
+                \underbrace{
+                    \psi_2(-\omega x'/\sqrt a)}_{O(a^k) \; \forall k \in \mathbb{N}}
+                + \underbrace{i
+                    \underbrace{\left(\psi_2 * \frac{1}{x}\right)}_{O(x^{-1})}
+                    (-\omega x'/\sqrt a)
+                }_{
+                    O\left((-\omega x'/\sqrt a)^{-1}\right)
+                    = O\left(a^{\frac{1}{2}}\right)
+                   }
+             \bigg]
+    = O \left(a^{\frac{1}{2}}\right)
+\end{dmath*}
+
+Wir dürfen also folgende Abschätzung für $\hat f_a(\omega)$ für $a \to 0$ machen:
+
+\begin{equation*}
+    \hat f_a(\omega) = \omega C a^{\frac{1}{2}} +o\left(a^{\frac{1}{2}}\right)
+\end{equation*}
+
+Setzen wir dies nun schließlich wieder in unseren letzten Ausdruck in \eqref{eq:psi_ast_delta_m2} ein, erhalten wir nach einiger Rechnerei und Abschätzerei endlich
+
+\todo{hier fehlen wenn man es ganz genau nimmt noch $O(a^{\frac{7}{2}})$-Terme.
+    Wird da noch eine Bemerkung zu geschrieben, oder nehme ich die ganz brav mit?}
+
+\todo{
+    Fall x'=t'=0 fehlt noch! Erwartet wird $a^{-\frac{3}{4}}$
+}
+
+\begin{dmath}
+\label{eq:delta_m2_s=1}
+    \left\langle \hat\psi_{ast}, \rwhat{\Delta}_m^{*2}\right\rangle
+    = 2 a^{-\frac{3}{4}} \int
+         \underbrace{
+             \omega C a^{\frac{1}{2}} \hat\psi_1(\omega)
+             }_{
+                \in C_c^\infty (\hat{\mathbb{R}})
+             }
+        e^{-i\omega \left(\frac{t'+x'}{a}\right)} \d \omega
+    = 2 a^{-\frac{1}{4}} C \left(\omega \hat\psi_1(\omega)\right)^\vee
+        \left(-\frac{t'+x'}{a}\right)
+    \sim O (a^{-\frac{1}{4}}) \condition{\textrm{falls} t' = -x'}
+    \sim O (a^k) ~~ \forall k \hiderel \in \mathbb{N}
+    \condition{\textrm{sonst}}
+\end{dmath}
+
+Wenn wir die Ergebnisse aus \eqref{eq:delta_m2_s>1}, \eqref{eq:delta_m2_s<1} und \eqref{eq:delta_m2_s=1} zusammenfassen, haben wir für die Wellenfrontmenge von $\rwhat{\Delta}_m^{*2}$
+
+\begin{table}[]
+\centering
+\label{tab:wavefrontset_delta_m2}
+\begin{tabular}{l|llll}
+        & $(t',x') = 0$      & $t'=x' \neq 0$     & $t'=-x' \neq 0$    & $t' \neq \pm x'$ \\ \hline
+$s=1$   & $a^{-\frac{3}{4}}$ & $a^{-\frac{1}{4}}$ & $a^k$              & $a^k$            \\
+$s=-1$  & $a^{-\frac{3}{4}}$ & $a^k$              & $a^{-\frac{1}{4}}$ & $a^k$            \\
+$|s|<1$ & $a^{-\frac{3}{4}}$ & $a^k$              & $a^k$              & $a^k$            \\
+$|s|>1$ & $a^k$              & $a^k$              & $a^k$              & $a^k$
+\end{tabular}
+\caption{Konvergenzordnung von $\mathcal{S}_{\Delta_m^2}(a,s,(t',x'))$ im Limit $a \to 0$ für alle interessanten Kombinationen von $s$ und $(t',x')$}
+\end{table}
 
 % section dots_und_nun_zur_wellenfrontmenge (end)
 

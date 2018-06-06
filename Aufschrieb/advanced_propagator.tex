@@ -275,7 +275,7 @@ In der Tat ist sogar
 \end{equation}
 
 da $\psi_1$ und $\psi_2$ getragen sind. Demnach ist die Fourierinverse von
-$\hat f$, $f := \mathcal{F}^{-1}(\hat f) \in \mathcal{S}(\mathbb{R}^2)$, also schnell
+$\hat f$, $f := (\hat f)^\vee \in \mathcal{S}(\mathbb{R}^2)$, also schnell
 fallend. Damit können wir schließlich abschätzen
 
 \begin{align}
@@ -373,18 +373,16 @@ Hier wurde in $i)$ einfach $k \rightarrow \omega k$ substituiert und im Schritt 
 wurde genutzt, dass $f(x) = \mathrm{sgn}(x) \leftrightarrow \hat f(k) \sim \frac{1}{k}$.
 Nun stecken wir diese Erkenntnisse in unseren vorigen Ausdruck und erhalten
 
-\begin{align}
- \left< \hat\psi_{a1t}, \hat G_F \right>
-    &=
+\begin{dmath}
+ \left\langle \hat\psi_{a1t}, \hat G_F \right\rangle
+    =
     \frac{i a^{\frac{3}{4}}}{2} \int \Psi_2\left(\frac{x' \omega}{\sqrt{a}}\right)
     ~\hat \psi_1(\omega)
     ~ e^{-i \omega \left(\frac{t'-x'}{a}\right)}
     \d \omega \d k
-    \nonumber \\
-    &\sim O\left(a^{\frac{3}{4}}\right) \kern 1em \textrm{ ; für } t'=x'
-    \nonumber \\
-    &\sim O\left(a^k\right) ~ \forall k \in \mathbb{N} \kern 1em \textrm{;   andernfalls}
-\end{align}
+    \sim O\left(a^{\frac{3}{4}}\right)  \condition{\textrm{für } t'=x'}
+    \sim O\left(a^k\right) ~ \forall k \hiderel \in \mathbb{N} \condition{sonst}
+\end{dmath}
 
 Im letzten Schritt wurde wieder genutzt, dass
 $\Psi_2\left(\frac{x' \omega}{\sqrt{a}}\right) ~\hat \psi_1(\omega) \in \mathcal{S}(\mathbb{R})$
