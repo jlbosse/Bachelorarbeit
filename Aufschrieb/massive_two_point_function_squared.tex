@@ -1,4 +1,5 @@
 %!TEX root = main.tex
+% !TEX spellcheck=de_DE
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % % Berechnen der Wellenfrontmenge von Delta_m
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -13,7 +14,7 @@ Bevor wir die Wellenfrontmenge von $\Delta_m^2$ berechnen können, benötigen wi
     {delta-ast-hat berechnen}}
  Gemäß dem Faltungssatz gilt $\rwhat{\Delta_m^2} = \rwhat \Delta_m * \rwhat \Delta_m = \rwhat\Delta_m^{*2}$. Wir müssen also die Faltung von $\rwhat \Delta_m$ mit sich selber ausrechnen.
 
-\begin{figure}
+\begin{figure}[h]
     \centering
     \begin{minipage}{0.5\textwidth}
         \centering
@@ -58,7 +59,7 @@ Aus Abb. \ref{fig:schulgeometrie} lesen wir ab:
 außerdem gilt
 
 \begin{equation}
-    \omega' = \sqrt{k{\prime 2} + m^2}
+    \omega' = \sqrt{k^{\prime 2} + m^2}
     ~~\Longrightarrow~~
     \frac{\d \omega'}{\d k'} = \frac{k'}{\sqrt{k^{\prime 2}+m^2}}
     \label{eq:schulgeometrie3}
@@ -182,7 +183,7 @@ Hier bedienen wir uns direkt bei \eqref{Eq:substitution2} und schreiben
      \d \omega \d k
 \end{dmath*}
 
-Für hinreichend kleine $a$ können wir den Integrand nun majorisieren
+Für hinreichend kleine $a$ können wir den Integranden nun majorisieren
 
 \begin{dmath*}
     \left|
@@ -236,14 +237,44 @@ Und da Shearlets nach Proposition \ref{prop:shearlets_decay_rapidly} schnell abf
 
 \begin{dmath*}
     \left\langle \psi_{ast},\Delta_m^{2}\right\rangle
+    = 2 a^{-\frac{3}{4}} \psi \left(\frac{t'-sx'}{a}, \frac{x'}{a}\right)
     \sim O(a^k) ~\forall k \in \mathbb{N} \condition{falls $(t',x') \neq 0$}
     \sim O(a^{-\frac{3}{4}}) \condition{falls (t',x') = 0}
 \end{dmath*}
+
+\subsubsection*{\texorpdfstring{Fall $s = -1$}{Fall s = 1}}
+% Bevor die folgenden Formelmonster allzu abschreckend werden, erklären wir hier kurz die Strategie. Für $s=1$ liegt der Träger des Shearlets ja genau auf der Diagonalen (vgl. Abb. \ref{fig:supp_psi_hat}) und damit schließich auf der Singularität von $\rwhat{\Delta_m}^{*2}$ welche sich asymptotisch an die Diagonale schmiegt. Die Strategie wird nun sein, durch Variablentransformation den Integrationsbereich so zu verzerren, dass die
+
+\begin{dmath*}
+    \left\langle \hat\psi_{ast},\rwhat{\Delta_m}^{*2} \right\rangle
+    =
+    2 a^{-\frac{3}{4}} \int
+    \frac{
+        \hat\psi_1(\omega)~\hat\psi_2(k)
+        \left(
+            \omega^2\left(
+            a^{-2}\cancel{(1-s^2)}-2a^{-\frac{3}{2}} k s -a^{-1}k^2
+            \right)
+            -3m^2
+        \right)
+    }
+    {
+        \sqrt{
+        \omega^2\left(a^{-2}\cancel{(1-s^2)}-2a^{-\frac{3}{2}} k s -a^{\frac{1}{2}}k^2\right)
+        }
+        \sqrt{
+        \omega^2\left(a^{-2}\cancel{(1-s^2)}-2a^{-\frac{3}{2}}k s  -a^{\frac{1}{2}}k^2\right) - 4m^2
+        }
+    }
+    \cdot
+    \Theta\left(
+        \omega^2\left(a^{-2}\cancel{(1-s^2)}-2a^{-\frac{3}{2}} -a^{\frac{1}{2}}k^2\right) - 4m^2\right)
+    e^{-i\omega\left(\frac{t'-sx'}{a}+k \frac{x'}{\sqrt a}\right)}
+    \cdot
+    \omega \d \omega \d k
+\end{dmath*}
+
 % section dots_und_nun_zur_wellenfrontmenge (end)
-
-
-
-
 
 
 

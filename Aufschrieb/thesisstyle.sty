@@ -12,8 +12,6 @@
 \linespread{1.05} % Line spacing - Palatino needs more space between lines
 \usepackage{microtype} % Slightly tweak font spacing for aesthetics
 
-
-
 % -----------------------------------------------------------------------------
 % % Packages and settings for graphics and plots
 % -----------------------------------------------------------------------------
@@ -22,6 +20,7 @@
 \pgfplotsset{compat=1.15}
 \usepackage{pgf}
 \usepackage{import}
+\usepackage[section]{placeins}
 
 \newcommand\inputpgf[2]{{
 \let\pgfimageWithoutPath\pgfimage
@@ -38,8 +37,6 @@
 \usepackage[backend=biber, style=numeric, doi=false]{biblatex}
 \usepackage{csquotes}
 \addbibresource{literature.bib}
-
-
 
 % -----------------------------------------------------------------------------
 % % Packages and Settings for math specific stuff
@@ -120,8 +117,8 @@
 \newcommand*\Laplace{\mathop{}\!\mathbin\bigtriangleup}
 \newcommand*\DAlambert{\mathop{}\!\mathbin\Box}
 
-
-% ------------------------------------------------------------------------------% % Headings and spacing
+% -----------------------------------------------------------------------------
+% % Headings and spacing
 % -----------------------------------------------------------------------------
 %\usepackage{parskip} %parskip doesn't work together with scrartcl
 \usepackage{ulem}
@@ -133,10 +130,9 @@
 }
 \addtokomafont{subsubsection}{\subsectionuline}
 
-
-% ------------------------------------------------------------------------------
+% -----------------------------------------------------------------------------
 % % Other stuff
-% ------------------------------------------------------------------------------
+% -----------------------------------------------------------------------------
 \usepackage{todonotes}
 \usepackage{hyperref}
 
