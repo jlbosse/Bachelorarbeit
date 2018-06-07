@@ -9,14 +9,14 @@
 \label{sec:die_wellenfrontmenge_von_delta_m}
 
 Die massive Zweipunktfunktion ist die Fouriertransformierte der 1$m$-Massenschale positiver Energie:
-\todo{Quelle dafür zitieren...}
+\todo[color=red]{Quelle dafür zitieren...}
 
 \begin{equation}
     \Delta_m (t,x) = \int \delta (\omega^2-k^2-m^2)
                     \Theta(\omega)e^{-i\omega t + i k x} \d \omega \d k
 \end{equation}
 
-woraus sich $\hat \Delta_m$ direkt zu $\delta (\omega^2-k^2-m^2)\Theta(\omega)$
+woraus sich $\rwhat \Delta_m$ direkt als $\delta (\omega^2-k^2-m^2)\Theta(\omega)$
 ablesen lässt.
 
 \begin{figure}[h]
@@ -32,7 +32,16 @@ ablesen lässt.
 \subsubsection*{Fall $s \neq \pm 1$}
 Hier gibt es nicht viel zu tun, denn für a klein genug gilt
 $supp (\hat \Delta_m) \cap supp (\hat \psi_{ast}) = \varnothing$ wie man Abb. \ref{fig:delta_m} entnehmen kann.
-Also gilt $\left< \psi_{ast}, \Delta_m\right> = 0 = O(a^k)~ \forall k$ für $a$ klein genug. Dies gilt für alle $(t', x') \in \mathbb{R}^2$
+Also gilt
+
+\begin{dmath}
+    \left\langle \psi_{ast}, \Delta_m\right\rangle
+    = \left\langle \hat\psi_{ast}, \rwhat\Delta_m\right\rangle
+    = 0 = O(a^k)~ \forall k  \condition{für $a$ klein genug}
+    \label{eq:delta_m_s_neq1}
+\end{dmath}
+
+ Dies gilt für alle $(t', x') \in \mathbb{R}^2$
 
 \todo{hier noch blöde Abschätzerei machen, warum das tatsächlich gilt, oder stehen lassen. Oder im Kapitel Shearlets ne Bemerkung machen, warum wir in immer engeren Kegeln landen?}
 
@@ -41,7 +50,7 @@ Also gilt $\left< \psi_{ast}, \Delta_m\right> = 0 = O(a^k)~ \forall k$ für $a$ 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection*{Fall $s=1$}
 \paragraph*{Intuition}
-Für $s=-1$ schneidet die Diagonale  $supp (\hat \psi_{ast})$ auf der ganzen Länge. Der Betrag von $\hat\psi_{ast}$ skaliert mit $a^{\frac{3}{4}}$ und die Länge von $supp (\hat \psi_{ast})$ mit $a^{-1}$. Also erwarten wir schlimmstenfalls $\left< \hat \psi_{a1t}, \hat\Delta_m\right> = O(a^-{\frac{1}{4}})$. Aber nur wenn die Wellenfronten von $e^{-i\omega t'+i k x'}$ parallel zu der Singularität und damit der Diagonalen liegen. Andernfalls erwarten wir, dass die immer schneller werdenden Oszillationen der Phase sich gegenseitig auslöschen/wegheben.
+Für $s=1$ schneidet die Diagonale  $supp (\hat \psi_{ast})$ auf der ganzen Länge. Der Betrag von $\hat\psi_{ast}$ skaliert mit $a^{\frac{3}{4}}$ und die Länge von $supp (\hat \psi_{ast})$ entlang der Diagonalen mit $a^{-1}$. Also erwarten wir schlimmstenfalls $\left< \hat \psi_{a1t}, \hat\Delta_m\right> = O\left(a^-{\frac{1}{4}}\right)$. Aber nur wenn die Wellenfronten von $e^{-i\omega t'+i k x'}$ parallel zu der Singularität und damit der Diagonalen liegen. Andernfalls erwarten wir, dass die immer schneller werdenden Oszillationen der Phase sich gegenseitig auslöschen.
 
 \paragraph*{Fleißige Analysis}
 \begin{align}
@@ -80,10 +89,11 @@ Der Integrand lässt sich nun durch $\hat \psi_1(\omega) \left\lVert \hat\psi_2\
  \sim O\left(a^{-\frac{1}{4}}\right) \condition{falls $x'=t'$}
 \\
  \sim O\left(a^k\right) ~ \forall k  \condition{sonst}
+\label{eq:delta_m_s=1}
 \end{dmath}
 
 Das analoge Ergebnis erhält man mit gleicher Rechnung auch für $s=-1$ und $t' = -x'$
-Dies bestätigt das intuitiv erwartete Ergebnis. Insgesamt erhalten wir also für die Wellenfrontmenge:
+Dies bestätigt das intuitiv erwartete Ergebnis. Fassen wir die Ergebnisse aus \eqref{eq:delta_m_s_neq1} und \eqref{eq:delta_m_s=1} noch einmal tabellarisch zusammen:
 
 \begin{table}[h]
 \centering

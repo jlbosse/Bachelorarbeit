@@ -1,0 +1,287 @@
+% !TEX root = main.tex
+% !TEX spellcheck=de_DE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % Berechnen der Wellenfrontmenge von Delta_m_twisted
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{\texorpdfstring{Die Wellenfrontmenge von $\Delta_m^{\star 2}$}
+         {wellenfrontmenge von delta_m2_twisted}} % (fold)
+\label{sec:die_wellenfrontmenge_von_delta_m2_twisted}
+
+\todo{herausfinden, was für ein Symbol man für dieses verdrehte Produkt verwendet}
+
+Hier gehört wohl erstmal Text hin, was diese perverse Windung = (twisted convolution) überhaupt zu bedeuten hat. Leider weiß ich das selber noch nicht.
+
+
+Die perverse Windung zweier Funktionen ist definiert wie folgt:
+
+\todo{twisted convolution definieren, oder twisted product definieren und zeigen, dass dann der Faltungssatz zu dem mit der twisted convolution wird?}
+
+\begin{definition}[perverse Windung]
+\label{def:twisted_convolution}
+    Seien $f,g \in $ "`passender Funktionen/Distributionenraum'". Sei $\Omega \in \mathbb{R}^{n \times n}$ eine symplektische Matrix. Dann ist die perverse Windung $(f \circledast g) (x)$ definiert als
+
+    \begin{equation}
+        (f \circledast g) \,(x) \coloneqq
+        \int f(y) g(x-y)e^{\frac{i}{2} \Omega(x,y)} \d y
+    \end{equation}
+
+    Die perverse Windung ist also einfach die gewöhnliche Faltung, die noch mit einem Ortsabhängigen Phasenfaktor verziert wurde.
+\end{definition}
+
+
+
+\todo{Gibt es schon eine Übersetzung für twisted convolution?}
+
+Bevor wir uns aber der Wellenfrontmenge widmen können, brauchen wir einen Ausdruck für die Fouriertransformierte $\rwhat{\Delta}_m^{\circledast 2}$ von $\Delta_m^{\star 2}$.
+
+\subsection{\texorpdfstring{$\Delta$ berechnen}
+            {delta_m2_twisted berechnen}} % (fold)
+\label{sec:delta_m2_twisted_berechnen}
+
+Sammeln wir zunächst einmal die Zutaten, die wir für die perverse Windung der massiven Zweipunktfunktion mit sich selber brauchen:
+
+\begin{dgroup}
+    \begin{dmath*}
+        \rwhat{\Delta}_m = \delta(\omega^2-k^w-m^2)\Theta(\omega)\\
+        \textrm{die Fouriertransformierte der massiven Zweipunktfunktion}
+    \end{dmath*}
+    \begin{dmath*}
+        \Omega = \begin{pmatrix}
+            0 & 1 \\ -1 & 1
+        \end{pmatrix}
+        \\ \textrm{die kanonische symplektische Matrix auf } \mathbb{R}^n
+    \end{dmath*}
+\end{dgroup}
+
+mit der Definition aus \ref{def:twisted_convolution} erhalten wir also
+
+\begin{dmath}
+    \rwhat{\Delta}_m^{\circledast 2} (\omega, k)
+    = \int
+    \delta(\omega^{\prime 2}-k^{\prime 2}-m^2)
+    \delta((\omega' - \omega)^2 - (k-k')^2 -m^2)
+    \cdot
+    \Theta(\omega') \Theta(\omega - \omega')
+    e^{\frac{i}{2}(\omega'k-\omega k')}
+    \d \omega' \d k'
+\end{dmath}
+
+und damit das selbe Integral wie in \eqref{eq:mass_shell_convolution} bis auf einen zusätzlichen Phasenfaktor. Nachdem wir gezeigt haben, dass auch dieser Poincare-Invariant ist, können wir das Integral mit dem selben Trick wie in Abschnitt \ref{sec:delta_m2_berechnen} berechnen.
+
+\begin{proposition}[$\Omega_{std}$ ist Lorenz-invariant für $n=2$]
+\label{prop:omega_ist_lorenz_invariant}
+    $\Omega_{std}$ ist Lorenz-invariant für $n=2$
+\\[1em]
+\emph{Beweis}\\
+    Eine einfache Rechnung zeigt
+    \begin{dmath*}
+        \begin{pmatrix}
+            \cosh \beta & \sinh \beta \\ -\sinh \beta & \cosh \beta
+        \end{pmatrix}
+        \begin{pmatrix}
+            0 & 1 \\ -1 & 0
+        \end{pmatrix}
+        \begin{pmatrix}
+            \cosh \beta & -\sinh \beta \\ \sinh \beta & \cosh \beta
+        \end{pmatrix}
+        =
+        \begin{pmatrix}
+            0 & 1 \\ -1 & 0
+        \end{pmatrix}
+    \end{dmath*}
+\end{proposition}
+
+Mit Proposition \ref{prop:omega_ist_lorenz_invariant} ist $\rwhat{\Delta}_m^{\circledast 2}$ Lorenz-Invariant und es reicht aus $\rwhat{\Delta}_m^{\circledast 2} (\omega, 0)$ zu berechnen.
+
+Die beiden Kreuzungspunkte der $\delta$-Distributionen liegen bei (vgl. Abb. \ref{fig:mass_shell_convolution})
+
+\begin{equation*}
+    \left(\omega'_0,k'_{0\pm}\right) = \left(\frac{\omega}{2}, \pm \sqrt{\left(\frac{\omega}{2}\right)^2-m^2}\right)
+\end{equation*}
+
+
+Die "`Fläche"' der Kreuzungspunkte der $\delta$-Distributionen wurde in
+Abschnitt \ref{sec:delta_m2_berechnen} berechnet und ist
+
+\begin{equation*}
+A = \frac{\omega^2-3m^2}{\omega \sqrt{\omega^2-4m^2}}
+\end{equation*}
+
+Der Phasenfaktor nimmt bei den Kreuzungspunkten adsföl fadmdsaf ökan
+\begin{dmath*}
+    e^{\frac{i}{2}\Omega \left((\omega, k),(\omega'_0,k'_{0\pm})\right)}
+    =
+    e^{\pm \frac{i}{2}\left(-\omega^2\sqrt{\frac{1}{4}-\frac{m^2}{\omega^2}}\right)}
+\end{dmath*}
+
+
+Kombinieren wir also die vorhergehenden Resultate erhalten wir
+
+\begin{dmath*}
+    \rwhat{\Delta}_m^{\circledast 2} (\omega, 0)
+    =
+    A e^{\frac{i}{2}\Omega \left((\omega, k),(\omega'_0,k'_{0+})\right)}
+    + A e^{\frac{i}{2}\Omega \left((\omega, k),(\omega'_0,k'_{0-})\right)}
+    =
+    \frac{\omega^2-3m^2}{\omega \sqrt{\omega^2-4m^2}}
+    \left\{
+        e^{-\frac{i}{2}\omega^2\sqrt{\frac{1}{4}-\frac{m^2}{\omega^2}}}
+      + e^{\frac{i}{2}\omega^2\sqrt{\frac{1}{4}-\frac{m^2}{\omega^2}}}
+    \right\}
+    =
+    2 \frac{\omega^2 -3m^2}{\omega \sqrt{\omega^2-4m^2}}
+    \cos \left(\varphi(\omega^2)\right)
+\end{dmath*}
+
+wobei im letzten Schritt noch implizit $\varphi(\omega^2)$ definiert wurde.
+Und mit Lorenz-Invarianz erhalten wir schließlich
+
+\begin{dmath}
+    \rwhat{\Delta}_m^{\circledast 2} (\omega, k)
+    =
+    \rwhat{\Delta}_m^{\circledast 2} (\sqrt{\omega^2-k^2}, 0)
+    =
+    2\frac{\omega^2-k^2-3m^2}{\sqrt{\omega^2-k^2} \sqrt{\omega^2-k^2-4m^2}}
+    \cos \left(\frac{k^2-\omega^2}{2}
+    \sqrt{\frac{1}{4}+\frac{m^2}{k^2-\omega^2}}
+    \right)
+    =
+    \rwhat{\Delta}_m^{* 2}(\omega, k) \cos (\varphi(\omega^2-k^2))
+\end{dmath}
+
+\subsection{
+\texorpdfstring{\dots und nun zur Wellenfrontmenge von ${\hat\Delta}_m^{\circledast 2}$}{und nun zur wellenfrontmenge von delta_m2_twisted}} % (fold)
+\label{sec:dots_und_nun_zur_wellenfrontmenge_von_delta_m2_twisted}
+
+\begin{figure}
+    \centering
+    \begin{minipage}{0.55\textwidth}
+        \centering
+        \resizebox{\textwidth}{!}{\input{images/delta_m2_twisted.pgf}} %
+        \caption{Plot von $\hat\Delta_m^{\circledast 2}$ und $\hat\Delta_m$. Wieder liegt der Träger von $\hat\Delta_m^{\circledast 2}$ in der kausalen Zukunft.
+        }
+        \label{fig:delta_2m_twisted}
+    \end{minipage}\hfill
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \resizebox{\textwidth}{!}{\input{images/delta_m2_twisted_k0.pgf}}
+        \caption{Plot von $\left.\hat{\Delta_m}^{\circledast 2}\right|_{k=0}$ um das asymptotische Verhalten für $\omega \rightarrow 0$ und $\omega \rightarrow \infty$ zu verdeutlichen}
+        \label{fig:delta_2m_twisted_k0}
+    \end{minipage}
+\end{figure}
+
+\subsubsection{Fall $|s| > 1$}
+Wir bedienen uns wieder genau des selben Arguments, wie in \eqref{eq:delta_m2_s>1}
+
+\begin{equation}
+\label{eq:delta_m2_twisted_s=1}
+    \left\langle\hat\psi_{ast}, \rwhat{\Delta}_m^{\circledast 2}\right\rangle
+    = 0
+\end{equation}
+
+für $a$ klein genug.
+
+\subsubsection*{Fall $|s| < 1, (x,t) \neq 0$}
+Da
+$\rwhat\Delta_m^{\circledast 2} = \rwhat\Delta_m^{\circledast 2} \cos(\dots)$ können wir direkt mit dem Ausdruck \eqref{eq:psi_ast_delta_m2_s<1} $\cdot \cos$ weiter arbeiten.
+
+\todo{Referenz zu Delta_m2 s<1 einfügen und argumentieren, dass wir genau die selben Abschätzungen machen.}
+
+\begin{dmath}
+\label{eq:delta_m2_twisted_s<1}
+    \left\langle \rwhat{\psi}_{ast},\rwhat{\Delta}_m^{\circledast 2}
+    \right\rangle
+    =
+     2 a^{-\frac{3}{4}} \int \frac{
+    \hat\psi_1(\omega)~ \hat\psi_2(k) \left(
+    \omega^2 \left(\Delta s - 2 a^{\frac{1}{2}} k s - ak^2
+            \right) - 3a^2m^2
+    \right)
+     }
+     {
+        \sqrt{\Delta s -2a^{\frac{1}{2}}ks - ak^2}
+            \sqrt{\Delta s \omega^2 -2a^{\frac{1}{2}} \omega^2 k s
+                    - a\omega^2k^2-4 a^2 m^2}
+     }
+     \cdot
+     \Theta(\cdots)
+     \cos(\varphi(\omega^2-k^2))
+     e^{-i \omega \left(\frac{t'-sx'}{a}+k \frac{x'}{\sqrt{a}}\right)}
+     \d \omega \d k
+     \leq
+     2 a^{-\frac{3}{4}} \int
+     \omega \hat\psi_1(\omega)\, \hat\psi_2(k)
+     e^{-i \omega \left(\frac{t'-sx'}{a}+k \frac{x'}{\sqrt{a}}\right)}
+     \d \omega \d k
+     \sim O(a^k) ~~ \forall k \hiderel \in \mathbb{N}
+\end{dmath}
+
+
+\subsubsection*{Fall $|s| < 1, (x,t) = 0$}
+In diesem Fall lassen wir den $\cos$-Faktor in \eqref{eq:delta_m2_twisted_s<1} in der ersten Ungleichung nicht heraus fallen, dafür wird der $e^\dots$-Faktor 1. Den $\cos$-schreiben wir als Summe von $e$-Funktionen und erhalten
+
+\todo[color=red]{das wird so nix, wie bringe ich den cosinus dazu, zu regeln? Reed Simons nachlesen?}
+
+\begin{dmath}
+    \left\langle \rwhat{\psi}_{ast},\rwhat{\Delta}_m^{\circledast 2}
+    \right\rangle
+    =
+    2 a^{-\frac{3}{4}} \int
+    \omega \hat\psi_1(\omega) \hat\psi_2(k)
+    \left\{
+        \exp\left(i a^{-2} \frac{
+        \omega^2 (\Delta s - 2 a^{\frac{1}{2}} k s - a k^2)
+        }{2}
+        \sqrt{\frac{1}{4} - \frac{a^2 m^2}{\omega^2(
+            \Delta s - 2 a^{\frac{1}{2}} k s - ak^2
+        )}}
+        \right)
+        +\exp (-i \cdots)
+    \right\}
+    \d \omega \d k
+    =
+    2 a^{-\frac{3}{4}} \int
+    \cancel{\sqrt{\omega}} \hat\psi_1(\sqrt{\omega}) \hat\psi_2(k)
+    \left\{
+        \exp\left(i a^{-2} \frac{
+        \omega (\Delta s - 2 a^{\frac{1}{2}} k s - a k^2)
+        }{2}
+        \sqrt{\frac{1}{4} - \frac{a^2 m^2}{\omega(
+            \Delta s - 2 a^{\frac{1}{2}} k s - ak^2
+        )}}
+        \right)
+        +\exp (-i \cdots)
+    \right\}
+    \frac{{\d \omega \d k}}{\cancel{\sqrt{\omega}}}
+    =
+    2 a^{-\frac{3}{4}} \int \left\{
+        \int
+        \hat\psi_1(\sqrt\omega)
+        \left\{
+            \exp
+            \left(ia^{-2} \left(\frac{\omega \Delta s}{4}
+                                + O\left(a^{\frac{1}{2}}\right)\right)
+            \right)
+            + \exp(-i\cdots)
+        \right\}
+        \d \omega
+    \right\}
+    \hat \psi_2(k) \d k
+    =
+    2 a^{-\frac{3}{4}} \int
+    \underbrace{
+    (\hat\psi_1 \circ \sqrt{\cdot })^\vee \left(\frac{\Delta s}{4a^2}\right)}_{
+    \sim O(a^k) ~\forall k \in \mathbb{N}
+    }
+    \psi_2(k) \d k
+    \sim O(a^k) ~~ \forall k \hiderel \in \mathbb{N}
+\end{dmath}
+
+\todo[color=red]{Schritt von dritte in die vierte Zeile rechtfertigen. Vermutlich nicht einfach...}
+
+wobei bei der Substition $\omega \to \sqrt{\omega}$ in der zweiten Zeile wichtig ist, dass $0 \notin supp (\hat\psi_1)$, also auch nach der Substitution noch $\hat\psi_1 \in C_c^\infty (\mathbb{R})$ ist.
+% section dots_und_nun_zur_wellenfrontmenge_von_ (end)
+
+
+% section die_wellenfrontmenge_von_ (end)

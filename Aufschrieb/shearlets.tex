@@ -55,7 +55,7 @@ Sei $\mathcal{R} =$ \{
 \input{images/supp_psi.pgf}
 \label{fig:supp_psi_hat}
 \caption{Der Träger von $\hat \psi_{ast}$ für verschiedene $a, s$. Man sieht gut,
-wie $supp (\hat \psi_{ast})$ für kleinere $a$ in immer kleineren Kegeln liegt.}
+wie $supp (\hat \psi_{ast})$ für kleinere $a$ in immer spitzeren Kegeln liegt.}
 \end{figure}
 
 \label{cor:psi_hat}
@@ -86,11 +86,11 @@ und es gilt
 \label{sec:substitutionen}
 
 Zunächst werden wir zwei verschiedene Ausdrücke für $\left<\psi_{ast}, f\right>$
-im Fourierraum herleiten, welche sich im dann folgenden als nützlich erweisen werden.
+im Fourierraum herleiten, welche fast immer Ausgangspunkt für unsere Abschätzungen sein werden.
 
 Sei also $\psi$ ein Shearlet wie in Korollar \ref{cor:psi_hat}. Sei $f$ die zu
 analysierende fouriertransformierbare Funktion (oder Distribution) in
-$\mathcal{D} \prime (\mathbb{R}^2)$. Dann ist $\mathcal{S}_f (ast)$ gegeben durch
+$\mathcal{D}' (\mathbb{R}^2)$. Dann ist $\mathcal{S}_f (ast)$ gegeben durch
 
 \begin{align*}
 \left< \psi_{ast}, f \right> &= \left<\hat\psi_{ast}, \hat f\right> \\
@@ -122,12 +122,13 @@ a^{-\frac{1}{2}} \left(\frac{\xi_2}{\xi_1} - s\right) &=\frac{k_2}{k_1}\\
 ergibt sich folgendes für $\left<\psi_{ast}, f\right>$:
 
 \begin{align}
-\owntag[substitution1]{Substitution 1}
-    \left<\psi_{ast},f\right>
-    =  \iint a^{-\frac{3}{4}}~\hat \psi_1(k_1) ~\hat \psi_2 \left(\tfrac{k_2}{k_1}\right)
+    \left\langle\psi_{ast},f\right\rangle
+    &=  \left\langle\hat\psi_{ast},\hat f\right\rangle \nonumber \\
+    &=  \iint a^{-\frac{3}{4}}~\hat \psi_1(k_1) ~\hat \psi_2 \left(\tfrac{k_2}{k_1}\right)
     ~\hat f \left(\tfrac{k_1}{a}, \tfrac{k_1 s}{a} + \tfrac{k_2}{\sqrt{a}}\right)
-    ~e^{-i\frac{k_1}{a}(t_1+t_2 s) - i \frac{k_2 t_2}{\sqrt(a)}}
+    ~e^{-i\frac{k_1}{a}(t_1+t_2 s) - i \frac{k_2 t_2}{\sqrt a}}
     \d k_1 \d k_2
+\owntag[substitution1]{Substitution 1}
 \end{align}
 
 \todo{herausfinden, wie die Gleichungen auch Kapitelnummern erhalten}
@@ -151,7 +152,7 @@ a^{-\frac{1}{2}} \left(\frac{\xi_2}{\xi_1} - s\right) &= k_2\\
 \d \xi_1 \d \xi_2 = a^{-\frac{3}{2}} k_1 \d k_1 \d k_2
 \end{equation*}
 
-gewählt werden, wodurch alle Parameter aus den Argumenten von $\psi_1, \psi_2$
+gewählt werden, wodurch alle Parameter $(a,s,t)$ aus den Argumenten von $\hat\psi_1, \hat\psi_2$
 verschwinden und sich
 
 \begin{align}

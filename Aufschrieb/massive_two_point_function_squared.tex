@@ -12,6 +12,8 @@ Bevor wir die Wellenfrontmenge von $\Delta_m^2$ berechnen können, benötigen wi
 
 \subsection{\texorpdfstring{$\hat\Delta^{\ast 2}$ berechnen}
     {delta-ast-hat berechnen}}
+\label{sec:delta_m2_berechnen}
+
  Gemäß dem Faltungssatz gilt $\rwhat{\Delta_m^2} = \rwhat \Delta_m * \rwhat \Delta_m = \rwhat\Delta_m^{*2}$. Wir müssen also die Faltung von $\rwhat \Delta_m$ mit sich selber ausrechnen.
 
 \begin{figure}[h]
@@ -31,17 +33,19 @@ Bevor wir die Wellenfrontmenge von $\Delta_m^2$ berechnen können, benötigen wi
 \end{figure}
 
 \begin{equation}
-    \rwhat{\Delta_m^{* 2}} (\omega, k)
+    \rwhat{\Delta}_m^{* 2} (\omega, k)
     = \int \theta(\omega') \delta(\omega^{\prime 2}-k^{\prime2}-m^2)\theta(\omega-\omega')
       \delta((\omega-\omega')^2-(k-k')^2-m^2) \d \omega' \d k'
 \label{eq:mass_shell_convolution}
 \end{equation}
 
 An Abbildung \ref{fig:mass_shell_convolution} sehen wir schon, dass das Faltungsintegral nur dann ungleich null ist, wenn $(\omega, k)$ in der 2$m$-Massenschale liegen. Es ist also insbesondere $\omega > 0$.
-Da $\Delta_m$ Poincare-invariant ist, sind $\Delta_m^2$ und $\rwhat{\Delta_m^{*2}}$ es auch. Es genügt also $\rwhat{\Delta_m^{*2}}$ für $k=0$ und positive $\omega$ zu berechnen. Alle anderen Werte holen wir uns dann aus der Poincare-Invarianz.
+Da $\Delta_m$ Lorenz-invariant ist, sind $\Delta_m^2$ und $\rwhat{\Delta}_m^{*2}$ es auch. Es genügt also $\rwhat{\Delta_m^{*2}}$ für $k=0$ und positive $\omega$ zu berechnen. Alle anderen Werte holen wir uns dann aus der Lorenz-Invarianz.
 
 \todo{Wie erklärt man das besser, ohne an Anschaulichkeit oder Rigorosität zu verlieren}
 Um nun das Integral über zwei sich schneidende lineare\footnote{Linear in dem Sinne, dass die Distribution entlang einer Linie getragen ist. Nicht das es eine lineare Distribution ist} $\delta$-Distributionen zu berechnen bedienen wir uns eines Physikertricks und stellen uns die $\delta$-Distribution als Grenzwert ($h \rightarrow 0$) einer $\frac{1}{h}$-hohen und $h$-breiten Rechtecksfunktion vor. Dann ist das Integral über die sich schneidenden Rechteckfunktionen proportional zu der Schnittfläche und damit zu $l \cdot h$ in Abb. \ref{fig:schulgeometrie}. Außerdem schneiden sich die beiden Hyperbeln für $\omega \rightarrow +\infty$ in einem rechten Winkel, das Faltungsintegral ergibt hier also 2.
+
+\todo{die Erklärungen dazwischen sind noch nicht ganz klar, fürchte ich...}
 
 Aus Abb. \ref{fig:schulgeometrie} lesen wir ab:
 
@@ -148,7 +152,7 @@ gilt.
 \subsubsection*{\texorpdfstring{Fall $s<1$}{Fall s<1}}
 Hier bedienen wir uns direkt bei \eqref{Eq:substitution2} und schreiben
 
-\begin{dmath*}
+\begin{dmath}
     \left\langle \rwhat{\psi}_{ast},\rwhat{\Delta_m}^{*2}\right\rangle
     =
     2 a^{-\frac{3}{4}} \int \frac{
@@ -184,7 +188,8 @@ Hier bedienen wir uns direkt bei \eqref{Eq:substitution2} und schreiben
                     - a\omega^2k^2-4 a^2 m^2}
      }
      \d \omega \d k
-\end{dmath*}
+\label{eq:psi_ast_delta_m2_s<1}
+\end{dmath}
 
 Für hinreichend kleine $a$ können wir den Integranden nun majorisieren
 
@@ -445,13 +450,13 @@ und wir können also schreiben
     \int \omega\, \hat\psi_2(k)\, \Theta(k)\, e^{-i\omega k \frac{x'}{\sqrt{a}}} \d k
     = \omega (\hat\psi_2 \cdot \Theta)^\vee (-\omega x'/\sqrt a)
     = \omega \left(\hat\psi_2^\vee * \Theta^\vee \right)(-\omega x'/\sqrt a)
-    = \omega \left(\psi_2 * \left(\delta + \frac{i}{x}\right)
+    = \omega \left(\psi_2 * \left(\delta + i\mathcal{P}(1/x)\right)
              \right)(-\omega x'/\sqrt a)
     = \omega \bigg[
                 \underbrace{
                     \psi_2(-\omega x'/\sqrt a)}_{O(a^k) \; \forall k \in \mathbb{N}}
                 + \underbrace{i
-                    \underbrace{\left(\psi_2 * \frac{1}{x}\right)}_{O(x^{-1})}
+                    \underbrace{\left(\psi_2 * \mathcal{P}(1/x)\right)}_{O(x^{-1})}
                     (-\omega x'/\sqrt a)
                 }_{
                     O\left((-\omega x'/\sqrt a)^{-1}\right)
