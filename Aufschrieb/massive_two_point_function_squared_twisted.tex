@@ -42,20 +42,21 @@ Bevor wir uns aber der Wellenfrontmenge widmen können, brauchen wir einen Ausdr
 Sammeln wir zunächst einmal die Zutaten, die wir für die perverse Windung der massiven Zweipunktfunktion mit sich selber brauchen:
 
 \begin{dgroup}
-    \begin{dmath*}
+    \begin{dmath}
         \rwhat{\Delta}_m = \delta(\omega^2-k^w-m^2)\Theta(\omega)\\
         \textrm{die Fouriertransformierte der massiven Zweipunktfunktion}
-    \end{dmath*}
-    \begin{dmath*}
+    \label{eq:material_fuer_delta_m2_twisted_a}
+    \end{dmath}
+    \begin{dmath}
         \Omega = \begin{pmatrix}
             0 & 1 \\ -1 & 1
         \end{pmatrix}
         \\ \textrm{die kanonische symplektische Matrix auf } \mathbb{R}^n
-    \end{dmath*}
-    \label{eq:material_fuer_delta_m2_twisted}
+    \label{eq:material_fuer_delta_m2_twisted_b}
+    \end{dmath}
 \end{dgroup}
 
-mit der Definition aus \ref{def:twisted_convolution} und \eqref{eq:material_fuer_delta_m2_twisted} erhalten wir also
+mit \cref{def:twisted_convolution,eq:material_fuer_delta_m2_twisted_a,eq:material_fuer_delta_m2_twisted_b} erhalten wir also
 
 \begin{dmath}
     \rwhat{\Delta}_m^{\circledast 2} (\omega, k)
@@ -68,7 +69,7 @@ mit der Definition aus \ref{def:twisted_convolution} und \eqref{eq:material_fuer
     \d \omega' \d k'
 \end{dmath}
 
-und damit das selbe Integral wie in \eqref{eq:mass_shell_convolution} bis auf einen zusätzlichen Phasenfaktor. Nachdem wir gezeigt haben, dass auch dieser Lorenz-Invariant ist, können wir das Integral mit dem selben Trick wie in Abschnitt \ref{sec:delta_m2_berechnen} berechnen.
+und damit das selbe Integral wie in \cref{eq:mass_shell_convolution} bis auf einen zusätzlichen Phasenfaktor. Nachdem wir gezeigt haben, dass auch dieser Lorenz-Invariant ist, können wir das Integral mit dem selben Trick wie in \cref{sec:delta_m2_berechnen} berechnen.
 
 \begin{proposition}[$\Omega_{std}$ ist Lorenz-invariant für $n=2$]
 \label{prop:omega_ist_lorenz_invariant}
@@ -93,9 +94,9 @@ und damit das selbe Integral wie in \eqref{eq:mass_shell_convolution} bis auf ei
     \end{dmath*}
 \end{proposition}
 
-Mit Proposition \ref{prop:omega_ist_lorenz_invariant} ist $\rwhat{\Delta}_m^{\circledast 2}$ Lorenz-Invariant und es reicht aus $\rwhat{\Delta}_m^{\circledast 2} (\omega, 0)$ zu berechnen.
+Mit \cref{prop:omega_ist_lorenz_invariant} ist $\rwhat{\Delta}_m^{\circledast 2}$ Lorenz-Invariant und es reicht aus $\rwhat{\Delta}_m^{\circledast 2} (\omega, 0)$ zu berechnen.
 
-Die beiden Kreuzungspunkte der $\delta$-Distributionen liegen bei (vgl. Abb. \ref{fig:mass_shell_convolution})
+Die beiden Kreuzungspunkte der $\delta$-Distributionen liegen bei (vgl. \cref{fig:mass_shell_convolution})
 
 \begin{equation*}
     \left(\omega'_0,k'_{0\pm}\right) = \left(\frac{\omega}{2}, \pm \sqrt{\left(\frac{\omega}{2}\right)^2-m^2}\right)
@@ -103,7 +104,7 @@ Die beiden Kreuzungspunkte der $\delta$-Distributionen liegen bei (vgl. Abb. \re
 
 
 Die "`Fläche"' der Kreuzungspunkte der $\delta$-Distributionen wurde in
-Abschnitt \ref{sec:delta_m2_berechnen} berechnet und ist
+ \cref{sec:delta_m2_berechnen} berechnet und ist
 
 \begin{equation*}
 A = \frac{\omega^2-3m^2}{\omega \sqrt{\omega^2-4m^2}}
@@ -173,18 +174,18 @@ Und mit Lorenz-Invarianz erhalten wir schließlich
 \end{figure}
 
 \subsubsection{Fall $|s| > 1$}
-Wir bedienen uns wieder genau des selben Arguments, wie in \eqref{eq:delta_m2_s>1} und dürfen direkt schreiben:
+Wir bedienen uns wieder genau des selben Arguments, wie in \cref{eq:delta_m2_s>1} und dürfen direkt schreiben:
 
 \begin{equation}
-\label{eq:delta_m2_twisted_s=1}
     \left\langle\hat\psi_{ast}, \rwhat{\Delta}_m^{\circledast 2}\right\rangle
     = 0 \condition{für alle $a$ klein genug}
+\label{eq:delta_m2_twisted_s>1}
 \end{equation}
 
 
 \subsubsection*{Fall $|s| < 1, (x,t) \neq 0$}
 Da
-$\rwhat\Delta_m^{\circledast 2} = \rwhat\Delta_m^{* 2} \cos(\dots)$ können wir direkt mit dem Ausdruck \eqref{eq:psi_ast_delta_m2_s<1} $\cdot \cos$ weiter arbeiten.
+$\rwhat\Delta_m^{\circledast 2} = \rwhat\Delta_m^{* 2} \cos(\dots)$ können wir direkt mit dem Ausdruck \cref{eq:psi_ast_delta_m2_s<1} $\cdot \cos$ weiter arbeiten.
 
 \todo{Referenz zu Delta_m2 s<1 einfügen und argumentieren, dass wir genau die selben Abschätzungen machen.}
 
@@ -215,11 +216,12 @@ $\rwhat\Delta_m^{\circledast 2} = \rwhat\Delta_m^{* 2} \cos(\dots)$ können wir 
      e^{-i \omega \left(\frac{t'-sx'}{a}+k \frac{x'}{\sqrt{a}}\right)}
      \d \omega \d k
      \sim O(a^k) ~~ \forall k \hiderel \in \mathbb{N}
+\label{eq:delta_m2_twisted_s<1_x_neq_0}
 \end{dmath}
 
 
 \subsubsection*{Fall $|s| < 1, (x,t) = 0$}
-In diesem Fall lassen wir den $\cos$-Faktor in \eqref{eq:delta_m2_twisted_s<1} in der ersten Ungleichung nicht heraus fallen, dafür wird der $e^\cdots$-Faktor 1. Den $\cos$-Faktor schreiben wir als Summe von $e$-Funktionen und erhalten
+In diesem Fall lassen wir den $\cos$-Faktor in \cref{eq:delta_m2_twisted_s<1} in der ersten Ungleichung nicht heraus fallen, dafür wird der $e^\cdots$-Faktor 1. Den $\cos$-Faktor schreiben wir als Summe von $e$-Funktionen und erhalten
 
 \todo{\dots in exp durch ---"--- ersetzen}
 
@@ -276,11 +278,211 @@ In diesem Fall lassen wir den $\cos$-Faktor in \eqref{eq:delta_m2_twisted_s<1} i
     }
     \psi_2(k) \d k
     \sim O(a^k) ~~ \forall k \hiderel \in \mathbb{N}
+\label{eq:delta_m2_twisted_s<1_x=0}
 \end{dmath}
 
 \todo[color=red]{Schritt von dritte in die vierte Zeile rechtfertigen. Vermutlich nicht einfach...}
 
 wobei bei der Substition $\omega \to \sqrt{\omega}$ in der zweiten Zeile wichtig ist, dass $0 \notin supp (\hat\psi_1)$, also auch nach der Substitution noch $\hat\psi_1 \in C_c^\infty (\mathbb{R})$ ist.
+
+
+\subsubsection*{Fall $s = -1$}
+
+Da $\rwhat\Delta_m^{\circledast 2} = \rwhat\Delta_m^{* 2} \cos(\dots)$ ist, haben wir bis auf den $\cos$-Faktor die selben Analysis zu betreiben, die uns schließlich
+
+\todo{ordentliche Formulierung und ordentliche Referenzen einfügen}
+
+\begin{dmath}
+    \left\langle \rwhat{\psi}_{a-1t},\rwhat{\Delta}_m^{\circledast 2}
+    \right\rangle
+    =
+    2 a^{-\frac{3}{4}} \int
+    \underbrace{\frac{
+        \hat\psi_1(\omega) \hat\psi_2(k'+k_0)
+        \left(
+        2\omega^2(k'+k_0)-a^{\frac{1}{2}}\omega^2(k'+k_0)^2-a^{\frac{3}{2}}3m^2
+        \right)
+        \Theta(k')
+    }
+    {
+        \sqrt{k'} \sqrt{k'+k_0}
+        \sqrt{2-a^{\frac{1}{2}}(k'+k_0)}
+        \sqrt{-a^{\frac{1}{2}}\omega^2\left(k'-\tfrac{2\sqrt{\omega^2-4a^2m^2}}
+                    {\sqrt a \omega}\right)}
+    }}_{i)}
+    \cdot
+    \cos
+    \underbrace{\left(
+        \frac{2\omega^2(k'+k_0)-a^{\frac{1}{2}}\omega^2(k'+k_0)^2}
+             {2 a^{\frac{3}{2}}}
+        \sqrt{
+            \frac{1}{4}
+            + \frac{a^{\frac{3}{2}} m^2}
+                   {2\omega^2(k'+k_0)-a^{\frac{1}{2}}\omega^2(k'+k_0)^2}
+        }
+    \right)}_{ii)}
+    \cdot
+    e^{-i\omega\left(\frac{t'+x'}{a}+\frac{(k'+k_0)x'}{\sqrt a}\right)}
+    \d \omega \d k'
+\label{eq:psi_a-1t_delta_m2_twisted}
+\end{dmath}
+
+Genau wie in \cref{eq:lange_1/sqrt_abschaetzerei} können wir für $i)$ wieder Abschätzen\footnote{Da cos beschränkt ist, spielt er bei den Abschätzungen keine Rolle}
+
+\begin{dmath*}
+    % \frac{
+    %     \hat\psi_1(\omega) \hat\psi_2(k'+k_0)
+    %     \left(
+    %     2\omega^2(k'+k_0)-a^{\frac{1}{2}}\omega^2(k'+k_0)^2-a^{\frac{3}{2}}3m^2
+    %     \right)
+    %     \Theta(k')
+    % }
+    % {
+    %     \sqrt{k'} \sqrt{k'+k_0}
+    %     \sqrt{2-a^{\frac{1}{2}}(k'+k_0)}
+    %     \sqrt{-a^{\frac{1}{2}}\omega^2\left(k'-\tfrac{2\sqrt{\omega^2-4a^2m^2}}
+    %                 {\sqrt a \omega}\right)}
+    % }
+    i)
+    \leq
+    \frac{\textrm{const}}{\sqrt{k'}} \Theta(k')
+\end{dmath*}
+
+Damit dürfen wir wieder Lebesgue anwenden, um den Grenzwert $a \to 0$ des Integrals zu berechnen.
+Des weiteren ist analog zu \cref{eq:langer_sqrt_bruch_punktweise_konvergenz}
+
+\begin{dmath}
+    i)
+    \stackrel{\textrm{\scriptsize punktweise f.ü.}}{\longrightarrow}
+    \omega\,\hat\psi_1(\omega) \,\hat\psi_2(k') \Theta(k')
+\label{eq:delta_m2_twisted_s=-1_material_a}
+\end{dmath}
+
+Widmen wir uns also dem Argument des cosinus $ii)$:
+
+\begin{dmath*}
+    \frac{2\omega^2(k'+k_0)-a^{\frac{1}{2}}\omega^2(k'+k_0)^2}
+         {2 a^{\frac{3}{2}}}
+    \sqrt{
+        \frac{1}{4}
+        + \frac{a^{\frac{3}{2}} m^2}
+               {2\omega^2(k'+k_0)-a^{\frac{1}{2}}\omega^2(k'+k_0)^2}
+    }
+    =
+    \frac{\omega^2 (k'+k'0)(2-a^{\frac{1}{2}}(k_+k_0))}
+         {2 a^{\frac{3}{2}}}
+    \sqrt{
+        \frac{1}{4}
+        + \frac{a^{\frac{3}{2}}m^2}
+               {\omega^2(k'+k_0)(a^{\frac{1}{2}}(k'+k_0)-2)}
+    }\\
+    \stackrel{\textrm{\scriptsize punktweise, außer } k'=0}{\longrightarrow}
+    \frac{\omega^2 k' a^{-\frac{3}{2}}}{2}
+\end{dmath*}
+
+also
+
+\begin{dmath}
+    \cos\big(ii)\big)
+    \stackrel{\textrm{\scriptsize punktweise, außer } k'=0}{\longrightarrow}
+    \cos\left(\frac{\omega^2 k' a^{-\frac{3}{2}}}{2}\right)
+\label{eq:delta_m2_twisted_s=-1_material_b}
+\end{dmath}
+
+Einsetzen von \cref{eq:delta_m2_twisted_s=-1_material_a,eq:delta_m2_twisted_s=-1_material_b} in \cref{eq:psi_a-1t_delta_m2_twisted} ergibt mit Lebesgue
+
+\todo{den Ausdruck hübscher machen. So ist das ja grauenhaft}
+
+\begin{dmath*}
+    \lim_{a \to 0}
+    \left\langle \rwhat{\psi}_{a-1t},\rwhat{\Delta}_m^{\circledast 2}
+    \right\rangle
+    =
+    2 a^{-\frac{3}{4}}
+    \int \omega \,\hat\psi_1(\omega) \,\hat\psi_2(k')
+         \cos\left(a^{-\frac{3}{2}}\frac{\omega^2 k'}{2}\right)
+         e^{-i\omega k' \frac{x'}{\sqrt a}}
+         e^{-i \omega \frac{t'+x'}{a}}
+         \d \omega \d k'
+    =
+    a^{-\frac{3}{4}} \int
+    \underbrace{\left\{
+            \int \hat\psi_2(k')\Theta(k')
+            \left(e^{i a^{-\frac{3}{2}}\frac{\omega^2 k'}{2}} + e^{-i\cdots}\right)
+            e^{-i\omega k' \frac{x'}{\sqrt a}}
+            \d k'
+        \right\}}_{=: \hat f_a(\omega)}
+    \cdot
+    \omega \hat\psi_1(\omega)e^{-i\omega \frac{t'+x'}{a}} \d \omega
+\end{dmath*}
+
+Nun betrachten wir $\hat f_a(\omega)$ und erhalten analog zu
+\cref{eq:faltung_mit_1/x_rechnung}
+
+\begin{dmath*}
+    \hat f_a(\omega)
+    =
+    \int \hat\psi_2(k')\Theta(k')
+    \left(
+        e^{i a^{-\frac{3}{2}}\left(\frac{\omega^2 k'}{2} + O(a^1)\right)}
+        + e^{-i \cdots}
+    \right) \d k
+    \\
+    \stackrel{a \to 0}{\longrightarrow}
+    \int \hat\psi_2(k')\Theta(k')
+    \left(
+        e^{i a^{-\frac{3}{2}}\left(\frac{\omega^2 k'}{2}\right)}
+        + e^{-i \cdots}
+    \right) \d k'
+    =
+    \bigg[
+        \underbrace{
+            \psi_2\left(-\frac{\omega^2}{2 a^{\frac{3}{2}}}\right)
+        }_{O(a^k) \; \forall k \in \mathbb{N}}
+        + \underbrace{i
+            \underbrace{\left(\psi_2 * \mathcal{P}(1/x)\right)}_{O(x^{-1})}
+            \left(-\frac{\omega^2}{2 a^{\frac{3}{2}}}\right)
+        }_{
+            O\left(\left(-\frac{\omega^2}{2 a^{\frac{3}{2}}}\right)^{-1}\right)
+            = O\left(a^{\frac{3}{2}}\right)
+           }
+     + (\textrm{anderer Term})
+     \bigg]
+     = O\left(a^{\frac{3}{2}}\right)
+\end{dmath*}
+
+Also dürfen wir für $a \to 0$ schreiben $\hat f_a(\omega) = C a^{\frac{3}{2}} + o\left(a^{\frac{3}{2}}\right)$ und landen bei
+
+\begin{dmath}
+    \lim_{a \to 0}
+    \left\langle \rwhat{\psi}_{a-1t},\rwhat{\Delta}_m^{\circledast 2}
+    \right\rangle
+    =
+    a^{-\frac{3}{4}} \int C a^{\frac{3}{2}} \omega \hat\psi_1(\omega)
+    e^{-i\omega \frac{t'+x'}{a}}
+    \d \omega
+    \sim O\left(a^{\frac{3}{4}}\right) \condition{falls $t'=-x'$}
+    \sim O\left(a^k\right) ~~ \forall k \hiderel \in \mathbb{N}
+                              \condition{sonst}
+\label{eq:delta_m2_twisted_s=-1}
+\end{dmath}
+
+Fassen wir also wie bisher schon die Ergebnisse aus \cref{eq:delta_m2_twisted_s>1,eq:delta_m2_twisted_s<1_x_neq_0,eq:delta_m2_twisted_s<1_x=0,eq:delta_m2_twisted_s=-1} wieder in einer Übersichtstabelle zusammen:
+
+\begin{table}[]
+\centering
+\label{tab:wavefrontset_delta_m2_twisted}
+\begin{tabular}{l|cccc}
+        & $(t',x') = 0$     & $t'=x' \neq 0$    & $t'=-x' \neq 0$   & $t' \neq \pm x'$ \\ \hline
+$s=1$   & $a^{\frac{3}{4}}$ & $a^{\frac{3}{4}}$ & $a^k$             & $a^k$            \\
+$s=-1$  & $a^{\frac{3}{4}}$ & $a^k$             & $a^{\frac{3}{4}}$ & $a^k$            \\
+$|s|<1$ & $a^k$             & $a^k$             & $a^k$             & $a^k$            \\
+$|s|>1$ & $a^k$             & $a^k$             & $a^k$             & $a^k$
+\end{tabular}
+\caption{Konvergenzordnung von $\mathcal{S}_{\Delta_m^{\star 2}}(a,s,(t',x'))$ im Limit $a \to 0$ für alle interessanten Kombinationen von $s$ und $(t',x')$}
+\end{table}
+
+
 % section dots_und_nun_zur_wellenfrontmenge_von_ (end)
 
 

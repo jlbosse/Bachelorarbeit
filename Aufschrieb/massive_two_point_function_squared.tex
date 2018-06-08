@@ -21,7 +21,7 @@ Bevor wir die Wellenfrontmenge von $\Delta_m^2$ berechnen können, benötigen wi
     \begin{minipage}{0.5\textwidth}
         \centering
         \resizebox{\textwidth}{!}{\input{images/mass_shell_convolution.pgf}} %
-        \caption{Das zu berechnende Integral aus \eqref{eq:mass_shell_convolution} visualisiert}
+        \caption{Das zu berechnende Integral aus \cref{eq:mass_shell_convolution} visualisiert}
         \label{fig:mass_shell_convolution}
     \end{minipage}\hfill
     \begin{minipage}{0.5\textwidth}
@@ -39,15 +39,13 @@ Bevor wir die Wellenfrontmenge von $\Delta_m^2$ berechnen können, benötigen wi
 \label{eq:mass_shell_convolution}
 \end{equation}
 
-An Abbildung \ref{fig:mass_shell_convolution} sehen wir schon, dass das Faltungsintegral nur dann ungleich null ist, wenn $(\omega, k)$ in der 2$m$-Massenschale liegen. Es ist also insbesondere $\omega > 0$.
+An \cref{fig:mass_shell_convolution} sehen wir schon, dass das Faltungsintegral nur dann ungleich null ist, wenn $(\omega, k)$ in der 2$m$-Massenschale liegen. Es ist also insbesondere $\omega > 0$.
 Da $\Delta_m$ Lorenz-invariant ist, sind $\Delta_m^2$ und $\rwhat{\Delta}_m^{*2}$ es auch. Es genügt also $\rwhat{\Delta_m^{*2}}$ für $k=0$ und positive $\omega$ zu berechnen. Alle anderen Werte holen wir uns dann aus der Lorenz-Invarianz.
 
 \todo{Wie erklärt man das besser, ohne an Anschaulichkeit oder Rigorosität zu verlieren}
-Um nun das Integral über zwei sich schneidende lineare\footnote{Linear in dem Sinne, dass die Distribution entlang einer Linie getragen ist. Nicht das es eine lineare Distribution ist} $\delta$-Distributionen zu berechnen bedienen wir uns eines Physikertricks und stellen uns die $\delta$-Distribution als Grenzwert ($h \rightarrow 0$) einer $\frac{1}{h}$-hohen und $h$-breiten Rechtecksfunktion vor. Dann ist das Integral über die sich schneidenden Rechteckfunktionen proportional zu der Schnittfläche und damit zu $l \cdot h$ in Abb. \ref{fig:schulgeometrie}. Außerdem schneiden sich die beiden Hyperbeln für $\omega \rightarrow +\infty$ in einem rechten Winkel, das Faltungsintegral ergibt hier also 2.
+Um nun das Integral über zwei sich schneidende lineare\footnote{Linear in dem Sinne, dass die Distribution entlang einer Linie getragen ist. Nicht das es eine lineare Distribution ist} $\delta$-Distributionen zu berechnen bedienen wir uns eines Physikertricks und stellen uns die $\delta$-Distribution als Grenzwert ($h \rightarrow 0$) einer $\frac{1}{h}$-hohen und $h$-breiten Rechtecksfunktion vor. Dann ist das Integral über die sich schneidenden Rechteckfunktionen proportional zu der Schnittfläche und damit zu $l \cdot h$ in \cref{fig:schulgeometrie}. Außerdem schneiden sich die beiden Hyperbeln für $\omega \rightarrow +\infty$ in einem rechten Winkel, das Faltungsintegral ergibt hier also 2 da es zwei Schnittpunkte gibt.
 
-\todo{die Erklärungen dazwischen sind noch nicht ganz klar, fürchte ich...}
-
-Aus Abb. \ref{fig:schulgeometrie} lesen wir ab:
+Aus \cref{fig:schulgeometrie} lesen wir ab:
 
 \begin{align}
     \tan(\alpha) &= \frac{\d \omega'}{\d k'}
@@ -69,7 +67,7 @@ außerdem gilt
     \label{eq:schulgeometrie3}
 \end{equation}
 
-Wenn wir nun \eqref{eq:schulgeometrie2} und \eqref{eq:schulgeometrie3} sowie die vorhergehenden Gedanken kombinieren erhalten wir
+Wenn wir nun \cref{eq:schulgeometrie2,eq:schulgeometrie3} sowie die vorhergehenden Gedanken kombinieren erhalten wir
 
 \begin{dmath}
     \rwhat{\Delta_m}^{*2} (\omega, 0) = C \frac{
@@ -96,9 +94,9 @@ Wenn wir nun \eqref{eq:schulgeometrie2} und \eqref{eq:schulgeometrie3} sowie die
     \nonumber
 \end{dmath}
 
-\todo{\texttt{breqn}-Package ausprobieren!}
+\todo[color=green]{$supp (\psi_{ast})$ einzeichnen oder nicht in \cref{fig:delta_2m}?}
 
-Jetzt erhalten wir $\rwhat{\Delta_m}^{*2}(\omega, k)$ noch aus der Poincare-Invarianz:
+Jetzt erhalten wir $\rwhat{\Delta}_m^{*2}(\omega, k)$ noch aus der Poincare-Invarianz:
 
 \begin{dmath}
     \rwhat{\Delta}_m^{*2}(\omega, k)
@@ -135,25 +133,25 @@ Es ist zu beachten, dass die Heaviside-Funktion genau bei der ersten Nullstelle 
 \subsection{\dots und nun zur Wellenfrontmenge} % (fold)
 \label{sec:dots_und_nun_zur_wellenfrontmenge}
 
-Mit diesen Ausdrücken für $\rwhat{\Delta_m}^{*2}$ können wir uns nun der Wellenfrontmenge widmen.
+Mit diesen Ausdrücken für $\rwhat{\Delta}_m^{*2}$ können wir uns nun der Wellenfrontmenge widmen.
 
 \subsubsection*{\texorpdfstring{Fall $|s|>1$}{Fall s>1}}
-Genau wie im Fall $s \neq 1$ bei der massiven Zweipunktfunktion (vgl. \ref{sec:die_wellenfrontmenge_von_delta_m}) ist hier nichts zu tun, da für $a$ klein genug wieder
+Genau wie im Fall $s \neq 1$ bei der massiven Zweipunktfunktion (vgl. \cref{sec:die_wellenfrontmenge_von_delta_m}) ist hier nichts zu tun, da für $a$ klein genug wieder
 
 \begin{align}
-\label{eq:delta_m2_s>1}
     supp (\hat\psi_{ast}) \cap supp (\rwhat{\Delta}_m^{*2}) = \varnothing
     \Rightarrow
     \left\langle\hat\psi_{ast}, \rwhat{\Delta}_m^{*2}\right\rangle = 0
+\label{eq:delta_m2_s>1}
 \end{align}
 
 gilt.
 
 \subsubsection*{\texorpdfstring{Fall $s<1$}{Fall s<1}}
-Hier bedienen wir uns direkt bei \eqref{Eq:substitution2} und schreiben
+Hier bedienen wir uns direkt bei \ref{Eq:substitution2} und schreiben
 
 \begin{dmath}
-    \left\langle \rwhat{\psi}_{ast},\rwhat{\Delta_m}^{*2}\right\rangle
+    \left\langle \rwhat{\psi}_{ast},\rwhat{\Delta}_m^{*2}\right\rangle
     =
     2 a^{-\frac{3}{4}} \int \frac{
     \hat\psi_1(\omega)~\hat\psi_2(k) \left(
@@ -241,14 +239,14 @@ und dürfen also Lebesgue verwenden und schreiben
     2 a^{-\frac{3}{4}} \psi \left(\frac{t'-sx'}{a}, \frac{x'}{a}\right)
 \end{dmath*}
 
-Und da Shearlets nach Proposition \ref{prop:shearlets_decay_rapidly} schnell abfallen erhalten wir schließlich
+Und da Shearlets nach \cref{prop:shearlets_decay_rapidly} schnell abfallen erhalten wir schließlich
 
 \begin{dmath}
-\label{eq:delta_m2_s<1}
     \left\langle \psi_{ast},\Delta_m^{2}\right\rangle
     = 2 a^{-\frac{3}{4}} \psi \left(\frac{t'-sx'}{a}, \frac{x'}{a}\right)
     \sim O(a^k) ~\forall k \hiderel \in \mathbb{N} \condition{falls $(t',x') \neq 0$}
-    \sim O(a^{-\frac{3}{4}}) \condition{falls (t',x') = 0}
+    \sim O(a^{-\frac{3}{4}}) \condition{falls $(t',x') = 0$}
+\label{eq:delta_m2_s<1}
 \end{dmath}
 
 \subsubsection*{\texorpdfstring{Fall $s = -1$}{Fall s = 1}}
@@ -376,7 +374,7 @@ und mit $k'=k-k_0$ gelten folgende Ausdrücke für den Nenner und den Zähler:
 
 Nun ist es an der Zeit für das alte Spiel von "`finde eine integrierbare Majorante, um Lebesgue verwenden und alle Terme mit positiver $a$-Potenz wegschmeißen zu dürfen\footnote{so lange sie in einer Summe mit mindestens einem Term \emph{ohne} positive $a$-Potenz auftauchen}"'
 
-\begin{dmath*}
+\begin{dmath}
     \left|
     \frac{
         \hat\psi_2(k'+k_0) \left(
@@ -417,11 +415,12 @@ Nun ist es an der Zeit für das alte Spiel von "`finde eine integrierbare Majora
     \Bigg)\Theta(k')
     \leq
     \frac{\textrm{const}}{\sqrt{k'}}\Theta(k')
-\end{dmath*}
+    \label{eq:lange_1/sqrt_abschaetzerei}
+\end{dmath}
 
 Der letzte Ausdruck ist eine integrierbare Majorante und in den Abschätzungen wurde u.a. verwendet, das $\hat\psi_2$ kompakt getragen und beschränkt ist. In "`const'" wurden immer notwendige aber letzten Endes irrelevante Vorfaktoren gesammelt wie z.B. $\Vert \hat\psi_2\Vert_\infty$.
 
-Der Integrand für $\hat f_a$ konvergiert punktweise (vgl. \eqref{eq:psi_ast_delta_m2})
+Der Integrand für $\hat f_a$ konvergiert punktweise (vgl. \cref{eq:psi_ast_delta_m2})
 
 \begin{dmath}
 \frac{
@@ -438,13 +437,14 @@ Der Integrand für $\hat f_a$ konvergiert punktweise (vgl. \eqref{eq:psi_ast_del
     }
     \rightarrow
     \hat \psi_2(k) \omega \Theta(k) e^{-i\omega k \frac{x'}{\sqrt{a}}}
+\label{eq:langer_sqrt_bruch_punktweise_konvergenz}
 \end{dmath}
 
 und wir können also schreiben
 
 \todo{Tief in uns drinnen, wissen wir alle, dass die Behauptung mit dem $O(x^{-1})$ stimmt, müssen wir sie also wirklich noch zeigen?}
 
-\begin{dmath*}
+\begin{dmath}
     \hat f_a(\omega) \hiderel \rightarrow \hat f_0(\omega)
     =
     \int \omega\, \hat\psi_2(k)\, \Theta(k)\, e^{-i\omega k \frac{x'}{\sqrt{a}}} \d k
@@ -464,7 +464,8 @@ und wir können also schreiben
                    }
              \bigg]
     = O \left(a^{\frac{1}{2}}\right)
-\end{dmath*}
+\label{eq:faltung_mit_1/x_rechnung}
+\end{dmath}
 
 Wir dürfen also folgende Abschätzung für $\hat f_a(\omega)$ für $a \to 0$ machen:
 
@@ -472,7 +473,7 @@ Wir dürfen also folgende Abschätzung für $\hat f_a(\omega)$ für $a \to 0$ ma
     \hat f_a(\omega) = \omega C a^{\frac{1}{2}} +o\left(a^{\frac{1}{2}}\right)
 \end{equation*}
 
-Setzen wir dies nun schließlich wieder in unseren letzten Ausdruck in \eqref{eq:psi_ast_delta_m2} ein, erhalten wir nach einiger Rechnerei und Abschätzerei endlich
+Setzen wir dies nun schließlich wieder in unseren letzten Ausdruck in \cref{eq:psi_ast_delta_m2} ein, erhalten wir nach einiger Rechnerei und Abschätzerei endlich
 
 \todo{hier fehlen wenn man es ganz genau nimmt noch $O(a^{\frac{7}{2}})$-Terme.
     Wird da noch eine Bemerkung zu geschrieben, oder nehme ich die ganz brav mit?}
@@ -498,7 +499,7 @@ Setzen wir dies nun schließlich wieder in unseren letzten Ausdruck in \eqref{eq
     \condition{\textrm{sonst}}
 \end{dmath}
 
-Wenn wir die Ergebnisse aus \eqref{eq:delta_m2_s>1}, \eqref{eq:delta_m2_s<1} und \eqref{eq:delta_m2_s=1} zusammenfassen, haben wir für die Wellenfrontmenge von $\rwhat{\Delta}_m^{*2}$
+Wenn wir die Ergebnisse aus \cref{eq:delta_m2_s>1,eq:delta_m2_s<1,eq:delta_m2_s=1} zusammenfassen, haben wir für die Wellenfrontmenge von $\rwhat{\Delta}_m^{*2}$
 
 \begin{table}[h]
 \centering

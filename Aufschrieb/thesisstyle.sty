@@ -1,3 +1,4 @@
+%!TEX root = main.tex
 % -----------------------------------------------------------------------------
 % Langugage Settings
 % -----------------------------------------------------------------------------
@@ -44,22 +45,27 @@
 \usepackage{dsfont}
 \usepackage{amsmath}
 \usepackage{amssymb}
-\usepackage{amsthm}
+% \usepackage{amsthm}
+\usepackage[amsmath]{ntheorem}
 \usepackage{mathtools}
 
 % Making Beweis, Satz, etc deutsch und wie sie aussehen sollen
-\newtheoremstyle{mystyle}%
-{9pt}{9pt}%Space above and below 9pt ist gut
-{\addtolength{\@totalleftmargin}{2em}
-   \addtolength{\linewidth}{-2em}
-   \parshape 1 2em \linewidth}% Body style
-{1em}%Heading indent amount
-{\sffamily\bfseries}{}% Heading font and punctuation after it
-{\newline}%Space after heading (\newline = linebreak)
-{}
-%{\thmname{#1} \thmnumber{(#2)} \itshape \thmnote{ #3}}% und der spannende Teil
+% \newtheoremstyle{mystyle}%
+% {9pt}{9pt}%Space above and below 9pt ist gut
+% {\addtolength{\@totalleftmargin}{2em}
+%    \addtolength{\linewidth}{-2em}
+%    \parshape 1 2em \linewidth}% Body style
+% {1em}%Heading indent amount
+% {\sffamily\bfseries}{}% Heading font and punctuation after it
+% {\newline}%Space after heading (\newline = linebreak)
+% {}
+% %{\thmname{#1} \thmnumber{(#2)} \itshape \thmnote{ #3}}% und der spannende Teil
 
-\theoremstyle{mystyle}
+% \theoremstyle{mystyle}
+\theoremstyle{break}
+\theorembodyfont{\normalfont}
+\theoremindent2em
+
 \newtheorem{theorem}{Satz}[section]
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{corollary}[theorem]{Korollar}
@@ -94,25 +100,6 @@
 \stackon[-6.9pt]{#1}{\tmpbox}%
 }
 
-% Tolle custom-Gleichungstags
-\makeatletter
-\newcommand{\owntag}[2][\relax]{% \owntag[short label]{tag}
-  \ifx#1\relax\relax\def\owntag@name{#2}\else\def\owntag@name{#1}\fi% base label
-  \refstepcounter{equation}\tag{\theequation, #2}%
-  \expandafter\ltx@label\expandafter{eq:\owntag@name}%
-  \edef\@currentlabel{\theequation, #2}\expandafter\ltx@label\expandafter{Eq:\owntag@name}%
-  \def\@currentlabel{#2}\expandafter\ltx@label\expandafter{tag:\owntag@name}%
-}
-\makeatother
-%% Usage example:
-% --------------------------------------------------------------------
-% \begin{align}
-%     F=ma \owntag[newton]{Newton}% with optional argument
-% \end{align}
-
-% My equation is \eqref{Eq:newton}. The equation number by itself is
-% \eqref{eq:newton} and the tag is \eqref{tag:newton}.
-% -------------------------------------------------------------------
 
 % ordentlicher Laplace operator
 \newcommand*\Laplace{\mathop{}\!\mathbin\bigtriangleup}
@@ -135,7 +122,29 @@
 % % Other stuff
 % -----------------------------------------------------------------------------
 \usepackage[ngerman]{todonotes}
-\usepackage{hyperref}
+\usepackage[colorlinks=true, urlcolor=blue, pdfborder={0 0 0}]{hyperref}
+\usepackage{cleveref}
+
+% Tolle custom-Gleichungstags
+\makeatletter
+\newcommand{\owntag}[2][\relax]{% \owntag[short label]{tag}
+  \ifx#1\relax\relax\def\owntag@name{#2}\else\def\owntag@name{#1}\fi% base label
+  \refstepcounter{equation}\tag{\theequation, #2}%
+  \expandafter\ltx@label\expandafter{eq:\owntag@name}%
+  \edef\@currentlabel{\theequation, #2}\expandafter\ltx@label\expandafter{Eq:\owntag@name}%
+  \def\@currentlabel{#2}\expandafter\ltx@label\expandafter{tag:\owntag@name}%
+}
+\makeatother
+%% Usage example:
+% --------------------------------------------------------------------
+% \begin{align}
+%     F=ma \owntag[newton]{Newton}% with optional argument
+% \end{align}
+
+% My equation is \eqref{Eq:newton}. The equation number by itself is
+% \eqref{eq:newton} and the tag is \eqref{tag:newton}.
+% -------------------------------------------------------------------
+
 
 % ordentlich gesetztes Differential
 \renewcommand*\d{\mathop{}\!\mathrm{d}}

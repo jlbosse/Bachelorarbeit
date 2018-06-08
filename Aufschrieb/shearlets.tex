@@ -1,9 +1,11 @@
 %!TEX root = main.tex
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % % Section 1
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Allgemeines Gelaber über Shearlets} % (fold)
-\label{sec:allgemeines_gelaber_ueber_shearlets}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Shearlets} % (fold)
+\label{sec:shearlets}
+
+\todo[color=green]{In dieser Sektion nur die wichtigsten Ergebnisse des Papers angeben, oder auch Beweise oder zumindest Beweisskizzen, damit man sieht wie alles zusammen spielt?}
 
 \begin{proposition}[$\psi_{ast}$ fällt schnell ab]
 \label{prop:shearlets_decay_rapidly}
@@ -85,10 +87,12 @@ und es gilt
 \section{\texorpdfstring{Zwei nützliche Substitionen für  $\left<\psi_{ast}, f\right>$}{zwei nützliche Substitutionen}}
 \label{sec:substitutionen}
 
+\todo[color=green]{mit $(\omega, k)$ als Variablennamen arbeiten, um zum Rest des Textes zu passen, oder mit $(\xi_1, \xi_2)$ um zu \textcite{Kutyniok2008} zu passen?}
+
 Zunächst werden wir zwei verschiedene Ausdrücke für $\left<\psi_{ast}, f\right>$
 im Fourierraum herleiten, welche fast immer Ausgangspunkt für unsere Abschätzungen sein werden.
 
-Sei also $\psi$ ein Shearlet wie in Korollar \ref{cor:psi_hat}. Sei $f$ die zu
+Sei also $\psi$ ein Shearlet wie in \cref{cor:psi_hat}. Sei $f$ die zu
 analysierende fouriertransformierbare Funktion (oder Distribution) in
 $\mathcal{D}' (\mathbb{R}^2)$. Dann ist $\mathcal{S}_f (ast)$ gegeben durch
 
@@ -120,6 +124,8 @@ a^{-\frac{1}{2}} \left(\frac{\xi_2}{\xi_1} - s\right) &=\frac{k_2}{k_1}\\
 \end{equation*}
 
 ergibt sich folgendes für $\left<\psi_{ast}, f\right>$:
+
+\todo{\texttt{owntag} fixen}
 
 \begin{align}
     \left\langle\psi_{ast},f\right\rangle
@@ -156,12 +162,12 @@ gewählt werden, wodurch alle Parameter $(a,s,t)$ aus den Argumenten von $\hat\p
 verschwinden und sich
 
 \begin{align}
-\owntag[substitution2]{Substitution 2}
     \left<\psi_{ast},f\right>
     =  \iint a^{-\frac{3}{4}}~ k_1~ \hat \psi_1(k_1)~ \hat \psi_2 (k_2)~
     \hat f \left(\tfrac{k_1}{a}, k_1 \left(a^{-\frac{1}{2}}k_2 + s a^{-1}\right)\right)
     ~e^{-i k_1 \left(\frac{t_1+s t_2}{a} + \frac{k_2 t_2}{\sqrt{a}}\right)}
     \d k_1 \d k_2
+\owntag[substitution2]{Substitution 2}
 \end{align}
 
 ergibt. Dabei ist zu beachten, dass diese Substitution zulässig ist, obwohl sie
