@@ -35,7 +35,7 @@ Die perverse Windung zweier Funktionen ist definiert wie folgt:
 
 Bevor wir uns aber der Wellenfrontmenge widmen können, brauchen wir einen Ausdruck für die Fouriertransformierte $\rwhat{\Delta}_m^{\circledast 2}$ von $\Delta_m^{\star 2}$.
 
-\subsection{\texorpdfstring{$\Delta$ berechnen}
+\subsection{\texorpdfstring{$\hat\Delta_m^{\circledast 2}$ berechnen}
             {delta_m2_twisted berechnen}} % (fold)
 \label{sec:delta_m2_twisted_berechnen}
 
@@ -52,9 +52,10 @@ Sammeln wir zunächst einmal die Zutaten, die wir für die perverse Windung der 
         \end{pmatrix}
         \\ \textrm{die kanonische symplektische Matrix auf } \mathbb{R}^n
     \end{dmath*}
+    \label{eq:material_fuer_delta_m2_twisted}
 \end{dgroup}
 
-mit der Definition aus \ref{def:twisted_convolution} erhalten wir also
+mit der Definition aus \ref{def:twisted_convolution} und \eqref{eq:material_fuer_delta_m2_twisted} erhalten wir also
 
 \begin{dmath}
     \rwhat{\Delta}_m^{\circledast 2} (\omega, k)
@@ -67,7 +68,7 @@ mit der Definition aus \ref{def:twisted_convolution} erhalten wir also
     \d \omega' \d k'
 \end{dmath}
 
-und damit das selbe Integral wie in \eqref{eq:mass_shell_convolution} bis auf einen zusätzlichen Phasenfaktor. Nachdem wir gezeigt haben, dass auch dieser Poincare-Invariant ist, können wir das Integral mit dem selben Trick wie in Abschnitt \ref{sec:delta_m2_berechnen} berechnen.
+und damit das selbe Integral wie in \eqref{eq:mass_shell_convolution} bis auf einen zusätzlichen Phasenfaktor. Nachdem wir gezeigt haben, dass auch dieser Lorenz-Invariant ist, können wir das Integral mit dem selben Trick wie in Abschnitt \ref{sec:delta_m2_berechnen} berechnen.
 
 \begin{proposition}[$\Omega_{std}$ ist Lorenz-invariant für $n=2$]
 \label{prop:omega_ist_lorenz_invariant}
@@ -108,7 +109,7 @@ Abschnitt \ref{sec:delta_m2_berechnen} berechnet und ist
 A = \frac{\omega^2-3m^2}{\omega \sqrt{\omega^2-4m^2}}
 \end{equation*}
 
-Der Phasenfaktor nimmt bei den Kreuzungspunkten adsföl fadmdsaf ökan
+Der Phasenfaktor nimmt bei den Kreuzungspunkten folgende Werte an:
 \begin{dmath*}
     e^{\frac{i}{2}\Omega \left((\omega, k),(\omega'_0,k'_{0\pm})\right)}
     =
@@ -166,25 +167,24 @@ Und mit Lorenz-Invarianz erhalten wir schließlich
     \begin{minipage}{0.45\textwidth}
         \centering
         \resizebox{\textwidth}{!}{\input{images/delta_m2_twisted_k0.pgf}}
-        \caption{Plot von $\left.\hat{\Delta_m}^{\circledast 2}\right|_{k=0}$ um das asymptotische Verhalten für $\omega \rightarrow 0$ und $\omega \rightarrow \infty$ zu verdeutlichen}
+        \caption{Plot von $\left.\hat{\Delta}_m^{\circledast 2}\right|_{k=0}$ um das asymptotische Verhalten für $\omega \rightarrow 0$ und $\omega \rightarrow \infty$ zu verdeutlichen}
         \label{fig:delta_2m_twisted_k0}
     \end{minipage}
 \end{figure}
 
 \subsubsection{Fall $|s| > 1$}
-Wir bedienen uns wieder genau des selben Arguments, wie in \eqref{eq:delta_m2_s>1}
+Wir bedienen uns wieder genau des selben Arguments, wie in \eqref{eq:delta_m2_s>1} und dürfen direkt schreiben:
 
 \begin{equation}
 \label{eq:delta_m2_twisted_s=1}
     \left\langle\hat\psi_{ast}, \rwhat{\Delta}_m^{\circledast 2}\right\rangle
-    = 0
+    = 0 \condition{für alle $a$ klein genug}
 \end{equation}
 
-für $a$ klein genug.
 
 \subsubsection*{Fall $|s| < 1, (x,t) \neq 0$}
 Da
-$\rwhat\Delta_m^{\circledast 2} = \rwhat\Delta_m^{\circledast 2} \cos(\dots)$ können wir direkt mit dem Ausdruck \eqref{eq:psi_ast_delta_m2_s<1} $\cdot \cos$ weiter arbeiten.
+$\rwhat\Delta_m^{\circledast 2} = \rwhat\Delta_m^{* 2} \cos(\dots)$ können wir direkt mit dem Ausdruck \eqref{eq:psi_ast_delta_m2_s<1} $\cdot \cos$ weiter arbeiten.
 
 \todo{Referenz zu Delta_m2 s<1 einfügen und argumentieren, dass wir genau die selben Abschätzungen machen.}
 
@@ -219,9 +219,9 @@ $\rwhat\Delta_m^{\circledast 2} = \rwhat\Delta_m^{\circledast 2} \cos(\dots)$ k�
 
 
 \subsubsection*{Fall $|s| < 1, (x,t) = 0$}
-In diesem Fall lassen wir den $\cos$-Faktor in \eqref{eq:delta_m2_twisted_s<1} in der ersten Ungleichung nicht heraus fallen, dafür wird der $e^\dots$-Faktor 1. Den $\cos$-schreiben wir als Summe von $e$-Funktionen und erhalten
+In diesem Fall lassen wir den $\cos$-Faktor in \eqref{eq:delta_m2_twisted_s<1} in der ersten Ungleichung nicht heraus fallen, dafür wird der $e^\cdots$-Faktor 1. Den $\cos$-Faktor schreiben wir als Summe von $e$-Funktionen und erhalten
 
-\todo[color=red]{das wird so nix, wie bringe ich den cosinus dazu, zu regeln? Reed Simons nachlesen?}
+\todo{\dots in exp durch ---"--- ersetzen}
 
 \begin{dmath}
     \left\langle \rwhat{\psi}_{ast},\rwhat{\Delta}_m^{\circledast 2}

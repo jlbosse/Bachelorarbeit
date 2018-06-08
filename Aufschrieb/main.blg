@@ -1,11 +1,11 @@
 [0] Config.pm:302> INFO - This is Biber 2.11
 [0] Config.pm:305> INFO - Logfile is 'main.blg'
-[52] biber:313> INFO - === Do Jun  7, 2018, 21:27:13
-[91] Biber.pm:371> INFO - Reading 'main.bcf'
-[202] Biber.pm:857> INFO - Found 1 citekeys in bib section 0
-[225] Biber.pm:3976> INFO - Processing section 0
-[245] Biber.pm:4136> INFO - Looking for bibtex format file 'literature.bib' for section 0
-[246] bibtex.pm:1500> INFO - LaTeX decoding ...
-[260] bibtex.pm:1316> INFO - Found BibTeX data source 'literature.bib'
-[294] Utils.pm:209> ERROR - BibTeX subsystem: /tmp/4FMTfapPUy/literature.bib_11886.utf8, line 38, syntax error: found "{jabref-meta: databaseType:bibtex;}", expected "="
-[294] Biber.pm:114> INFO - ERRORS: 1
+[46] biber:313> INFO - === Fr Jun  8, 2018, 00:08:48
+[79] Biber.pm:371> INFO - Reading 'main.bcf'
+[185] Biber.pm:857> INFO - Found 1 citekeys in bib section 0
+[211] Biber.pm:3976> INFO - Processing section 0
+[236] Biber.pm:4136> INFO - Looking for bibtex format file 'literature.bib' for section 0
+[238] bibtex.pm:1500> INFO - LaTeX decoding ...
+[249] bibtex.pm:1316> INFO - Found BibTeX data source 'literature.bib'
+[283] Utils.pm:209> ERROR - BibTeX subsystem: /tmp/AhvjZu4yN4/literature.bib_16763.utf8, line 38, syntax error: found "{jabref-meta: databaseType:bibtex;}", expected "="
+[283] Biber.pm:114> INFO - ERRORS: 1

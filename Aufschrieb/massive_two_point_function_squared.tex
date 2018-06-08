@@ -101,9 +101,9 @@ Wenn wir nun \eqref{eq:schulgeometrie2} und \eqref{eq:schulgeometrie3} sowie die
 Jetzt erhalten wir $\rwhat{\Delta_m}^{*2}(\omega, k)$ noch aus der Poincare-Invarianz:
 
 \begin{dmath}
-    \rwhat{\Delta_m}^{*2}(\omega, k)
+    \rwhat{\Delta}_m^{*2}(\omega, k)
     \stackrel{(\omega,k) \sim (\sqrt{\omega^2-k^2},0)}{=}
-    \rwhat{\Delta_m}^{*2}(\sqrt{\omega^2-k^2},0)
+    \rwhat{\Delta}_m^{*2}(\sqrt{\omega^2-k^2},0)
     = 2 \frac{\omega^2-k^2-3m^2}
               {\sqrt{\omega^2-k^2}\sqrt{\omega^2-k^2-4m^2}}
               \Theta(\omega^2-k^2-4m^2)
@@ -117,7 +117,7 @@ Es ist zu beachten, dass die Heaviside-Funktion genau bei der ersten Nullstelle 
     \begin{minipage}{0.55\textwidth}
         \centering
         \resizebox{\textwidth}{!}{\input{images/delta_m2.pgf}} %
-        \caption{Plot von $\hat{\Delta_m}^{*2}$ und $\hat{\Delta_m}$.
+        \caption{Plot von $\hat{\Delta}_m^{*2}$ und $\hat{\Delta}_m$.
         Je weiter wir uns von der 2m-Massenschale wegbewegen, desto konstanter
         wird $\hat{\Delta_m}^{*2}$ und ist singulär genau auf der $2m$-Massenschale}
         \label{fig:delta_2m}
@@ -142,9 +142,9 @@ Genau wie im Fall $s \neq 1$ bei der massiven Zweipunktfunktion (vgl. \ref{sec:d
 
 \begin{align}
 \label{eq:delta_m2_s>1}
-    supp (\hat\psi_{ast}) \cap supp (\rwhat{\Delta_m}^{*2}) = \varnothing
+    supp (\hat\psi_{ast}) \cap supp (\rwhat{\Delta}_m^{*2}) = \varnothing
     \Rightarrow
-    \left\langle\hat\psi_{ast}, \rwhat{\Delta_m}^{*2}\right\rangle = 0
+    \left\langle\hat\psi_{ast}, \rwhat{\Delta}_m^{*2}\right\rangle = 0
 \end{align}
 
 gilt.
@@ -256,7 +256,7 @@ Und da Shearlets nach Proposition \ref{prop:shearlets_decay_rapidly} schnell abf
 
 \begin{dmath}
 \label{eq:psi_ast_delta_m2}
-    \left\langle \hat\psi_{ast},\rwhat{\Delta_m}^{*2} \right\rangle
+    \left\langle \hat\psi_{ast},\rwhat{\Delta}_m^{*2} \right\rangle
     =
     2 a^{-\frac{3}{4}} \int
     \frac{
@@ -398,7 +398,7 @@ Nun ist es an der Zeit für das alte Spiel von "`finde eine integrierbare Majora
     }
     {
         \sqrt{k' + k_0}\cancel{\sqrt{2}} \cancel{\sqrt{2}}
-    }
+    }\Theta(k')
     \leq
     \frac{\textrm{const}}{\sqrt{k'}}
     \left(
@@ -406,7 +406,7 @@ Nun ist es an der Zeit für das alte Spiel von "`finde eine integrierbare Majora
         - \frac{a^{\frac{1}{2}}\omega^2(k'+k_0)^2}{\sqrt{k'+k_0}}
         + \frac{a^{\frac{3}{2}}m^2}{\sqrt{k'+k_0}}
         + \frac{O\left(a^{\frac{7}{2}}\right)}{\sqrt{k_0}}
-    \right)
+    \right)\Theta(k')
     =
     \frac{\textrm{const}}{\sqrt{k'}}
     \Bigg(
@@ -414,7 +414,7 @@ Nun ist es an der Zeit für das alte Spiel von "`finde eine integrierbare Majora
         + \underbrace{\frac{a^{\frac{3}{2}}m^2}
                     {\sqrt{\frac{2m^2}{\omega^2}a^{\frac{3}{2}}+O(a^{\frac{7}{2}})}}}_{O\left(a^{\frac{3}{4}}\right)}
         + \dots
-    \Bigg)
+    \Bigg)\Theta(k')
     \leq
     \frac{\textrm{const}}{\sqrt{k'}}\Theta(k')
 \end{dmath*}
@@ -445,7 +445,7 @@ und wir können also schreiben
 \todo{Tief in uns drinnen, wissen wir alle, dass die Behauptung mit dem $O(x^{-1})$ stimmt, müssen wir sie also wirklich noch zeigen?}
 
 \begin{dmath*}
-    \hat f_a(\omega) \rightarrow \hat f_0(\omega)
+    \hat f_a(\omega) \hiderel \rightarrow \hat f_0(\omega)
     =
     \int \omega\, \hat\psi_2(k)\, \Theta(k)\, e^{-i\omega k \frac{x'}{\sqrt{a}}} \d k
     = \omega (\hat\psi_2 \cdot \Theta)^\vee (-\omega x'/\sqrt a)
@@ -500,10 +500,10 @@ Setzen wir dies nun schließlich wieder in unseren letzten Ausdruck in \eqref{eq
 
 Wenn wir die Ergebnisse aus \eqref{eq:delta_m2_s>1}, \eqref{eq:delta_m2_s<1} und \eqref{eq:delta_m2_s=1} zusammenfassen, haben wir für die Wellenfrontmenge von $\rwhat{\Delta}_m^{*2}$
 
-\begin{table}[]
+\begin{table}[h]
 \centering
 \label{tab:wavefrontset_delta_m2}
-\begin{tabular}{l|llll}
+\begin{tabular}{l|cccc}
         & $(t',x') = 0$      & $t'=x' \neq 0$     & $t'=-x' \neq 0$    & $t' \neq \pm x'$ \\ \hline
 $s=1$   & $a^{-\frac{3}{4}}$ & $a^{-\frac{1}{4}}$ & $a^k$              & $a^k$            \\
 $s=-1$  & $a^{-\frac{3}{4}}$ & $a^k$              & $a^{-\frac{1}{4}}$ & $a^k$            \\
