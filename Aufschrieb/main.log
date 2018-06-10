@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Arch Linux) (preloaded format=pdflatex 2018.4.18)  10 JUN 2018 17:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Arch Linux) (preloaded format=pdflatex 2018.4.18)  10 JUN 2018 19:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2692,7 +2692,7 @@ b></usr/share/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texmf-
 dist/fonts/type1/urw/palatino/uplbi8a.pfb></usr/share/texmf-dist/fonts/type1/ur
 w/palatino/uplr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplri8a.p
 fb>
-Output written on main.pdf (27 pages, 637384 bytes).
+Output written on main.pdf (27 pages, 637388 bytes).
 PDF statistics:
  479 PDF objects out of 1000 (max. 8388607)
  409 compressed objects within 5 object streams

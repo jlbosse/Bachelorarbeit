@@ -1,13 +1,13 @@
 [0] Config.pm:302> INFO - This is Biber 2.11
-[1] Config.pm:305> INFO - Logfile is 'main.blg'
-[47] biber:313> INFO - === Fr Jun  8, 2018, 15:48:14
-[89] Biber.pm:371> INFO - Reading 'main.bcf'
-[197] Biber.pm:857> INFO - Found 2 citekeys in bib section 0
-[220] Biber.pm:3976> INFO - Processing section 0
-[238] Biber.pm:4136> INFO - Looking for bibtex format file 'literature.bib' for section 0
-[240] bibtex.pm:1500> INFO - LaTeX decoding ...
-[253] bibtex.pm:1316> INFO - Found BibTeX data source 'literature.bib'
-[255] Utils.pm:193> WARN - month field 'oct' in entry 'Kutyniok2008' is not an integer - this will probably not sort properly.
-[296] Utils.pm:209> ERROR - BibTeX subsystem: /tmp/iW7AA0DKMd/literature.bib_15906.utf8, line 38, syntax error: found "{jabref-meta: databaseType:bibtex;}", expected "="
-[296] Biber.pm:110> INFO - WARNINGS: 1
-[296] Biber.pm:114> INFO - ERRORS: 1
+[0] Config.pm:305> INFO - Logfile is 'main.blg'
+[53] biber:313> INFO - === So Jun 10, 2018, 19:54:29
+[99] Biber.pm:371> INFO - Reading 'main.bcf'
+[204] Biber.pm:857> INFO - Found 2 citekeys in bib section 0
+[227] Biber.pm:3976> INFO - Processing section 0
+[247] Biber.pm:4136> INFO - Looking for bibtex format file 'literature.bib' for section 0
+[259] bibtex.pm:1500> INFO - LaTeX decoding ...
+[272] bibtex.pm:1316> INFO - Found BibTeX data source 'literature.bib'
+[274] Utils.pm:193> WARN - month field 'oct' in entry 'Kutyniok2008' is not an integer - this will probably not sort properly.
+[315] Utils.pm:209> ERROR - BibTeX subsystem: /tmp/hxX87vurHs/literature.bib_27570.utf8, line 38, syntax error: found "{jabref-meta: databaseType:bibtex;}", expected "="
+[316] Biber.pm:110> INFO - WARNINGS: 1
+[316] Biber.pm:114> INFO - ERRORS: 1
