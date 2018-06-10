@@ -50,7 +50,7 @@ Also gilt
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection*{Fall $s=1$}
 \paragraph*{Intuition}
-Für $s=1$ schneidet die Diagonale  $supp (\hat \psi_{ast})$ auf der ganzen Länge. Der Betrag von $\hat\psi_{ast}$ skaliert mit $a^{\frac{3}{4}}$ und die Länge von $supp (\hat \psi_{ast})$ entlang der Diagonalen mit $a^{-1}$. Also erwarten wir schlimmstenfalls $\left< \hat \psi_{a1t}, \hat\Delta_m\right> = O\left(a^-{\frac{1}{4}}\right)$. Aber nur wenn die Wellenfronten von $e^{-i\omega t'+i k x'}$ parallel zu der Singularität und damit der Diagonalen liegen. Andernfalls erwarten wir, dass die immer schneller werdenden Oszillationen der Phase sich gegenseitig auslöschen.
+Für $s=1$ schneidet die Diagonale  $supp (\hat \psi_{ast})$ auf der ganzen Länge. Der Betrag von $\hat\psi_{ast}$ skaliert mit $a^{\frac{3}{4}}$ (vgl. \cref{eq:hat_psi_ast}) und die Länge von $supp (\hat \psi_{ast})$ entlang der Diagonalen mit $a^{-1}$ (vgl. \cref{eq:hat_psi_ast}). Also erwarten wir schlimmstenfalls $\left< \hat \psi_{a1t}, \hat\Delta_m\right> = O\left(a^-{\frac{1}{4}}\right)$. Aber nur wenn die Wellenfronten von $e^{-i\omega t'+i k x'}$ parallel zu der Singularität und damit der Diagonalen liegen. Andernfalls erwarten wir, dass die immer schneller werdenden Oszillationen der Phase sich gegenseitig auslöschen.
 
 \paragraph*{Fleißige Analysis}
 \begin{align}
@@ -82,7 +82,9 @@ Für $s=1$ schneidet die Diagonale  $supp (\hat \psi_{ast})$ auf der ganzen Län
 Der Integrand lässt sich nun durch $\hat \psi_1(\omega) \left\lVert \hat\psi_2\right\lVert_\infty$ majorisieren und wir dürfen Lebesgue verwenden um Integral und Grenzwert $a \rightarrow 0$ zu vertauschen
 
 \begin{dmath}
- = a^{-\frac{1}{4}} \int \hat \psi_1(\omega) \hat \psi_2 (0)
+\lim_{a \to o}
+\left\langle\hat \psi_{a1t} ,\hat \Delta_m\right\rangle
+= a^{-\frac{1}{4}} \int \hat \psi_1(\omega) \hat \psi_2 (0)
     e^{-i\omega \left(\frac{t'-x'}{a}\right)}
 = a^{-\frac{1}{4}} \hat \psi_2 (0) \psi_1\left(\frac{t'-x'}{a}\right)
 \\

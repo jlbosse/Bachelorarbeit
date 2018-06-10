@@ -8,30 +8,29 @@
          {wellenfrontmenge von delta_m2_twisted}} % (fold)
 \label{sec:die_wellenfrontmenge_von_delta_m2_twisted}
 
-\todo{herausfinden, was für ein Symbol man für dieses verdrehte Produkt verwendet}
-
-Hier gehört wohl erstmal Text hin, was diese perverse Windung = (twisted convolution) überhaupt zu bedeuten hat. Leider weiß ich das selber noch nicht.
+Hier gehört wohl erstmal Text hin, was diese verdrehte Faltung überhaupt zu bedeuten hat. Leider weiß ich das selber noch nicht.
 
 
-Die perverse Windung zweier Funktionen ist definiert wie folgt:
+Die verdrehte Faltung zweier Funktionen ist definiert wie folgt:
 
-\todo{twisted convolution definieren, oder twisted product definieren und zeigen, dass dann der Faltungssatz zu dem mit der twisted convolution wird?}
+\todo{verdrehte Faltung definieren, oder sternprodukt definieren und zeigen, dass dann der Faltungssatz zu dem mit der verdrehte Faltung wird?}
 
-\begin{definition}[perverse Windung]
+\begin{definition}[verdrehte Faltung]
+\footnote{jetzt noch die Enden verkleben, und fertig ist das Möbiusband}
 \label{def:twisted_convolution}
-    Seien $f,g \in $ "`passender Funktionen/Distributionenraum'". Sei $\Omega \in \mathbb{R}^{n \times n}$ eine symplektische Matrix. Dann ist die perverse Windung $(f \circledast g) (x)$ definiert als
+    Seien $f,g \in $ "`passender Funktionen/Distributionenraum'". Sei $\Omega \in \mathbb{R}^{n \times n}$ eine symplektische Matrix. Dann ist die verdrehte Faltung $(f \circledast g) (x)$ definiert als
 
     \begin{equation}
         (f \circledast g) \,(x) \coloneqq
         \int f(y) g(x-y)e^{\frac{i}{2} \Omega(x,y)} \d y
     \end{equation}
 
-    Die perverse Windung ist also einfach die gewöhnliche Faltung, die noch mit einem Ortsabhängigen Phasenfaktor verziert wurde.
+    Die verdrehte Faltung ist also einfach die gewöhnliche Faltung, die noch mit einem ortsabhängigen Phasenfaktor verziert wurde.
 \end{definition}
 
 
 
-\todo{Gibt es schon eine Übersetzung für twisted convolution?}
+\todo{Gibt es schon eine Übersetzung für verdrehte Faltung?}
 
 Bevor wir uns aber der Wellenfrontmenge widmen können, brauchen wir einen Ausdruck für die Fouriertransformierte $\rwhat{\Delta}_m^{\circledast 2}$ von $\Delta_m^{\star 2}$.
 
@@ -39,7 +38,7 @@ Bevor wir uns aber der Wellenfrontmenge widmen können, brauchen wir einen Ausdr
             {delta_m2_twisted berechnen}} % (fold)
 \label{sec:delta_m2_twisted_berechnen}
 
-Sammeln wir zunächst einmal die Zutaten, die wir für die perverse Windung der massiven Zweipunktfunktion mit sich selber brauchen:
+Sammeln wir zunächst einmal die Zutaten, die wir für die verdrehte Faltung der massiven Zweipunktfunktion mit sich selber brauchen:
 
 \begin{dgroup}
     \begin{dmath}
@@ -95,6 +94,8 @@ und damit das selbe Integral wie in \cref{eq:mass_shell_convolution} bis auf ein
 \end{proposition}
 
 Mit \cref{prop:omega_ist_lorenz_invariant} ist $\rwhat{\Delta}_m^{\circledast 2}$ Lorenz-Invariant und es reicht aus $\rwhat{\Delta}_m^{\circledast 2} (\omega, 0)$ zu berechnen.
+
+\todo{herausfinden, warum hier Satz statt Proposition geschrieben wird... Warum ist cleverref nicht so clever?}
 
 Die beiden Kreuzungspunkte der $\delta$-Distributionen liegen bei (vgl. \cref{fig:mass_shell_convolution})
 
@@ -173,7 +174,7 @@ Und mit Lorenz-Invarianz erhalten wir schließlich
     \end{minipage}
 \end{figure}
 
-\subsubsection{Fall $|s| > 1$}
+\subsubsection*{Fall $|s| > 1$}
 Wir bedienen uns wieder genau des selben Arguments, wie in \cref{eq:delta_m2_s>1} und dürfen direkt schreiben:
 
 \begin{equation}
@@ -185,7 +186,7 @@ Wir bedienen uns wieder genau des selben Arguments, wie in \cref{eq:delta_m2_s>1
 
 \subsubsection*{Fall $|s| < 1, (x,t) \neq 0$}
 Da
-$\rwhat\Delta_m^{\circledast 2} = \rwhat\Delta_m^{* 2} \cos(\dots)$ können wir direkt mit dem Ausdruck \cref{eq:psi_ast_delta_m2_s<1} $\cdot \cos$ weiter arbeiten.
+$\rwhat\Delta_m^{\circledast 2} = \rwhat\Delta_m^{* 2} \cos(\dots)$ können wir direkt mit dem Ausdruck \cref{eq:psi_ast_delta_m2_s<1} $\cdot \cos$ weiter arbeiten und genau die selben Abschätzungen machen. cos ist bekanntermaßen beschränkt.
 
 \todo{Referenz zu Delta_m2 s<1 einfügen und argumentieren, dass wir genau die selben Abschätzungen machen.}
 
@@ -273,7 +274,12 @@ In diesem Fall lassen wir den $\cos$-Faktor in \cref{eq:delta_m2_twisted_s<1} in
     =
     2 a^{-\frac{3}{4}} \int
     \underbrace{
-    (\hat\psi_1 \circ \sqrt{\cdot })^\vee \left(\frac{\Delta s}{4a^2}\right)}_{
+    \left\{
+    (\hat\psi_1 \circ \sqrt{\cdot })^\vee
+    \left(\frac{\Delta s}{4a^2}\right)
+     + (\hat\psi_1 \circ \sqrt{\cdot })^\vee
+    \left(-\frac{\Delta s}{4a^2}\right)
+    \right\}}_{
     \sim O(a^k) ~\forall k \in \mathbb{N}
     }
     \psi_2(k) \d k
@@ -281,14 +287,14 @@ In diesem Fall lassen wir den $\cos$-Faktor in \cref{eq:delta_m2_twisted_s<1} in
 \label{eq:delta_m2_twisted_s<1_x=0}
 \end{dmath}
 
-\todo[color=red]{Schritt von dritte in die vierte Zeile rechtfertigen. Vermutlich nicht einfach...}
+\todo[color=red]{Schritt von dritte in die vierte Zeile rechtfertigen. Ist wieder die Geschichte vom "`halben Lebesgue"'}
 
 wobei bei der Substition $\omega \to \sqrt{\omega}$ in der zweiten Zeile wichtig ist, dass $0 \notin supp (\hat\psi_1)$, also auch nach der Substitution noch $\hat\psi_1 \in C_c^\infty (\mathbb{R})$ ist.
 
 
 \subsubsection*{Fall $s = -1$}
 
-Da $\rwhat\Delta_m^{\circledast 2} = \rwhat\Delta_m^{* 2} \cos(\dots)$ ist, haben wir bis auf den $\cos$-Faktor die selben Analysis zu betreiben, die uns schließlich
+Da $\rwhat\Delta_m^{\circledast 2} = \rwhat\Delta_m^{* 2} \cos(\dots)$ ist, haben wir bis auf den $\cos$-Faktor die selben Analysis zu betreiben, wie für $\rwhat\Delta_m^{*2}$.
 
 \todo{ordentliche Formulierung und ordentliche Referenzen einfügen}
 
@@ -448,7 +454,7 @@ Nun betrachten wir $\hat f_a(\omega)$ und erhalten analog zu
            }
      + (\textrm{anderer Term})
      \bigg]
-     = O\left(a^{\frac{3}{2}}\right)
+     \sim O\left(a^{\frac{3}{2}}\right)
 \end{dmath*}
 
 Also dürfen wir für $a \to 0$ schreiben $\hat f_a(\omega) = C a^{\frac{3}{2}} + o\left(a^{\frac{3}{2}}\right)$ und landen bei

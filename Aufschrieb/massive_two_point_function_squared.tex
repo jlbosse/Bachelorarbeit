@@ -16,12 +16,22 @@ Bevor wir die Wellenfrontmenge von $\Delta_m^2$ berechnen können, benötigen wi
 
  Gemäß dem Faltungssatz gilt $\rwhat{\Delta_m^2} = \rwhat \Delta_m * \rwhat \Delta_m = \rwhat\Delta_m^{*2}$. Wir müssen also die Faltung von $\rwhat \Delta_m$ mit sich selber ausrechnen.
 
+
+Das Faltungsintegral ist
+
+\begin{equation}
+    \rwhat{\Delta}_m^{* 2} (\omega, k)
+    = \int \theta(\omega') \delta(\omega^{\prime 2}-k^{\prime2}-m^2)\theta(\omega-\omega')
+      \delta((\omega-\omega')^2-(k-k')^2-m^2) \d \omega' \d k'
+\label{eq:mass_shell_convolution}
+\end{equation}
+
 \begin{figure}[h]
     \centering
     \begin{minipage}{0.5\textwidth}
         \centering
         \resizebox{\textwidth}{!}{\input{images/mass_shell_convolution.pgf}} %
-        \caption{Das zu berechnende Integral aus \cref{eq:mass_shell_convolution} visualisiert}
+        \caption{Das zu berechnende Integral aus \cref{eq:mass_shell_convolution} visualisiert für $k=0$}
         \label{fig:mass_shell_convolution}
     \end{minipage}\hfill
     \begin{minipage}{0.5\textwidth}
@@ -32,15 +42,8 @@ Bevor wir die Wellenfrontmenge von $\Delta_m^2$ berechnen können, benötigen wi
     \end{minipage}
 \end{figure}
 
-\begin{equation}
-    \rwhat{\Delta}_m^{* 2} (\omega, k)
-    = \int \theta(\omega') \delta(\omega^{\prime 2}-k^{\prime2}-m^2)\theta(\omega-\omega')
-      \delta((\omega-\omega')^2-(k-k')^2-m^2) \d \omega' \d k'
-\label{eq:mass_shell_convolution}
-\end{equation}
+Da $\Delta_m$ Lorenz-invariant ist, sind $\Delta_m^2$ und $\rwhat{\Delta}_m^{*2}$ es auch. Es genügt also $\rwhat{\Delta_m^{*2}}$ für $k=0$ und positive $\omega$ zu berechnen. Alle anderen Werte holen wir uns dann aus der Lorenz-Invarianz. An \cref{fig:mass_shell_convolution} sehen wir schon, dass das Faltungsintegral \cref{eq:mass_shell_convolution} nur dann ungleich null ist, wenn $(\omega, k)$ in der 2$m$-Massenschale liegen. Es ist also insbesondere $\omega > 0$.
 
-An \cref{fig:mass_shell_convolution} sehen wir schon, dass das Faltungsintegral nur dann ungleich null ist, wenn $(\omega, k)$ in der 2$m$-Massenschale liegen. Es ist also insbesondere $\omega > 0$.
-Da $\Delta_m$ Lorenz-invariant ist, sind $\Delta_m^2$ und $\rwhat{\Delta}_m^{*2}$ es auch. Es genügt also $\rwhat{\Delta_m^{*2}}$ für $k=0$ und positive $\omega$ zu berechnen. Alle anderen Werte holen wir uns dann aus der Lorenz-Invarianz.
 
 \todo{Wie erklärt man das besser, ohne an Anschaulichkeit oder Rigorosität zu verlieren}
 Um nun das Integral über zwei sich schneidende lineare\footnote{Linear in dem Sinne, dass die Distribution entlang einer Linie getragen ist. Nicht das es eine lineare Distribution ist} $\delta$-Distributionen zu berechnen bedienen wir uns eines Physikertricks und stellen uns die $\delta$-Distribution als Grenzwert ($h \rightarrow 0$) einer $\frac{1}{h}$-hohen und $h$-breiten Rechtecksfunktion vor. Dann ist das Integral über die sich schneidenden Rechteckfunktionen proportional zu der Schnittfläche und damit zu $l \cdot h$ in \cref{fig:schulgeometrie}. Außerdem schneiden sich die beiden Hyperbeln für $\omega \rightarrow +\infty$ in einem rechten Winkel, das Faltungsintegral ergibt hier also 2 da es zwei Schnittpunkte gibt.
@@ -70,7 +73,10 @@ außerdem gilt
 Wenn wir nun \cref{eq:schulgeometrie2,eq:schulgeometrie3} sowie die vorhergehenden Gedanken kombinieren erhalten wir
 
 \begin{dmath}
-    \rwhat{\Delta_m}^{*2} (\omega, 0) = C \frac{
+    \rwhat{\Delta_m}^{*2} (\omega, 0) =
+    \eqref{eq:mass_shell_convolution}
+    =
+    C \frac{
         \left.\left(\d \omega'/\d k'\right)^2\right|_{k'_0} +1
     }
     {
@@ -94,9 +100,7 @@ Wenn wir nun \cref{eq:schulgeometrie2,eq:schulgeometrie3} sowie die vorhergehend
     \nonumber
 \end{dmath}
 
-\todo[color=green]{$supp (\psi_{ast})$ einzeichnen oder nicht in \cref{fig:delta_2m}?}
-
-Jetzt erhalten wir $\rwhat{\Delta}_m^{*2}(\omega, k)$ noch aus der Poincare-Invarianz:
+Jetzt erhalten wir $\rwhat{\Delta}_m^{*2}(\omega, k)$ für beliebige $k$ noch aus der Lorenz-Invarianz:
 
 \begin{dmath}
     \rwhat{\Delta}_m^{*2}(\omega, k)
@@ -128,19 +132,23 @@ Es ist zu beachten, dass die Heaviside-Funktion genau bei der ersten Nullstelle 
     \end{minipage}
 \end{figure}
 
-\todo{spacing der figures anpassen. Monster hässliche Hüte korrigieren...}
+
+\todo[color=green]{$supp (\psi_{ast})$ einzeichnen oder nicht in \cref{fig:delta_2m}?}
+
+
+\todo{spacing der figures anpassen}
 
 \subsection{\dots und nun zur Wellenfrontmenge} % (fold)
 \label{sec:dots_und_nun_zur_wellenfrontmenge}
 
-Mit diesen Ausdrücken für $\rwhat{\Delta}_m^{*2}$ können wir uns nun der Wellenfrontmenge widmen.
+Mit diesem Ausdruck für $\rwhat{\Delta}_m^{*2}$ können wir uns nun der Wellenfrontmenge widmen.
 
 \subsubsection*{\texorpdfstring{Fall $|s|>1$}{Fall s>1}}
 Genau wie im Fall $s \neq 1$ bei der massiven Zweipunktfunktion (vgl. \cref{sec:die_wellenfrontmenge_von_delta_m}) ist hier nichts zu tun, da für $a$ klein genug wieder
 
 \begin{align}
     supp (\hat\psi_{ast}) \cap supp (\rwhat{\Delta}_m^{*2}) = \varnothing
-    \Rightarrow
+    ~~\Longrightarrow~~
     \left\langle\hat\psi_{ast}, \rwhat{\Delta}_m^{*2}\right\rangle = 0
 \label{eq:delta_m2_s>1}
 \end{align}
@@ -463,11 +471,12 @@ und wir können also schreiben
                     = O\left(a^{\frac{1}{2}}\right)
                    }
              \bigg]
-    = O \left(a^{\frac{1}{2}}\right)
+    \sim O \left(a^{\frac{1}{2}}\right) \condition{falls $x' \neq 0$}
+    \sim \textrm{const} \condition{falls $x'=0$}
 \label{eq:faltung_mit_1/x_rechnung}
 \end{dmath}
 
-Wir dürfen also folgende Abschätzung für $\hat f_a(\omega)$ für $a \to 0$ machen:
+Wir dürfen also, falls $x' \neq 0$, folgende Abschätzung für $\hat f_a(\omega)$ für $a \to 0$ machen:
 
 \begin{equation*}
     \hat f_a(\omega) = \omega C a^{\frac{1}{2}} +o\left(a^{\frac{1}{2}}\right)
@@ -494,7 +503,8 @@ Setzen wir dies nun schließlich wieder in unseren letzten Ausdruck in \cref{eq:
         e^{-i\omega \left(\frac{t'+x'}{a}\right)} \d \omega
     = 2 a^{-\frac{1}{4}} C \left(\omega \hat\psi_1(\omega)\right)^\vee
         \left(-\frac{t'+x'}{a}\right)
-    \sim O (a^{-\frac{1}{4}}) \condition{\textrm{falls} t' = -x'}
+    \sim O (a^{-\frac{1}{4}}) \condition{falls $t' = -x' \neq 0$}
+    \sim (a^{-\frac{3}{4}}) \condition{falls $t'=0=x'$}
     \sim O (a^k) ~~ \forall k \hiderel \in \mathbb{N}
     \condition{\textrm{sonst}}
 \end{dmath}

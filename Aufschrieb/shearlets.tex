@@ -50,7 +50,7 @@ Sei $\mathcal{R} =$ \{
     Dann gilt $sing ~supp (\psi)^c = \mathcal{R}$
 \end{corollary}
 
-\begin{remark}[Träger von $\psi$]
+\begin{remark}[Träger von $\hat\psi_{ast}$]
 
 \begin{figure}[h]
 \centering
@@ -65,6 +65,7 @@ Im Fourierraum ist $\hat{\psi}_{ast}$ gegeben durch
 
 \begin{equation}
     \hat \psi_{ast}{(\xi_1, \xi_2)} = a^{\frac{3}{4}}e^{-i\xi \cdot t}\hat\psi_1(a \xi_1) \hat\psi_{2}\left(a^{-\frac{1}{2}}\left(\frac{\xi_2}{\xi_1}-s\right)\right)
+\label{eq:hat_psi_ast}
 \end{equation}
 
 und es gilt
@@ -106,7 +107,7 @@ $\mathcal{D}' (\mathbb{R}^2)$. Dann ist $\mathcal{S}_f (ast)$ gegeben durch
 \todo{entscheiden, was mit dem fehlenden Faktor $\frac{1}{(2 \pi)^n}$ geschieht}
 und nach "`entscheren"' und "`deskalieren"', also der Substitution
 
-\begin{equation*}
+\begin{equation}
 \begin{aligned}[c]
 a \xi_1 &= k_1\\
 a^{-\frac{1}{2}} \left(\frac{\xi_2}{\xi_1} - s\right) &=\frac{k_2}{k_1}\\
@@ -116,7 +117,8 @@ a^{-\frac{1}{2}} \left(\frac{\xi_2}{\xi_1} - s\right) &=\frac{k_2}{k_1}\\
 \xi_1 &= \frac{k_1}{a}\\
 \xi_2 &= \frac{k_1 s}{a} + a^{-\frac{1}{2}} k_2\\
 \end{aligned}
-\end{equation*}
+\label{eq:substitution1_coords}
+\end{equation}
 
 \begin{equation*}
 \Rightarrow
@@ -137,11 +139,10 @@ ergibt sich folgendes für $\left<\psi_{ast}, f\right>$:
 \owntag[substitution1]{Substitution 1}
 \end{align}
 
-\todo{herausfinden, wie die Gleichungen auch Kapitelnummern erhalten}
+Wie man sieht, tauchen in den Argumente von $\hat\psi_1$ und $\hat\psi_2$ nun die Parameter $a,s,t$ gar nicht mehr auf, und wir können nun verwenden, was wir aus \ref{sec:shearlets} über deren Träger wissen.
+Alternativ und mit ähnlichem Ergebniss kann auch folgende Substitution
 
-Alternativ kann auch folgende Substitution
-
-\begin{equation*}
+\begin{equation}
 \begin{aligned}[c]
 a \xi_1 &= k_1\\
 a^{-\frac{1}{2}} \left(\frac{\xi_2}{\xi_1} - s\right) &= k_2\\
@@ -151,14 +152,15 @@ a^{-\frac{1}{2}} \left(\frac{\xi_2}{\xi_1} - s\right) &= k_2\\
 \xi_1 &= \frac{k_1}{a}\\
 \xi_2 &= \left( a^{\frac{1}{2}} k_2 +s \right) \frac{k_1}{a}\\
 \end{aligned}
-\end{equation*}
+\label{eq:substitution2_coords}
+\end{equation}
 
 \begin{equation*}
 \Rightarrow
 \d \xi_1 \d \xi_2 = a^{-\frac{3}{2}} k_1 \d k_1 \d k_2
 \end{equation*}
 
-gewählt werden, wodurch alle Parameter $(a,s,t)$ aus den Argumenten von $\hat\psi_1, \hat\psi_2$
+gewählt werden, wodurch wieder alle Parameter $(a,s,t)$ aus den Argumenten von $\hat\psi_1, \hat\psi_2$
 verschwinden und sich
 
 \begin{align}
@@ -174,4 +176,21 @@ ergibt. Dabei ist zu beachten, dass diese Substitution zulässig ist, obwohl sie
 die Orientierung \emph{nicht} erhält und \emph{keine} Bijektion ist. Aber
 der kritische Bereich, nämlich $\xi_1 = 0$, liegt nicht im Träger von $\rwhat{\psi}$.
 
-\todo{Grafik basteln, die $supp ~\psi$ vor und nach der Substitution zeigt.}
+Beiden Substitution gemein ist aber, dass danach
+$0=\omega \notin supp (\hat\psi)$ und dass $supp (\psi)$ sowohl in $k$ als auch in $\omega$ beschränkt ist. $\omega$ kann also sowohl nach unten als auch nach oben durch eine Konstante abgeschätzt werden, wannimmer dies der Sache dienlich ist. Auch $k$ kann zumindest nach oben immer durche eine Konstante abgeschätzt werden.
+
+\begin{figure}[h]
+    \centering
+    \begin{minipage}{0.5\textwidth}
+        \centering
+        \resizebox{\textwidth}{!}{\input{images/supp_psi_substitution1.pgf}} %
+        \caption{Der Träger von $\hat\psi$ vor und nach der Substitution aus \cref{eq:substitution1_coords}}
+        \label{fig:supp_psi_substitution1}
+    \end{minipage}\hfill
+    \begin{minipage}{0.5\textwidth}
+        \centering
+        \resizebox{\textwidth}{!}{\input{images/supp_psi_substitution2.pgf}}
+        \caption{Der Träger von $\hat\psi$ vor und nach der Substitution aus \cref{eq:substitution2_coords}}
+        \label{fig:supp_psi_substitution2}
+    \end{minipage}
+\end{figure}
