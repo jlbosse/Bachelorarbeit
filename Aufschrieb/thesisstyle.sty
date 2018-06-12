@@ -50,18 +50,6 @@
 \usepackage{mathtools}
 
 % Making Beweis, Satz, etc deutsch und wie sie aussehen sollen
-% \newtheoremstyle{mystyle}%
-% {9pt}{9pt}%Space above and below 9pt ist gut
-% {\addtolength{\@totalleftmargin}{2em}
-%    \addtolength{\linewidth}{-2em}
-%    \parshape 1 2em \linewidth}% Body style
-% {1em}%Heading indent amount
-% {\sffamily\bfseries}{}% Heading font and punctuation after it
-% {\newline}%Space after heading (\newline = linebreak)
-% {}
-% %{\thmname{#1} \thmnumber{(#2)} \itshape \thmnote{ #3}}% und der spannende Teil
-
-% \theoremstyle{mystyle}
 \theoremstyle{break}
 \theorembodyfont{\normalfont}
 \theoremindent2em
@@ -119,6 +107,15 @@
   \ULon%
 }
 \addtokomafont{subsubsection}{\subsectionuline}
+
+% \let\emph\relax % there's no \RedeclareTextFontCommand
+% \DeclareTextFontCommand{\emph}{\itshape\em}
+
+\makeatletter
+\DeclareRobustCommand{\em}{%
+  \@nomath\em \if b\expandafter\@car\f@series\@nil
+  \normalfont \else \itshape \fi}
+\makeatother
 
 % -----------------------------------------------------------------------------
 % % Other stuff

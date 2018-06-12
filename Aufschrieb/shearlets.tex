@@ -11,7 +11,7 @@ Eine Riesz-Basis oder Hamel-Basis für $L^2(\mathbb{R}^n)$ die aus Funktionen de
     \left\{\psi_{at}(x) = a^{-\frac{n}{2}}\psi\left(a^{-1}(x-t)\right)  | t \in \mathbb{Z}^n \textrm{ oder } t \in \mathbb{R}^n, a = 2^{-j}, j \in \mathbb{Z} \textrm{ oder } a \in \mathbb{R}\right\}
 \end{equation*}
 
-besteht heißt \textit{Waveletbasis} oder \textit{Multiskalenanlyse} für $L^2(\mathbb{R}^n)$. Der Parameter $t$ heißt \textit{Verschiebungsparameter} und verschiebt das Wavelet an alle Orte des $\mathbb{R}^n$ während der \textit{Skalierungsparameter} $a$ für $a \to 0$ immer genauer lokalisiert. Der Faktor $a^{-\frac{n}{2}}$ sorgt dafür, dass die $L^2$-Norm aller $\psi_{at}$ gleich ist. In der Fourierdomäne wird die Verschiebung zum Phasenfaktor und der Träger mit verschwindendem $a$ immer \emph{größer}. Noch einmal als Formel:
+ mit einem \textit{Mutterwavelet} $\psi \in C^\infty (\mathbb{R}^n)$ besteht heißt \textit{Waveletbasis} oder \textit{Multiskalenanlyse} für $L^2(\mathbb{R}^n)$. Der Parameter $t$ heißt \textit{Verschiebungsparameter} und verschiebt das Wavelet an alle Orte des $\mathbb{R}^n$ während der \textit{Skalierungsparameter} $a$ für $a \to 0$ immer genauer lokalisiert. Der Faktor $a^{-\frac{n}{2}}$ sorgt dafür, dass die $L^2$-Norm aller $\psi_{at}$ gleich ist. In der Fourierdomäne wird die Verschiebung zum Phasenfaktor und der Träger mit verschwindendem $a$ immer \emph{größer}. Noch einmal als Formel:
 
 \begin{align*}
     supp (\psi_{at}) &= a \cdot supp(\psi)+t \\
@@ -31,7 +31,7 @@ Ist $\psi$ eine glatte Funktion und $f$ bei $t$ glatt, so fällt $\mathcal{W}_f 
 \todo[color=green]{Kurze Plausibel machen, warum dem so ist?}
 Umgekehrt fällt auch $\mathcal{W}_f(a,t)$ \emph{genau dann} nicht schnell ab, wenn $f$ bei $t$ \emph{nicht} glatt ist. Also ist die Wavelettransformation in der Lage $sing~ supp (f)$ zu identifizieren. Allerdings sind die klassischen  Wavelettransformationen mit isotroper Skalierung nicht in der Lage die  Orientierung der Singularitäten aufzulösen. Sie besitzen ja gar keinen Orientierungsparameter.
 
-Um dem abzuhelfen, oder besser: um auch dieses Feature noch zu erhalten, gibt es verschiedene Verallgemeinerungen der Wavelets, die mit anisotropischer Skalierung und einem Richtungsparameter arbeiten. Die bekanntesten Beispiele sind die \textit{Curvelets} von \textcite{Candes2005} sowie die \textit{Shearlets} von \textcite{Kutyniok2008}. Beide Ansätze sind bisher nur in zwei Dimensionen im Detail untersucht \todo{besseres Wort} und arbeiten mit parabolischer Skalierung. Im Fall der \textit{Curvelets} wird die Richtungsabhängigkeit durch Drehmatrizen implementiert, während die \textit{Shearlets} mit Scherungen arbeiten. Konkret sieht dass dann so aus:
+Um dem abzuhelfen, oder besser: um auch dieses Feature noch zu erhalten, gibt es verschiedene Verallgemeinerungen der Wavelets, die mit anisotropischer Skalierung und einem Richtungsparameter arbeiten. Die bekanntesten Beispiele sind die \textit{Curvelets} von \textcite{Candes2005} sowie die \textit{Shearlets} von \textcite{Kutyniok2008}. Beide Ansätze sind bisher nur in zwei Dimensionen im Detail untersucht und arbeiten mit parabolischer Skalierung. Im Fall der \textit{Curvelets} wird die Richtungsabhängigkeit durch Drehmatrizen implementiert, während die \textit{Shearlets} mit Scherungen arbeiten. Konkret sieht dass dann so aus:
 
 \todo[color=green]{Hier die Formeln hin schreiben, oder ganz drauf verzichten}
 
@@ -67,6 +67,18 @@ Um dem abzuhelfen, oder besser: um auch dieses Feature noch zu erhalten, gibt es
 
 Beide Ansätze sind in der Lage, die Wellenfrontmenge einer Distribution zu identifizieren. Allerdings sind die Rechnungen bei den \textit{Shearlets} in der praktischen Umsetzung einfacher, wenn auch sie von einem ästhetischen Standpunkt nicht ganz so befriedigend, da sie nicht inhärent Rotationsinvariant sind, also nicht alle Symmetrien unseres Raumes abbilden. Aber nach allzu viel Ästhetik kann man in dieser Arbeit, mit Hinblick auf die Rechnungen ab \cref{sec:die_wellenfrontmenge_von_delta_m}, ohnehin nicht fragen.
 
+
+\todo{Abschnitt über die grundsätzlichen Erfordernisse, um eine höherdimensionale Wavelettransformation zu basteln}
+
+\begin{theorem}[admissibility condition]
+\label{thm:admissibility_criterion}
+    Falls $\psi$ und $G$ gewisse Bedingungen erfüllen, erhalten wir ein reproduzierendes System.
+    \begin{equation}
+        \Delta(\psi)(\xi) = \int_G |\hat\psi(M^t \xi)|^2 |\det M| \d \lambda(M) = 1
+    \label{eq:admissibility criterion}
+    \end{equation}
+\end{theorem}
+
 Jetzt also in mehr Details zur Konstruktion der Shearlets und deren Eigenschaften:
 
 
@@ -81,8 +93,47 @@ Jetzt also in mehr Details zur Konstruktion der Shearlets und deren Eigenschafte
 Der folgende Abschnitt basiert größtenteils auf der Arbeit in \textcite{Kutyniok2008}, allerdings wurde die Notation den später berechneten Problemen angepasst und als Ortskoordination $(t,x)$ verwendet sowie als Koordinaten des Dualraums $(\omega, k)$ entsprechend der Konvention in der Physik. Auch Fouriertransformation wird mit $e^{-i\omega t + ikx}$ gerechnet. Dies ändert allerdings nichts essentielles. Da wir später auch komplexwertige Distributionen analysieren wollen, deren Wellenfrontmenge nicht zwingend punktsymmetrisch um den Ursprung (in der Richtung, nicht im Ort) sind, werden wir Shearlets verwenden, deren Fouriertransformierte asymetrischen Träger hat, indem wir die Shearlets aus \cite{Kutyniok2008} jeweils in zwei Shearlets aufteilen, eines mit Träger im Frequenzbereich "`nach vorne"', und eines mit Träger "`nach hinten"'. \todo{Grafik mit der "Parzellierung" des Frequenzbereiches}
 
 \begin{definition}[Shearlettransformation]
-ssg
+Seien
+% \begin{dgroup*}
+\begin{equation}
+    \psi_1 \in L^2(\mathbb{R})
+            \textrm{ mit }supp(\hat\psi_1) \subseteq \left[\frac{1}{2},2\right]
+            \textrm{ und } \psi_1 \textrm{ erfüllt \cref{eq:admissibility criterion}}
+            \footnote{mit $G = (\mathbb{R}^*, \cdot), |\det M| d \lambda(M) = \frac{\d a}{a}$}
+\end{equation}
+\begin{equation}
+    \psi_2 \in L^2(\mathbb{R})
+            \textrm{ mit } supp(\hat\psi_1) \subseteq \left[-1,1\right]
+            \textrm{ und } \left\Vert\psi_2 \right\Vert_2 = 1
+\end{equation}
+% \end{dgroup*}
+und $\psi \in C^\infty(\mathbb{R}^2)$ implizit definiert durch
+
+\begin{equation}
+    \hat \psi(\omega,k) = \hat\psi_1(\omega) \hat \psi_2 \left(\frac{k}{\omega}\right)
+\end{equation}
+
+Sei des weiteren
+
+\begin{equation}
+    G = \left\{M_{as} \in GL(2,\mathbb{R}) \Big | M_{as} = \left(\begin{smallmatrix}
+        a & -\sqrt a s \\ 0 & \sqrt a
+    \end{smallmatrix}\right)
+    , a \in [0,1], s \in [-2,2]
+    \right\}
+\end{equation}
+
+Dann ist für $t \in \mathbb{R}^n, M_{as} \in G$ die Shearlettransformation von $f$ bezüglich $\psi$ definiert als
+
+\begin{equation}
+    \mathcal{S}_f(a,s,t) =
+    \left\langle D_{M_{as}}T_t\psi, f
+    \right\rangle
+    = \int f(t,x) \psi\left(\right) \d t \d x
+\end{equation}
+
 \end{definition}
+
 
 % section konstruktion_und_eigenschaften_der_shearlets (end)
 
