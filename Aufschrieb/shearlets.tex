@@ -2,10 +2,89 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % % Section 1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Shearlets} % (fold)
+\section{Wavelettransformation und die Wellenfrontmenge} % (fold)
 \label{sec:shearlets}
 
+Eine Riesz-Basis oder Hamel-Basis für $L^2(\mathbb{R}^n)$ die aus Funktionen der Form
+
+\begin{equation*}
+    \left\{\psi_{at}(x) = a^{-\frac{n}{2}}\psi\left(a^{-1}(x-t)\right)  | t \in \mathbb{Z}^n \textrm{ oder } t \in \mathbb{R}^n, a = 2^{-j}, j \in \mathbb{Z} \textrm{ oder } a \in \mathbb{R}\right\}
+\end{equation*}
+
+besteht heißt \textit{Waveletbasis} oder \textit{Multiskalenanlyse} für $L^2(\mathbb{R}^n)$. Der Parameter $t$ heißt \textit{Verschiebungsparameter} und verschiebt das Wavelet an alle Orte des $\mathbb{R}^n$ während der \textit{Skalierungsparameter} $a$ für $a \to 0$ immer genauer lokalisiert. Der Faktor $a^{-\frac{n}{2}}$ sorgt dafür, dass die $L^2$-Norm aller $\psi_{at}$ gleich ist. In der Fourierdomäne wird die Verschiebung zum Phasenfaktor und der Träger mit verschwindendem $a$ immer \emph{größer}. Noch einmal als Formel:
+
+\begin{align*}
+    supp (\psi_{at}) &= a \cdot supp(\psi)+t \\
+    \Longleftrightarrow ~~
+    supp (\hat\psi_{at}) &= a^{-1} \cdot supp(\hat\psi_{at})
+\end{align*}
+
+Ist $t \in \mathbb{Z}^n$ (oder auf einem anderen diskreten Gitter in $\mathbb{R}^n$) und $a = 2^{-j}$, so spricht man von der \textit{diskreten Wavelettransformation}. Ist $t \in \mathbb{R}^n$ und $G \subseteq GL(n,\mathbb{R})$ so ist es eine \textit{stetige Wavelettransformation} (engl. \textit{continuous wavelet transform}). Die Wavelettransformation einer Funktion (später auch temperierten Distribution) $f$ ist dann definiert als
+
+\begin{equation}
+    \mathcal{W}_f (a,t) = a^{-\frac{n}{2}} \int f(x) \psi \left(a^{-1}(x-t)\right) \d x
+\end{equation}
+
+Ist $\psi$ eine glatte Funktion und $f$ bei $t$ glatt, so fällt $\mathcal{W}_f (a,t)$ schnell ab für $a \to 0$.
+% Dies ist schnell einzusehen, wenn man sich überlegt, dass $\psi \in C^k$ impliziert, dass $\hat\psi$ eine $k$-fache Nullstelle bei $0$ hat und $\int x^l \psi(x) \d x = (-i)^{l} \partial_k^l \hat\psi(0) = 0 ~~\textrm{falls}~ l<k $.
+
+\todo[color=green]{Kurze Plausibel machen, warum dem so ist?}
+Umgekehrt fällt auch $\mathcal{W}_f(a,t)$ \emph{genau dann} nicht schnell ab, wenn $f$ bei $t$ \emph{nicht} glatt ist. Also ist die Wavelettransformation in der Lage $sing~ supp (f)$ zu identifizieren. Allerdings sind die klassischen  Wavelettransformationen mit isotroper Skalierung nicht in der Lage die  Orientierung der Singularitäten aufzulösen. Sie besitzen ja gar keinen Orientierungsparameter.
+
+Um dem abzuhelfen, oder besser: um auch dieses Feature noch zu erhalten, gibt es verschiedene Verallgemeinerungen der Wavelets, die mit anisotropischer Skalierung und einem Richtungsparameter arbeiten. Die bekanntesten Beispiele sind die \textit{Curvelets} von \textcite{Candes2005} sowie die \textit{Shearlets} von \textcite{Kutyniok2008}. Beide Ansätze sind bisher nur in zwei Dimensionen im Detail untersucht \todo{besseres Wort} und arbeiten mit parabolischer Skalierung. Im Fall der \textit{Curvelets} wird die Richtungsabhängigkeit durch Drehmatrizen implementiert, während die \textit{Shearlets} mit Scherungen arbeiten. Konkret sieht dass dann so aus:
+
+\todo[color=green]{Hier die Formeln hin schreiben, oder ganz drauf verzichten}
+
+\begin{align*}
+    \psi_{a\theta t}(x) &= \det (AR)^{-\frac{1}{2}}
+                    \psi \left((AR)^{-1}(x-t) \right)
+    \condition{für Curvelets}\\
+    \psi_{ast}(x) &= \det (AS)^{-\frac{1}{2}}
+                    \psi \left((AS)^{-1}(x-t)\right)
+    \condition{für Shearlets}
+\end{align*}
+
+\begin{dgroup*}
+\begin{dsuspend}
+    mit der parabolischen Skalierungsmatrix
+\end{dsuspend}
+\begin{dmath*}
+    A = \begin{pmatrix}  a & 0 \\ 0 & \sqrt a\end{pmatrix}
+\end{dmath*}
+\begin{dsuspend}
+    der Drehmatrix
+\end{dsuspend}
+\begin{dmath*}
+    R = \begin{pmatrix}  \cos \theta & \sin \theta \\ - \sin \theta & \cos \theta \end{pmatrix}
+\end{dmath*}
+\begin{dsuspend}
+    und der Scherungsmatrix
+\end{dsuspend}
+\begin{dmath*}
+    S = \begin{pmatrix}  1 & -s \\ 0 & 1\end{pmatrix}
+\end{dmath*}
+\end{dgroup*}
+
+Beide Ansätze sind in der Lage, die Wellenfrontmenge einer Distribution zu identifizieren. Allerdings sind die Rechnungen bei den \textit{Shearlets} in der praktischen Umsetzung einfacher, wenn auch sie von einem ästhetischen Standpunkt nicht ganz so befriedigend, da sie nicht inhärent Rotationsinvariant sind, also nicht alle Symmetrien unseres Raumes abbilden. Aber nach allzu viel Ästhetik kann man in dieser Arbeit, mit Hinblick auf die Rechnungen ab \cref{sec:die_wellenfrontmenge_von_delta_m}, ohnehin nicht fragen.
+
+Jetzt also in mehr Details zur Konstruktion der Shearlets und deren Eigenschaften:
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % Section 2, die Shearlets
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Konstruktion und Eigenschaften der Shearlets} % (fold)
+\label{sec:konstruktion_und_eigenschaften_der_shearlets}
+
 \todo[color=green]{In dieser Sektion nur die wichtigsten Ergebnisse des Papers angeben, oder auch Beweise oder zumindest Beweisskizzen, damit man sieht wie alles zusammen spielt?}
+
+Der folgende Abschnitt basiert größtenteils auf der Arbeit in \textcite{Kutyniok2008}, allerdings wurde die Notation den später berechneten Problemen angepasst und als Ortskoordination $(t,x)$ verwendet sowie als Koordinaten des Dualraums $(\omega, k)$ entsprechend der Konvention in der Physik. Auch Fouriertransformation wird mit $e^{-i\omega t + ikx}$ gerechnet. Dies ändert allerdings nichts essentielles. Da wir später auch komplexwertige Distributionen analysieren wollen, deren Wellenfrontmenge nicht zwingend punktsymmetrisch um den Ursprung (in der Richtung, nicht im Ort) sind, werden wir Shearlets verwenden, deren Fouriertransformierte asymetrischen Träger hat, indem wir die Shearlets aus \cite{Kutyniok2008} jeweils in zwei Shearlets aufteilen, eines mit Träger im Frequenzbereich "`nach vorne"', und eines mit Träger "`nach hinten"'. \todo{Grafik mit der "Parzellierung" des Frequenzbereiches}
+
+\begin{definition}[Shearlettransformation]
+ssg
+\end{definition}
+
+% section konstruktion_und_eigenschaften_der_shearlets (end)
 
 \begin{proposition}[$\psi_{ast}$ fällt schnell ab]
 \label{prop:shearlets_decay_rapidly}
