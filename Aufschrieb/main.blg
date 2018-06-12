@@ -1,13 +1,17 @@
 [0] Config.pm:302> INFO - This is Biber 2.11
 [0] Config.pm:305> INFO - Logfile is 'main.blg'
-[53] biber:313> INFO - === So Jun 10, 2018, 19:54:29
-[99] Biber.pm:371> INFO - Reading 'main.bcf'
-[204] Biber.pm:857> INFO - Found 2 citekeys in bib section 0
-[227] Biber.pm:3976> INFO - Processing section 0
-[247] Biber.pm:4136> INFO - Looking for bibtex format file 'literature.bib' for section 0
-[259] bibtex.pm:1500> INFO - LaTeX decoding ...
-[272] bibtex.pm:1316> INFO - Found BibTeX data source 'literature.bib'
-[274] Utils.pm:193> WARN - month field 'oct' in entry 'Kutyniok2008' is not an integer - this will probably not sort properly.
-[315] Utils.pm:209> ERROR - BibTeX subsystem: /tmp/hxX87vurHs/literature.bib_27570.utf8, line 38, syntax error: found "{jabref-meta: databaseType:bibtex;}", expected "="
-[316] Biber.pm:110> INFO - WARNINGS: 1
-[316] Biber.pm:114> INFO - ERRORS: 1
+[56] biber:313> INFO - === Di Jun 12, 2018, 16:56:31
+[96] Biber.pm:371> INFO - Reading 'main.bcf'
+[227] Biber.pm:857> INFO - Found 3 citekeys in bib section 0
+[250] Biber.pm:3976> INFO - Processing section 0
+[272] Biber.pm:4136> INFO - Looking for bibtex format file 'literature.bib' for section 0
+[279] bibtex.pm:1500> INFO - LaTeX decoding ...
+[301] bibtex.pm:1316> INFO - Found BibTeX data source 'literature.bib'
+[348] Utils.pm:193> WARN - ISBN '10635203' in entry 'Candes2005' is invalid - run biber with '--validate_datamodel' for details.
+[385] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[385] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
+[385] Biber.pm:3804> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'de-DE'
+[385] Biber.pm:3810> INFO - No sort tailoring available for locale 'de-DE'
+[402] bbl.pm:617> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[406] bbl.pm:720> INFO - Output to main.bbl
+[407] Biber.pm:110> INFO - WARNINGS: 1

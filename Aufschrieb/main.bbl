@@ -1,0 +1,138 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.9 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global}
+    \entry{Candes2005}{article}{}
+      \name{author}{2}{}{%
+        {{hash=47e52e423450f79070607f61a9f53828}{%
+           family={Cand{è}s},
+           familyi={C\bibinitperiod},
+           given={Emmanuel\bibnamedelima J.},
+           giveni={E\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=3a36340eb00c0787b234ca40a835340d}{%
+           family={Donoho},
+           familyi={D\bibinitperiod},
+           given={David\bibnamedelima L.},
+           giveni={D\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \strng{namehash}{37ac594642349914e34af988091cbd39}
+      \strng{fullhash}{37ac594642349914e34af988091cbd39}
+      \strng{bibnamehash}{37ac594642349914e34af988091cbd39}
+      \strng{authorbibnamehash}{37ac594642349914e34af988091cbd39}
+      \strng{authornamehash}{37ac594642349914e34af988091cbd39}
+      \strng{authorfullhash}{37ac594642349914e34af988091cbd39}
+      \field{sortinit}{C}
+      \field{sortinithash}{095692fd22cc3c74d7fe223d02314dbd}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{We discuss a Continuous Curvelet Transform (CCT), a transform f→$\Gamma$f(a,b,$\theta$) of functions f(x1,x2) on R2 into a transform domain with continuous scale a{>}0, location b∈R2, and orientation $\theta$∈[0,2$\pi$). Here $\Gamma$f(a,b,$\theta$)=〈f,$\gamma$ab$\theta$〉 projects f onto analyzing elements called curvelets $\gamma$ab$\theta$ which are smooth and of rapid decay away from an a by a rectangle with minor axis pointing in direction $\theta$. We call them curvelets because this anisotropic behavior allows them to 'track' the behavior of singularities along curves. They are continuum scale/space/orientation analogs of the discrete frame of curvelets discussed in [E.J. Cand{è}s, F. Guo, New multiscale transforms, minimum total variation synthesis: applications to edge-preserving image reconstruction, Signal Process. 82 (2002) 1519-1543; E.J. Cand{è}s, L. Demanet, Curvelets and Fourier integral operators, C. R. Acad. Sci. Paris, S{é}r. I (2003) 395-398; E.J. Cand{è}s, D.L. Donoho, Curvelets: a surprisingly effective nonadaptive representation of objects with edges, in: A. Cohen, C. Rabut, L.L. Schumaker (Eds.), Curve and Surface Fitting: Saint-Malo 1999, Vanderbilt Univ. Press, Nashville, TN, 2000]. We use the CCT to analyze several objects having singularities at points, along lines, and along smooth curves. These examples show that for fixed (x0,$\theta$0), $\Gamma$f(a,x0,$\theta$0) decays rapidly as a→0 if f is smooth near x0, or if the singularity of f at x0 is oriented in a different direction than $\theta$0. Generalizing these examples, we show that decay properties of $\Gamma$f(a,x0,$\theta$0) for fixed (x0,$\theta$0), as a→0 can precisely identify the wavefront set and the Hm-wavefront set of a distribution. In effect, the wavefront set of a distribution is the closure of the set of (x0,$\theta$0) near which $\Gamma$f(a,x,$\theta$) is not of rapid decay as a→0; the Hm-wavefront set is the closure of those points (x0,$\theta$0) where the 'directional parabolic square function' Sm(x,$\theta$)=(∫|$\Gamma$f(a,x,$\theta$)|2 da/ a3+2m)1/2 is not locally integrable. The CCT is closely related to a continuous transform pioneered by Hart Smith in his study of Fourier Integral Operators. Smith's transform is based on strict affine parabolic scaling of a single mother wavelet, while for the transform we discuss, the generating wavelet changes (slightly) scale by scale. The CCT can also be compared to the FBI (Fourier-Bros-Iagolnitzer) and Wave Packets (Cordoba-Fefferman) transforms. We describe their similarities and differences in resolving the wavefront set. {©} 2005 Elsevier Inc. All rights reserved.}
+      \field{isbn}{10635203}
+      \field{issn}{10635203}
+      \field{journaltitle}{Applied and Computational Harmonic Analysis}
+      \field{number}{2}
+      \field{title}{{Continuous curvelet transform: I. Resolution of the wavefront set}}
+      \field{volume}{19}
+      \field{year}{2005}
+      \field{pages}{162\bibrangedash 197}
+      \range{pages}{36}
+      \verb{doi}
+      \verb 10.1016/j.acha.2005.02.003
+      \endverb
+      \verb{file}
+      \verb :home/janlukas/Studium/BA/6.pdf:pdf
+      \endverb
+      \keyw{Analysis of singularities,Curvelets,Directional wavelets,Parabolic scaling,Singular support,Wave packets,Wavefront set,Wavelets}
+    \endentry
+    \entry{Kutyniok2008}{article}{}
+      \name{author}{2}{}{%
+        {{hash=2e7b05c7e0c405468d37834ab05737b3}{%
+           family={Kutyniok},
+           familyi={K\bibinitperiod},
+           given={Gitta},
+           giveni={G\bibinitperiod}}}%
+        {{hash=329f407df1b94ff8c99c2db1ba6f5797}{%
+           family={Labate},
+           familyi={L\bibinitperiod},
+           given={Demetrio},
+           giveni={D\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Mathematical Society ({AMS})}%
+      }
+      \strng{namehash}{fbdffe53dc2b6b97ffb8e595dc27e0b5}
+      \strng{fullhash}{fbdffe53dc2b6b97ffb8e595dc27e0b5}
+      \strng{bibnamehash}{fbdffe53dc2b6b97ffb8e595dc27e0b5}
+      \strng{authorbibnamehash}{fbdffe53dc2b6b97ffb8e595dc27e0b5}
+      \strng{authornamehash}{fbdffe53dc2b6b97ffb8e595dc27e0b5}
+      \strng{authorfullhash}{fbdffe53dc2b6b97ffb8e595dc27e0b5}
+      \field{sortinit}{K}
+      \field{sortinithash}{4c244ceae61406cdc0cc2ce1cb1ff703}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Transactions of the American Mathematical Society}
+      \field{month}{10}
+      \field{number}{05}
+      \field{title}{Resolution of the wavefront set using continuous shearlets}
+      \field{volume}{361}
+      \field{year}{2008}
+      \field{pages}{2719\bibrangedash 2754}
+      \range{pages}{36}
+      \verb{doi}
+      \verb 10.1090/s0002-9947-08-04700-4
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1090/s0002-9947-08-04700-4
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1090/s0002-9947-08-04700-4
+      \endverb
+    \endentry
+    \entry{Schwartz2014}{book}{}
+      \name{author}{1}{}{%
+        {{hash=b99376f6279719f28e65b9875e400fc4}{%
+           family={Schwartz},
+           familyi={S\bibinitperiod},
+           given={Matthew\bibnamedelima D.},
+           giveni={M\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Cambridge}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{b99376f6279719f28e65b9875e400fc4}
+      \strng{fullhash}{b99376f6279719f28e65b9875e400fc4}
+      \strng{bibnamehash}{b99376f6279719f28e65b9875e400fc4}
+      \strng{authorbibnamehash}{b99376f6279719f28e65b9875e400fc4}
+      \strng{authornamehash}{b99376f6279719f28e65b9875e400fc4}
+      \strng{authorfullhash}{b99376f6279719f28e65b9875e400fc4}
+      \field{sortinit}{S}
+      \field{sortinithash}{3c1547c63380458f8ca90e40ed14b83e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-1-107-03473-0}
+      \field{title}{Quantum Field Theory and the Standard Model -}
+      \field{year}{2014}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
