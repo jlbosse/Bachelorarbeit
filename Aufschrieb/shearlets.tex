@@ -117,7 +117,7 @@ Im Allgemeinen wird man aber nicht die ganze affine Gruppe benötigen, um ein re
 \begin{theorem}[Zulässigkeitskriterium]
 \label{thm:admissibility_criterion}
     Sei $\psi \in L^2(\mathbb{R}^n)$.
-    Sei $G \subset GL(n,\mathbb{R})$, $\d \mu(M)$ ein Maß auf $G$, im Falle einer Untergruppe z.B. das Haarmaß und es gelte
+    Sei $G \subset GL(n,\mathbb{R})$, $\d \mu(M)$ ein Maß auf $G$, im Falle einer Untergruppe z.B. das Haarmaß, und es gelte
     \begin{equation}
         \Delta(\psi)(\xi) = \int_G |\hat\psi(M^t \xi)|^2 |\det M| \d \mu(M) = 1
     \label{eq:admissibility criterion}
@@ -334,16 +334,16 @@ Um nun nicht nur ein reproduzierendes System für $L^2(C)^\vee$, sondern für ga
 % section konstruktion_und_eigenschaften_der_shearlets (end)
 
 
-Das große Versprechen der Shearlettransformation war ja, dass sie in der Lage ist nicht nur Position, sondern auch Orientierung der Singularitäten aufzulösen. Das dem auch sie ist, ist Aussage des folgenden Satzes:
+Das große Versprechen der Shearlettransformation war ja, dass sie in der Lage ist nicht nur Position, sondern auch Orientierung der Singularitäten aufzulösen. Das dem auch so ist, ist Aussage des folgenden Satzes:
 
 \begin{theorem}[$\mathcal{S}_f(a,s,t)$ misst $WF(f)$]
 \label{thm:main_theorem}
-    Sei $f \in \mathcal{S}(C)^\vee$ (wobei $\mathcal{S}(C)^\vee$ analog zu $L^2(C)^\vee$ definiert ist).
+    Sei $f \in \mathcal{S}'(C)^\vee$ (wobei $\mathcal{S}(C)^\vee$ analog zu $L^2(C)^\vee$ definiert ist).
     Sei $\mathcal{D}$ die Menge der $((x',t'), s)$ s.d. $\mathcal{S}(a,s,(t',x'))$ schnell verschwindet. Genauer
 
     \begin{dmath*}
         \mathcal{D} = \left\{
-        ((t'_0,x'_0),s_0) \hiderel \in \mathbb{R}^2 \times [-1,1]~ \big|\\ ~\textrm{ für  $((t',x'),s)$ in einer Umgebung $U$ von } ((t'_0,x'_0),s_0) \hiderel :\\
+        ((t'_0,x'_0),s_0) \hiderel \in \mathbb{R}^2 \times [-1,1]~ \Big|\\ ~\textrm{ für  $((t',x'),s)$ in einer Umgebung $U$ von } ((t'_0,x'_0),s_0) \hiderel :\\
         |S_f (a,s,(t',x'))| = O(a^k) \textrm{ für } a \hiderel \to 0, \forall k \hiderel \in \mathbb{N} \\ \textrm{ mit $O(\cdot)$ gleichmäßig über } ((t',x'),s) \hiderel \in U
         \right\}
     \end{dmath*}
@@ -351,10 +351,10 @@ Das große Versprechen der Shearlettransformation war ja, dass sie in der Lage i
     Dann gilt $WF(f)^c = \mathcal{D}$
 \end{theorem}
 
-Wenn wir die Wellenfrontmenge einer Distribution kennen, kenne wir trivialerweise auch ihren singulären Träger:
+Wenn wir die Wellenfrontmenge einer Distribution kennen, kennen wir auch ihren singulären Träger:
 
 \begin{corollary}[$WF(f)$ misst $sing ~supp (\psi)$]
-Sei $f$ wie eben und $\mathcal{R}$ die Projektion von $\mathcal{D}$ auf die erste Ortskomponente. Also
+Sei $f$ wie eben und $\mathcal{R}$ die Projektion von $\mathcal{D}$ auf die  Ortskomponente. Also
 
 \begin{equation}
     \mathcal{R} = \pi (\mathcal{D})~~;~~~~
@@ -370,7 +370,7 @@ Der Beweis für \cref{thm:main_theorem} findet sich in \textcite[S.19 ff]{Kutyni
 
 
 \todo{Beweis ordentlich formatieren}
-\begin{proof}[Beweis von \ref{thm:main_theorem}]
+\begin{proof}[von \ref{thm:main_theorem}]
 Zunächst die einfachere Richtung, nämlich $WF(f)^c \subseteq \mathcal{D}$.
 Wir nehmen also einen gerichteten regulären Punkt $((t_0,x_0),s_0) \in WF(f)^c$ und zeigen, dass er auch in $\mathcal{D}$ liegt. Dazu zerlegen wir $f$ zunächst wie folgt:
  Da $f$ bei $(t_0, x_0)$ in Richtung $s_0$ regulär ist, gibt es per Definition der Wellenfrontmenge ein $\phi \in C_0^\infty(\mathcal{R}^2)$ s.d. $\phi = 1$ in einer Umgebung von $(t_0, x_0)$ und für alle $N \in \mathbb{N}$ $\rwhat{\phi f} = O(1+|(\omega,k)|)^{-N}$ für $\frac{k}{\omega}$ in einer Umgebung von $s_0$. Dementsprechend ist $(1-\phi)f = 0$ in einer Umgebung von $(t_0, x_0)$ und es gilt
