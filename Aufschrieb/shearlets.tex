@@ -287,6 +287,7 @@ Wer bisher aufmerksam mitgelesen hat und sich \cref{fig:supp_psi_hat} genau ange
 \todo[color=green]{Die konkrete Konstruktion für die volle Transformation angeben, oder reicht der Hinweis, dass ich mit Spiegeln und Drehen alles sehen kann?}
 
 \begin{theorem}[$\psi$ reproduziert $L^2(C)^\vee$]
+\label{thm:shearlets_reproduzieren}
     Sei
     \begin{equation}
         C= \left\{(\omega,k)\in \hat{\mathbb{R}}^2
@@ -353,7 +354,7 @@ Das große Versprechen der Shearlettransformation war ja, dass sie in der Lage i
 
 Wenn wir die Wellenfrontmenge einer Distribution kennen, kennen wir auch ihren singulären Träger:
 
-\begin{corollary}[$WF(f)$ misst $sing ~supp (\psi)$]
+\begin{corollary}[$\mathcal{S}_f(a,s,t)$ misst $sing ~supp (\psi)$]
 Sei $f$ wie eben und $\mathcal{R}$ die Projektion von $\mathcal{D}$ auf die  Ortskomponente. Also
 
 \begin{equation}
@@ -394,6 +395,38 @@ für $(t',x') = (t_0,x_0)$ schnell ab. Für den ersten Term überzeugen wir uns 
 Die beiden entscheidenden Zutaten waren hier also die Tatsache, dass die Shearlets außerhalb von $(t',x')$ rapide Abfallen und damit bei immer feineren Skalen $a$ immer besser lokalisiert werden sowie die Tatsache, dass für $a \to 0$ der Träger im Frequenzbereich in immer engeren Kegeln liegt.
 
 Deutlich schwieriger ist die umgekehrte Inklusion, nämlich dass die Shearlettransformation tatsächlich die ganze Wellenfrontmenge erkennt. Hier geht jetzt auch die Reproduktionseigenschaft der Transformation ein, eben genau dass sie alles sieht.
+
+Für die umgekehrte Inklusion $\mathcal{D} \subseteq WF(f)^c$ haben wir zu zeigen, dass falls $\mathcal{S}_f (a,s,(t',x'))$ schnell abfällt für $a \to 0$ einer Umgebung $U$ von $(s_0, (t_0, x_0))$ dann auch $\rwhat{\phi f} (\omega,k)$ schnell abfällt für $\Vert(\omega,k)\Vert \to \infty$ für $\frac{k}{\omega}$ in einer Umgebung von $s_0$ und ein $\phi$ getragen in einer Umgebung von $(t_0, x_0)$.
+
+Sei also $\phi \in C^\infty(\pi(U))$, wobei $\pi$ wieder die Projektion auf die Ortskomponente ist. Dann ist
+
+\begin{dmath*}
+    \rwhat{\phi f} (\omega, k)
+    =
+    \int \phi f e^{-i\omega t+ikx} \d t \d x \\
+    \stackrel{\ref{thm:shearlets_reproduzieren}}{=}
+    \iint \left\langle \psi_{as(t',x')},\phi f \right\rangle
+        \psi_{as(t',x')} (t,x) \d \mu (as(t',x'))
+        e^{\cdots} \d t \d x
+    =
+    \int \left\langle \psi_{as(t',x')},\phi f \right\rangle
+    \hat\psi_{as(t',x')}(\omega,k) \d \mu(\cdots)
+    = \kern -1em
+    \underbrace{
+        \int \limits_{U \times [0,1]} \kern -1em
+        \left\langle \psi_{as(t',x')},\phi f \right\rangle
+        \hat\psi_{as(t',x')}(\omega,k) \d \mu(\cdots)
+    }_{i)}
+    + \kern -1em
+    \underbrace{
+        \int \limits_{U^c \times [0,1]} \kern -1em
+        \left\langle \psi_{as(t',x')},\phi f \right\rangle
+        \hat\psi_{as(t',x')}(\omega,k) \d \mu(\cdots)
+    }_{ii)}
+\end{dmath*}
+
+\emph{zu $ii)$}
+Für $\Vert (\omega,k)\Vert \to \infty$ ist $\hat \psi$ nur für $a \to 0$
 
 \end{proof}
 
