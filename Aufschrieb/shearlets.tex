@@ -364,6 +364,49 @@ Sei $f$ wie eben und $\mathcal{R}$ die Projektion von $\mathcal{D}$ auf die  Ort
 Dann gilt $sing ~supp (f)^c = \mathcal{R}$
 \end{corollary}
 
+Bevor wir \cref{thm:main_theorem} beweisen können, benötigen wir aber noch ein paar Lemmata.
+
+\begin{lemma}
+Seien $ B(s_0,\Delta)\subset [-1,1]$ und $V \subset \mathbb{R}^2$ beschränkt. Nehme an, dass $G(a,s,t)$ schnell abfällt für $a \to 0$ gleichmäßig für $(s,t) \in  B(s_0,\Delta) \times V$. Dann fällt
+
+\begin{equation*}
+    \hat h(k) = \int \limits_0^1 \int \limits_V \int \limits_{[-1,1]}
+    G(a,s,t) \hat \psi_{ast} (k)
+        \d s \d t \frac{\d a}{a^3}
+\end{equation*}
+
+schnell ab, für $\Vert k \Vert \to \infty$ und $\frac{k_2}{k_1} \in B\left(s_0, \frac{\Delta}{2}\right)$.
+\end{lemma}
+
+\begin{proof}
+\begin{dmath*}
+    \hat h(k) =
+    \underbrace{
+    \int \limits_0^1 \int \limits_V \int \limits_{B(s_0,\Delta)}
+    G(a,s,t) \hat \psi_{ast} (k)
+        \d s \d t \frac{\d a}{a^3}}_{i)}
+     +
+    \underbrace{
+     \int \limits_0^1 \int \limits_V \int \limits_{[-1,1]\setminus B(s_0,\Delta) }
+    G(a,s,t) \hat \psi_{ast} (k)
+        \d s \d t \frac{\d a}{a^3}}_{ii)}
+\end{dmath*}
+
+Es sei
+\begin{equation*}
+    \Gamma (a,s) = \left\{k \in \hat{\mathbb{R}}^2 \big| \tfrac{1}{2} \leq a|k| \leq
+                   \right\}
+\end{equation*}
+
+\emph{zu $i)$}
+
+\begin{dmath*}
+    i) \leq \int \limits_0^1 \int \limits_V \int \limits_{B(s_0,\Delta)}
+    \left\lvert G(a,s,t)\right\rvert
+    \left\lvert \hat \psi_{ast} (k) \right\rvert
+        \d s \d t \frac{\d a}{a^3}
+\end{dmath*}
+\end{proof}
 
 Der Beweis für \cref{thm:main_theorem} findet sich in \textcite[S.19 ff]{Kutyniok2008} und soll hier nur plausibel gemacht werden.
 \todo{Beweis noch besser verstehen und hier plausibel machen! Wichtig: Welche Zutaten spielen wie zusammen?}
