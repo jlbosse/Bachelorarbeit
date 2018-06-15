@@ -1,0 +1,189 @@
+%!TEX root = main.tex
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % Section 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Beweis von \cref{thm:main_theorem}} % (fold)
+\label{sec:beweis_von_thm:main_theorem}
+
+
+Bevor wir \cref{thm:main_theorem} beweisen können, benötigen wir aber noch ein paar technische Lemmata. Beweise dafür finden sich in \textcite{Kutyniok2008}
+
+\begin{lemma}
+\label{lemm:ruecktrafo_fourier_faellt_schnell_ab}
+
+Seien $B(s_0,\Delta) \subset [-1,1]$ und $V \subset \mathbb{R}^2$ beschränkt. Nehme an, dass $G(a,s,t)$ schnell abfällt für $a \to 0$ gleichmäßig für $(s,t) \in  B(s_0,\Delta) \times V$. Dann fällt
+
+\begin{equation*}
+    \hat h(k) = \int \limits_0^1 \int \limits_V \int \limits_{[-1,1]}
+    G(a,s,t) \hat \psi_{ast} (k)
+        \d s \d t \frac{\d a}{a^3}
+\end{equation*}
+
+schnell ab, für $\Vert k \Vert \to \infty$ und $\frac{k_2}{k_1}$ in einer Umgebung von $s_0$.
+\end{lemma}
+
+\begin{proof}
+Es sei
+\begin{equation*}
+    \Gamma_k = \left\{a\in [0,1], s \in [-1,1] \big| \tfrac{1}{2} \leq a|k| \leq 2 , \left|s-\tfrac{k_2}{k_1} \right| \leq \sqrt a
+                   \right\}
+\end{equation*}
+
+Dann können wir dank \cref{eq:supp_psi} abschätzen
+
+\begin{equation*}
+    | \hat \psi_{ast} (k)| \leq C' a^{\frac{3}{4}} \chi_{\Gamma_k}
+\end{equation*}
+
+und nach Vorraussetzung gilt auch
+
+\begin{equation*}
+    |G(a,s,t)| \leq C_{N} a^{N} \condition{$\forall N \in \mathbb{N}$}
+\end{equation*}
+
+Außerdem sei
+\begin{equation*}
+    S = B(s_0,\Delta/2)
+\end{equation*}
+
+Um $\hat h(k)$ abzuschätzen, teilen wir es in den Bereich auf, in dem G(a,s,t) schnell abfällt, und in dem es nicht schnell abfällt:
+
+\begin{dmath*}
+    \hat h(k) =
+    \underbrace{
+    \int \limits_0^1 \int \limits_V \int \limits_{S}
+    G(a,s,t) \hat \psi_{ast} (k)
+        \d s \d t \frac{\d a}{a^3}}_{i)}
+     +
+    \underbrace{
+     \int \limits_0^1 \int \limits_V \int \limits_{[-1,1]\setminus S}
+    G(a,s,t) \hat \psi_{ast} (k)
+        \d s \d t \frac{\d a}{a^3}}_{ii)}
+\end{dmath*}
+
+
+\emph{zu $i)$}
+
+\begin{dmath*}
+    i) \leq \int \limits_0^1 \int \limits_V \int \limits_{S}
+    \left\lvert G(a,s,t)\right\rvert
+    \left\lvert \hat \psi_{ast} (k) \right\rvert
+        \d s \d t \frac{\d a}{a^3}
+    \leq
+    C_N C'
+    \int \limits_0^1 \int \limits_V \int \limits_{S}
+    a^{\frac{3}{4}} a^N \chi_{\Gamma_k} \d s \d t \frac{\d a}{a^3}
+    \leq
+    C_N \int \limits_{\frac{1}{2|k|}}^{\frac{2}{|k|}}
+    a^{N-\frac{9}{4}} \d a
+    \le C_N |k|^{-N+\frac{7}{4}}
+\end{dmath*}
+
+$i)$ fällt also schnell ab für $a \to 0$.
+
+
+\emph{zu $ii)$}
+
+\begin{dmath*}
+    ii) \leq
+     \int \limits_0^1 \int \limits_V \int \limits_{[-1,1]\setminus S}
+    |G(a,s,t)| |\hat \psi_{ast} (k)|
+        \d s \d t \frac{\d a}{a^3}
+    \leq
+    C' \int \limits_{0}^{1} \int \limits_{V} \int \limits_{[-1,1]\setminus S}
+    |G(a,s,t)| \chi_{\Gamma_k} a^{\frac{3}{4}}
+    \d s \d t \frac{\d a}{a^3}
+\end{dmath*}
+
+Für alle hinreichend großen $k$ ist aber $\Gamma_k \subset S$, also $\Gamma_k \cap [-1,1]\setminus S = \varnothing$ und demnach das Integral 0. Also
+
+\begin{equation*}
+    ii) = 0 \condition{für alle k groß genug}
+\end{equation*}
+\end{proof}
+
+
+\begin{corollary}
+    [Abschätzungen für $\left<\phi \psi_{a_0st},\psi_{a_1s't'}\right>$]
+Sei $\phi \in C_0^\infty(B(t,\delta))$. Dann gilt für alle $N>0$
+
+\begin{enumerate}
+    \item Falls $0 \leq \sqrt{a_0} \leq \sqrt{a_1}\leq \delta \leq 1$
+    \begin{equation*}
+        |\left<\phi \psi_{a_0st},\psi_{a_1s't'}\right>| \leq
+        C_N \left(1+\frac{a_1}{a_0}\right)^{-N}
+        \left(1+\frac{|s-s'|^2}{a_1}\right)^{-N}
+        \left(1+\frac{\Vert t-t' \Vert^2}{a_1}\right)^{-N}
+    \end{equation*}
+    \item Falls $0 \leq \sqrt{a_0} \leq \delta \leq \sqrt{a_1} \leq 1$
+    \begin{equation*}
+        |\left<\phi \psi_{a_0st},\psi_{a_1s't'}\right>| \leq
+        C_N \left(1+\frac{a_1}{a_0}\right)^{-N}
+        \left(1+\frac{|s-s'|^2}{\delta^2}\right)^{-N}
+        \left(1+\frac{\Vert t-t' \Vert^2}{a_1}\right)^{-N}
+    \end{equation*}
+\end{enumerate}
+\end{corollary}
+
+\begin{proof}[von \ref{thm:main_theorem}]
+Zunächst die einfachere Richtung, nämlich $WF(f)^c \subseteq \mathcal{D}$.
+Wir nehmen also einen gerichteten regulären Punkt $((t_0,x_0),s_0) \in WF(f)^c$ und zeigen, dass er auch in $\mathcal{D}$ liegt. Dazu zerlegen wir $f$ zunächst wie folgt:
+ Da $f$ bei $(t_0, x_0)$ in Richtung $s_0$ regulär ist, gibt es per Definition der Wellenfrontmenge ein $\phi \in C_0^\infty(\mathcal{R}^2)$ s.d. $\phi = 1$ in einer Umgebung von $(t_0, x_0)$ und für alle $N \in \mathbb{N}$ $\rwhat{\phi f} = O(1+|(\omega,k)|)^{-N}$ für $\frac{k}{\omega}$ in einer Umgebung von $s_0$. Dementsprechend ist $(1-\phi)f = 0$ in einer Umgebung von $(t_0, x_0)$ und es gilt
+
+ \begin{equation}
+     \mathcal{S}_f (a,s,(t',x')) = \left\langle \psi_{ast},\phi f \right\rangle
+                                + \left\langle \psi_{ast},(1-\phi) f \right\rangle
+ \label{eq:schlaue sache}
+ \end{equation}
+
+\begin{figure}[h]
+\centering
+\input{images/smart_decomposition.pgf}
+\caption{Die Zerlegung von $f$ um $(t_0,x_0)$ herum visualisiert}
+\label{fig:smart_decomposition}
+\end{figure}
+
+Da $(1-\phi)f$ in einer Umgebung von $(t_0, x_0)$ verschwindet und nach \cref{prop:shearlets_decay_rapidly} Shearlets außerhalb von $(t',x')$ schnell abfallen für $a \to 0$ fällt auch der zweite Term von \cref{eq:schlaue sache}
+für $(t',x') = (t_0,x_0)$ schnell ab. Für den ersten Term überzeugen wir uns anhand von \cref{fig:supp_psi_hat,eq:supp_psi}, dass für $a$ klein genug $supp(\hat\psi_{ast})$ schließlich in jedem noch so kleinen Kegel um $s$ liegt. In einem solchen um $s_0$ fällt aber $\rwhat{\phi f}$ rapide ab nach Vorraussetzung und damit auch der erste Term in \cref{eq:schlaue sache}.
+
+Die beiden entscheidenden Zutaten waren hier also die Tatsache, dass die Shearlets außerhalb von $(t',x')$ rapide Abfallen und damit bei immer feineren Skalen $a$ immer besser lokalisiert werden sowie die Tatsache, dass für $a \to 0$ der Träger im Frequenzbereich in immer engeren Kegeln liegt.
+
+Deutlich schwieriger ist die umgekehrte Inklusion, nämlich dass die Shearlettransformation tatsächlich die ganze Wellenfrontmenge erkennt. Hier geht jetzt auch die Reproduktionseigenschaft der Transformation ein, eben genau dass sie alles sieht.
+
+Für die umgekehrte Inklusion $\mathcal{D} \subseteq WF(f)^c$ haben wir zu zeigen, dass falls $\mathcal{S}_f (a,s,(t',x'))$ schnell abfällt für $a \to 0$ einer Umgebung $U$ von $(s_0, (t_0, x_0))$ dann auch $\rwhat{\phi f} (\omega,k)$ schnell abfällt für $\Vert(\omega,k)\Vert \to \infty$ für $\frac{k}{\omega}$ in einer Umgebung von $s_0$ und ein $\phi$ getragen in einer Umgebung von $(t_0, x_0)$.
+
+Sei also $\phi \in C^\infty(\pi(U))$, wobei $\pi$ wieder die Projektion auf die Ortskomponente ist. Dann ist
+
+\begin{dmath*}
+    \rwhat{\phi f} (\omega, k)
+    =
+    \int \phi f e^{-i\omega t+ikx} \d t \d x \\
+    \stackrel{\ref{thm:shearlets_reproduzieren}}{=}
+    \iint \left\langle \psi_{as(t',x')},\phi f \right\rangle
+        \psi_{as(t',x')} (t,x) \d \mu (as(t',x'))
+        e^{\cdots} \d t \d x
+    =
+    \int \left\langle \psi_{as(t',x')},\phi f \right\rangle
+    \hat\psi_{as(t',x')}(\omega,k) \d \mu(\cdots)
+    = \kern -1em
+    \underbrace{
+        \int \limits_{U \times [0,1]} \kern -1em
+        \left\langle \psi_{as(t',x')},\phi f \right\rangle
+        \hat\psi_{as(t',x')}(\omega,k) \d \mu(\cdots)
+    }_{i)}
+    + \kern -1em
+    \underbrace{
+        \int \limits_{U^c \times [0,1]} \kern -1em
+        \left\langle \psi_{as(t',x')},\phi f \right\rangle
+        \hat\psi_{as(t',x')}(\omega,k) \d \mu(\cdots)
+    }_{ii)}
+\end{dmath*}
+
+\emph{zu $ii)$}
+Für $\Vert (\omega,k)\Vert \to \infty$ ist $\hat \psi$ nur für $a \to 0$
+
+\end{proof}
+
+
+
+% section beweis_von_thm:main_theorem (end)
