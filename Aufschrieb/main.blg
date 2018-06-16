@@ -1,17 +1,17 @@
-[0] Config.pm:302> INFO - This is Biber 2.11
-[1] Config.pm:305> INFO - Logfile is 'main.blg'
-[69] biber:313> INFO - === Fr Jun 15, 2018, 12:11:59
-[117] Biber.pm:371> INFO - Reading 'main.bcf'
-[295] Biber.pm:857> INFO - Found 4 citekeys in bib section 0
-[330] Biber.pm:3976> INFO - Processing section 0
-[368] Biber.pm:4136> INFO - Looking for bibtex format file 'literature.bib' for section 0
-[371] bibtex.pm:1500> INFO - LaTeX decoding ...
-[406] bibtex.pm:1316> INFO - Found BibTeX data source 'literature.bib'
-[467] Utils.pm:193> WARN - ISBN '10635203' in entry 'Candes2005' is invalid - run biber with '--validate_datamodel' for details.
-[519] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
-[520] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[520] Biber.pm:3804> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'de-DE'
-[520] Biber.pm:3810> INFO - No sort tailoring available for locale 'de-DE'
-[537] bbl.pm:617> INFO - Writing 'main.bbl' with encoding 'UTF-8'
-[541] bbl.pm:720> INFO - Output to main.bbl
-[542] Biber.pm:110> INFO - WARNINGS: 1
+[0] Config.pm:354> INFO - This is Biber 2.7 (beta)
+[1] Config.pm:357> INFO - Logfile is 'main.blg'
+[37] biber:303> INFO - === Fr Jun 15, 2018, 16:57:29
+[52] Biber.pm:360> INFO - Reading 'main.bcf'
+[136] Biber.pm:836> INFO - Found 4 citekeys in bib section 0
+[154] Biber.pm:3671> INFO - Processing section 0
+[175] Biber.pm:3841> INFO - Looking for bibtex format file 'literature.bib' for section 0
+[186] bibtex.pm:1424> INFO - Decoding LaTeX character macros into UTF-8
+[196] bibtex.pm:1281> INFO - Found BibTeX data source 'literature.bib'
+[235] Utils.pm:164> WARN - ISBN '10635203' in entry 'Candes2005' is invalid - run biber with '--validate_datamodel' for details.
+[269] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
+[269] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[269] Biber.pm:3500> INFO - Sorting list 'nty/global/' of type 'entry' with scheme 'nty' and locale 'de-DE'
+[269] Biber.pm:3506> INFO - No sort tailoring available for locale 'de-DE'
+[275] bbl.pm:608> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[277] bbl.pm:712> INFO - Output to main.bbl
+[277] Biber.pm:110> INFO - WARNINGS: 1

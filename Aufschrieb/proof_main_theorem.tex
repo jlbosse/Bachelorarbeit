@@ -2,16 +2,33 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % % Section 1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Beweis von \cref{thm:main_theorem}} % (fold)
+\section{\texorpdfstring{Beweis von \cref{thm:main_theorem}}{beweis des hauptsatzes}} % (fold)
 \label{sec:beweis_von_thm:main_theorem}
 
 
-Bevor wir \cref{thm:main_theorem} beweisen können, benötigen wir aber noch ein paar technische Lemmata. Beweise dafür finden sich in \textcite{Kutyniok2008}
+Bevor wir \cref{thm:main_theorem} beweisen können, benötigen wir aber noch ein paar technische Lemmata. Beweise für diese finden sich, wenn nicht gegeben, in \cite{Kutyniok2008}
 
+\todo[color=red]{Ich will temperierte Distributionen anschauen, nicht beschränkte Funktionen! Brauche also eigentlich ein anderes Lemma mit einem anderen Beweis}
+\begin{lemma}
+\label{lemm:lemma54}
+    Sei $g \in L^2(\mathbb{R}^2)$ mit $\Vert g\Vert_\infty < \infty$. Nehme an, dass $supp (g) \subset U$ für ein $U \subset \mathbb{R}^2$ und setze
+    $(U^\delta)^c \coloneqq \left\{x \in \mathbb{R}^2 | d(x,U) > \delta\right\}$.
+    Dann fällt
+
+    \begin{equation*}
+        \hat h(k) \coloneqq \int \limits_0^1 \int \limits_{(B^\delta)^c} \int \limits_{-1}^{1} \left<\psi_{ast},f\right> \hat \psi_{ast}(k) \d \mu (a,s,t)
+    \end{equation*}
+
+    schnell ab für $\Vert k \Vert \to \infty$.
+\end{lemma}
+
+Der Beweist findet sich in \cite{Kutyniok2008} und ist unserem für \cref{lemm:ruecktrafo_fourier_faellt_schnell_ab} sehr ähnlich.
+
+Das nächste Lemma ist eine Verfeinerung von Lemma 5.5 in \textcite{Kutyniok2008}, der Beweis wird deshalb erbracht.
 \begin{lemma}
 \label{lemm:ruecktrafo_fourier_faellt_schnell_ab}
 
-Seien $B(s_0,\Delta) \subset [-1,1]$ und $V \subset \mathbb{R}^2$ beschränkt. Nehme an, dass $G(a,s,t)$ schnell abfällt für $a \to 0$ gleichmäßig für $(s,t) \in  B(s_0,\Delta) \times V$. Dann fällt
+Seien $B(s_0,\Delta) \subset [-1,1]$ und $U \subset \mathbb{R}^2$ beschränkt. Nehme an, dass $G(a,s,t)$ schnell abfällt für $a \to 0$ gleichmäßig für $(s,t) \in  B(s_0,\Delta) \times U$. Dann fällt
 
 \begin{equation*}
     \hat h(k) = \int \limits_0^1 \int \limits_V \int \limits_{[-1,1]}
@@ -103,8 +120,9 @@ Für alle hinreichend großen $k$ ist aber $\Gamma_k \subset S$, also $\Gamma_k 
 \end{proof}
 
 
-\begin{corollary}
+\begin{lemma}
     [Abschätzungen für $\left<\phi \psi_{a_0st},\psi_{a_1s't'}\right>$]
+\label{lemm:lemma57}
 Sei $\phi \in C_0^\infty(B(t,\delta))$. Dann gilt für alle $N>0$
 
 \begin{enumerate}
@@ -123,15 +141,38 @@ Sei $\phi \in C_0^\infty(B(t,\delta))$. Dann gilt für alle $N>0$
         \left(1+\frac{\Vert t-t' \Vert^2}{a_1}\right)^{-N}
     \end{equation*}
 \end{enumerate}
-\end{corollary}
+\end{lemma}
+
+% Das jetzt folgende Lemma fehlt in \textcite{Kutyniok2008}, weshalb auf Seite 26 fälschlicherweise benutzt werden muss, dass $f$ beschränkt ist. Es reicht aber, dass $\mathcal{S}_f(a,s,t)$ für $\Vert t \Vert \to \infty$ polynomiell beschränkt ist. Mehr geht auch gar nicht, da $f$ i.A. eine temperierte Distribution ist.
+
+% \begin{lemma}[$|\left<f,\psi_{ast}\right>|$ ist langsam wachsend]
+% Sei $f \in \mathcal{S}'(\mathbb{R}^2)$. Dann gibt es ein $N \in \mathbb{N}$ s.d. für alle $a \in [0,1]$ und $s \in [-1,1]$
+% \begin{equation*}
+%     \left|\left\langle f, \psi_{ast}\right\rangle\right| \leq C_N (1+\Vert t\Vert^2)^{N}
+% \end{equation*}
+% \end{lemma}
+
+% \begin{proof}
+% $\psi_{ast} \in \mathcal{S}$ für alle $a,s,t$, da $\hat \psi_{ast}$ kompakt getragen ist für alle $a,s,t$. Also gibt es per Definition von $\mathcal{S}'$ $C \in \mathbb{R}, M,N \in \mathbb{N}$ so dass
+
+% \begin{equation*}
+%     \left|\left\langle f, \psi_{ast} \right\rangle \right|
+%     \leq
+%     C \sum_{|\alpha| \leq N, |\beta|\leq M} \sup_{x \in \mathbb{R}^2} \left| x^\alpha \partial^\beta \psi_{ast}(x)\right|
+% \end{equation*}
+% \todo{hier den Beweis fertig machen}
+% \end{proof}
+
+Kommen wir nun endlich zu dem Beweis unseres Hauptsatzes:
 
 \begin{proof}[von \ref{thm:main_theorem}]
+\label{proof:main_theorem}
 Zunächst die einfachere Richtung, nämlich $WF(f)^c \subseteq \mathcal{D}$.
 Wir nehmen also einen gerichteten regulären Punkt $((t_0,x_0),s_0) \in WF(f)^c$ und zeigen, dass er auch in $\mathcal{D}$ liegt. Dazu zerlegen wir $f$ zunächst wie folgt:
  Da $f$ bei $(t_0, x_0)$ in Richtung $s_0$ regulär ist, gibt es per Definition der Wellenfrontmenge ein $\phi \in C_0^\infty(\mathcal{R}^2)$ s.d. $\phi = 1$ in einer Umgebung von $(t_0, x_0)$ und für alle $N \in \mathbb{N}$ $\rwhat{\phi f} = O(1+|(\omega,k)|)^{-N}$ für $\frac{k}{\omega}$ in einer Umgebung von $s_0$. Dementsprechend ist $(1-\phi)f = 0$ in einer Umgebung von $(t_0, x_0)$ und es gilt
 
  \begin{equation}
-     \mathcal{S}_f (a,s,(t',x')) = \left\langle \psi_{ast},\phi f \right\rangle
+     \mathcal{S}_f (a,s,t = \left\langle \psi_{ast},\phi f \right\rangle
                                 + \left\langle \psi_{ast},(1-\phi) f \right\rangle
  \label{eq:schlaue sache}
  \end{equation}
@@ -146,42 +187,129 @@ Wir nehmen also einen gerichteten regulären Punkt $((t_0,x_0),s_0) \in WF(f)^c$
 Da $(1-\phi)f$ in einer Umgebung von $(t_0, x_0)$ verschwindet und nach \cref{prop:shearlets_decay_rapidly} Shearlets außerhalb von $(t',x')$ schnell abfallen für $a \to 0$ fällt auch der zweite Term von \cref{eq:schlaue sache}
 für $(t',x') = (t_0,x_0)$ schnell ab. Für den ersten Term überzeugen wir uns anhand von \cref{fig:supp_psi_hat,eq:supp_psi}, dass für $a$ klein genug $supp(\hat\psi_{ast})$ schließlich in jedem noch so kleinen Kegel um $s$ liegt. In einem solchen um $s_0$ fällt aber $\rwhat{\phi f}$ rapide ab nach Vorraussetzung und damit auch der erste Term in \cref{eq:schlaue sache}.
 
-Die beiden entscheidenden Zutaten waren hier also die Tatsache, dass die Shearlets außerhalb von $(t',x')$ rapide Abfallen und damit bei immer feineren Skalen $a$ immer besser lokalisiert werden sowie die Tatsache, dass für $a \to 0$ der Träger im Frequenzbereich in immer engeren Kegeln liegt.
+Die beiden entscheidenden Zutaten waren hier also die Tatsache, dass die Shearlets außerhalb von $(t',x')$ rapide abfallen und damit bei immer feineren Skalen $a$ immer besser lokalisiert werden sowie die Tatsache, dass für $a \to 0$ der Träger im Frequenzbereich in immer engeren Kegeln liegt.
 
 Deutlich schwieriger ist die umgekehrte Inklusion, nämlich dass die Shearlettransformation tatsächlich die ganze Wellenfrontmenge erkennt. Hier geht jetzt auch die Reproduktionseigenschaft der Transformation ein, eben genau dass sie alles sieht.
 
-Für die umgekehrte Inklusion $\mathcal{D} \subseteq WF(f)^c$ haben wir zu zeigen, dass falls $\mathcal{S}_f (a,s,(t',x'))$ schnell abfällt für $a \to 0$ einer Umgebung $U$ von $(s_0, (t_0, x_0))$ dann auch $\rwhat{\phi f} (\omega,k)$ schnell abfällt für $\Vert(\omega,k)\Vert \to \infty$ für $\frac{k}{\omega}$ in einer Umgebung von $s_0$ und ein $\phi$ getragen in einer Umgebung von $(t_0, x_0)$.
+Für die umgekehrte Inklusion $\mathcal{D} \subseteq WF(f)^c$ haben wir zu zeigen, dass falls $\mathcal{S}_f (a,s,(t',x'))$ schnell abfällt in einer Umgebung $U$ von $(s_0, t_0)$ für $a \to 0$ dann auch $\rwhat{\phi f} (k)$ schnell abfällt für $\Vert(k)\Vert \to \infty$ für $\frac{k_2}{k_1}$ in einer Umgebung von $s_0$ und ein $\phi$ getragen in einer Umgebung von $t_0$.
 
-Sei also $\phi \in C^\infty(\pi(U))$, wobei $\pi$ wieder die Projektion auf die Ortskomponente ist. Dann ist
+Sei also $\mathcal{S}_f(a,s,t) \xrightarrow[a \to 0]{\text{\tiny schnell}} 0$
+für $(s,t) \in B(s_0, \Delta) \times B(t_0, 2 \delta) \eqqcolon S \times U$\footnote{Falls das ganze gilt für $(s,t)$ in einer offenen Umgebung von $(s_0,t_0)$, dann auch in solchen Bällen mit passenden $\Delta, \delta$}.
+Sei $\phi \in C_0^\infty(B(t_0,\delta))$ und $\phi \equiv 1$ in einer Umgebung von $t_0$. Dann müssen wir zeigen, dass $\rwhat{\phi f}(k) \xrightarrow[a \to 0]{\text{\tiny schnell}} 0$ für $\frac{k_2}{k_1} \in S$
 
+\todo{Wie schreibt an das ganze auf, im Sinne von Distributionen, also $f$ keien Funktion?}
 \begin{dmath*}
-    \rwhat{\phi f} (\omega, k)
+    \rwhat{\phi f} (k)
     =
-    \int \phi f e^{-i\omega t+ikx} \d t \d x \\
+    \int \phi(x) f(x) e^{-ikx} \d x \\
     \stackrel{\ref{thm:shearlets_reproduzieren}}{=}
-    \iint \left\langle \psi_{as(t',x')},\phi f \right\rangle
-        \psi_{as(t',x')} (t,x) \d \mu (as(t',x'))
-        e^{\cdots} \d t \d x
+    \iint \left\langle \psi_{ast},\phi f \right\rangle
+        \psi_{ast} (x) \d \mu (ast)
+        e^{\cdots} \d x
     =
-    \int \left\langle \psi_{as(t',x')},\phi f \right\rangle
-    \hat\psi_{as(t',x')}(\omega,k) \d \mu(\cdots)
+    \int \left\langle \psi_{ast'},\phi f \right\rangle
+    \hat\psi_{ast}(k) \d \mu(\cdots)
     = \kern -1em
     \underbrace{
-        \int \limits_{U \times [0,1]} \kern -1em
-        \left\langle \psi_{as(t',x')},\phi f \right\rangle
-        \hat\psi_{as(t',x')}(\omega,k) \d \mu(\cdots)
+        \int \limits_{U \times [-1,1] \times [0,1]} \kern -1em
+        \left\langle \psi_{ast},\phi f \right\rangle
+        \hat\psi_{ast}(k) \d \mu(\cdots)
     }_{i)}
     + \kern -1em
     \underbrace{
-        \int \limits_{U^c \times [0,1]} \kern -1em
-        \left\langle \psi_{as(t',x')},\phi f \right\rangle
-        \hat\psi_{as(t',x')}(\omega,k) \d \mu(\cdots)
+        \int \limits_{U^c \times [-1,1] \times [0,1]} \kern -1em
+        \left\langle \psi_{ast},\phi f \right\rangle
+        \hat\psi_{ast}(k) \d \mu(\cdots)
     }_{ii)}
 \end{dmath*}
 
-\emph{zu $ii)$}
-Für $\Vert (\omega,k)\Vert \to \infty$ ist $\hat \psi$ nur für $a \to 0$
+\emph{zu $ii)$}\\[.5em]
+Per Konstruktion von $\phi$ gilt $d(supp(\phi f, U^c)) = \delta > 0$. Also fällt nach \cref{lemm:lemma54} $ii)$ schnell ab.
 
+\emph{zu $i)$}\\[.5em]
+Falls $\left<\psi_{ast},\phi f\right> \xrightarrow[a \to 0]{\text{\tiny schnell}} 0$ für $(s,t) \in S \times U$, dann fällt $ii)$ schnell ab $\frac{k_2}{k_2} \in B(s_0,\Delta/2)$ nach \cref{lemm:ruecktrafo_fourier_faellt_schnell_ab}. Wir zeigen also, dass $\left<\psi_{ast},\phi f\right> \xrightarrow[a \to 0]{\text{\tiny schnell}} 0$ für $(s,t) \in S \times U$.
+
+\begin{dmath*}
+    \left\langle \phi f, \psi_{ast} \right\rangle
+    =
+    \int \phi f \psi_{ast} \d x
+    =
+    \int \phi(x) \int \left\langle f, \psi_{a' s' t'} \right\rangle
+    \psi_{a's't'} (x) \d \mu(a',s',t') \psi_{ast}(x) \d x
+    =
+    \int\limits_{0}^{1} \int\limits_{\mathbb{R}^2} \int\limits_{-1}^1
+    \left\langle \phi \psi_{ast}, \psi_{a's't'} \right\rangle
+    \left\langle f, \psi_{a's't'} \right\rangle
+    \d s' \d t' \frac{\d a'}{a^{\prime 3}}
+\end{dmath*}
+
+
+Für $a < \delta$\footnote{Und da wir uns für kleine $a$ interessieren, dürfen wir das auch direkt annehmen} teilen wir die Integration über $s'$ auf in die drei Fälle $a)$ $0<a'<a<\delta$, $b)$ $a < a' < \delta$ und $c)$ $\delta < a'$ und nutzen \cref{lemm:lemma57}. Des weiteren Teilen wir die Integration über $t'$ auf in die Fälle $t' \in U$
+
+\emph{Zu $a)$, $t \in U^c$}\\[.5em]
+Hier gilt im Integrationsbereich $\Vert t' - t \Vert \geq \delta$. Mit \cref{lemm:lemma57} können wir für alle $N\in \mathbb{N}$ abschätzen wie folgt:
+\begin{dmath*}
+ \int\limits_{0}^{a} \int\limits_{U^c} \int\limits_{-1}^1
+ \cdots
+    \d s' \d t' \frac{\d a'}{a^{\prime 3}}
+\leq
+\int\limits_{0}^{a} \int\limits_{U^c} \int\limits_{-1}^1
+C_N
+\left| \left\langle f, \psi_{a's't'} \right\rangle \right|
+\left(1+\frac{\Vert t-t' \Vert^2}{a}\right)^{-N} \d \mu(a',s',t')
+\leq
+\int\limits_{0}^{a} \int\limits_{U^c} \int\limits_{-1}^1
+C_N
+\left| \left\langle f, \psi_{a's't'} \right\rangle \right|
+a^N \Vert t-t' \Vert^{-N} \d \mu(a',s',t')
+\leq
+C_N a^N
+\int\limits_{0}^{a} \int\limits_{U^c} \int\limits_{-1}^1
+\left| \left\langle f, \psi_{a's't'} \right\rangle \right|
+\Vert t-t' \Vert^{-N} \d \mu(a',s',t')
+\end{dmath*}
+
+Wobei das letzte Integral endlich ist, da $\Vert t-t'\Vert \geq \delta$ im Integrationsbereich und $\left| \left\langle f, \psi_{a's't'} \right\rangle \right|$ beschränkt ist, da $f$ beschränkt ist. Für kleinere $a$ kann es nur kleiner werden.
+
+
+\emph{Zu $a)$, $t \in U$}\\[.5em]
+Eine kurze Erinnerung: Falls $(s',t') \in S \times U$ gilt für alle $N \in \mathbb{N}$:
+$\left| \left\langle f, \psi_{a's't'} \right\rangle \right| \leq C_N a^N$
+Außerdem gilt für $s' \notin S$ $|s-s'| \geq \Delta$ bei den $s$ die wir uns anschauen
+
+\begin{dmath*}
+ \int\limits_{0}^{a} \int\limits_{U} \int\limits_{-1}^1
+ \cdots
+    \d \mu(a',s',t')
+=
+ \int\limits_{0}^{a} \int\limits_{U} \int\limits_{S}
+ \cdots
+    \d \mu(a',s',t')
+    +
+ \int\limits_{0}^{a} \int\limits_{U} \int\limits_{S^c}
+ \cdots
+    \d \mu(a',s',t')
+=
+ \int\limits_{0}^{a} \int\limits_{U} \int\limits_{S} C_N a^N
+ \d \mu(a',s',t')
+ +
+ \int\limits_{0}^{a} \int\limits_{U} \int\limits_{S^c}
+ |\left\langle f, \psi_{a's't'} \right\rangle|
+ \left(1+\frac{|s-s'|^2}{a}\right)^{-N}
+ \d \mu(a',s',t')
+ \leq
+ C_N a^N +
+  \int\limits_{0}^{a} \int\limits_{U} \int\limits_{S^c}
+ \left\langle f, \psi_{a's't'} \right\rangle
+ a^N \Delta^{-2N}
+ \d \mu(a',s',t')
+ \leq
+ C_N a^N
+\end{dmath*}
+
+Mit analogen Abschätzungen und \cref{lemm:lemma57} erhalten wir auch noch, dass auch die Integral zu $b)$ und $c)$ schnell abfallen in $a$.
+
+\raggedleft{$QED$}
 \end{proof}
 
 
