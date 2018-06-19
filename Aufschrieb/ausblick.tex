@@ -1,0 +1,35 @@
+%!TEX root = main.tex
+%!TEX spellcheck=de_DE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % Section 2
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Ausblick} % (fold)
+\label{sec:ausblick}
+
+\subsection{\texorpdfstring{Ausdehnen von \cref{thm:main_theorem} auf $\mathcal{S}'$}{Ausdehnen auf Distributionen}} % (fold)
+\label{sec:ausdehnen_von_thm:main_theorem}
+Wie in \cref{rem:shearlets_no_distributions} angesprochen, zeigt der Beweis von \textcite{Kutyniok2008} \cref{thm:main_theorem} nur für beschränkte Funtkionen und nicht für allgemeine temperierte Distributionen in $\mathcal{S}'$. So werden alle Hilfslemmata für \cref{proof:main_theorem} nur für solche Funktionen bewiesen. Wir glauben aber, dass sich der Beweis auf alle temperierten Distributionen ausdehnen lässt, dank der Tatsache dass "`temperierte Distributionen polynomiell beschränkt sind"':
+
+\begin{theorem}[Struktursatz für temperierte Distributionen]
+\label{thm:struktursatz}
+    Sei $X \subset \mathbb{R}^n$ offen. Sei $f \in \mathcal{S}'(X)$. Dann gibt es ein $F \in C(X)$ und $C \in \mathbb{R}, N \in \mathbb{N}$ s.d. für alle $x \in X$
+    \begin{equation*}
+        |F(x)| \leq C (1+|x| )^N
+    \end{equation*}
+    (also F polynomiell beschränkt ist) und
+    \begin{equation*}
+        f = \partial^\alpha F
+    \end{equation*}
+    als distributionelle Ableitung
+
+    \emph{Beweis} \\[.5em]
+    Der Beweis findet sich in \textcite[S. 97]{Friedlander1998}.
+\end{theorem}
+
+
+Leider fehlt aufgrund des stetigen Studienfortschritts die Zeit, diesen Beweis komplett auszuarbeiten. Der Beweis der auf temperierte Distributionen ausgeweiteten \cref{prop:shearlets_decay_rapidly} und wie das polynomielle Wachstum der temperierten Distributionen soll hier aber beispielhaft skizziert werden.  Mit ähnlichen Tricks lassen sich hoffentlich auch alle anderen Hilfslemmata auf temperierte Distributionen ausweiten.
+% section ausdehnen_von_thm:main_theorem (end)
+
+
+% section ausblick (end)

@@ -76,10 +76,10 @@
 \end{pgfscope}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgftext[x=2.050000in,y=0.246986in,,top]{\rmfamily\fontsize{10.000000}{12.000000}\selectfont \(\displaystyle (t_0, x_0)\)}%
+\pgftext[x=2.050000in,y=0.246986in,,top]{\rmfamily\fontsize{10.000000}{12.000000}\selectfont \(\displaystyle t_0\)}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgfpathrectangle{\pgfqpoint{0.500000in}{0.275000in}}{\pgfqpoint{3.100000in}{1.661000in}} %
+\pgfpathrectangle{\pgfqpoint{0.500000in}{0.275000in}}{\pgfqpoint{3.100000in}{1.661000in}}%
 \pgfusepath{clip}%
 \pgfsetrectcap%
 \pgfsetroundjoin%
@@ -136,7 +136,7 @@
 \pgfusepath{stroke}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgfpathrectangle{\pgfqpoint{0.500000in}{0.275000in}}{\pgfqpoint{3.100000in}{1.661000in}} %
+\pgfpathrectangle{\pgfqpoint{0.500000in}{0.275000in}}{\pgfqpoint{3.100000in}{1.661000in}}%
 \pgfusepath{clip}%
 \pgfsetrectcap%
 \pgfsetroundjoin%
@@ -182,7 +182,7 @@
 \pgfusepath{stroke}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgfpathrectangle{\pgfqpoint{0.500000in}{0.275000in}}{\pgfqpoint{3.100000in}{1.661000in}} %
+\pgfpathrectangle{\pgfqpoint{0.500000in}{0.275000in}}{\pgfqpoint{3.100000in}{1.661000in}}%
 \pgfusepath{clip}%
 \pgfsetrectcap%
 \pgfsetroundjoin%
@@ -282,8 +282,8 @@
 \definecolor{currentstroke}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{currentstroke}%
 \pgfsetdash{}{0pt}%
-\pgfpathmoveto{\pgfqpoint{3.606111in}{0.344208in}}%
-\pgfpathquadraticcurveto{\pgfqpoint{3.606938in}{0.344208in}}{\pgfqpoint{3.600000in}{0.344208in}}%
+\pgfpathmoveto{\pgfqpoint{3.606114in}{0.344208in}}%
+\pgfpathquadraticcurveto{\pgfqpoint{3.606939in}{0.344208in}}{\pgfqpoint{3.600000in}{0.344208in}}%
 \pgfusepath{stroke}%
 \end{pgfscope}%
 \begin{pgfscope}%
@@ -293,13 +293,13 @@
 \definecolor{currentstroke}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{currentstroke}%
 \pgfsetdash{}{0pt}%
-\pgfpathmoveto{\pgfqpoint{3.550556in}{0.371986in}}%
-\pgfpathlineto{\pgfqpoint{3.606111in}{0.344208in}}%
-\pgfpathlineto{\pgfqpoint{3.550556in}{0.316431in}}%
+\pgfpathmoveto{\pgfqpoint{3.550559in}{0.371986in}}%
+\pgfpathlineto{\pgfqpoint{3.606114in}{0.344208in}}%
+\pgfpathlineto{\pgfqpoint{3.550559in}{0.316431in}}%
 \pgfusepath{stroke}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgftext[x=3.669444in,y=0.344208in,left,]{\rmfamily\fontsize{10.000000}{12.000000}\selectfont \(\displaystyle (x,t)\)}%
+\pgftext[x=3.669444in,y=0.344208in,left,]{\rmfamily\fontsize{10.000000}{12.000000}\selectfont \(\displaystyle t\)}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfsetbuttcap%
