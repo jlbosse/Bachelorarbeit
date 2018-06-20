@@ -34,31 +34,32 @@ Leider fehlt aufgrund des stetigen Studienfortschritts die Zeit, diesen Beweis k
     \label{lemm:shearlets_decay_quickly_schwartz}
     Sei $f \in \mathcal{S}'(\mathbb{R}^2)$ und $supp(f) \subset U$. Sei $t \notin U$. Dann gilt für alle $k \in \mathbb{N}$
     \begin{equation*}
-        \left\langle f, \psi_{ast}\right\rangle \leq C_k \left(1+a^{-1} d(t,U)\right)^{-k}
+        |\left\langle f, \psi_{ast}\right\rangle| \leq C_k \left(1+a^{-1} d(t,U)\right)^{-k}
     \end{equation*}
     ab einem hinreichend kleinen $a$.
 \end{lemma}
 
-Vor dem Beweis zwei Worte zur Bedeutung des Lemmas: Der hauptsächliche Nutzen des Lemmas ist die Aussage, dass wir mit Shearlets, also Schwartzfunktionen und \emph{nicht} kompakt getragenen Funktionen, die lokalen Eigenschaften von temperierten Distributionen untersuchen können, da wir alles was $\delta$-weit von $t$ entfernt exponentiell schnell (in $a$) nicht mehr sehen.
+Vor dem Beweis zwei Worte zur Bedeutung des Lemmas: Der hauptsächliche Nutzen des Lemmas ist die Aussage, dass wir mit Shearlets, also Schwartzfunktionen und \emph{nicht} kompakt getragenen Funktionen, die lokalen Eigenschaften von temperierten Distributionen untersuchen können, da wir alles was $\delta$-weit von $t$ entfernt exponentiell schnell (in $a$) nicht mehr sehen. Dies ist möglich, da temperierte Distributionen in einem geeigneten Sinne nur polynomiell schnell wachsen.
 
 \begin{proof}
     Nach \cref{thm:struktursatz} gibt es ein polynomiell beschränktes $F \in C(\mathbb{R}^2)$ s.d. $f = \partial^\alpha F$. O.B.d.A können wir annehmen, dass $f$ auf $B(0,\delta)$ verschwindet (im distributionellen Sinne) und damit auch $F$. Dann zeigen wir die Aussage für $t=0$:
 
     \begin{dmath*}
-        \left \langle f, \psi_{as0} \right\rangle
+        |\left \langle f, \psi_{as0} \right\rangle|
         \stackrel{\textrm{formal}}{=}
+        \left\lvert
         \int f(x) \psi\left(\left(\begin{smallmatrix}
             a & -\sqrt{a}s \\ 0 & \sqrt a
         \end{smallmatrix}
         \right)^{-1}\left(x-0\right)\right)
-        \d x
+        \d x \right\rvert
         =
-        \int F(x) \partial^{\alpha}\left[
+        \left\lvert \int F(x) \partial^{\alpha}\left[
         \psi\left(\left(\begin{smallmatrix}
             a^{-1} & \frac{s}{\sqrt a} \\ 0 & a^{-\frac{1}{2}}
         \end{smallmatrix}
         \right)^{-1}x\right)\right]
-        \d x
+        \d x \right\rvert
         \leq
         \int \limits_{|x| \geq \delta}
         C (1+|x|)^N
@@ -107,6 +108,9 @@ Vor dem Beweis zwei Worte zur Bedeutung des Lemmas: Der hauptsächliche Nutzen d
 % section ausdehnen_von_thm:main_theorem (end)
 
 \subsection{Hörmanders Kriterium abschwächen}
+Falls
 
 \subsection{Höherdimensionale Shearlets}
+
+
 % section ausblick (end)
