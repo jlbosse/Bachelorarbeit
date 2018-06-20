@@ -103,6 +103,93 @@
       \field{title}{Introduction to the Theory of Distributions -}
       \field{year}{1998}
     \endentry
+    \entry{Guo2006}{article}{}
+      \name{author}{5}{}{%
+        {{hash=c002f774258223ad3728e94235955be6}{%
+           family={Guo},
+           familyi={G\bibinitperiod},
+           given={Kanghui},
+           giveni={K\bibinitperiod}}}%
+        {{hash=329f407df1b94ff8c99c2db1ba6f5797}{%
+           family={Labate},
+           familyi={L\bibinitperiod},
+           given={Demetrio},
+           giveni={D\bibinitperiod}}}%
+        {{hash=10dbc06395ab9efa5848fb843949e64e}{%
+           family={Lim},
+           familyi={L\bibinitperiod},
+           given={Wang-Q},
+           giveni={W\bibinithyphendelim Q\bibinitperiod}}}%
+        {{hash=5b49661b118086aeba47a1a549d78f16}{%
+           family={Weiss},
+           familyi={W\bibinitperiod},
+           given={Guido},
+           giveni={G\bibinitperiod}}}%
+        {{hash=e1cd32fa9623bc241f97321b9dfe1f58}{%
+           family={Wilson},
+           familyi={W\bibinitperiod},
+           given={Edward},
+           giveni={E\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier {BV}}%
+      }
+      \strng{namehash}{39d9f77ae2840f14a6abfe5629f9a7b1}
+      \strng{fullhash}{eefb654b6007a7e6281b63b2955227ab}
+      \strng{bibnamehash}{39d9f77ae2840f14a6abfe5629f9a7b1}
+      \strng{authorbibnamehash}{39d9f77ae2840f14a6abfe5629f9a7b1}
+      \strng{authornamehash}{39d9f77ae2840f14a6abfe5629f9a7b1}
+      \strng{authorfullhash}{eefb654b6007a7e6281b63b2955227ab}
+      \field{sortinit}{G}
+      \field{sortinithash}{618d986594b7198ba52cf8b00d348f3f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Applied and Computational Harmonic Analysis}
+      \field{month}{3}
+      \field{number}{2}
+      \field{title}{Wavelets with composite dilations and their {MRA} properties}
+      \field{volume}{20}
+      \field{year}{2006}
+      \field{pages}{202\bibrangedash 236}
+      \range{pages}{35}
+      \verb{doi}
+      \verb 10.1016/j.acha.2005.07.002
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1016/j.acha.2005.07.002
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1016/j.acha.2005.07.002
+      \endverb
+    \endentry
+    \entry{Hoermander1985}{book}{}
+      \name{author}{1}{}{%
+        {{hash=c2553b671df63eec279a1059ab372509}{%
+           family={Hörmander},
+           familyi={H\bibinitperiod},
+           given={Lars},
+           giveni={L\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Berlin, Heidelberg}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{c2553b671df63eec279a1059ab372509}
+      \strng{fullhash}{c2553b671df63eec279a1059ab372509}
+      \strng{bibnamehash}{c2553b671df63eec279a1059ab372509}
+      \strng{authorbibnamehash}{c2553b671df63eec279a1059ab372509}
+      \strng{authornamehash}{c2553b671df63eec279a1059ab372509}
+      \strng{authorfullhash}{c2553b671df63eec279a1059ab372509}
+      \field{sortinit}{H}
+      \field{sortinithash}{2f664b453ec75da1fe3804ca92633405}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-0-387-12104-8}
+      \field{title}{The analysis of linear partial differential operators -}
+      \field{year}{1985}
+    \endentry
     \entry{Kutyniok2008}{article}{}
       \name{author}{2}{}{%
         {{hash=2e7b05c7e0c405468d37834ab05737b3}{%

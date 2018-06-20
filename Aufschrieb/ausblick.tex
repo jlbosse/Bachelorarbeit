@@ -52,14 +52,14 @@ Vor dem Beweis zwei Worte zur Bedeutung des Lemmas: Der hauptsächliche Nutzen d
             a & -\sqrt{a}s \\ 0 & \sqrt a
         \end{smallmatrix}
         \right)^{-1}\left(x-0\right)\right)
-        \d x \right\rvert
+        \d x \right\rvert \\
         =
         \left\lvert \int F(x) \partial^{\alpha}\left[
         \psi\left(\left(\begin{smallmatrix}
             a^{-1} & \frac{s}{\sqrt a} \\ 0 & a^{-\frac{1}{2}}
         \end{smallmatrix}
         \right)^{-1}x\right)\right]
-        \d x \right\rvert
+        \d x \right\rvert\\
         \leq
         \int \limits_{|x| \geq \delta}
         C (1+|x|)^N
@@ -71,9 +71,8 @@ Vor dem Beweis zwei Worte zur Bedeutung des Lemmas: Der hauptsächliche Nutzen d
         \right]
         }_{=: \phi \in \mathcal{S}}
         \left(\begin{smallmatrix}
-            a^{-1} & \frac{s}{\sqrt{a}} \\ 0 & a
-^{-\frac{1}{2}}
-        \end{smallmatrix}\right) x \d x
+            a^{-1} & \frac{s}{\sqrt{a}} \\ 0 & a^{-\frac{1}{2}}
+        \end{smallmatrix}\right) x \d x\\
         \leq
         \int \limits_{|x| \geq \delta}
         C (1+|x|)^N
@@ -83,21 +82,21 @@ Vor dem Beweis zwei Worte zur Bedeutung des Lemmas: Der hauptsächliche Nutzen d
             a^{-1} & \frac{s}{\sqrt{a}} \\ 0 & a^{-\frac{1}{2}}
         \end{smallmatrix}\right) x \right\rvert
         \right)^{-k}
-        \d x
+        \d x\\
         \leq
         \int \limits_{|x| \geq \delta}
-        C C_k a^{-|\alpha|} (1+|x|)^N (1+a^{-1}|x|)^{-k} \d x
+        C C_k a^{-|\alpha|} (1+|x|)^N (1+a^{-1}|x|)^{-k} \d x\\
         \leq
         C C_k a^{-|\alpha|}
         \int \limits_{|x| \geq \delta}
-        (1+a^{-1}|x|)^{N-k} \d x
+        (1+a^{-1}|x|)^{N-k} \d x\\
         =
         C C_k a^{-|\alpha|} 2 \pi
         \int\limits_0^\infty
-        (1+a^{-1}r)^{N-k} \d r
+        (1+a^{-1}r)^{N-k} \d r\\
         =
         C C_k a^{-|\alpha|} 2 \pi
-        \frac{(a+\delta)\left(1+\frac{\delta}{a}\right)^{N-k}(a+(k-N-1)\delta)}{(k-N-1)(k-N-2)}
+        \frac{(a+\delta)\left(1+\frac{\delta}{a}\right)^{N-k}(a+(k-N-1)\delta)}{(k-N-1)(k-N-2)}\\
         \leq
         C'_k\left(1+\frac{\delta}{a}\right)^{N-k-|\alpha|}
     \end{dmath*}
@@ -114,7 +113,7 @@ Um die Wellenfrontmenge einer Distribution zu bestimmen, muss man diese per Defi
 Nach der Anschauung aus \cref{fig:faltung_strahlen} ist Hörmanders Kriterium zwar hinreichend, um das punktweise Produkt zweier Distributionen zu definieren über die Faltung ihrer Fouriertransformierten, aber nicht notwendig. Ein Beispiel dafür ist die Heaviside-Funktion. Offenbar existiert $\Theta(x)^2$, aber Hörmanders Kriterium wird an der $0$ verletzt, da $\hat \Theta (k) = \frac{i}{k} + \delta(k)$. Es ist ausreichend, wenn die lokalisierten Fouriertransformierten in entgegengesetzter im Produkt mit $|k|^{-d-\epsilon}$ abfallen, damit das Faltungsintegral existiert.
 
 Die Hoffnung ist also, dass man an der $a$-Potenz mit der $\left\langle f, \psi_{ast} \right\rangle$ für $a \to 0$ skaliert ablesen kann, wie schnell
-	$\lim_{|k| \to \infty} \rwhat{\phi f} (k)$ 
+	$\lim_{|k| \to \infty} \rwhat{\phi f} (k)$
 abfällt für $\frac{k_2}{k_1} = s$ und $\phi$ beliebig nah um $t$ lokalisiert.
 
 Der Ansatz dabei wäre es, zunächst einmal diese $a$-Potenzen bei gut verstandenen Distributionen, z.B. Polynomen oder Ableitungen der $\delta$-Distribution auszurechnen und mit dem Abfallverhalten der lokalisierten Fouriertransformierten zu vergleichen, um dann den genauen Zusammenhang zu raten. Dann wird man versuchen diesen mit den Techniken und Lemmata aus \cref{sec:beweis_von_thm:main_theorem} zu beweisen.
@@ -140,7 +139,7 @@ k_1 \\ k_2 \\ \vdots \\ k_n
 \end{pmatrix},
 \end{equation*}
 
-denn diese sorgt wieder dafür, dass der Träger von $\psi_{ast}$ im Fourierraum für $a \to 0$ wieder einer immer spitzer werdenden Nadel gleicht. Die Wahl $\sqrt{a}$ statt $a^\delta$ für irgendein anderes $a<1$ ist ziemlich willkürlich. \cite{Kutyniok2008} schreiben auch, dass sie für $\delta \neq \frac{1}{2}$ die Wellenfrontmenge an Beispielen genau so gut bestimmen konnten, wie für $\delta = \frac{1}{2}$. Tatsächlich geht $\delta = \frac{1}{2}$ nur bei dem Beweis von \cref{lemm:lemma57} explizit ein. Aber sicher lässt sich \cref{thm:main_theorem} auch mit einem \cref{lemm:lemma57} beweisen, das leicht andere Exponenten hat.\footnote{Stellt sich nur die Frage, warum man das überhaupt wollte. $\delta = \frac{1}{2}$ ist doch ein ziemlich schöne Wahl.}
+denn diese sorgt wieder dafür, dass der Träger von $\psi_{ast}$ im Fourierraum für $a \to 0$ wieder einer immer spitzer werdenden Nadel gleicht. Die Wahl $\sqrt{a}$ statt $a^\delta$ für irgendein anderes $a<1$ ist ziemlich willkürlich. \textcite{Kutyniok2008} schreiben auch, dass sie für $\delta \neq \frac{1}{2}$ die Wellenfrontmenge an Beispielen genau so gut bestimmen konnten, wie für $\delta = \frac{1}{2}$. Tatsächlich geht $\delta = \frac{1}{2}$ nur bei dem Beweis von \cref{lemm:lemma57} explizit ein. Aber sicher lässt sich \cref{thm:main_theorem} auch mit einem \cref{lemm:lemma57} beweisen, das leicht andere Exponenten hat.\footnote{Stellt sich nur die Frage, warum man das überhaupt wollte. $\delta = \frac{1}{2}$ ist doch ein ziemlich schöne Wahl.}
 
 Allerdings zeigen die Rechnungen ab \cref{sec:die_wellenfrontmenge_von_delta_m_2_}, dass schon im 2-dimensionalen Fall die Rechungen schnell unübersichtlich werden und notwendigen Abschätzungen sich häufig nur schwer rechtfertigen lassen. Dementsprechend mag es möglich sein, höherdimensionale Shearlets zu entwickeln mit denen es möglich ist Wellenfrontmengen zu bestimmen. Aber in der Praxis werden die Rechnungen bei Distributionen, deren Wellenfrontmengen nicht ohnehin schon einfach zu berechnen sind, sicher sehr unübersichtlich. Oder ich habe mich bei meinen Abschätzungen einfach selten dämlich angestellt.
 
