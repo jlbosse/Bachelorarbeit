@@ -71,7 +71,8 @@ Vor dem Beweis zwei Worte zur Bedeutung des Lemmas: Der hauptsächliche Nutzen d
         \right]
         }_{=: \phi \in \mathcal{S}}
         \left(\begin{smallmatrix}
-            a^{-1} & \frac{s}{\sqrt{a}} \\ 0 & a^{-\frac{1}{2}}
+            a^{-1} & \frac{s}{\sqrt{a}} \\ 0 & a
+^{-\frac{1}{2}}
         \end{smallmatrix}\right) x \d x
         \leq
         \int \limits_{|x| \geq \delta}
@@ -108,9 +109,44 @@ Vor dem Beweis zwei Worte zur Bedeutung des Lemmas: Der hauptsächliche Nutzen d
 % section ausdehnen_von_thm:main_theorem (end)
 
 \subsection{Hörmanders Kriterium abschwächen}
-Falls
+Um die Wellenfrontmenge einer Distribution zu bestimmen, muss man diese per Definition erst einmal mit einer kompakt getragenen Funktion lokalisieren, um eine kompakt getragene Distribution zu erhalten, deren Fouriertransformation sich berechnen lässt. Ist der Ansatz aus \cref{sec:ausdehnen_von_thm:main_theorem} erfolgreich, so zeigt dies, dass temperierte Distributionen \emph{nicht} mit einer kompakt getragenen Funktion lokalisert werden müssen; Exponentieller Abfall ist genug, um die Wellenfrontmenge zu bestimmen.
+
+Nach der Anschauung aus \cref{fig:faltung_strahlen} ist Hörmanders Kriterium zwar hinreichend, um das punktweise Produkt zweier Distributionen zu definieren über die Faltung ihrer Fouriertransformierten, aber nicht notwendig. Ein Beispiel dafür ist die Heaviside-Funktion. Offenbar existiert $\Theta(x)^2$, aber Hörmanders Kriterium wird an der $0$ verletzt, da $\hat \Theta (k) = \frac{i}{k} + \delta(k)$. Es ist ausreichend, wenn die lokalisierten Fouriertransformierten in entgegengesetzter im Produkt mit $|k|^{-d-\epsilon}$ abfallen, damit das Faltungsintegral existiert.
+
+Die Hoffnung ist also, dass man an der $a$-Potenz mit der $\left\langle f, \psi_{ast} \right\rangle$ für $a \to 0$ skaliert ablesen kann, wie schnell
+	$\lim_{|k| \to \infty} \rwhat{\phi f} (k)$ 
+abfällt für $\frac{k_2}{k_1} = s$ und $\phi$ beliebig nah um $t$ lokalisiert.
+
+Der Ansatz dabei wäre es, zunächst einmal diese $a$-Potenzen bei gut verstandenen Distributionen, z.B. Polynomen oder Ableitungen der $\delta$-Distribution auszurechnen und mit dem Abfallverhalten der lokalisierten Fouriertransformierten zu vergleichen, um dann den genauen Zusammenhang zu raten. Dann wird man versuchen diesen mit den Techniken und Lemmata aus \cref{sec:beweis_von_thm:main_theorem} zu beweisen.
 
 \subsection{Höherdimensionale Shearlets}
+Eine beinahe schon peinlich offensichtliche Frage ist: Wie steht es denn damit, das ganze Geschäft der Shearlets mal auf höhere Dimensionen auszudehnen und auch dort eine schöne Technik zum bestimmen von Wellenfrontmengen zu erhalten?
+
+\textcite{Guo2006} diskutieren Verallgemeinerungen der Schergruppe in höheren Dimensionen und entwickeln daraus auch diskrete Wavelets. Aus z.B. \cref{fig:delta_m} wird auch deutlich, was die richtige höhere Verallgemeinerung der parabolischen Skalierung ist. Nämlich
+
+\begin{equation*}
+\begin{pmatrix}
+k_1 \\ k_2 \\ \vdots \\ k_n
+\end{pmatrix}
+\mapsto
+\begin{pmatrix}
+	a & 0 		& \cdots & 0\\
+	0 & \sqrt a & 		 & 	\vdots\\
+	0 & 			& \ddots & 0 \\
+	0 & \cdots  & 	0    & \sqrt{a}
+\end{pmatrix}
+\begin{pmatrix}
+k_1 \\ k_2 \\ \vdots \\ k_n
+\end{pmatrix},
+\end{equation*}
+
+denn diese sorgt wieder dafür, dass der Träger von $\psi_{ast}$ im Fourierraum für $a \to 0$ wieder einer immer spitzer werdenden Nadel gleicht. Die Wahl $\sqrt{a}$ statt $a^\delta$ für irgendein anderes $a<1$ ist ziemlich willkürlich. \cite{Kutyniok2008} schreiben auch, dass sie für $\delta \neq \frac{1}{2}$ die Wellenfrontmenge an Beispielen genau so gut bestimmen konnten, wie für $\delta = \frac{1}{2}$. Tatsächlich geht $\delta = \frac{1}{2}$ nur bei dem Beweis von \cref{lemm:lemma57} explizit ein. Aber sicher lässt sich \cref{thm:main_theorem} auch mit einem \cref{lemm:lemma57} beweisen, das leicht andere Exponenten hat.\footnote{Stellt sich nur die Frage, warum man das überhaupt wollte. $\delta = \frac{1}{2}$ ist doch ein ziemlich schöne Wahl.}
+
+Allerdings zeigen die Rechnungen ab \cref{sec:die_wellenfrontmenge_von_delta_m_2_}, dass schon im 2-dimensionalen Fall die Rechungen schnell unübersichtlich werden und notwendigen Abschätzungen sich häufig nur schwer rechtfertigen lassen. Dementsprechend mag es möglich sein, höherdimensionale Shearlets zu entwickeln mit denen es möglich ist Wellenfrontmengen zu bestimmen. Aber in der Praxis werden die Rechnungen bei Distributionen, deren Wellenfrontmengen nicht ohnehin schon einfach zu berechnen sind, sicher sehr unübersichtlich. Oder ich habe mich bei meinen Abschätzungen einfach selten dämlich angestellt.
+
+
+\subsection{Skalengrad}
+
 
 
 % section ausblick (end)
