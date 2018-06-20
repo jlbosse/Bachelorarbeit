@@ -5,10 +5,38 @@
 
 Hier entsteht mal ein Kapitel, in dem die notwendigen mathematischen Begriffe eingeführt und motiviert werden.
 
+\begin{definition}[high frequency set]
+\label{def:high_frequency_set}
+Sei $f \in \mathcal{E}'(\Omega), \Omega \subset \mathcal{R}^n$ ein kompakt getragene Distribution. Dann definieren wir die Richtungen höher Frequenzen als
+\begin{dmath*}
+\Sigma (v) = \left\{k \hiderel \in \hat{\mathbb{R}}^n \big| k \textrm{ hat \emph{keine} kegelförmige Umgebung U s.d. } \\ |\hat v (k')| \leq C_N(1+|k|)^{-N} \forall k \hiderel\in V, \forall N  \hiderel\in \mathbb{N} \right\}
+\end{dmath*}
+und darauf basierend definieren wir noch eine lokalisierte Variante:
+
+Sei $f \in \mathcal{D}'(\Omega), \Omega \subset \mathbb{R}^n$ eine Distribution.
+Sei $\mathcal{D}_x$ die Menge der kompakt getragenen glatten Funktionen, die an $x$ nicht verschwinden.
+Dann ist die singuläre Faser von $f$ an $x$ definiert als
+\begin{dmath*}
+\Sigma_x (f) = \bigcap \limits_{\phi \includegraphics[scale=•]{•} \mathcal{D}_x} \Sigma (\underbrace{\phi f}_{\in \mathcal{E}'(\mathbb{R}^n)}) 
+\end{dmath*}
+\end{definition}
+
+Damit können wir uns dann die Wellenfrontmenge definieren:
 
 \begin{definition}[Wellenfrontmenge]
 \label{def:wavefrontset}
 \end{definition}
+Sei $f \in \mathcal{D}'(\Omega), \Omega \subset \mathbb{R}^n$ eine Distribution. Dann ist ihre Wellenfrontmenge definiert als
+
+\begin{dmath*}
+WF(f) \coloneqq \left\{
+	(x,k) \in \Omega \times (\hat{\mathbb{R}}^n \setminus 0)
+	\Big | k \in \Sigma_x(f)
+	\right\}
+\end{dmath*}
+\end{definition}
+
+Anschaulich sagt uns die Wellenfrontmenge wo und in welche Richtungen eine Distribution singulär ist. So ist z.B. die Wellenfrontmenge der $\delta$-Distribution $(0, \mathbb{R}^n \setminus 0)$ oder das der 2-dimensionalen Heaviside-Funktion $1(x)\cdot\Theta(y)$ ist $\{((x,0),(0,1)\cdot \mathbb{R}\setminus 0)\}$
 
 \begin{figure}
 \caption{so ne tolle Faltung}
