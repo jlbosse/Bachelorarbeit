@@ -9,38 +9,73 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % \documentclass{article}
-\documentclass[ngerman, parskip=half]{scrartcl}
+\documentclass[bachelor,       %% Typ der Arbeit: bachelor oder master
+               twoside,        %% zweiseitiges Layout
+               BCOR10mm,       %% Bindekorrektur 10 mm
+%               liststotoc,nomtotoc,bibtotoc, %% Aufnahme der div. Verzeichnisse
+                                              %% ins Inhaltsverzeichnis
+               english,ngerman, %% Alternativspr. Englisch, Dokumentspr. Deutsch
+%               ngerman,english  %% Alternativspr. Deutsch, Dokumentspr. Englisch
+%               final,          %% Endversion; draft fuer schnelles Kompilieren
+               ]{GAUBM}
 \usepackage{thesisstyle}
 
 \addbibresource{literature.bib}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % % Import plots
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% % Title and author(s)
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\title{Jan Lukas krasse Bachelorarbeit}
-\author{Jan Lukas Bosse\thanks{
-                  Georg-August Universität Göttingen}
-        }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 \begin{document}
-\newpage
-\maketitle
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% abstract, keywords and Subject classification are optional.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{abstract}
-    Hier ist wohl noch etwas zu tun... So eine hübsche Frontseite wäre doch was!
-\end{abstract}
+\pagenumbering{roman}
 
+\ThesisAuthor{Jan Lukas}{Bosse}
+%% Hier den Geburtsort einsetzen
+\PlaceOfBirth{Freiburg im Breisgau}
+%% Titel Arbeit. Das erste Argument ist der deutsche, das zweite der
+%% englische Titel.
+\ThesisTitle{Zur Auflösung der Wellenfrontmenge mittels Shearlets}{Resolution of the wavefrontset using shearlets}
+%% Erst- und Zweitgutacher/in
+%% Ist der/die Betreuer/in nicht identisch mit dem/r Erstgutachter/in,
+%% muss diese/r als optionales Argument angegeben werden.
+\FirstReferee[Prof.\ Dr.\ Dorothea Bahns]{Prof.\ Dr.\ Dorothea Bahns}
+\Institute{Institut f\"ur Mathematik}
+\SecondReferee{Prof.\ Dr.\ Ingo Witt}
+%% Beginn und Ende des Anfertigungszeitraumes
+\ThesisBegin{1}{4}{2009}
+\ThesisEnd{15}{7}{2009}
+%% DO NOT TOUCH THESE LINES!!!!
+% \frontmatter
+\maketitle
+\cleardoublepage
+%% Zusammenfassung. Falls nicht gewuenscht, bitte auskommentieren.
+\begin{abstract}
+  Mein schnönes Abstrakt
+%% Optional: Stichwoerter. Wenn nicht gewuenscht, koennen die beiden
+%% folgenden Zeilen geloescht werden
+  \bigskip\par
+  \textbf{Stichwörter:} Physik, Bachelorarbeit
+\end{abstract}
+%% So laesst sich in die andere Sprache umschalten (Englisch bzw. Deutsch)
+\begin{otherlanguage}{english}
+\begin{abstract}
+  Do we need an english abstract?
+  \bigskip\par
+  \textbf{Keywords:} Physics, Bachelor thesis
+\end{abstract}
+\end{otherlanguage}
+
+%% Ende des Vorspanns
+\cleardoublepage
+%% Ab hier 1 1/2 facher Zeilenabstand (durch setspace-Paket)
+% \onehalfspacing
+%% Erzeugt Inhaltsverzeichnis
 \tableofcontents
+\pagenumbering{arabic}
+% \mainmatter
 
 \input{mathematische_grundlagen}
 
@@ -62,5 +97,7 @@
 
 \input{ausblick}
 \printbibliography
+
+\Declaration
 
 \end{document}

@@ -128,7 +128,13 @@
 % % Other stuff
 % -----------------------------------------------------------------------------
 \usepackage[ngerman]{todonotes}
-\usepackage[colorlinks=true, urlcolor=blue, pdfborder={0 0 0}]{hyperref}
+% \usepackage[colorlinks=true, urlcolor=blue, pdfborder={0 0 0}]{hyperref}
+\usepackage[pdfstartview=FitH,      % Oeffnen mit fit width
+            breaklinks=true,        % Umbrueche in Links, nur bei pdflatex default
+            bookmarksopen=true,     % aufgeklappte Bookmarks
+            bookmarksnumbered=true,  % Kapitelnummerierung in bookmarks
+            colorlinks=true, urlcolor=blue, pdfborder={0 0 0}
+            ]{hyperref}
 \usepackage{cleveref}
 
 \crefname{theorem}{Satz}{Sätze}
