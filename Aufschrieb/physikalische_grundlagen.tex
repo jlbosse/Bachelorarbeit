@@ -3,7 +3,54 @@
 \section{Zweipunktfunktionen, Sternprodukte und all die Physik} % (fold)
 \label{sec:zweipunktfunktionen_sternprodukte_und_all_die_physik}
 
+\subsection{Zweipunktfunktionen und warum wir sie potenzieren wollen}
+In der \emph{perturbativen Quantenfeldtheorie}
 
-Eine der zentralen Größen, wenn nicht die zentrale Größe, in der störungstheoretischen Quantenfeldtheorie ist die Zweipunktfunktion\footnote{technisch gesehen eine Distribution, aber aus historischen Gründen wird sie dennoch Funktion genannt} $\Delta_m (x-y)$. Grob gesagt beschreibt sie die Wahrscheinlichkeit, dass ein Teilchen welches am Raumzeitpunkt $x$ zu finden ist auch am Raumzeitpunkt $y$ zu finden ist.
+\begin{equation}
+    G_F(t,x)
+    =
+    \Theta (t)\Delta_m(t,x) + \Theta(-t)\Delta_m(-t,-x)
+\end{equation}
+
+Deshalb ist es wichtig zu wissen, dass das Produkt der Distributionen $\Delta_m(t,x)$ und $\Theta(t)\otimes 1(x)$ und seine Potenzen wohldefiniert sind.
+
+\subsection{Sternprodukte und getwistete Faltungen}
+Die \emph{nicht kommutativen Quantenfeldtheorie} beschäftigt sich mit Quantenfeldtheorien in der Größenordnung der \emph{Planck-Skala}. Bei diesen Größenordnungen wird erwartet, dass die Geometrie der Raumzeit nicht mehr kommutativ ist; sich also Ort und Zeit nicht mehr mit beliebiger Präzision messen lassen. Diese Schranken in der Messgenauigkeit lassen sich als Unschärferelation verstehen, ganz analog zur klassischen Unschärferelation zwischen Ort und Impuls.
+
+Bei der Deformationsquantisierung wird das kommutative punktweise Produkt von Funktionen auf dem Phasenraum ersetzt durch ein nicht-kommutatives Sternprodukt/Moyal-Produkt, um das nicht-kommutieren von Ort und Impuls zu implementieren.
+Mehr Details finden sich in \textcite[Kap. 6]{Waldmann2007}.
+
+Analog zu dieser Konstruktion ersetzen \textcite{Doplicher1995} das kommutative Produkt von Funktionen auf der Raumzeit durch ein Sternprodukt $\star$ auf den Funktionen auf der Raumzeit, und erhalten damit eine nicht-kommutative Geometrie. Gemäß dem Faltungssatz für die Fouriertransformierte gibt es auch eine \emph{getwistete Faltung} $\circledast$, s.d. der Faltungssatz erfüllt ist. Also
+\begin{equation*}
+    \rwhat{f \star g} (k) = \hat f \circledast \hat g (k)
+\end{equation*}
+
+In zwei Dimensionen ist die getwistete Faltung definiert durch
+
+\begin{definition}[getwistete Faltung]
+\label{def:twisted_convolution}
+    Seien $f,g \in $ "`passender Funktionen/Distributionenraum"'. Sei $\Omega \in \mathbb{R}^{2 \times 2}$ eine symplektische Matrix. Dann ist die verdrehte Faltung $(f \circledast g) (x)$ definiert als
+
+    \begin{equation}
+        (f \circledast g) \,(x) \coloneqq
+        \int f(y) g(x-y)e^{\frac{i}{2} \Omega(x,y)} \d y
+    \end{equation}
+
+    Die getwistete Faltung ist also einfach die gewöhnliche Faltung, die noch mit einem ortsabhängigen Phasenfaktor verziert wurde.
+
+    Wir verwenden die kanonische symplektische Matrix, also
+    $\Omega = \left(\begin{smallmatrix}
+        0 & 1 \\ -1 & 0
+    \end{smallmatrix}\right)$
+\end{definition}
+
+Durch formale Rechnung, Ausschreiben der $e$-Funktion als Potenzreihe und nutzen der Fourieridentitäten $\cdot x \leftrightarrow i \partial_k$ sieht man, dass das Sternprodukt die Form
+
+\begin{equation*}
+    f \star g = fg + \frac{i}{2} \sum_{i,j} \Pi^{ik}(\partial_if)(\partial_jg) - \frac{1}{8}\sum_{i,j,k,m} \Pi^{ij} \Pi^{km} (\partial_i \partial_k f)(\partial_j \partial_m g) + \dots
+\end{equation*}
+
+hat. Dabei ist $\Pi$ der zu $\Omega$ korrespondierende Poisson-Bivektor.
+
 
 % section zweipunktfunktionen_sternprodukte_und_all_die_physik (end)

@@ -144,8 +144,57 @@ denn diese sorgt wieder dafür, dass der Träger von $\psi_{ast}$ im Fourierraum
 Allerdings zeigen die Rechnungen ab \cref{sec:die_wellenfrontmenge_von_delta_m_2_}, dass schon im 2-dimensionalen Fall die Rechungen schnell unübersichtlich werden und notwendigen Abschätzungen sich häufig nur schwer rechtfertigen lassen. Dementsprechend mag es möglich sein, höherdimensionale Shearlets zu entwickeln mit denen es möglich ist Wellenfrontmengen zu bestimmen. Aber in der Praxis werden die Rechnungen bei Distributionen, deren Wellenfrontmengen nicht ohnehin schon einfach zu berechnen sind, sicher sehr unübersichtlich. Oder ich habe mich bei meinen Abschätzungen einfach selten dämlich angestellt.
 
 
-\subsection{Skalengrad}
+\subsection{Berechnung des Skalengrads mittels Shearlets}
+Eine weitere Größe der mikrolokalen Analysis, die eventuell durch die Shearlettransformation bestimmt werden kann ist der Skalengrad. Er ist definiert wie folgt:
+
+\begin{definition}[Skalengrad]
+\label{def:skalengrad}
+    Sei $u \in \mathcal{D}'(\Omega),~ \Omega \subset \mathbb{R}^n ~$ offen. Dann ist der Skalengrad $sd(u)$ definiert als
+    \begin{equation*}
+        \inf_{\omega} \left\{\lambda^\omega \left\langle u_\lambda, \phi \right\rangle
+        \stackrel{\lambda \to 0}{\to} 0 \condition{für alle $\phi$} \right\}
+    \end{equation*}
+
+    wobei $u_\lambda$ definiert ist über
+    \begin{equation*}
+        \lambda^{-n} \left\langle u, \phi\left(\tfrac{\cdot}{\lambda}\right)\right\rangle
+    \end{equation*}
+
+    also falls $u \in C^\infty$:
+    \begin{equation*}
+        u_\lambda (x) = u(\lambda x)
+    \end{equation*}
+\end{definition}
+
+Eine einfache Rechnung zeigt z.B. für die $\delta$-Distribution und ihre Ableitungen, dass
+
+\begin{equation*}
+    sd(\delta^{(\alpha)}) = n + |\alpha|
+    .
+\end{equation*}
+
+Mit der Shearlettransformation erhalten wir aber
+
+\begin{dmath*}
+    \left\langle \delta_{x_1}^\alpha \otimes \delta_{x_2}, \psi_{a00} \right\rangle
+    =
+    \left.\partial_{x_1}^\alpha \left(a^{-\frac{3}{4}}\psi\left(\frac{x_1}{a}, \frac{x_2}{\sqrt a}\right)\right)\right|_{x=0} \\
+    =
+    a^{-\frac{3}{4}} a^{-\alpha} \partial_{x_1}^\alpha \psi(0)
+    \hiderel \sim a^{ - \alpha-\frac{3}{4}}
+\end{dmath*}
+
+und bei Ableitung in die andere Richtung
 
 
+\begin{dmath*}
+    \left\langle \delta_{x_1} \otimes \delta_{x_2}^\alpha, \psi_{a00} \right\rangle
+    =
+    \left.\partial_{x_2}^\alpha \left(a^{-\frac{3}{4}}\psi\left(\frac{x_1}{a}, \frac{x_2}{\sqrt a}\right)\right)\right|_{x=0} \\
+    =
+    a^{-\frac{3}{4}} a^{-\frac{\alpha}{2}} \partial_{x_2}^\alpha \psi(0)
+    \hiderel \sim a^{-\frac{\alpha}{2}-\frac{3}{4}}
+\end{dmath*}
 
+Und falls wir $s \neq 0$ wählen wird das ganze nur noch unübersichtlicher, da wir Mischterme erhalten. Dieses Beispiel legt also nahe, dass es einen Zusammenhang zwischen dem Skalengrad einer Distribution und dem Abfallverhalten der Shearlettransformation bei $t=0$ gibt. Aber die parabolische Skalierung in $a$ und Scherung in $s$ sorgen dafür, dass sie sich nicht mehr ganz einfach ablesen lässt.
 % section ausblick (end)
