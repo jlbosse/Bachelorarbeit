@@ -8,6 +8,23 @@ Hier gehört auch noch Text hin. Zwei Überschriften direkt hintereinander sind 
 \subsection{Die Zweipunktfunktionen und warum wir sie potenzieren wollen}
 In der störungstheoretischen Quantenfeldtheorie entsprechen schon einfache Feynmandiagramme, wie z.B. das in \cref{fig:feynman-diagramm} (formal) Integralen über Produkte von Distributionen, in diesem Fall dem Feynman-Propagator.
 
+
+
+% \begin{tikzpicture}
+% \begin{feynman}
+% \vertex (a) {\(\phi)};
+% \vertex [right=of a] (b);
+% \vertex [right=of b] (c);
+% \vertex [right=of c] (d) {\(\phi)};
+% \diagram*{
+% (a) -- [boson, edge label'=\(p\)] (b) %[dot, label=right:\(x_1\)]
+% -- [boson, half left, edge label'=\(k\)] (c) %[dot, label=left:\(x_2\)]
+% -- [boson, half left, edge label'=\(k-p\)] (b),
+% (c) -- [boson, edge label=\(p\)] (d),
+% };
+% \end{feynman}
+% \end{tikzpicture}
+
 \begin{figure}
 \begin{equation*}
 \feynmandiagram [layered layout, horizontal=b to c] {
