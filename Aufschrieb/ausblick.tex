@@ -108,6 +108,7 @@ Vor dem Beweis zwei Worte zur Bedeutung des Lemmas: Der hauptsächliche Nutzen d
 % section ausdehnen_von_thm:main_theorem (end)
 
 \subsection{Hörmanders Kriterium abschwächen}
+\label{sec:hoermanders_crit_abschwaechen}
 Um die Wellenfrontmenge einer Distribution zu bestimmen, muss man diese per Definition erst einmal mit einer kompakt getragenen Funktion lokalisieren, um eine kompakt getragene Distribution zu erhalten, deren Fouriertransformation sich berechnen lässt. Ist der Ansatz aus \cref{sec:ausdehnen_von_thm:main_theorem} erfolgreich, so zeigt dies, dass temperierte Distributionen \emph{nicht} mit einer kompakt getragenen Funktion lokalisert werden müssen; Exponentieller Abfall ist genug, um die Wellenfrontmenge zu bestimmen.
 
 Nach der Anschauung aus \cref{fig:faltung_strahlen} ist Hörmanders Kriterium zwar hinreichend, um das punktweise Produkt zweier Distributionen zu definieren über die Faltung ihrer Fouriertransformierten, aber nicht notwendig. Ein Beispiel dafür ist die Heaviside-Funktion. Offenbar existiert $\Theta(x)^2$, aber Hörmanders Kriterium wird an der $0$ verletzt, da $\hat \Theta (k) = \frac{i}{k} + \delta(k)$. Es ist ausreichend, wenn die lokalisierten Fouriertransformierten in entgegengesetzter im Produkt mit $|k|^{-d-\epsilon}$ abfallen, damit das Faltungsintegral existiert.

@@ -33,6 +33,11 @@
 \renewcommand{\pgfimage}[2][]{\pgfimageWithoutPath[#1]{images/#2}}
 
 % -----------------------------------------------------------------------------
+% Feynman Diagramme
+% -----------------------------------------------------------------------------
+\usepackage{tikz-feynman}
+
+% -----------------------------------------------------------------------------
 % % Bibliography
 % -----------------------------------------------------------------------------
 \usepackage[backend=biber, style=numeric, doi=false]{biblatex}
@@ -101,7 +106,7 @@
 % % Headings and spacing
 % -----------------------------------------------------------------------------
 %\usepackage{parskip} %parskip doesn't work together with scrartcl
-\usepackage{ulem}
+\usepackage[normalem]{ulem}
 
 % subsubsection unterstreichen. Muss schöner gehen!
 \newcommand\subsectionuline{%

@@ -8,7 +8,7 @@
 \todo[color=red]{Notation anpassen. Geht halt nicht ohne Wechsel nach der Hälfte im Dokument}
 
 Die klassische Fouriertransformation $f(x) \mapsto \int f(x) e^{-ik x} \d x$
-zerlegt eine Funktion in ihre verschiedenen Frequenzanteile und misst nach dem Satz von Payley-Wiener dabei auch die Regularität der Funktion. Es gilt nämlich $f \in C^N(\mathbb{R}^n) \cap L^1(\mathbb{R}^n) \Rightarrow \hat f(k) = O(k^N) $ für $|k| \to \infty$. Leider "`sieht"' die Fouriertransformation aber nicht, wo $f$ singulär ist. Das hängt damit zusammen, dass die "`Basisfunktionen"', die ebenen Wellen, nicht lokalisiert sind. Das Argument der Fouriertransformation $k$ kontrolliert die Richtung und Skala, die von der Basisfunktion $e^{-ikx}$ aufgelöst werden. Ortsauflösung der Singularitäten gibt uns die
+zerlegt eine Funktion in ihre verschiedenen Frequenzanteile und misst nach dem Satz von Payley-Wiener dabei auch die Regularität der Funktion. Es gilt nämlich $f \in C^N(\mathbb{R}^n) \cap L^1(\mathbb{R}^n) \Rightarrow \hat f(k) = O(k^N) $ für $|k| \to \infty$. Leider "`sieht"' die Fouriertransformation aber nicht, an welchen $x$ $f$ singulär (= nicht glatt) ist. Das hängt damit zusammen, dass die "`Basisfunktionen"', die ebenen Wellen, nicht lokalisiert sind. Das Argument der Fouriertransformation $k$ kontrolliert die Richtung und Skala, die von der Basisfunktion $e^{-ikx}$ aufgelöst werden. Ortsauflösung der Singularitäten gibt uns die
 
 
 
@@ -21,7 +21,7 @@ zerlegt eine Funktion in ihre verschiedenen Frequenzanteile und misst nach dem S
 
 % section wavelettransformation (end)
 
-Einen Schritt in die richtige Richtung, nämlich die Ortsauflösung der Singularitäten, macht die Wavelettransformation. Hier wird wieder eine Familie von Basisfunktionen erzeugt von einem \textit{Mutterwavelet} $\psi$. Anders als die Ebenen Wellen ist $\psi$ aber lokalisiert -- häufig sogar kompakt getragen -- und die Basis wird erzeugt durch Verschieben und Skalieren des Mutterwavelets.
+Einen Schritt in die richtige Richtung, nämlich die Ortsauflösung der Singularitäten, macht die Wavelettransformation. Hier wird eine Familie von Basisfunktionen erzeugt von einem \textit{Mutterwavelet} $\psi$. Anders als die ebenen Wellen ist $\psi$ aber lokalisiert -- häufig sogar kompakt getragen -- und die Basis wird erzeugt durch Verschieben und Skalieren des Mutterwavelets.
 
 Eine Hamel-Basis für $L^2(\mathbb{R}^n)$ die aus Funktionen der Form
 
@@ -29,7 +29,7 @@ Eine Hamel-Basis für $L^2(\mathbb{R}^n)$ die aus Funktionen der Form
     \left\{\psi_{at}(x) = a^{-\frac{n}{2}}\psi\left(a^{-1}(x-t)\right)  |~ t \in \mathbb{R}^n,  ~a \in \mathbb{R}\right\}
 \end{equation*}
 
- mit einem \textit{Mutterwavelet} $\psi \in C^\infty (\mathbb{R}^n)$ besteht heißt \textit{Waveletbasis} für $L^2(\mathbb{R}^n)$. Der Parameter $t$ heißt \textit{Verschiebungsparameter} und verschiebt das Wavelet an alle Orte des $\mathbb{R}^n$ während der \textit{Skalierungsparameter} $a$ für $a \to 0$ immer genauer lokalisiert. Der Faktor $a^{-\frac{n}{2}}$ sorgt dafür, dass die $L^2$-Norm aller $\psi_{at}$ gleich ist. In der Fourierdomäne wird die Verschiebung zum Phasenfaktor und der Träger mit verschwindendem $a$ immer \emph{größer}.
+ mit einem \textit{Mutterwavelet} $\psi \in C^\infty (\mathbb{R}^n)$ besteht heißt \textit{stetige Waveletbasis} für $L^2(\mathbb{R}^n)$. Der Parameter $t$ heißt \textit{Verschiebungsparameter} und verschiebt das Wavelet an alle Orte des $\mathbb{R}^n$ während der \textit{Skalierungsparameter} $a$ für $a \to 0$ immer genauer lokalisiert. Der Faktor $a^{-\frac{n}{2}}$ sorgt dafür, dass die $L^2$-Norm aller $\psi_{at}$ gleich ist. In der Fourierdomäne wird die Verschiebung zum Phasenfaktor und der Träger mit verschwindendem $a$ immer \emph{größer}.
 % Noch einmal als Formel:
 
 % \begin{align*}
@@ -40,7 +40,7 @@ Eine Hamel-Basis für $L^2(\mathbb{R}^n)$ die aus Funktionen der Form
 
 % Ist $t \in \mathbb{Z}^n$ (oder auf einem anderen diskreten Gitter in $\mathbb{R}^n$) und $a = 2^{-j}$, so spricht man von der \textit{diskreten Wavelettransformation}. Ist $t \in \mathbb{R}^n$ und $G \subseteq GL(n,\mathbb{R})$ so ist es eine \textit{stetige Wavelettransformation} (engl. \textit{continuous wavelet transform}). Die Wavelettransformation einer Funktion (später auch temperierten Distribution) $f$ ist dann definiert als
 
-Analog zur Definition der Fouriertransformation ist die Wavelettransformation von $f$ die Projektion auf die Basisfunktionen:
+Analog zur Definition der Fouriertransformation ist die stetige Wavelettransformation von $f$ die Projektion auf die Basisfunktionen:
 \begin{equation}
     \mathcal{W}_f (a,t) = \left\langle\psi_{at},f\right\rangle
     = a^{-\frac{n}{2}} \int f(x) \psi \left(a^{-1}(x-t)\right) \d x
@@ -51,7 +51,7 @@ Ist $\psi$ eine glatte Funktion und $f$ bei $t$ glatt, so fällt $\mathcal{W}_f 
 \todo[color=green]{Kurze Plausibel machen, warum dem so ist?}
 Umgekehrt fällt auch $\mathcal{W}_f(a,t)$ \emph{genau dann} nicht schnell ab, wenn $f$ bei $t$ \emph{nicht} glatt ist. Also löst die Wavelettransformation die Lage der Singularitäten von $f$ auf. Allerdings sind die klassischen  Wavelettransformationen mit isotroper Skalierung nicht in der Lage die  Orientierung der Singularitäten aufzulösen. Sie besitzen ja gar keinen Orientierungsparameter.
 
-Um auch hier noch weiter zu kommen, muss einerseits ein Richtungsparameter eingeführt werden und andererseits dafür gesorgt werden, dass die Basisfunktionen mit immer feinerer Skala immer orientierter werden. Deshalb gibt es
+Um auch die Orientierung aufzulösen, muss einerseits ein Richtungsparameter eingeführt werden und andererseits dafür gesorgt werden, dass die Basisfunktionen mit immer feinerer Skala immer orientierter werden. Deshalb gibt es
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -62,7 +62,7 @@ Um auch hier noch weiter zu kommen, muss einerseits ein Richtungsparameter einge
 
 % section verallgemeinerte_gerichtete_wavelets (end)
 
- Die bekanntesten Beispiele solcher gerichteter Wavelets sind die \textit{Curvelets} von \textcite{Candes2005} sowie die \textit{Shearlets} von \textcite{Kutyniok2008}. Die mit feiner werdenden Skala schärfer werdende Skalierung wird in beiden Fällen durch parabolische Skalierung implementiert. D.h. in Richtung der Orientierung wird mit $a$ skaliert, während in den Richtungen senkrecht dazu mit $\sqrt a$ skaliert wird. In zwei Dimensionen gibt es nur eine weitere senkrechte Richtung, aber später wird deutlich werden, dass dies in mehr Dimensionen die richtige Verallgemeinerung sein muss.
+ Beispiele solcher gerichteter Wavelets sind die \textit{Curvelets} von \textcite{Candes2005}, die \textit{Shearlets} von \textcite{Kutyniok2008} sowie \textit{Contourlets} von \textcite{Contourlets}. Die mit feiner werdenden Skala schärfer werdende Skalierung wird in den ersten beiden Fällen durch parabolische Skalierung implementiert. D.h. in Richtung der Orientierung wird mit $a$ skaliert, während in den Richtungen senkrecht dazu mit $\sqrt a$ skaliert wird. In zwei Dimensionen gibt es nur eine weitere senkrechte Richtung, aber später wird deutlich werden, dass dies in mehr Dimensionen die richtige Verallgemeinerung der parabolischen Skalierung sein muss.
 
  Die Richtung der Curvelets wird durch Drehmatrizen implementiert, die auf die Variablen $(x_1,x_2)$ wirken, während bei den Shearlets die Variablen $(x_1,x_2)$ geschert werden.
 
@@ -100,7 +100,7 @@ Um auch hier noch weiter zu kommen, muss einerseits ein Richtungsparameter einge
 % \end{dmath*}
 % \end{dgroup*}
 
-Beide Ansätze sind in der Lage, die Wellenfrontmenge einer Distribution zu identifizieren. Allerdings sind die Rechnungen bei den \textit{Shearlets} in der praktischen Umsetzung einfacher, wenn auch sie von einem ästhetischen Standpunkt nicht ganz so befriedigend, da sie nicht inhärent Rotationsinvariant sind, also nicht alle Symmetrien unseres Raumes abbilden. Aber nach allzu viel Ästhetik kann man in dieser Arbeit, mit Hinblick auf die Rechnungen ab \cref{sec:die_wellenfrontmenge_von_delta_m}, ohnehin nicht fragen.
+Beide Ansätze sind in der Lage, die Wellenfrontmenge einer Distribution zu identifizieren. Allerdings sind die Rechnungen bei den \textit{Shearlets} in der praktischen Umsetzung einfacher, wenn auch von einem ästhetischen Standpunkt nicht ganz so befriedigend, da sie nicht inhärent rotationsinvariant sind, also nicht alle Symmetrien unseres Raumes abbilden. Aber nach allzu viel Ästhetik sollte man in dieser Arbeit, mit Hinblick auf die Rechnungen ab \cref{sec:die_wellenfrontmenge_von_delta_m}, ohnehin nicht fragen.
 
 Bevor wir die konkrete Konstruktion der Shearlets widmen, brauchen wir noch ein kleines bisschen Theorie, welche Möglichkeiten wir überhaupt haben, um die Konstruktion der Wavelets zu verallgemeinern. Die weitestgehende Verallgemeinerung von "`verschiebe und skaliere ein Mutterwavelet"' um ein reproduzierendes System zu erhalten ist "`verschiebe es und lasse eine beliebge invertierbare Matrix auf die Koordinaten wirken"'. Wir definieren also eine Wirkung der affinen Gruppe $\mathbb{A}^n$ auf Funktionen $\psi \in L^2(\mathbb{R}^n)$ via
 
@@ -126,7 +126,7 @@ Im Allgemeinen wird man aber nicht die ganze affine Gruppe benötigen, um ein re
     \end{equation}
 
     für fast alle $k \in \hat{\mathbb{R}}^2$.
-    Dann ist $(\psi, G\ltimes \mathbb{R}^n)$ ein reproduzierendes System für $L^2(\mathbb{R}^n)$, also für alle
+    Dann ist $(\psi, G\ltimes \mathbb{R}^n)$ ein reproduzierendes System für $L^2(\mathbb{R}^n)$, also gilt für alle $f \in L^2(\mathbb{R}^n)$
 
     \begin{equation}
         f = \int_{\mathbb{R}^n} \int_G \left\langle \psi_{M,t},f\right\rangle
@@ -153,9 +153,6 @@ Jetzt aber mehr Details zur Konstruktion der Shearlets und deren Eigenschaften:
 \label{sec:konstruktion_und_eigenschaften_der_shearlets}
 
 Der folgende Abschnitt basiert größtenteils auf der Arbeit in \textcite{Kutyniok2008}.
-
-% allerdings wurde die Notation den später berechneten Problemen angepasst und als Ortskoordination $(t,x)$ verwendet sowie als Koordinaten des Dualraums $(\omega, k)$ entsprechend der Konvention in der Physik. Auch Fouriertransformation wird mit $e^{-i\omega t + ikx}$ gerechnet. Dies ändert allerdings nichts essentielles.
-
  Da wir später auch komplexwertige Distributionen analysieren wollen, deren Wellenfrontmenge nicht zwingend punktsymmetrisch um den Ursprung (in der Richtung, nicht im Ort) sind, werden wir Shearlets verwenden, deren Fouriertransformierte asymetrischen Träger hat, indem wir die Shearlets aus \cite{Kutyniok2008} jeweils in zwei Shearlets aufteilen, eines mit Träger im Frequenzbereich "`nach vorne"', und eines mit Träger "`nach hinten"'. \todo{Grafik mit der "Parzellierung" des Frequenzbereiches}
 
 \begin{definition}[Shearlettransformation]
@@ -185,7 +182,7 @@ und $\psi \in C^\infty(\mathbb{R}^2)$ implizit definiert durch
 Sei des weiteren
 
 \begin{equation}
-    G = \left\{M_{as} \in GL(2,\mathbb{R}) \Big | M_{as} = \left(\begin{smallmatrix}
+    G = \left\{M_{as} \in GL(2,\mathbb{R}) ~\Big|~ M_{as} = \left(\begin{smallmatrix}
         a & -\sqrt a s \\ 0 & \sqrt a
     \end{smallmatrix}\right)
     , a \in [0,1], s \in [-2,2]
@@ -231,7 +228,7 @@ Bevor es mit dem Text weiter geht, noch eine kurze Bemerkung zu Vereinfachung de
 Offenbar können $\psi_1$ und $\psi_2$ in \cref{def:shearletttransformationI} problemlos auch so gewählt werden, dass $\hat\psi_1$ und $\hat\psi_2$ glatt sind; wir stellen in \cref{eq:psi_1,eq:psi_2} ja keine allzu restriktiven Anforderungen an sie. Dann ist $\psi_{ast}$ eine Schwartz-Funktion für alle $(a,s,t)$ und die Shearlettransformation temperierter Distributionen ist wohldefiniert.  Die Anforderungen aus \cref{eq:psi_1,eq:psi_2} sind so gewählt, dass \cref{eq:admissibility criterion} von $\psi$ erfüllt wird, und gleichzeitig die konkreten Rechnungen zur Bestimmung der Wellenfrontmenge auch analytisch möglich sind.
 
 Der kompakte Träger von $\hat\psi$ in der Frequenzdomäne erlaubt einfachere
-Abschätzungen von Ausdrücken der Form $\left<\hat \psi_{ast}, \hat f\right>$, ist aber \emph{nicht} zwingend notwendig, um mit diesem Shearlet die Wellenfrontmenge zu bestimmen.
+Abschätzungen von Ausdrücken der Form $\left<\hat f, \hat \psi_{ast}\right>$, ist aber \emph{nicht} zwingend notwendig, um mit diesem Shearlet die Wellenfrontmenge zu bestimmen.
 
 
 Die Wirkung der Scher- und Skalierungsmatrizen aus \cref{eq:schermatrizen} versteht man am besten in der Frequenzdomäne. Mit $a \to 0$ wird $\hat \psi$ immer weiter "`nach außen"' geschoben in der Frequenzdomäne und der Träger wird gleichzeitig immer schmaler bzw. gerichteter. Dies ist genau die Anisotropie, die uns erlaubt, nicht nur die Position der Singularitäten, sondern auch ihre Orientierung zu erkennen. Der Parameter bestimmt die Scherung des Trägers von $\psi$. Für $s=0$ ist der Träger um $k=0$ herum lokalisiert, für $s = \pm 1$ um die Diagonale bzw Antidiagonale. Siehe auch \cref{fig:supp_psi_hat} und \cref{rem:psi_hat}.
@@ -243,7 +240,7 @@ Die Wirkung der Scher- und Skalierungsmatrizen aus \cref{eq:schermatrizen} verst
 \centering
 \input{images/supp_psi.pgf}
 \caption{Der Träger von $\hat \psi_{ast}$ für verschiedene $a, s$. Man sieht gut,
-wie $supp (\hat \psi_{ast})$ für kleinere $a$ in immer spitzeren Kegeln liegt. Da wir in den konkreten Rechnungen später $(k_1, k_2) = (\omega, k)$ nennen werden und Minkowski-Diagramme üblicherweise mit $\omega$ auf der $y$-Achse dargestellt werden, haben wir hier beide Namen eingetragen und alles um $90^\circ$ gedreht.}
+wie $supp (\hat \psi_{ast})$ für kleinere $a$ in immer spitzeren Kegeln liegt. Da wir in den konkreten Rechnungen später $(k_1, k_2) = (\omega, k)$ nennen werden und Minkowski-Diagramme üblicherweise mit $\omega$ auf der $y$-Achse dargestellt werden, haben wir hier beide Namen eingetragen und alles an der Diagonale gespiegelt.}
 \label{fig:supp_psi_hat}
 \end{figure}
 
@@ -251,7 +248,7 @@ wie $supp (\hat \psi_{ast})$ für kleinere $a$ in immer spitzeren Kegeln liegt. 
 Im Fourierraum ist $\hat{\psi}_{ast}$ gegeben durch
 
 \begin{equation}
-    \hat \psi_{ast}{(\omega, k)} = a^{\frac{3}{4}}e^{-ikx}\hat\psi_1(a k_1) \hat\psi_{2}\left(a^{-\frac{1}{2}}\left(\frac{k_2}{k_1}-s\right)\right)
+    \hat \psi_{ast}{(k_1, k_2)} = a^{\frac{3}{4}}e^{-ikx}\hat\psi_1(a k_1) \hat\psi_{2}\left(a^{-\frac{1}{2}}\left(\frac{k_2}{k_1}-s\right)\right)
 \label{eq:hat_psi_ast}
 \end{equation}
 
@@ -263,7 +260,7 @@ und es gilt
 \end{equation}
 \end{remark}
 
-Eine weitere Eigenschaft, die aus dieser Definition der Shearlets folgt, ist der schnelle Abfall der Shearlets Abseits von $(t',x')$
+Eine weitere Eigenschaft, die aus dieser Definition der Shearlets folgt, ist der schnelle Abfall der Shearlets Abseits von $t$:
 
 \begin{proposition}[$\psi_{ast}$ fällt schnell ab]
 \label{prop:shearlets_decay_rapidly}
@@ -289,7 +286,7 @@ Und insbesondere ist $C_N = \frac{15}{2}\frac{\sqrt{a} + s}{a^2}\left(\Vert \hat
 \end{proposition}
 
 
-Wer bisher aufmerksam mitgelesen hat und sich \cref{fig:supp_psi_hat} genau angeschaut hat, wird bemerkt haben, dass $supp(\hat\psi_{ast})$ für alle $a$ und $s$ quasi nur im Quadranten $x_1^2 \geq x_2^2$ und $x_2 \geq 0$ liegt.
+Wer bis hier aufmerksam mitgelesen hat und sich \cref{fig:supp_psi_hat} genau angeschaut hat, wird bemerkt haben, dass $supp(\hat\psi_{ast})$ für alle $a$ und $s$ quasi nur im Quadranten $x_1^2 \geq x_2^2$ und $x_2 \geq 0$ liegt.
 Mit den Namen der Physik $(k_1, k_2) = (\omega, k)$ entspricht das dem "`Vorwärtskegel"'. Glücklicherweise liegen alle analysierten Distributionen im gleich definierten $L^(C)^\vee$
 Wie der folgende Satz zeigt, erzeugt $\psi$ auch nur für solche $f$ ein reproduzierendes System.
 \todo[color=green]{Die konkrete Konstruktion für die volle Transformation angeben, oder reicht der Hinweis, dass ich mit Spiegeln und Drehen alles sehen kann?}
@@ -311,12 +308,12 @@ Wie der folgende Satz zeigt, erzeugt $\psi$ auch nur für solche $f$ ein reprodu
     $f \in L^2(C)^\vee$
     \begin{equation}
         f(x) = \int_{\mathbb{R}^2} \int_{-2}^2 \int_0^1
-                \left\langle\psi_{ast},f\right\rangle \psi_{ast}(x)
+                \left\langle f,\psi_{ast}\right\rangle \psi_{ast}(x)
                 \frac{\d a}{a^3} \d s \d t
     \end{equation}
 \end{theorem}
 
-Um nun nicht nur ein reproduzierendes System für $L^2(C)^\vee$, sondern für ganz $L^2(\mathbb{R}^2)$ zu erhalten, muss $\hat \psi$ noch in den rechten, linken und rückwärts liegenden Kegel gedreht und geschoben werden. Zusätzlich muss noch eine weitere Funktion $W$ gefunden werden, welche die groben Skalen (also $|k_1|, |k_2| \leq 2$) auflöst. Die Konstruktion dazu findet sich in \textcite[S. 7 ff]{Kutyniok2008}. Hier verzichten wir aber darauf, da wir in den späteren Rechnungen nur Distributionen betrachten, die im der Frequenzdomäne im oberen Kegel liegen und die groben Skalen bei der Bestimmung der Wellenfrontmenge per Definition nicht interessant sind.
+Um nun nicht nur ein reproduzierendes System für $L^2(C)^\vee$, sondern für ganz $L^2(\mathbb{R}^2)$ zu erhalten, muss $\hat \psi$ noch in den rechten, linken und rückwärts liegenden Kegel gedreht und geschoben werden. Zusätzlich muss noch eine weitere Funktion $W$ gefunden werden, welche die groben Skalen (also $|k_1|, |k_2| \leq 2$) auflöst. Die Konstruktion dazu findet sich in \textcite[S. 7 ff]{Kutyniok2008}. Hier verzichten wir aber darauf, da wir in den späteren Rechnungen nur Distributionen betrachten, die in der Frequenzdomäne im oberen Kegel liegen und die groben Skalen bei der Bestimmung der Wellenfrontmenge per Definition nicht interessant sind.
 
 \todo{L2 ist Summer der vier Quadranten plus grobe Strukturen}
 
@@ -352,8 +349,8 @@ Das große Versprechen der Shearlettransformation war ja, dass sie in der Lage i
 
     \begin{dmath*}
         \mathcal{D} = \left\{
-        (t_0,s_0) \hiderel \in \mathbb{R}^2 \times [-1,1]~ \Big|\\ ~\textrm{ für  $(t,s)$ in einer Umgebung $U$ von } (t_0,s_0) \hiderel :\\
-        |S_f (a,s,t)| = O(a^k) \textrm{ für } a \hiderel \to 0, \forall k \hiderel \in \mathbb{N} \\ \textrm{ mit $O(\cdot)$ gleichmäßig über } (t,s) \hiderel \in U
+        (t_0,s_0) \hiderel \in \mathbb{R}^2 \times [-1,1]~ \Big| ~\textrm{ für  $(t,s)$ in einer Umgebung $U$ von } (t_0,s_0) \hiderel :\\
+        |S_f (a,s,t)| = O(a^k) \textrm{ für } a \hiderel \to 0, \forall k \hiderel \in \mathbb{N}  \textrm{ mit $O(\cdot)$ gleichmäßig über } (t,s) \hiderel \in U
         \right\}
     \end{dmath*}
 
@@ -363,7 +360,7 @@ Das große Versprechen der Shearlettransformation war ja, dass sie in der Lage i
 
 \begin{remark}
 \label{rem:shearlets_no_distributions}
-    Die Einschränkung $f \in B(\mathbb{R}^2)$ ist keine kleine und bedeutet zunächst, dass die Shearlettransformation nur bedingt geeignet ist, um Wellenfrontmengen auszurechnen. In \cref{sec:ausblick} soll aber ein Ansatz gegeben werden, wie der Beweis von \cref{thm:main_theorem} hoffentlich auf ganz $\mathcal{S}'(C)^\vee$ ausgedehnt werden kann. Des weiteren zeigen ja auch die konkreten Rechnungen an Distributionen mit bereits bekannter Wellefrontmenge, dass die Shearlettransformation diese korrekt erkennt.
+    Die Einschränkung $f \in B(\mathbb{R}^2)$ ist gravierend und bedeutet zunächst, dass die Shearlettransformation nur bedingt geeignet ist, um Wellenfrontmengen auszurechnen. In \cref{sec:ausblick} soll aber ein Ansatz gegeben werden, wie der Beweis von \cref{thm:main_theorem} hoffentlich auf ganz $\mathcal{S}'(C)^\vee$ ausgedehnt werden kann. Des weiteren zeigen ja auch die konkreten Rechnungen an Distributionen mit bereits bekannter Wellefrontmenge, dass die Shearlettransformation diese korrekt erkennt.
 \end{remark}
 Wenn wir die Wellenfrontmenge einer Distribution kennen, kennen wir auch ihren singulären Träger:
 
