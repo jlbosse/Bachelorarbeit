@@ -8,8 +8,6 @@
          {wellenfrontmenge von delta_m2_twisted}} % (fold)
 \label{sec:die_wellenfrontmenge_von_delta_m2_twisted}
 
-\todo{Gibt es schon eine Übersetzung für verdrehte Faltung?}
-
 Bevor wir uns aber der Wellenfrontmenge widmen können, brauchen wir einen Ausdruck für die Fouriertransformierte $\rwhat{\Delta}_m^{\circledast 2}$ von $\Delta_m^{\star 2}$.
 
 \subsection{\texorpdfstring{$\hat\Delta_m^{\circledast 2}$ berechnen}
@@ -201,8 +199,6 @@ $\rwhat\Delta_m^{\circledast 2} = \rwhat\Delta_m^{* 2} \cos(\dots)$ können wir 
 
 \subsubsection*{Fall $|s| < 1, (x,t) = 0$}
 In diesem Fall lassen wir den $\cos$-Faktor in \cref{eq:delta_m2_twisted_s<1} in der ersten Ungleichung nicht heraus fallen, dafür wird der $e^\cdots$-Faktor 1. Den $\cos$-Faktor schreiben wir als Summe von $e$-Funktionen und erhalten
-
-\todo{\dots in exp durch ---"--- ersetzen}
 
 \begin{dmath}
     \left\langle \rwhat{\psi}_{ast},\rwhat{\Delta}_m^{\circledast 2}
@@ -403,22 +399,21 @@ Einsetzen von \cref{eq:delta_m2_twisted_s=-1_material_a,eq:delta_m2_twisted_s=-1
 Nun betrachten wir $\hat f_a(\omega)$ und erhalten analog zu
 \cref{eq:faltung_mit_1/x_rechnung}
 
-\begin{dmath*}
+\begin{align*}
     \hat f_a(\omega)
-    =
+    &=
     \int \hat\psi_2(k')\Theta(k')
     \left(
         e^{i a^{-\frac{3}{2}}\left(\frac{\omega^2 k'}{2} + O(a^1)\right)}
         + e^{-i \cdots}
     \right) \d k
-    \\
-    \stackrel{a \to 0}{\longrightarrow}
+    \\ &\stackrel{a \to 0}{\longrightarrow}
     \int \hat\psi_2(k')\Theta(k')
     \left(
         e^{i a^{-\frac{3}{2}}\left(\frac{\omega^2 k'}{2}\right)}
         + e^{-i \cdots}
     \right) \d k'
-    =
+    \\ &=
     \bigg[
         \underbrace{
             \psi_2\left(-\frac{\omega^2}{2 a^{\frac{3}{2}}}\right)
@@ -432,8 +427,40 @@ Nun betrachten wir $\hat f_a(\omega)$ und erhalten analog zu
            }
      + (\textrm{anderer Term})
      \bigg]
-     \sim O\left(a^{\frac{3}{2}}\right)
-\end{dmath*}
+     \\ &\sim
+    O\left(a^{\frac{3}{2}}\right)
+\end{align*}
+% \begin{dmath*}
+%     \hat f_a(\omega)
+%     =
+%     \int \hat\psi_2(k')\Theta(k')
+%     \left(
+%         e^{i a^{-\frac{3}{2}}\left(\frac{\omega^2 k'}{2} + O(a^1)\right)}
+%         + e^{-i \cdots}
+%     \right) \d k
+%     \\
+%     \stackrel{a \to 0}{\longrightarrow}
+%     \int \hat\psi_2(k')\Theta(k')
+%     \left(
+%         e^{i a^{-\frac{3}{2}}\left(\frac{\omega^2 k'}{2}\right)}
+%         + e^{-i \cdots}
+%     \right) \d k'
+%     =
+%     \bigg[
+%         \underbrace{
+%             \psi_2\left(-\frac{\omega^2}{2 a^{\frac{3}{2}}}\right)
+%         }_{O(a^k) \; \forall k \in \mathbb{N}}
+%         + \underbrace{i
+%             \underbrace{\left(\psi_2 * \mathcal{P}(1/x)\right)}_{O(x^{-1})}
+%             \left(-\frac{\omega^2}{2 a^{\frac{3}{2}}}\right)
+%         }_{
+%             O\left(\left(-\frac{\omega^2}{2 a^{\frac{3}{2}}}\right)^{-1}\right)
+%             = O\left(a^{\frac{3}{2}}\right)
+%            }
+%      + (\textrm{anderer Term})
+%      \bigg]
+%      \sim O\left(a^{\frac{3}{2}}\right)
+% \end{dmath*}
 
 Also dürfen wir für $a \to 0$ schreiben $\hat f_a(\omega) = C a^{\frac{3}{2}} + o\left(a^{\frac{3}{2}}\right)$ und landen bei
 
@@ -451,11 +478,11 @@ Also dürfen wir für $a \to 0$ schreiben $\hat f_a(\omega) = C a^{\frac{3}{2}} 
 \label{eq:delta_m2_twisted_s=-1}
 \end{dmath}
 
-Fassen wir also wie bisher schon die Ergebnisse aus \cref{eq:delta_m2_twisted_s>1,eq:delta_m2_twisted_s<1_x_neq_0,eq:delta_m2_twisted_s<1_x=0,eq:delta_m2_twisted_s=-1} wieder in einer Übersichtstabelle zusammen:
+\subsection{Zusammenfassung und Vergleich der Ergebnisse}
+Fassen wir wie bisher schon die Ergebnisse aus \cref{eq:delta_m2_twisted_s>1,eq:delta_m2_twisted_s<1_x_neq_0,eq:delta_m2_twisted_s<1_x=0,eq:delta_m2_twisted_s=-1} wieder in einer Übersichtstabelle zusammen:
 
-\begin{table}[]
+\begin{table}[h]
 \centering
-\label{tab:wavefrontset_delta_m2_twisted}
 \begin{tabular}{l|cccc}
         & $(t',x') = 0$     & $t'=x' \neq 0$    & $t'=-x' \neq 0$   & $t' \neq \pm x'$ \\ \hline
 $s=1$   & $a^{\frac{3}{4}}$ & $a^{\frac{3}{4}}$ & $a^k$             & $a^k$            \\
@@ -464,9 +491,16 @@ $|s|<1$ & $a^k$             & $a^k$             & $a^k$             & $a^k$     
 $|s|>1$ & $a^k$             & $a^k$             & $a^k$             & $a^k$
 \end{tabular}
 \caption{Konvergenzordnung von $\mathcal{S}_{\Delta_m^{\star 2}}(a,s,(t',x'))$ im Limit $a \to 0$ für alle interessanten Kombinationen von $s$ und $(t',x')$}
+\label{tab:wavefrontset_delta_m2_twisted}
 \end{table}
 
+Auch diesmal stimmen die Ergebnisse mit denen von \textcite[Prop. 3.72]{Schulz2014}\footnote{So weit sie gegeben wurden} überein, welcher für alle Potenzen des getwisteten Produkts $\Delta_+^{\star k}$ erhält:
 
+\begin{equation*}
+\left\langle t,x; \omega, k \right\rangle \hiderel\in WF(\Delta_+^{\star k})
+\Rightarrow
+- \omega \geq |k|
+\end{equation*}
 % section dots_und_nun_zur_wellenfrontmenge_von_ (end)
 
 

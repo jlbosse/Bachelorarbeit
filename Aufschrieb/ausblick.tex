@@ -103,6 +103,19 @@ Vor dem Beweis zwei Worte zur Bedeutung des Lemmas: Der hauptsächliche Nutzen d
     Was die Aussage für $N-k-|\alpha|$ und damit auch für alle $k$ zeigt.
 \end{proof}
 
+Neben der Ausweitung der Hilfslemmata auf temperierte Distributionen muss auch noch erklärt werden, was die richtige Verallgemeinerung der Reproduktionseigenschaft in \cref{thm:shearlets_reproduzieren} ist. Die kanonische Verallgemeinerung ist
+
+\begin{equation*}
+    \left\langle f,\phi\right\rangle = \int_{\mathbb{R}^2} \int_{\{a,s,t\}}
+    \left\langle f,\psi_{ast}\right\rangle\, \psi_{ast}(x) \,\phi(x)
+    \d \mu(a,s,t) \d x
+    .
+\end{equation*}
+Für alle Schwartzfunktionen $\phi$ und alle temperierten Distributionen $f \in \mathcal{S}'(C)^\vee$, wobei $\mathcal{S}'(C)^\vee$ analog zu \cref{eq:L2_cone} definiert ist.
+
+
+In den Beweis von \cref{lemm:shearlets_decay_quickly_schwartz} ging der Struktursatz für temperierte Distributionen entscheidend ein. Deshalb ist eine Ausweitung der Ergebnisse auf ganz $\mathcal{D}'(\mathbb{R}^n)$ nicht möglich. In der Tat sind die Shearlets $\psi_{ast}$ ja gar nicht kompakt getragen.
+Ob eine analoge Konstruktion von Shearlets die kompakt getragen sind möglich ist, ist a priori nicht klar.
 % Die entscheidende Aussage des Lemmas ist, dass die Shearlettransformation Eigenschaften von $f$, die mindestens $delta$-weit von $t$ entfernt sind "`exponentiell schnell nicht mehr sieht"'. Obwohl die Shearlets nicht getragen sind!
 
 % section ausdehnen_von_thm:main_theorem (end)
@@ -146,6 +159,7 @@ Allerdings zeigen die Rechnungen ab \cref{sec:die_wellenfrontmenge_von_delta_m_2
 
 
 \subsection{Berechnung des Skalengrads mittels Shearlets}
+\label{sec:scaling_degree}
 Eine weitere Größe der mikrolokalen Analysis, die eventuell durch die Shearlettransformation bestimmt werden kann ist der Skalengrad. Er ist definiert wie folgt:
 
 \begin{definition}[Skalengrad]

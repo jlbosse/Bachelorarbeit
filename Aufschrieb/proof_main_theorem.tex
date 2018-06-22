@@ -83,36 +83,63 @@ Um $\hat h(k)$ abzuschätzen, teilen wir es in den Bereich auf, in dem G(a,s,t) 
 
 
 \paragraph{zu $i)$}
-\begin{dmath*}
-    i) \leq \int \limits_0^1 \int \limits_U \int \limits_{S}
+\begin{align*}
+    i) &\leq
+     \int \limits_0^1 \int \limits_U \int \limits_{S}
     \left\lvert G(a,s,t)\right\rvert
     \left\lvert \hat \psi_{ast} (k) \right\rvert
         \d s \d t \frac{\d a}{a^3}
-    \leq
+    \\ &\leq
     C_N C'
     \int \limits_0^1 \int \limits_U \int \limits_{S}
     a^{\frac{3}{4}} a^N \chi_{\Gamma_k} \d s \d t \frac{\d a}{a^3}
-    \leq
+    \\ &\leq
     C_N \int \limits_{\frac{1}{2|k|}}^{\frac{2}{|k|}}
     a^{N-\frac{9}{4}} \d a
-    \le C_N |k|^{-N+\frac{7}{4}}
-\end{dmath*}
+    ~\leq~
+     C_N |k|^{-N+\frac{7}{4}}
+\end{align*}
+
+% \begin{dmath*}
+%     i) \leq \int \limits_0^1 \int \limits_U \int \limits_{S}
+%     \left\lvert G(a,s,t)\right\rvert
+%     \left\lvert \hat \psi_{ast} (k) \right\rvert
+%         \d s \d t \frac{\d a}{a^3}
+%     \leq
+%     C_N C'
+%     \int \limits_0^1 \int \limits_U \int \limits_{S}
+%     a^{\frac{3}{4}} a^N \chi_{\Gamma_k} \d s \d t \frac{\d a}{a^3}
+%     \leq
+%     C_N \int \limits_{\frac{1}{2|k|}}^{\frac{2}{|k|}}
+%     a^{N-\frac{9}{4}} \d a
+%     \le C_N |k|^{-N+\frac{7}{4}}
+% \end{dmath*}
 
 $i)$ fällt also schnell ab für $a \to 0$.
 
 
 \paragraph{zu $ii)$}
 
-\begin{dmath*}
-    ii) \leq
+\begin{align*}
+    ii) &\leq
      \int \limits_0^1 \int \limits_U \int \limits_{[-2,2]\setminus S}
     |G(a,s,t)| |\hat \psi_{ast} (k)|
         \d s \d t \frac{\d a}{a^3}
-    \leq
+    \\ &\leq
     C' \int \limits_{0}^{1} \int \limits_{U} \int \limits_{[-2,2]\setminus S}
     |G(a,s,t)| \chi_{\Gamma_k} a^{\frac{3}{4}}
     \d s \d t \frac{\d a}{a^3}
-\end{dmath*}
+\end{align*}
+% \begin{dmath*}
+%     ii) \leq
+%      \int \limits_0^1 \int \limits_U \int \limits_{[-2,2]\setminus S}
+%     |G(a,s,t)| |\hat \psi_{ast} (k)|
+%         \d s \d t \frac{\d a}{a^3}
+%     \leq
+%     C' \int \limits_{0}^{1} \int \limits_{U} \int \limits_{[-2,2]\setminus S}
+%     |G(a,s,t)| \chi_{\Gamma_k} a^{\frac{3}{4}}
+%     \d s \d t \frac{\d a}{a^3}
+% \end{dmath*}
 
 Für alle hinreichend großen $k$ ist aber $\Gamma_k \subset S$, also $\Gamma_k \cap [-1,1]\setminus S = \varnothing$ und demnach das Integral 0. Also
 
@@ -206,30 +233,54 @@ Sei also $\mathcal{S}_f(a,s,t) \xrightarrow[a \to 0]{\text{\tiny schnell}} 0$
 für $(s,t) \in B(s_0, 2 \Delta) \times B(t_0, 2 \delta) \eqqcolon S \times U$\footnote{Falls das ganze gilt für $(s,t)$ in einer offenen Umgebung von $(s_0,t_0)$, dann auch in solchen Bällen mit passenden $\Delta, \delta$}.
 Sei $\phi \in C_0^\infty(B(t_0,\delta))$ und $\phi \equiv 1$ in einer Umgebung von $t_0$. Dann müssen wir zeigen, dass $\rwhat{\phi f}(k) \xrightarrow[a \to 0]{\text{\tiny schnell}} 0$ für $\frac{k_2}{k_1} \in S$
 
-\begin{dmath*}
+\begin{align*}
     \rwhat{\phi f} (k)
-    =
+    &=
     \int \phi(x) f(x) e^{-ikx} \d x \\
-    \stackrel{\ref{thm:shearlets_reproduzieren}}{=}
+    \\&\stackrel{\ref{thm:shearlets_reproduzieren}}{=}
     \iint \left\langle \psi_{ast},\phi f \right\rangle
         \psi_{ast} (x) \d \mu (a,s,t)
         e^{-ikx} \d x
-    =
+    \\ &=
     \int \left\langle \psi_{ast'},\phi f \right\rangle
     \hat\psi_{ast}(k) \d \mu(a,s,t)
-    = \kern -1em
+    \\&= \kern -1em
     \underbrace{
         \int \limits_{U \times [-2,2] \times [0,1]} \kern -1em
         \left\langle \psi_{ast},\phi f \right\rangle
         \hat\psi_{ast}(k) \d \mu(a,s,t)
     }_{i)}
-    + \kern -1em
+    \\& \kern 2em+ \kern -1em
     \underbrace{
         \int \limits_{U^c \times [-2,2] \times [0,1]} \kern -1em
         \left\langle \psi_{ast},\phi f \right\rangle
         \hat\psi_{ast}(k) \d \mu(a,s,t)
     }_{ii)}
-\end{dmath*}
+\end{align*}
+% \begin{dmath*}
+%     \rwhat{\phi f} (k)
+%     =
+%     \int \phi(x) f(x) e^{-ikx} \d x \\
+%     \stackrel{\ref{thm:shearlets_reproduzieren}}{=}
+%     \iint \left\langle \psi_{ast},\phi f \right\rangle
+%         \psi_{ast} (x) \d \mu (a,s,t)
+%         e^{-ikx} \d x
+%     =
+%     \int \left\langle \psi_{ast'},\phi f \right\rangle
+%     \hat\psi_{ast}(k) \d \mu(a,s,t)
+%     = \kern -1em
+%     \underbrace{
+%         \int \limits_{U \times [-2,2] \times [0,1]} \kern -1em
+%         \left\langle \psi_{ast},\phi f \right\rangle
+%         \hat\psi_{ast}(k) \d \mu(a,s,t)
+%     }_{i)}
+%     + \kern -1em
+%     \underbrace{
+%         \int \limits_{U^c \times [-2,2] \times [0,1]} \kern -1em
+%         \left\langle \psi_{ast},\phi f \right\rangle
+%         \hat\psi_{ast}(k) \d \mu(a,s,t)
+%     }_{ii)}
+% \end{dmath*}
 
 \paragraph*{zu $ii)$}
 Per Konstruktion von $\phi$ gilt $d(supp(\phi f, U^c)) = \delta > 0$. Also fällt nach \cref{lemm:lemma54} $ii)$ schnell ab.
@@ -237,46 +288,81 @@ Per Konstruktion von $\phi$ gilt $d(supp(\phi f, U^c)) = \delta > 0$. Also fäll
 \paragraph*{zu $i)$}
 Falls $\left<\psi_{ast},\phi f\right> \xrightarrow[a \to 0]{\text{\tiny schnell}} 0$ für $(s,t) \in S \times U$, dann fällt $ii)$ schnell ab falls $\frac{k_2}{k_2} \in B(s_0,\Delta)$ nach \cref{lemm:ruecktrafo_fourier_faellt_schnell_ab}. Wir zeigen also, dass $\left<\psi_{ast},\phi f\right> \xrightarrow[a \to 0]{\text{\tiny schnell}} 0$ für $(s,t) \in S \times U$.
 
-\begin{dmath*}
+\begin{align*}
     \left\langle \phi f, \psi_{ast} \right\rangle
-    =
+    &=
     \int \phi f \psi_{ast} \d x
-    =
+    \\&=
     \int \phi(x) \int \left\langle f, \psi_{a' s' t'} \right\rangle
     \psi_{a's't'} (x) \d \mu(a',s',t') \,\psi_{ast}(x) \d x
-    =
+    \\&=
     \int\limits_{0}^{1} \int\limits_{\mathbb{R}^2} \int\limits_{-2}^2
     \left\langle \phi \psi_{ast}, \psi_{a's't'} \right\rangle
     \left\langle f, \psi_{a's't'} \right\rangle
     \d s' \d t' \frac{\d a'}{a^{\prime 3}}
-\end{dmath*}
+\end{align*}
+% \begin{dmath*}
+%     \left\langle \phi f, \psi_{ast} \right\rangle
+%     =
+%     \int \phi f \psi_{ast} \d x
+%     =
+%     \int \phi(x) \int \left\langle f, \psi_{a' s' t'} \right\rangle
+%     \psi_{a's't'} (x) \d \mu(a',s',t') \,\psi_{ast}(x) \d x
+%     =
+%     \int\limits_{0}^{1} \int\limits_{\mathbb{R}^2} \int\limits_{-2}^2
+%     \left\langle \phi \psi_{ast}, \psi_{a's't'} \right\rangle
+%     \left\langle f, \psi_{a's't'} \right\rangle
+%     \d s' \d t' \frac{\d a'}{a^{\prime 3}}
+% \end{dmath*}
 
 
 Für $a < \delta$\footnote{Und da wir uns für kleine $a$ interessieren, dürfen wir das auch direkt annehmen} teilen wir die Integration über $s'$ auf in die drei Fälle $a)$ $0<a'<a<\delta$, $b)$ $a < a' < \delta$ und $c)$ $\delta < a'$ und nutzen \cref{lemm:lemma57}. Des weiteren Teilen wir die Integration über $t'$ auf in die Fälle $t' \in U$ und $t' \in U^c$
 
 \paragraph*{Zu $a)$, $t' \in U^c$}
 Hier gilt im Integrationsbereich $\Vert t' - t \Vert \geq \delta$. Mit \cref{lemm:lemma57}$.1)$ können wir für alle $N\in \mathbb{N}$ abschätzen wie folgt:
-\begin{dmath*}
+\begin{align*}
+ &\kern-2em
  \int\limits_{0}^{a} \int\limits_{U^c} \int\limits_{-2}^2
  \left\langle \phi \psi_{ast}, \psi_{a's't'} \right\rangle
  \left\langle f, \psi_{a's't'} \right\rangle
     \d s' \d t' \frac{\d a'}{a^{\prime 3}}
-\leq
+\\&\leq
 \int\limits_{0}^{a} \int\limits_{U^c} \int\limits_{-2}^2
 C_N
 \left| \left\langle f, \psi_{a's't'} \right\rangle \right|
 \left(1+\frac{\Vert t-t' \Vert^2}{a}\right)^{-N} \d \mu(a',s',t')
-\leq
+\\&\leq
 \int\limits_{0}^{a} \int\limits_{U^c} \int\limits_{-2}^2
 C_N
 \left| \left\langle f, \psi_{a's't'} \right\rangle \right|
 a^N \Vert t-t' \Vert^{-N} \d \mu(a',s',t')
-\leq
+\\&\leq
 C_N a^N
 \int\limits_{0}^{a} \int\limits_{U^c} \int\limits_{-2}^2
 \left| \left\langle f, \psi_{a's't'} \right\rangle \right|
 \Vert t-t' \Vert^{-N} \d \mu(a',s',t')
-\end{dmath*}
+\end{align*}
+% \begin{dmath*}
+%  \int\limits_{0}^{a} \int\limits_{U^c} \int\limits_{-2}^2
+%  \left\langle \phi \psi_{ast}, \psi_{a's't'} \right\rangle
+%  \left\langle f, \psi_{a's't'} \right\rangle
+%     \d s' \d t' \frac{\d a'}{a^{\prime 3}}
+% \leq
+% \int\limits_{0}^{a} \int\limits_{U^c} \int\limits_{-2}^2
+% C_N
+% \left| \left\langle f, \psi_{a's't'} \right\rangle \right|
+% \left(1+\frac{\Vert t-t' \Vert^2}{a}\right)^{-N} \d \mu(a',s',t')
+% \leq
+% \int\limits_{0}^{a} \int\limits_{U^c} \int\limits_{-2}^2
+% C_N
+% \left| \left\langle f, \psi_{a's't'} \right\rangle \right|
+% a^N \Vert t-t' \Vert^{-N} \d \mu(a',s',t')
+% \leq
+% C_N a^N
+% \int\limits_{0}^{a} \int\limits_{U^c} \int\limits_{-2}^2
+% \left| \left\langle f, \psi_{a's't'} \right\rangle \right|
+% \Vert t-t' \Vert^{-N} \d \mu(a',s',t')
+% \end{dmath*}
 
 Wobei das letzte Integral endlich ist, da $\Vert t-t'\Vert \geq \delta$ im Integrationsbereich und $\left| \left\langle f, \psi_{a's't'} \right\rangle \right|$ beschränkt ist, da $f$ beschränkt ist. Für kleinere $a$ kann es nur kleiner werden.
 
@@ -286,12 +372,13 @@ Eine kurze Erinnerung: Falls $(s',t') \in S \times U$ gilt nach Vorraussetzung f
 $\left| \left\langle f, \psi_{a's't'} \right\rangle \right| \leq C_N a^N$.
 Außerdem gilt für $s' \notin B(s_0,\Delta) : ~$ $|s-s'|  \geq \Delta$ für alle $s$ die wir hier betrachten. Also:
 
-\begin{dmath*}
+\begin{align*}
+&\kern -2em
  \int\limits_{0}^{a} \int\limits_{U} \int\limits_{-2}^2
  \left\langle \phi \psi_{ast}, \psi_{a's't'} \right\rangle
  \left\langle f, \psi_{a's't'} \right\rangle
     \d \mu(a',s',t')
-=
+\\&=
  \int\limits_{0}^{a} \int\limits_{U} \int\limits_{B(s_0,\Delta)}
  \cdots
     \d \mu(a',s',t')
@@ -299,23 +386,53 @@ Außerdem gilt für $s' \notin B(s_0,\Delta) : ~$ $|s-s'|  \geq \Delta$ für all
  \int\limits_{0}^{a} \int\limits_{U} \int\limits_{B(s_0,\Delta)^c}
  \cdots
     \d \mu(a',s',t')
-=
+\\&=
  \int\limits_{0}^{a} \int\limits_{U} \int\limits_{B(s_0,\Delta)} C_N a^N
  \d \mu(a',s',t')
- +
+ \\&\kern +2em+
  \int\limits_{0}^{a} \int\limits_{U} \int\limits_{B(s_0,\Delta)^c}
  |\left\langle f, \psi_{a's't'} \right\rangle|
  \left(1+\frac{|s-s'|^2}{a}\right)^{-N}
  \d \mu(a',s',t')
- \leq
+ \\ &\leq
  C_N a^N +
   \int\limits_{0}^{a} \int\limits_{U} \int\limits_{B(s_0,\Delta)^c}
  \left\langle f, \psi_{a's't'} \right\rangle
  a^N \Delta^{-2N}
  \d \mu(a',s',t')
- \leq
+ \\&\leq
  C_N a^N
-\end{dmath*}
+\end{align*}
+% \begin{dmath*}
+%  \int\limits_{0}^{a} \int\limits_{U} \int\limits_{-2}^2
+%  \left\langle \phi \psi_{ast}, \psi_{a's't'} \right\rangle
+%  \left\langle f, \psi_{a's't'} \right\rangle
+%     \d \mu(a',s',t')
+% =
+%  \int\limits_{0}^{a} \int\limits_{U} \int\limits_{B(s_0,\Delta)}
+%  \cdots
+%     \d \mu(a',s',t')
+%     +
+%  \int\limits_{0}^{a} \int\limits_{U} \int\limits_{B(s_0,\Delta)^c}
+%  \cdots
+%     \d \mu(a',s',t')
+% =
+%  \int\limits_{0}^{a} \int\limits_{U} \int\limits_{B(s_0,\Delta)} C_N a^N
+%  \d \mu(a',s',t')
+%  +
+%  \int\limits_{0}^{a} \int\limits_{U} \int\limits_{B(s_0,\Delta)^c}
+%  |\left\langle f, \psi_{a's't'} \right\rangle|
+%  \left(1+\frac{|s-s'|^2}{a}\right)^{-N}
+%  \d \mu(a',s',t')
+%  \leq
+%  C_N a^N +
+%   \int\limits_{0}^{a} \int\limits_{U} \int\limits_{B(s_0,\Delta)^c}
+%  \left\langle f, \psi_{a's't'} \right\rangle
+%  a^N \Delta^{-2N}
+%  \d \mu(a',s',t')
+%  \leq
+%  C_N a^N
+% \end{dmath*}
 
 Mit analogen Abschätzungen und \cref{lemm:lemma57} erhalten wir auch noch, dass auch die Integral zu $b)$ und $c)$ schnell abfallen in $a$.
 

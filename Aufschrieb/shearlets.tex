@@ -9,8 +9,6 @@ Die klassische Fouriertransformation $f(x) \mapsto \int f(x) e^{-ik x} \d x$
 zerlegt eine Funktion in ihre verschiedenen Frequenzanteile und misst nach dem Satz von Payley-Wiener dabei auch die Regularität der Funktion. Es gilt nämlich $f \in C^N(\mathbb{R}^n) \cap L^1(\mathbb{R}^n) \Rightarrow \hat f(k) = O(k^N) $ für $|k| \to \infty$. Leider "`sieht"' die Fouriertransformation aber nicht, an welchen $x$ $f$ singulär (= nicht glatt) ist. Das hängt damit zusammen, dass die "`Basisfunktionen"', die ebenen Wellen, nicht lokalisiert sind. Das Argument der Fouriertransformation $k$ kontrolliert die Richtung und Skala, die von der Basisfunktion $e^{-ikx}$ aufgelöst werden. Ortsauflösung der Singularitäten gibt uns die
 
 
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % % Wavelets
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -292,14 +290,15 @@ Wie der folgende Satz zeigt, erzeugt $\psi$ auch nur für solche $f$ ein reprodu
 \begin{theorem}[$\psi$ reproduziert $L^2(C)^\vee$]
 \label{thm:shearlets_reproduzieren}
     Sei
-    \begin{equation}
+    \begin{equation*}
         C= \left\{(k_1,k_2)\in \hat{\mathbb{R}}^2
         \Big| k_1 \geq 2 \textrm{ und } \left\lvert\tfrac{k_2}{k_1}\right\rvert \leq 1
         \right\}
-    \end{equation}
+    \end{equation*}
     und
     \begin{equation}
         L^2(C)^\vee = \{f \in L^2(\mathbb{R}^2) ~|~ supp (\hat f) \subset C\}
+        \label{eq:L2_cone}
     \end{equation}
 
     Dann ist $\psi$ aus \cref{def:shearletttransformationI} ein reproduzierendes System für $L^2(C)^\vee$, also für alle

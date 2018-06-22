@@ -25,14 +25,16 @@
 
 \addbibresource{literature.bib}
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% % Import plots
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
 \begin{document}
+
+\makeatletter
+\everymath{%
+  \ifodd\value{page}\allowdisplaybreaks[0]%
+    \else \allowdisplaybreaks[4]%
+  \fi
+}
+\makeatother
+
 \pagenumbering{roman}
 
 \ThesisAuthor{Jan Lukas}{Bosse}
@@ -44,7 +46,7 @@
 %% Erst- und Zweitgutacher/in
 %% Ist der/die Betreuer/in nicht identisch mit dem/r Erstgutachter/in,
 %% muss diese/r als optionales Argument angegeben werden.
-\FirstReferee[Prof.\ Dr.\ Dorothea Bahns]{Prof.\ Dr.\ Dorothea Bahns}
+\FirstReferee{Prof.\ Dr.\ Dorothea Bahns}
 \Institute{Institut f\"ur Mathematik}
 \SecondReferee{Prof.\ Dr.\ Ingo Witt}
 %% Beginn und Ende des Anfertigungszeitraumes
@@ -54,31 +56,37 @@
 % \frontmatter
 \maketitle
 \cleardoublepage
-%% Zusammenfassung. Falls nicht gewuenscht, bitte auskommentieren.
-\begin{abstract}
-  Mein schnönes Abstrakt
-%% Optional: Stichwoerter. Wenn nicht gewuenscht, koennen die beiden
-%% folgenden Zeilen geloescht werden
-  \bigskip\par
-  \textbf{Stichwörter:} Physik, Bachelorarbeit
-\end{abstract}
-%% So laesst sich in die andere Sprache umschalten (Englisch bzw. Deutsch)
-\begin{otherlanguage}{english}
-\begin{abstract}
-  Do we need an english abstract?
-  \bigskip\par
-  \textbf{Keywords:} Physics, Bachelor thesis
-\end{abstract}
-\end{otherlanguage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % Kein Abstract
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \begin{abstract}
+%   \input{abstract_physic_german}
+%   % \bigskip\par
+%   % \textbf{Stichwörter:} Physik, Bachelorarbeit
+% \end{abstract}
+% %% So laesst sich in die andere Sprache umschalten (Englisch bzw. Deutsch)
+% \begin{otherlanguage}{english}
+% \begin{abstract}
+%   Do we need an english abstract?
+%   \bigskip\par
+%   \textbf{Keywords:} Physics, Bachelor thesis
+% \end{abstract}
+% \end{otherlanguage}
 
 %% Ende des Vorspanns
 \cleardoublepage
 %% Ab hier 1 1/2 facher Zeilenabstand (durch setspace-Paket)
 \onehalfspacing
 %% Erzeugt Inhaltsverzeichnis
-\tableofcontents
+
 \pagenumbering{arabic}
+\tableofcontents
 % \mainmatter
+
+\input{introduction_math}
+
+\input{introduction_physics}
 
 \input{mathematische_grundlagen}
 
@@ -99,6 +107,10 @@
 \input{advanced_propagator}
 
 \input{ausblick}
+
+\input{fazit_physik}
+
+\input{fazit_mathe}
 \printbibliography
 
 \Declaration

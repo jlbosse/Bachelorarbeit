@@ -11,14 +11,7 @@
         {Ausdrücke für psi ast, gf}} % (fold)
 \label{sec:psiast_gf}
 
-\todo{Überarbeiten und dem Format der anderen Berechungen anpassen!}
-
-Ab jetzt werden wir der Namenskonvention der Physiker in der SRT folgen und unsere
-Ortsraumvariablen mit $x = (t, x)$ und unsere Impulsraumvariablen mit $\xi = (\omega, k)$
-bezeichnen sowie konsequenterweise das Minkowskiskalarprodukt $x \cdot \xi = \omega t - k x$
-verwenden. Des weiteren wird der Verschiebungsparameter mit  $t = (t', x')$ bezeichnet.
-
-Die massive skalare Zweipunktfunktion bzw. der Feynmanpropagator im Impulsraum ist dann gegeben durch (\textcite{Schwartz2014}, (6.34))
+Der Feynmanpropgator ist einerseits definiert durch \cref{eq:feynman_propgator_as_product}, kann aber im Impulsraum auch geschrieben werden als (\textcite{Schwartz2014}, (6.34))
 
 \begin{equation}
 \label{eq:gf}
@@ -106,27 +99,6 @@ wobei sich die Integrationsbereiche aus den Forderungen an den Träger von $\psi
 (vgl. \eqref{eq:supp_psi}) ergeben.
 
 
-
-
-Nach Satz \eqref{thm:main_theorem} genügt es zu bestimmen, an welchen Punkten
-$(t', x')$ und in welche Richtungen $s$ $\mathcal{S}_f(a,s,(t',x'))$ nicht schnell-fallend in $a^{-1}$ ist, um die Wellenfrontmenge zu bestimmen. Da wir keine explizite erzeugende Funktion $\psi$ angegeben haben, werden wir uns dabei Argumente bedienen, die alleine auf den allgemeinen Eigenschaften von $\psi_{ast}$ beruhen, aber nicht einer expliziten Form.
-
-\todo{In Textform beschreiben, was die grobe Strategie ist, also wie der Integrand
-vernünfitg vereinfacht wird und welche Eigenschaften von¸$\psi$ wie eingehen.}
-
-\todo{Hier schon die Ergebnisse als Satz angeben, und dann Beweis hinschreiben?}
-\todo{Bemerkung einfügen, warum dass auch ziemlich unmöglich ist}
-
-Das allgemeine Vorgehen wird dabei folgendes sein: Die Ausdrücke in \eqref{eq:psi_ast_gf_1}
-und \eqref{eq:psi_ast_gf_2} genau anstarren, um zu sehen für welche Werte von
-$(t',x')$ und $s$ potentiell interessante Dinge geschehen, also z.B. Terme im Nenner
-weg fallen, oder die Phase konstant wird. Dann werden diese Werte von $(t',x')$ und
-$s$ eingesetzt und alles so weit vereinfacht und genähert -- im Rahmen des Erlaubten, ohne
-das Verhalten für $a \rightarrow 0$ zu ändern --, bis die $a$-Abhängigkeit abgelesen
-werden kann. Entscheidende Zutaten sind dabei der beschränkte Träger von $\hat \psi$
-und der schnelle Abfall von $\psi$.
-
-
 \subsubsection*{Fall $s=1, t' = 0 = x'$}
 Nach \eqref{eq:psi_ast_gf_2} erhalten wir mit $s=1, t' = 0 = x'$
 
@@ -180,6 +152,7 @@ Wir dürfen uns also des Lebesgueschen Konvergenzsatzes bedienen und schreiben
     }
     \d \omega \d k
     \sim O(a^{\frac{3}{4}})
+    \label{eq:gf_s=1_tx=0}
 \end{equation}
 
 Für $s = -1$ erhalten wir genau das selbe Ergebniss, da ja der $\omega^2 (1-s^2)$-Term
@@ -207,6 +180,7 @@ dementsprechend folgt
         a^2 m^2+\omega^2 (s^2-1) + a \omega^2 k^2 + a^{\frac{1}{2}}2 \omega^2 k s
     }
     \d \omega \d k
+    \label{eq:gf_s=-1_tx=0}
 \end{align*}
 
 Analog zum vorigen Teil ist, diesmal sogar ohne den Cauchy-Hauptwert bemühen zu
@@ -233,13 +207,14 @@ dass der Limit überall impliziert ist}
 dass eine integrierbare Majorante ist (in der Tat ja sogar in $C_c^\infty (\mathbb{R}^2)$)
 Damit können wir folgende Abschätzung treffen:
 
-\begin{equation*}
+\begin{equation}
     \lim_{a \rightarrow 0} \left< \hat\psi_{as0}, \hat G_F \right> =
     a^{\frac{5}{4}} \int \frac{2 \omega ~\hat \psi_1(\omega) ~\hat \psi_2(k)}
     {\omega^2 (1-s^2)}
     \d \omega \d k
     \sim O(a^{\frac{5}{4}})
-\end{equation*}
+    \label{eq:gf_s_neq_1_xt=0}
+\end{equation}
 
 
 \subsubsection*{Fall $s \neq \pm 1, (t', s') \neq 0$}
@@ -304,6 +279,7 @@ fallend. Damit können wir schließlich abschätzen
      \left| \left< \hat\psi_{ast}, \hat G_F \right> \right|
      &\sim
      O\left(a^k\right) ~~ \forall k \in \mathbb{N}
+     \label{eq:gf_s_neq=1_xt_neq_0}
 \end{align}
 
 
@@ -384,11 +360,31 @@ Nun stecken wir diese Erkenntnisse in unseren vorigen Ausdruck und erhalten
     \d \omega \d k
     \sim O\left(a^{\frac{3}{4}}\right)  \condition{\textrm{für } t'=x'}
     \sim O\left(a^k\right) ~ \forall k \hiderel \in \mathbb{N} \condition{sonst}
+    \label{eq:gf_s=1_xt_neq_0}
 \end{dmath}
 
 Im letzten Schritt wurde wieder genutzt, dass
 $\Psi_2\left(\frac{x' \omega}{\sqrt{a}}\right) ~\hat \psi_1(\omega) \in \mathcal{S}(\mathbb{R})$
 ist, und demnach eine schnell fallende Fouriertransformierte hat.
+
+\subsection{Zusammenfassung und Vergleich der Ergebnisse}
+Fassen wir wie bisher schon die Ergebnisse aus\cref{eq:gf_s_neq_1_xt=0,eq:gf_s=1_xt_neq_0,eq:gf_s_neq=1_xt_neq_0,eq:gf_s=1_tx=0} wieder in einer Übersichtstabelle zusammen:
+
+
+\begin{table}[]
+\centering
+\begin{tabular}{l|cccc}
+        & \multicolumn{1}{l}{$(t', x') = (0, 0)$} & \multicolumn{1}{l}{$t' = x'$} & \multicolumn{1}{l}{$t' = -x'$} & \multicolumn{1}{l}{$t' \neq \pm x'$} \\ \hline
+$s=1$   & $a^{\frac{3}{4}}$                       & $a^{\frac{3}{4}}$             & $a^k$                          & $a^k$                                \\
+$s=-1$  &$a^{\frac{3}{4}}$                       & $a^k$                         & $a^{\frac{3}{4}}$              & $a^k$                                \\
+$s \neq \pm 1$ & $a^{\frac{5}{4}}$                       & $a^k$                         & $a^k$                          & $a^k$                                \\
+\end{tabular}
+\caption{Konvergenzordnung von $\mathcal{S}_{G_F}(a,s,(t',x'))$ im Limit $a \to 0$ für alle interessanten Kombinationen von $s$ und $(t',x')$}
+\label{tab:wavefrontset_gf}
+\end{table}
+
+
+
 
 % Es gilt $\psi_2(0) = 1$, da nach Konstruktion
 % $\Vert \psi_2 \Vert_1 = 1$. Außerdem können wir $\psi_2$ so wählen, dass es

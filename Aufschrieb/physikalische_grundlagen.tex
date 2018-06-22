@@ -3,7 +3,7 @@
 \section{Zweipunktfunktionen, Sternprodukte und all die Physik} % (fold)
 \label{sec:zweipunktfunktionen_sternprodukte_und_all_die_physik}
 
-Hier gehört auch noch Text hin. Zwei Überschriften direkt hintereinander sind hässlich. Vllt. kurz anteasern, was gleich kommt.
+In diesem Kapitel wollen wir motivieren, warum die Multiplikation von Distributionen auch für Physiker eine relevante Fragestellung ist, was getwistete Produkte sind und was sie mit nicht-kommutativer Raumzeit zu tun haben.
 
 \subsection{Die Zweipunktfunktionen und warum wir sie potenzieren wollen}
 In der störungstheoretischen Quantenfeldtheorie entsprechen schon einfache Feynmandiagramme, wie z.B. das in \cref{fig:feynman-diagramm} (formal) Integralen über Produkte von Distributionen, in diesem Fall dem Feynman-Propagator.
@@ -23,7 +23,7 @@ In der störungstheoretischen Quantenfeldtheorie entsprechen schon einfache Feyn
 % \end{feynman}
 % \end{tikzpicture}
 
-\begin{figure}
+\begin{figure}[h]
 \begin{equation*}
 \feynmandiagram [layered layout, horizontal=b to c] {
 a [particle=\(\phi\)] -- [fermion, edge label=\(p\)] b [dot, label=right:\(x_1\)]
@@ -44,6 +44,7 @@ Der Feynman-Propagator in zwei Dimensionen kann geschrieben werden als zeitgeord
     G_F(t,x)
     =
     \Theta (t)\Delta_m(t,x) + \Theta(-t)\Delta_m(-t,-x)
+    \label{eq:feynman_propgator_as_product}
 \end{equation}
 
 Wobei $\Theta$ die Heaviside-Funktion bezeichnet. Also sind Potenzen des Feynman-Propagators gegeben durch Potenzen der Zweipunktfunktion und der Heaviside-Funktion. Um zu wissen, wo diese Produkte definiert werden können, muss man deren Wellenfrontmengen kennen; dann liefert \cref{thm:hoermanders_criterion} ein Kriterium für die Wohldefiniertheit.

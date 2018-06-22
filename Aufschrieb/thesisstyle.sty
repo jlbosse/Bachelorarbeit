@@ -3,7 +3,12 @@
 % Langugage Settings
 % -----------------------------------------------------------------------------
 \usepackage[ngerman]{babel} % Language hyphenation and typographical rules
-\usepackage[utf8]{inputenc}
+% \usepackage[utf8]{inputenc}
+% \usepackage[utf8]{luainputenc}
+% \usepackage{fontspec}
+\catcode`\ß=13
+\defß{\ss}
+
 
 % ----------------------------------------------------------------------------
 % pretty fonts
@@ -108,6 +113,9 @@
 %\usepackage{parskip} %parskip doesn't work together with scrartcl
 \usepackage[normalem]{ulem}
 \usepackage{setspace}
+
+% roman headings
+\addtokomafont{disposition}{\rmfamily}
 
 % subsubsection unterstreichen. Muss schöner gehen!
 \newcommand\subsectionuline{%

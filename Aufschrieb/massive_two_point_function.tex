@@ -8,6 +8,8 @@
         {Die Wellenfrontmenge von Delta m}} % (fold)
 \label{sec:die_wellenfrontmenge_von_delta_m}
 
+\todo[color=red]{Wie gehe ich mit der falschen Fouriertransformierten für $\Delta$ um?}
+
 Nach \cref{eq:delta_m} gilt
 \begin{equation*}
     \Delta_m (t,x) = \int \delta (\omega^2-k^2-m^2)
@@ -78,28 +80,30 @@ Für $s=1$ schneidet die Diagonale  $supp (\hat \psi_{ast})$ auf der ganzen Län
 \end{align}
 Der Integrand lässt sich nun durch $\hat \psi_1(\omega) \left\lVert \hat\psi_2\right\lVert_\infty$ majorisieren und wir dürfen Lebesgue verwenden um Integral und Grenzwert $a \rightarrow 0$ zu vertauschen
 
-\begin{dmath}
+\begin{align}
 \lim_{a \to o}
 \left\langle\hat \psi_{a1t} ,\hat \Delta_m\right\rangle
-= a^{-\frac{1}{4}} \int \hat \psi_1(\omega) \hat \psi_2 (0)
-    e^{-i\omega \left(\frac{t'-x'}{a}\right)}
-= a^{-\frac{1}{4}} \hat \psi_2 (0) \psi_1\left(\frac{t'-x'}{a}\right)
-\\
- \sim O\left(a^{-\frac{1}{4}}\right) \condition{falls $x'=t'$}
-\\
- \sim O\left(a^k\right) ~ \forall k  \condition{sonst}
+&=
+a^{-\frac{1}{4}} \int \hat \psi_1(\omega) \hat \psi_2 (0)
+    e^{-i\omega \left(\frac{t'-x'}{a}\right)} \nonumber
+\\ \nonumber &=
+a^{-\frac{1}{4}} \hat \psi_2 (0) \psi_1\left(\frac{t'-x'}{a}\right)
+\\ \nonumber &\sim
+O\left(a^{-\frac{1}{4}}\right) \condition{falls $x'=t'$}
+\\ &\sim O
+\left(a^k\right) ~ \forall k  \condition{sonst}
 \label{eq:delta_m_s=1}
-\end{dmath}
+\end{align}
 
 Das analoge Ergebnis erhält man mit gleicher Rechnung auch für $s=-1$ und $t' = -x'$
-Dies bestätigt das intuitiv erwartete Ergebnis. Fassen wir die Ergebnisse aus
- \cref{eq:delta_m_s_neq1,eq:delta_m_s=1} noch einmal tabellarisch zusammen:
+Dies bestätigt das intuitiv erwartete Ergebnis.
 
-\todo[color=green]{Statt $a^k$ einfach leer lassen, und nur nicht reguläre Punkte und Richtungen aufschreiben?}
+\subsection{Zusammenfassung und Vergleich der Ergebnisse}
+ Fassen wir die Ergebnisse aus
+ \cref{eq:delta_m_s_neq1,eq:delta_m_s=1} noch einmal tabellarisch zusammen:
 
 \begin{table}[h]
 \centering
-\label{my-label}
 \begin{tabular}{l|cccc}
         & \multicolumn{1}{l}{$(t', x') = (0, 0)$} & \multicolumn{1}{l}{$t' = x'$} & \multicolumn{1}{l}{$t' = -x'$} & \multicolumn{1}{l}{$t' \neq \pm x'$} \\ \hline
 s = 1   & $a^{-\frac{1}{4}}$    & $a^{-\frac{1}{4}}$    & $a^k$  & $a^k$    \\
@@ -107,6 +111,19 @@ s = -1  & $a^{-\frac{1}{4}}$    & $a^k$    & $a^{-\frac{1}{4}}$  & $a^k$    \\
 $s \neq \pm 1$  & $a^k$         & $a^k$    & $a^k$               & $a^k$    \\
 \end{tabular}
 \caption{Konvergenzordnung von $\mathcal{S}_{\Delta_m} (a,s,(t',x'))$ im Limit $a \rightarrow 0$ für alle interessanten Kombinationen von $s$ und $(t',x')$}
+\label{tab:wavefront_set_massive_two_point_function}
 \end{table}
 
+
+Dies deckt sich auch mit den Ergebnissen von \textcite{Schulz2014} und \textcite{Hoermander1985} welche jeweils erhalten:
+
+\begin{dmath*}
+    WF_{(SG)}(\Delta_+) =
+    \{\left\langle 0,0; -|k|,k\right\rangle\ \big|\, k \hiderel\in \hat{\mathbb{R}}\}"
+    \cup
+    \{\left\langle \pm |x|, x; -\lambda |k|,\mp k\right\rangle\ \big|\, k \hiderel\in \hat{\mathbb{R}}, \lambda \hiderel> 0\}
+\end{dmath*}
+
+
+Zusätzlich zu der Wellenfrontmenge erhalten wir aber mit dem Exponenten von $a$ auch noch eine Information `"wie schlimm"' die entsprechende Richtung ist. Ein Vergleich mit entsprechenden Begriffen der mikrolokalen Analysis wird in \cref{sec:ausblick} diskutiert.
 % section die_wellenfrontmenge_von_ (end)
