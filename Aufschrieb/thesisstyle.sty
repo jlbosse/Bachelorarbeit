@@ -107,6 +107,7 @@
 % -----------------------------------------------------------------------------
 %\usepackage{parskip} %parskip doesn't work together with scrartcl
 \usepackage[normalem]{ulem}
+\usepackage{setspace}
 
 % subsubsection unterstreichen. Muss schöner gehen!
 \newcommand\subsectionuline{%
@@ -115,14 +116,23 @@
 }
 \addtokomafont{subsubsection}{\subsectionuline}
 
+\makeatletter
+\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}%
+   {-1.5ex\@plus -1ex \@minus -.2ex}%
+   {0.5ex \@plus .2ex}%
+   {\normalfont\normalsize\bfseries}}
+\makeatother
+
+% \raggedbottom
+
 % \let\emph\relax % there's no \RedeclareTextFontCommand
 % \DeclareTextFontCommand{\emph}{\itshape\em}
 
-\makeatletter
-\DeclareRobustCommand{\em}{%
-  \@nomath\em \if b\expandafter\@car\f@series\@nil
-  \normalfont \else \itshape \fi}
-\makeatother
+% \makeatletter
+% \DeclareRobustCommand{\em}{%
+%   \@nomath\em \if b\expandafter\@car\f@series\@nil
+%   \normalfont \else \itshape \fi}
+% \makeatother
 
 % -----------------------------------------------------------------------------
 % % Other stuff

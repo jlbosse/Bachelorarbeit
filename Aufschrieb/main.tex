@@ -13,7 +13,8 @@
 % \documentclass{article}
 \documentclass[bachelor,       %% Typ der Arbeit: bachelor oder master
                twoside,        %% zweiseitiges Layout
-               BCOR10mm,       %% Bindekorrektur 10 mm
+               BCOR5mm,
+               DIV=11,       %% Bindekorrektur 10 mm
 %               liststotoc,nomtotoc,bibtotoc, %% Aufnahme der div. Verzeichnisse
                                               %% ins Inhaltsverzeichnis
                english,ngerman, %% Alternativspr. Englisch, Dokumentspr. Deutsch
@@ -73,7 +74,7 @@
 %% Ende des Vorspanns
 \cleardoublepage
 %% Ab hier 1 1/2 facher Zeilenabstand (durch setspace-Paket)
-% \onehalfspacing
+\onehalfspacing
 %% Erzeugt Inhaltsverzeichnis
 \tableofcontents
 \pagenumbering{arabic}
