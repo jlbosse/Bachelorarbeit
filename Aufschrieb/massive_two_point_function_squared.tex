@@ -15,7 +15,9 @@ Bevor wir die Wellenfrontmenge von $\Delta_m^2$ berechnen können, benötigen wi
 \label{sec:delta_m2_berechnen}
 
  Gemäß dem Faltungssatz gilt $\rwhat{\Delta_m^2} = \rwhat \Delta_m * \rwhat \Delta_m = \rwhat\Delta_m^{*2}$. Wir müssen also die Faltung von $\rwhat \Delta_m$ mit sich selber ausrechnen. Dabei gilt (kurze Rechnung)
- $\left(\rwhat{\Delta}_m * \rwhat{\Delta}_m\right) (-\omega,-k) = \left(\rwhat{\Delta}_m (-\cdot) * \rwhat{\Delta}_m (-\cdot)\right) (\omega,k)$ und wir berechnen also letzteren Ausdruck
+ $$\rwhat{\Delta}_m * \rwhat{\Delta}_m (-\omega,-k)
+ =
+ \left(\rwhat{\Delta}_m (-\cdot) * \rwhat{\Delta}_m (-\cdot)\right) (\omega,k)$$ und wir berechnen also letzteren Ausdruck
 
 
 Das Faltungsintegral ist
@@ -146,13 +148,14 @@ Es ist zu beachten, dass die Heaviside-Funktion genau bei der ersten Nullstelle 
         \resizebox{\textwidth}{!}{\input{images/delta_m2.pgf}} %
         \caption{Plot von $\hat{\Delta}_m^{*2}(-\cdot)$ und $\hat{\Delta}_m(-\cdot)$.
         Je weiter wir uns von der 2m-Massenschale wegbewegen, desto konstanter
-        wird $\rwhat{\Delta_m}^{*2}(-\cdot)$ und ist singulär genau auf der $2m$-Massenschale}
+        wird $\hat{\Delta}_m^{*2}(-\cdot)$ und ist singulär genau auf der
+        $2m$-Massenschale}
         \label{fig:delta_2m}
     \end{minipage}\hfill
     \begin{minipage}{0.45\textwidth}
         \centering
         \resizebox{\textwidth}{!}{\input{images/delta_m2_k0.pgf}}
-        \caption{Plot von $\left.\rwhat{\Delta_m}^{*2}(-\cdot)\right|_{k=0}$ um das asymptotische Verhalten für $\omega \rightarrow 0$ und $\omega \rightarrow \infty$ zu verdeutlichen}
+        \caption{Plot von $\left.\hat{\Delta}_m^{*2}(-\cdot)\right|_{k=0}$ um das asymptotische Verhalten für $\omega \rightarrow 0$ und $\omega \rightarrow \infty$ zu verdeutlichen}
         \label{fig:delta_2m_k0}
     \end{minipage}
 \end{figure}
@@ -336,7 +339,7 @@ und dürfen also Lebesgue verwenden und schreiben
 Und da Shearlets nach \cref{prop:shearlets_decay_rapidly} schnell abfallen erhalten wir schließlich
 
 \begin{dmath}
-    \left\langle \Delta_m^{2}, \psi_{ast}\right\rangle
+    \left\langle \Delta_m^{2}, \psi_{ast}^{(3)}\right\rangle
     = 2 a^{-\frac{3}{4}} \psi \left(\frac{t'-sx'}{a}, \frac{x'}{a}\right)
     \sim O(a^k) ~\forall k \hiderel \in \mathbb{N} \condition{falls $(t',x') \neq 0$}
     \sim O(a^{-\frac{3}{4}}) \condition{falls $(t',x') = 0$}
@@ -349,7 +352,7 @@ Und da Shearlets nach \cref{prop:shearlets_decay_rapidly} schnell abfallen erhal
 \begin{align}
 \label{eq:psi_ast_delta_m2}
     &\kern -1em
-    \left\langle \rwhat{\Delta}_m^{*2}, \hat\psi_{ast} \right\rangle
+    \left\langle \rwhat{\Delta}_m^{*2}(-\cdot), \hat\psi_{ast} \right\rangle
     \\ &=
     2 a^{-\frac{3}{4}} \int
     \frac{
@@ -729,7 +732,7 @@ $s=-1$  & $a^{-\frac{3}{4}}$ & $a^k$              & $a^{-\frac{1}{4}}$ & $a^k$  
 $|s|<1$ & $a^{-\frac{3}{4}}$ & $a^k$              & $a^k$              & $a^k$            \\
 $|s|>1$ & $a^k$              & $a^k$              & $a^k$              & $a^k$
 \end{tabular}
-\caption{Konvergenzordnung von $\mathcal{S}_{\Delta_m^2}(a,s,(t',x'))$ im Limit $a \to 0$ für alle interessanten Kombinationen von $s$ und $(t',x')$}
+\caption{Konvergenzordnung von $\left<\Delta_m^2, \psi_{as(t',x')^{(3)}}\right>$ im Limit $a \to 0$ für alle interessanten Kombinationen von $s$ und $(t',x')$}
 \end{table}
 
 Erfreulicherweise deckt sich dies wieder mit den Ergebnissen von \textcite[Cor. 3.70]{Schulz2014}, welcher für allgemeine Potenzen von $\Delta_+$ folgendes erhält:
