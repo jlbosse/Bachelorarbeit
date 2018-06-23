@@ -22,7 +22,7 @@ Setzen wir dies in unsere Ausdrücke für $\left< \psi_{ast}, f\right>$ aus \eqr
 bzw. \eqref{Eq:substitution1} ergibt sich, unter Verwendung des Minkowskiskalaprodukts,
 
 \begin{align}
-\left< \hat\psi_{ast}, \hat G_F \right> &=
+\left<  \hat G_F, \hat\psi_{ast} \right> &=
     \int \hat \psi_{ast}(\omega, t) ~\hat G_F(\omega, t) ~\d \omega \d k
     \nonumber \\
     &=
@@ -74,7 +74,7 @@ bzw. \eqref{Eq:substitution1} ergibt sich, unter Verwendung des Minkowskiskalapr
 und mit der anderen Substitution analog
 
 \begin{align}
-    \left< \hat\psi_{ast}, \hat G_F \right>
+    \left<  \hat G_F, \hat\psi_{ast} \right>
     &=
     a^{-\frac{3}{4}}
     \kern -1em
@@ -103,7 +103,7 @@ wobei sich die Integrationsbereiche aus den Forderungen an den Träger von $\psi
 Nach \eqref{eq:psi_ast_gf_2} erhalten wir mit $s=1, t' = 0 = x'$
 
 \begin{align*}
-    \left< \hat\psi_{a10}, \hat G_F \right>
+    \left<  \hat G_F,\hat\psi_{a10} \right>
     &=
     \int a^{-\frac{3}{4}} \frac{
         \omega ~\hat \psi_1(\omega) ~\hat \psi_2(k)
@@ -163,7 +163,7 @@ In diesem Fall verschwindet der $\omega^2 (1-s^2)$-Term im Nenner nicht und
 dementsprechend folgt
 
 \begin{align*}
-    \left< \hat\psi_{as0}, \hat G_F \right>
+    \left< \hat G_F, \hat\psi_{as0} \right>
     &=
     \int a^{-\frac{3}{4}} \frac{
         \omega ~\hat \psi_1(\omega) ~\hat \psi_2(k)
@@ -208,7 +208,7 @@ dass eine integrierbare Majorante ist (in der Tat ja sogar in $C_c^\infty (\math
 Damit können wir folgende Abschätzung treffen:
 
 \begin{equation}
-    \lim_{a \rightarrow 0} \left< \hat\psi_{as0}, \hat G_F \right> =
+    \lim_{a \rightarrow 0} \left< \hat G_F, \hat\psi_{as0} \right> =
     a^{\frac{5}{4}} \int \frac{2 \omega ~\hat \psi_1(\omega) ~\hat \psi_2(k)}
     {\omega^2 (1-s^2)}
     \d \omega \d k
@@ -224,7 +224,7 @@ Potenz von $a$ im Nenner aus.
 
 \begin{align}
 \Rightarrow ~
-    \left< \hat\psi_{ast}, \hat G_F \right>
+    \left< \hat G_F,\hat\psi_{ast} \right>
     &=
     a^{\frac{5}{4}} \int \frac{
         \hat \psi_1 (\omega) ~\hat \psi_2 \left(\frac{k}{\omega}\right)
@@ -256,7 +256,7 @@ $\hat f$, $f := (\hat f)^\vee \in \mathcal{S}(\mathbb{R}^2)$, also schnell
 fallend. Damit können wir schließlich abschätzen
 
 \begin{align}
-    \left| \left< \hat\psi_{ast}, \hat G_F \right> \right|
+    \left| \left<  \hat G_F,\hat\psi_{ast} \right> \right|
     &=
     a^{\frac{5}{4}} \left|  \int \hat f(\omega, k)
     ~e^{-i \omega \left(\frac{t'-sx'}{a}\right) + ik \frac{x'}{\sqrt{a}}}
@@ -276,7 +276,7 @@ fallend. Damit können wir schließlich abschätzen
     \sim O\left(a^{\frac{5/2+k}{2}}\right) ~~ \forall k \in \mathbb{N}
     \nonumber \\[1em]
     \Rightarrow
-     \left| \left< \hat\psi_{ast}, \hat G_F \right> \right|
+     \left| \left< \hat G_F, \hat\psi_{ast} \right> \right|
      &\sim
      O\left(a^k\right) ~~ \forall k \in \mathbb{N}
      \label{eq:gf_s_neq=1_xt_neq_0}
@@ -290,7 +290,7 @@ wir auch bisher jedes Mal dafür, dass wir im Nenner nur noch positive Potenzen 
 $a$ und einen von $a$ unabhängigen Term haben. Dann sieht das ganze so aus:
 
 \begin{equation*}
-    \left< \hat\psi_{a1t}, \hat G_F \right>
+    \left< \hat G_F, \hat\psi_{a1t} \right>
     =
     a^{\frac{3}{4}} \int \frac{\hat \psi_1(\omega)
     ~\hat\psi_2 \left(\frac{k}{\omega}\right)
@@ -352,7 +352,7 @@ wurde genutzt, dass $f(x) = \mathrm{sgn}(x) \leftrightarrow \hat f(k) \sim \frac
 Nun stecken wir diese Erkenntnisse in unseren vorigen Ausdruck und erhalten
 
 \begin{dmath}
- \left\langle \hat\psi_{a1t}, \hat G_F \right\rangle
+ \left\langle \hat G_F, \hat\psi_{a1t} \right\rangle
     =
     \frac{i a^{\frac{3}{4}}}{2} \int \Psi_2\left(\frac{x' \omega}{\sqrt{a}}\right)
     ~\hat \psi_1(\omega)
