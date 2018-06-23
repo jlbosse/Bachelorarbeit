@@ -57,7 +57,7 @@
 \pgfusepath{fill}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgfpathrectangle{\pgfqpoint{0.198611in}{0.198611in}}{\pgfqpoint{3.602778in}{1.602778in}}%
+\pgfpathrectangle{\pgfqpoint{0.198611in}{0.198611in}}{\pgfqpoint{3.602778in}{1.602778in}} %
 \pgfusepath{clip}%
 \pgfsetbuttcap%
 \pgfsetmiterjoin%
@@ -76,7 +76,7 @@
 \pgfusepath{stroke,fill}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgfpathrectangle{\pgfqpoint{0.198611in}{0.198611in}}{\pgfqpoint{3.602778in}{1.602778in}}%
+\pgfpathrectangle{\pgfqpoint{0.198611in}{0.198611in}}{\pgfqpoint{3.602778in}{1.602778in}} %
 \pgfusepath{clip}%
 \pgfsetbuttcap%
 \pgfsetmiterjoin%
@@ -95,7 +95,7 @@
 \pgfusepath{stroke,fill}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgfpathrectangle{\pgfqpoint{0.198611in}{0.198611in}}{\pgfqpoint{3.602778in}{1.602778in}}%
+\pgfpathrectangle{\pgfqpoint{0.198611in}{0.198611in}}{\pgfqpoint{3.602778in}{1.602778in}} %
 \pgfusepath{clip}%
 \pgfsetbuttcap%
 \pgfsetroundjoin%
@@ -109,7 +109,7 @@
 \pgfusepath{stroke}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgfpathrectangle{\pgfqpoint{0.198611in}{0.198611in}}{\pgfqpoint{3.602778in}{1.602778in}}%
+\pgfpathrectangle{\pgfqpoint{0.198611in}{0.198611in}}{\pgfqpoint{3.602778in}{1.602778in}} %
 \pgfusepath{clip}%
 \pgfsetbuttcap%
 \pgfsetroundjoin%

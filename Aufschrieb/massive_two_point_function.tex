@@ -35,8 +35,8 @@ $supp (\hat \Delta_m) \cap supp (\hat \psi_{ast}) = \varnothing$ wie man \cref{f
 Also gilt
 
 \begin{dmath}
-    \left\langle \psi_{ast}, \Delta_m\right\rangle
-    = \left\langle \hat\psi_{ast}, \rwhat\Delta_m\right\rangle
+    \left\langle \Delta_m, \psi_{ast}\right\rangle
+    = \left\langle \rwhat\Delta_m, \hat\psi_{ast}\right\rangle
     = 0 = O(a^k)~ \forall k  \condition{für $a$ klein genug}
     \label{eq:delta_m_s_neq1}
 \end{dmath}
@@ -49,7 +49,7 @@ Also gilt
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection*{Fall $s=1$}
 \subparagraph*{Intuition}
-Für $s=1$ schneidet die Diagonale  $supp (\hat \psi_{ast})$ auf der ganzen Länge. Der Betrag von $\hat\psi_{ast}$ skaliert mit $a^{\frac{3}{4}}$ (vgl. \cref{eq:hat_psi_ast}) und die Länge von $supp (\hat \psi_{ast})$ entlang der Diagonalen mit $a^{-1}$ (vgl. \cref{eq:hat_psi_ast}). Also erwarten wir schlimmstenfalls $\left< \hat \psi_{a1t}, \hat\Delta_m\right> = O\left(a^-{\frac{1}{4}}\right)$. Aber nur wenn die Wellenfronten von $e^{-i\omega t'+i k x'}$ parallel zu der Singularität und damit der Diagonalen liegen. Andernfalls erwarten wir, dass die immer schneller werdenden Oszillationen der Phase sich gegenseitig auslöschen.
+Für $s=1$ schneidet die Diagonale $\{\omega = k\}$  $supp (\hat \psi_{ast})$ auf der ganzen Länge. Der Betrag von $\hat\psi_{ast}$ skaliert mit $a^{\frac{3}{4}}$ (vgl. \cref{eq:hat_psi_ast}) und die Länge von $supp (\hat \psi_{ast})$ entlang der Diagonalen mit $a^{-1}$ (vgl. \cref{eq:hat_psi_ast}). Also erwarten wir schlimmstenfalls $\left<\hat\Delta_m,  \hat \psi_{a1t}\right> = O\left(a^-{\frac{1}{4}}\right)$. Aber nur wenn die Wellenfronten von $e^{-i\omega t'+i k x'}$ parallel zu der Singularität und damit der Diagonalen liegen. Andernfalls erwarten wir, dass die immer schneller werdenden Oszillationen der Phase sich gegenseitig auslöschen.
 
 \subparagraph*{Fleißige Analysis}
 \begin{align}
@@ -119,7 +119,7 @@ Dies deckt sich auch mit den Ergebnissen von \textcite{Schulz2014} und \textcite
 
 \begin{dmath*}
     WF_{(SG)}(\Delta_+) =
-    \{\left\langle 0,0; -|k|,k\right\rangle\ \big|\, k \hiderel\in \hat{\mathbb{R}}\}"
+    \{\left\langle 0,0; -|k|,k\right\rangle\ \big|\, k \hiderel\in \hat{\mathbb{R}}\}
     \cup
     \{\left\langle \pm |x|, x; -\lambda |k|,\mp k\right\rangle\ \big|\, k \hiderel\in \hat{\mathbb{R}}, \lambda \hiderel> 0\}
 \end{dmath*}

@@ -752,6 +752,8 @@ INPUT /usr/share/texlive/texmf-dist/fonts/vf/public/mathpazo/zplmb7t.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
 INPUT /home/janlukas/Studium/BA/Aufschrieb/images/supp_psi.pgf
 INPUT /home/janlukas/Studium/BA/Aufschrieb/images/supp_psi.pgf
+INPUT /home/janlukas/Studium/BA/Aufschrieb/images/quadrants.pgf
+INPUT /home/janlukas/Studium/BA/Aufschrieb/images/quadrants.pgf
 INPUT /home/janlukas/Studium/BA/Aufschrieb/proof_main_theorem.tex
 INPUT /home/janlukas/Studium/BA/Aufschrieb/proof_main_theorem.tex
 INPUT /home/janlukas/Studium/BA/Aufschrieb/images/smart_decomposition.pgf

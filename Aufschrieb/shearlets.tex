@@ -283,7 +283,7 @@ Und insbesondere ist $C_N = \frac{15}{2}\frac{\sqrt{a} + s}{a^2}\left(\Vert \hat
 
 
 Wer bis hier aufmerksam mitgelesen hat und sich \cref{fig:supp_psi_hat} genau angeschaut hat, wird bemerkt haben, dass $supp(\hat\psi_{ast})$ für alle $a$ und $s$ quasi nur im Quadranten $x_1^2 \geq x_2^2$ und $x_2 \geq 0$ liegt.
-Mit den Namen der Physik $(k_1, k_2) = (\omega, k)$ entspricht das dem "`Vorwärtskegel"'. Glücklicherweise liegen alle analysierten Distributionen im gleich definierten $L^(C)^\vee$
+Mit den Namen der Physik $(k_1, k_2) = (\omega, k)$ entspricht das dem "`Vorwärtskegel"'. Glücklicherweise liegen alle analysierten Distributionen im gleich definierten $L(C)^\vee$
 Wie der folgende Satz zeigt, erzeugt $\psi$ auch nur für solche $f$ ein reproduzierendes System.
 \todo[color=green]{Die konkrete Konstruktion für die volle Transformation angeben, oder reicht der Hinweis, dass ich mit Spiegeln und Drehen alles sehen kann?}
 
@@ -310,9 +310,38 @@ Wie der folgende Satz zeigt, erzeugt $\psi$ auch nur für solche $f$ ein reprodu
     \end{equation}
 \end{theorem}
 
-Um nun nicht nur ein reproduzierendes System für $L^2(C)^\vee$, sondern für ganz $L^2(\mathbb{R}^2)$ zu erhalten, muss $\hat \psi$ noch in den rechten, linken und rückwärts liegenden Kegel gedreht und geschoben werden. Zusätzlich muss noch eine weitere Funktion $W$ gefunden werden, welche die groben Skalen (also $|k_1|, |k_2| \leq 2$) auflöst. Die Konstruktion dazu findet sich in \textcite[S. 7 ff]{Kutyniok2008}. Hier verzichten wir aber darauf, da wir in den späteren Rechnungen nur Distributionen betrachten, die in der Frequenzdomäne im oberen Kegel liegen und die groben Skalen bei der Bestimmung der Wellenfrontmenge per Definition nicht interessant sind.
+Um nun nicht nur ein reproduzierendes System für $L^2(C)^\vee$, sondern für ganz $L^2(\mathbb{R}^2)$ zu erhalten, muss $\hat \psi_{ast}$ noch in den rechten, linken und rückwärts liegenden Kegel gedreht und geschoben werden. Zusätzlich muss noch eine weitere Funktion $W$ gefunden werden, welche die groben Skalen (also $|k_1|, |k_2| \leq 2$) auflöst.
 
-\todo{L2 ist Summer der vier Quadranten plus grobe Strukturen}
+\begin{figure}[h]
+\centering
+\input{images/quadrants.pgf}
+\caption{Aufteilung des Fourierraums in vier Quadranten plus einen Teil für die groben Skalen. Die Quadranten $C^{(i)}$ entsprechen genau den Unterräumen von $L^2$ die von $\psi_{ast}^{(i)}$ reproduziert werden.}
+\label{fig:quadrants}
+\end{figure}
+
+Wir definieren also
+\begin{align}
+    \hat \psi_{ast}^{(1)} (k_1, k_2) &\coloneqq \hat\psi_{ast} (k_1,k_2)
+    \qquad
+    \hat\psi_{ast}^{(3)}(k_1,k_2) \coloneqq \hat\psi_{ast} (-k_1,-k_2)
+    \nonumber\\
+    \hat \psi_{ast}^{(2)} (k_1, k_2) &\coloneqq \hat\psi_{ast} (k_2,k_1)
+    \qquad
+    \hat\psi_{ast}^{(4)}(k_1, k_2) \coloneqq \hat\psi_{ast} (-k_2,-k_1)
+    \label{eq:psi(i)}
+\end{align}
+
+Des weiteren gibt es ein $W(x)$ s.d. $\hat W(k) \in C^\infty (\hat{\mathbb{R}}^2)$ und
+
+\begin{align*}
+    \Vert f \Vert^2 =
+    \int_{\mathbb{R}^2} |\left\langle f, T_t W \right\rangle|^2 \d t
+    + \sum_{i=1}^4 \int |\left\langle f, \psi_{ast} \right\rangle \, \d \mu (a,s,t)
+\end{align*}
+
+und somit erhalten wir (dank Parseval) ein reproduzierendes System für ganz $L^2$, da ja
+$L^2 (\mathbb{R}^2) = L^2 (\textrm{grobe Skalen})^\vee \oplus \sum_{i=1}^4 L^2 \left(C^{(i)}\right)^\vee$ ist. Mehr Details finden sich in \cite[S. 28 ff]{Kutyniok2008}
+
 
 % Wer bisher aufmerksam mitgelesen hat und sich \cref{fig:supp_psi_hat} genau angeschaut hat, wird bemerkt haben, dass $supp(\hat\psi_{ast})$ für alle $a,s$ quasi nur im Quadranten positiver Energie und Masse (also $\omega \geq 0, \omega^2 \geq k^2$) liegt. Also wird $\mathcal{S}_f(a,s,t)$ auch nur für solche $f$ von Nutzen sein. Diesen Mangel wollen wir nun durch "`Drehen und Spiegeln"' von $\hat \psi$ und Einführen einer weiteren Analysefunktion $W$ für die groben Skalen beheben. Mehr der Vollständigkeit halber, als aus wirklicher Notwendigkeit, denn in den späteren Kapiteln betrachten wir doch nur Distributionen deren Träger komplett im Vorwärtsquadranten(?) liegt. Und die groben Skalen interessieren beim Bestimmen der Wellenfrontmenge ohnehin nicht.
 
