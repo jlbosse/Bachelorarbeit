@@ -371,10 +371,10 @@ Da $\rwhat\Delta_m^{\circledast 2} = \rwhat\Delta_m^{* 2} \cos(\dots)$ ist, habe
 
 \todo{ordentliche Formulierung und ordentliche Referenzen einfügen}
 
-\begin{dmath}
-    \left\langle \rwhat{\Delta}_m^{\circledast 2}, \rwhat{\psi}_{a-1t}
+\begin{align}
+    & \kern -2em\left\langle \rwhat{\Delta}_m^{\circledast 2}, \rwhat{\psi}_{a-1t}
     \right\rangle
-    =
+    \nonumber \\ &=
     2 a^{-\frac{3}{4}} \int
     \underbrace{\frac{
         \hat\psi_1(\omega) \hat\psi_2(k'+k_0)
@@ -389,7 +389,7 @@ Da $\rwhat\Delta_m^{\circledast 2} = \rwhat\Delta_m^{* 2} \cos(\dots)$ ist, habe
         \sqrt{-a^{\frac{1}{2}}\omega^2\left(k'-\tfrac{2\sqrt{\omega^2-4a^2m^2}}
                     {\sqrt a \omega}\right)}
     }}_{i)}
-    \cdot
+    \nonumber \\ & \kern 2em\cdot
     \cos
     \underbrace{\left(
         \frac{2\omega^2(k'+k_0)-a^{\frac{1}{2}}\omega^2(k'+k_0)^2}
@@ -400,11 +400,45 @@ Da $\rwhat\Delta_m^{\circledast 2} = \rwhat\Delta_m^{* 2} \cos(\dots)$ ist, habe
                    {2\omega^2(k'+k_0)-a^{\frac{1}{2}}\omega^2(k'+k_0)^2}
         }
     \right)}_{ii)}
-    \cdot
+    \nonumber \\ & \kern 2em\cdot
     e^{-i\omega\left(\frac{t'+x'}{a}+\frac{(k'+k_0)x'}{\sqrt a}\right)}
     \d \omega \d k'
 \label{eq:psi_a-1t_delta_m2_twisted}
-\end{dmath}
+\end{align}
+% \begin{dmath}
+%     \left\langle \rwhat{\Delta}_m^{\circledast 2}, \rwhat{\psi}_{a-1t}
+%     \right\rangle
+%     =
+%     2 a^{-\frac{3}{4}} \int
+%     \underbrace{\frac{
+%         \hat\psi_1(\omega) \hat\psi_2(k'+k_0)
+%         \left(
+%         2\omega^2(k'+k_0)-a^{\frac{1}{2}}\omega^2(k'+k_0)^2-a^{\frac{3}{2}}3m^2
+%         \right)
+%         \Theta(k')
+%     }
+%     {
+%         \sqrt{k'} \sqrt{k'+k_0}
+%         \sqrt{2-a^{\frac{1}{2}}(k'+k_0)}
+%         \sqrt{-a^{\frac{1}{2}}\omega^2\left(k'-\tfrac{2\sqrt{\omega^2-4a^2m^2}}
+%                     {\sqrt a \omega}\right)}
+%     }}_{i)}
+%     \cdot
+%     \cos
+%     \underbrace{\left(
+%         \frac{2\omega^2(k'+k_0)-a^{\frac{1}{2}}\omega^2(k'+k_0)^2}
+%              {2 a^{\frac{3}{2}}}
+%         \sqrt{
+%             \frac{1}{4}
+%             + \frac{a^{\frac{3}{2}} m^2}
+%                    {2\omega^2(k'+k_0)-a^{\frac{1}{2}}\omega^2(k'+k_0)^2}
+%         }
+%     \right)}_{ii)}
+%     \cdot
+%     e^{-i\omega\left(\frac{t'+x'}{a}+\frac{(k'+k_0)x'}{\sqrt a}\right)}
+%     \d \omega \d k'
+% \label{eq:psi_a-1t_delta_m2_twisted}
+% \end{dmath}
 
 Genau wie in \cref{eq:lange_1/sqrt_abschaetzerei} können wir für $i)$ wieder Abschätzen\footnote{Da cos beschränkt ist, spielt er bei den Abschätzungen keine Rolle}
 
@@ -563,19 +597,32 @@ Nun betrachten wir $\hat f_a(\omega)$ und erhalten analog zu
 
 Also dürfen wir für $a \to 0$ schreiben $\hat f_a(\omega) = C a^{\frac{3}{2}} + o\left(a^{\frac{3}{2}}\right)$ und landen bei
 
-\begin{dmath}
+\begin{align}
     \lim_{a \to 0}
     \left\langle \rwhat{\Delta}_m^{\circledast 2}, \rwhat{\psi}_{a-1t}
     \right\rangle
-    =
+    &=
     a^{-\frac{3}{4}} \int C a^{\frac{3}{2}} \omega \hat\psi_1(\omega)
     e^{-i\omega \frac{t'+x'}{a}}
     \d \omega
-    \sim O\left(a^{\frac{3}{4}}\right) \condition{falls $t'=-x'$}
-    \sim O\left(a^k\right) ~~ \forall k \hiderel \in \mathbb{N}
+    \nonumber \\ &\sim O\left(a^{\frac{3}{4}}\right) \condition{falls $t'=-x'$}
+    \nonumber \\ &\sim O\left(a^k\right) ~~ \forall k \hiderel \in \mathbb{N}
                               \condition{sonst}
 \label{eq:delta_m2_twisted_s=-1}
-\end{dmath}
+\end{align}
+% \begin{dmath}
+%     \lim_{a \to 0}
+%     \left\langle \rwhat{\Delta}_m^{\circledast 2}, \rwhat{\psi}_{a-1t}
+%     \right\rangle
+%     =
+%     a^{-\frac{3}{4}} \int C a^{\frac{3}{2}} \omega \hat\psi_1(\omega)
+%     e^{-i\omega \frac{t'+x'}{a}}
+%     \d \omega
+%     \sim O\left(a^{\frac{3}{4}}\right) \condition{falls $t'=-x'$}
+%     \sim O\left(a^k\right) ~~ \forall k \hiderel \in \mathbb{N}
+%                               \condition{sonst}
+% \label{eq:delta_m2_twisted_s=-1}
+% \end{dmath}
 
 \subsection{Zusammenfassung und Vergleich der Ergebnisse}
 Fassen wir wie bisher schon die Ergebnisse aus \cref{eq:delta_m2_twisted_s>1,eq:delta_m2_twisted_s<1_x_neq_0,eq:delta_m2_twisted_s<1_x=0,eq:delta_m2_twisted_s=-1} wieder in einer Übersichtstabelle zusammen:
