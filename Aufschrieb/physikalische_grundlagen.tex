@@ -49,11 +49,11 @@ Der Feynman-Propagator in zwei Dimensionen kann geschrieben werden als zeitgeord
 
 Wobei $\Theta$ die Heaviside-Funktion bezeichnet. Also sind Potenzen des Feynman-Propagators gegeben durch Potenzen der Zweipunktfunktion und der Heaviside-Funktion. Um zu wissen, wo diese Produkte definiert werden können, muss man deren Wellenfrontmengen kennen; dann liefert \cref{thm:hoermanders_criterion} ein Kriterium für die Wohldefiniertheit.
 
-In all dem kann die Zweipunktfunktion geschrieben als Fouriertransformierte eines positiven Maßes auf der positiven Massenschale $H_m$ (vgl. \textcite{Schwartz2014}, 24.69):
+In all dem kann die Zweipunktfunktion geschrieben als Fouriertransformierte eines positiven Maßes auf der negativen Massenschale $H_m$ (vgl. \textcite{Schwartz2014}, 24.69):
 
 \begin{equation}
     \Delta_m (t,x) = \int \delta (\omega^2-k^2-m^2)
-                    \Theta(\omega)e^{-i\omega t + i k x} \d \omega \d k
+                    \Theta(-\omega)e^{-i\omega t + i k x} \d \omega \d k
 \label{eq:delta_m}
 \end{equation}
 

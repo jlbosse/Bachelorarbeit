@@ -13,10 +13,10 @@
 Nach \cref{eq:delta_m} gilt
 \begin{equation*}
     \Delta_m (t,x) = \int \delta (\omega^2-k^2-m^2)
-                    \Theta(\omega)e^{-i\omega t + i k x} \d \omega \d k
+                    \Theta(-\omega)e^{-i\omega t + i k x} \d \omega \d k
 \end{equation*}
 
-woraus sich $\rwhat \Delta_m$ direkt als $\delta (\omega^2-k^2-m^2)\Theta(\omega)$
+woraus sich $\rwhat \Delta_m$ direkt als $\delta (\omega^2-k^2-m^2)\Theta(-\omega)$
 ablesen lässt.
 
 \begin{figure}[h]
@@ -26,17 +26,29 @@ ablesen lässt.
 \label{fig:delta_m}
 \end{figure}
 
+Offensichtlich ist $\hat\Delta_m \subset C^{(3)}$, d.h. der entscheidende Beitrag der Shearlettransformation ist
+\begin{equation*}
+    \left\langle f, \psi_{ast}^{(3)} \right\rangle
+    =
+    \left\langle \hat f, \hat \psi_{ast}^{(3)} \right\rangle
+    =
+    \left\langle \hat f(-\omega, -k), \hat \psi_{ast}^{(1)} \right\rangle
+    =
+    \left\langle \hat f(-\omega, -k), \hat \psi_{ast} \right\rangle
+\end{equation*}
+
+Da nach \cref{eq:psi(i)} gilt $\psi_{ast}^{(3)}(\omega,k) = \psi_{ast}^{(1)}(-\omega,-k)$. Berechnen wir also letzteres:
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % % Teil 2
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection*{Fall $s \neq \pm 1$}
 Hier gibt es nicht viel zu tun, denn für a klein genug gilt
-$supp (\hat \Delta_m) \cap supp (\hat \psi_{ast}) = \varnothing$ wie man \cref{fig:delta_m} entnehmen kann.
+$supp (\hat \Delta_m (- \cdot)) \cap supp (\hat \psi_{ast}) = \varnothing$ wie man \cref{fig:delta_m} entnehmen kann.
 Also gilt
 
 \begin{dmath}
-    \left\langle \Delta_m, \psi_{ast}\right\rangle
-    = \left\langle \rwhat\Delta_m, \hat\psi_{ast}\right\rangle
+    \left\langle \rwhat\Delta_m (-\cdot), \hat\psi_{ast}\right\rangle
     = 0 = O(a^k)~ \forall k  \condition{für $a$ klein genug}
     \label{eq:delta_m_s_neq1}
 \end{dmath}
