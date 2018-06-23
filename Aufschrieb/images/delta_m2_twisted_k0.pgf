@@ -302,7 +302,7 @@
 \pgfusepath{stroke}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgftext[x=0.301548in,y=2.070833in,,bottom]{\rmfamily\fontsize{10.000000}{12.000000}\selectfont \(\displaystyle \hat\Delta^{\circledast 2} ~(\omega, 0)\)}%
+\pgftext[x=0.301548in,y=2.070833in,,bottom]{\rmfamily\fontsize{10.000000}{12.000000}\selectfont \(\displaystyle \hat\Delta^{\circledast 2} ~(-\omega, 0)\)}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfsetroundcap%

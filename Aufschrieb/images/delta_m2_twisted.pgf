@@ -352,10 +352,10 @@
 \pgftext[x=3.189167in,y=0.406236in,left,]{\rmfamily\fontsize{10.000000}{12.000000}\selectfont \(\displaystyle k\)}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgftext[x=2.316417in,y=0.990458in,left,base]{\rmfamily\fontsize{10.000000}{12.000000}\selectfont \(\displaystyle supp~(\hat\Delta_m)\)}%
+\pgftext[x=2.170361in,y=0.844403in,left,base]{\rmfamily\fontsize{10.000000}{12.000000}\selectfont \(\displaystyle supp~(\hat\Delta_m (-\cdot))\)}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgftext[x=1.367056in,y=1.136514in,left,base]{\rmfamily\fontsize{10.000000}{12.000000}\selectfont \(\displaystyle \hat\Delta_m^{\circledast 2}\)}%
+\pgftext[x=1.147972in,y=1.282569in,left,base]{\rmfamily\fontsize{10.000000}{12.000000}\selectfont \(\displaystyle \hat\Delta_m^{\circledast 2}(-\cdot)\)}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfpathrectangle{\pgfqpoint{3.302292in}{0.435000in}}{\pgfqpoint{0.063333in}{1.330000in}} %
