@@ -394,6 +394,10 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
 INPUT /usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
 INPUT /usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg
 INPUT /usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg
+INPUT /usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def
+INPUT /usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def
+INPUT /usr/share/texlive/texmf-dist/tex/generic/oberdiek/stringenc.sty
+INPUT /usr/share/texlive/texmf-dist/tex/generic/oberdiek/stringenc.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/hyperref/hluatex.def
 INPUT /usr/share/texlive/texmf-dist/tex/latex/hyperref/hluatex.def
 INPUT /usr/share/texlive/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
@@ -444,6 +448,9 @@ INPUT /home/janlukas/Studium/BA/Aufschrieb/main.out
 INPUT /home/janlukas/Studium/BA/Aufschrieb/main.out
 OUTPUT /home/janlukas/Studium/BA/Aufschrieb/main.pdf
 OUTPUT /home/janlukas/Studium/BA/Aufschrieb/main.out
+INPUT /usr/share/texlive/texmf-dist/tex/generic/oberdiek/se-pdfdoc.def
+INPUT /usr/share/texlive/texmf-dist/tex/generic/oberdiek/se-pdfdoc.def
+INPUT /usr/share/texlive/texmf-dist/tex/generic/oberdiek/se-pdfdoc.def
 INPUT /home/janlukas/Studium/BA/Aufschrieb/images/Logo_Uni_Goettingen.pdf
 INPUT /home/janlukas/Studium/BA/Aufschrieb/images/Logo_Uni_Goettingen.pdf
 INPUT images/Logo_Uni_Goettingen.pdf
