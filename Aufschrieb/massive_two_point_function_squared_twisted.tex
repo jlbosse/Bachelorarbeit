@@ -18,14 +18,15 @@ Auch für die getwistete Faltung ist schnell nachgerechnet, dass
 \begin{equation*}
     \rwhat{\Delta_m} \circledast \rwhat{\Delta_m} (-\omega,-k)
      =
-     \left(\rwhat{\Delta_m} (-\cdot) \circledast \rwhat{\Delta_m} (-\cdot)\right)
+    \overline{ \left(\rwhat{\Delta_m} (-\cdot) \circledast \rwhat{\Delta_m} (-\cdot)\right)}
      (\omega,k).
 \end{equation*}
+Wie wir später sehen werden, ist die komplexe Konjugation irrelevant, da alles reell.
 Sammeln wir zunächst einmal die Zutaten, die wir für die verdrehte Faltung der massiven Zweipunktfunktion mit sich selber brauchen:
 
 \begin{dgroup}
     \begin{dmath}
-        \rwhat{\Delta}_m = \delta(\omega^2-k^w-m^2)\Theta(\omega)\\
+        \rwhat{\Delta}_m(-\cdot) = \delta(\omega^2-k^w-m^2)\Theta(\omega)\\
         \textrm{die Fouriertransformierte der massiven Zweipunktfunktion}
     \label{eq:material_fuer_delta_m2_twisted_a}
     \end{dmath}
@@ -41,7 +42,7 @@ Sammeln wir zunächst einmal die Zutaten, die wir für die verdrehte Faltung der
 mit \cref{def:twisted_convolution,eq:material_fuer_delta_m2_twisted_a,eq:material_fuer_delta_m2_twisted_b} erhalten wir also
 
 \begin{dmath}
-    \rwhat{\Delta}_m^{\circledast 2} (\omega, k)
+    \rwhat{\Delta}_m^{\circledast 2} (-\omega, -k)
     = \int
     \delta(\omega^{\prime 2}-k^{\prime 2}-m^2)
     \delta((\omega' - \omega)^2 - (k-k')^2 -m^2)
@@ -106,7 +107,7 @@ Der Phasenfaktor nimmt bei den Kreuzungspunkten folgende Werte an:
 Kombinieren wir also die vorhergehenden Resultate erhalten wir
 
 \begin{align*}
-    \rwhat{\Delta}_m^{\circledast 2} (\omega, 0)
+    \rwhat{\Delta}_m^{\circledast 2} (-\omega, 0)
     &=
     A e^{\frac{i}{2}\Omega \left((\omega, k),(\omega'_0,k'_{0+})\right)}
     + A e^{\frac{i}{2}\Omega \left((\omega, k),(\omega'_0,k'_{0-})\right)}
@@ -142,9 +143,9 @@ wobei im letzten Schritt noch implizit $\varphi(\omega^2)$ definiert wurde.
 Und mit Lorenz-Invarianz erhalten wir schließlich
 
 \begin{align}
-    \rwhat{\Delta}_m^{\circledast 2} (\omega, k)
+    \rwhat{\Delta}_m^{\circledast 2} (-\omega, -k)
     &=
-    \rwhat{\Delta}_m^{\circledast 2} (\sqrt{\omega^2-k^2}, 0)
+    \rwhat{\Delta}_m^{\circledast 2} (-\sqrt{\omega^2-k^2}, 0)
     \nonumber \\ &=
     2\frac{\omega^2-k^2-3m^2}{\sqrt{\omega^2-k^2} \sqrt{\omega^2-k^2-4m^2}}
     \cos \left(\frac{k^2-\omega^2}{2}
@@ -179,14 +180,14 @@ Und mit Lorenz-Invarianz erhalten wir schließlich
     \begin{minipage}{0.55\textwidth}
         \centering
         \resizebox{\textwidth}{!}{\input{images/delta_m2_twisted.pgf}} %
-        \caption{Plot von $\hat\Delta_m^{\circledast 2}$ und $\hat\Delta_m$. Wieder liegt der Träger von $\hat\Delta_m^{\circledast 2}$ in der kausalen Zukunft.
+        \caption{Plot von $\hat\Delta_m^{\circledast 2}(-\cdot)$ und $\hat\Delta_m(-\cdot)$. Wieder liegt der Träger von $\hat\Delta_m^{\circledast 2}(-\cdot)$ oberhalb der $2m$-Massenschale.
         }
         \label{fig:delta_2m_twisted}
     \end{minipage}\hfill
     \begin{minipage}{0.45\textwidth}
         \centering
         \resizebox{\textwidth}{!}{\input{images/delta_m2_twisted_k0.pgf}}
-        \caption{Plot von $\left.\hat{\Delta}_m^{\circledast 2}\right|_{k=0}$ um das asymptotische Verhalten für $\omega \rightarrow 0$ und $\omega \rightarrow \infty$ zu verdeutlichen}
+        \caption{Plot von $\left.\hat{\Delta}_m^{\circledast 2}\right|_{k=0}(-\cdot)$ um das asymptotische Verhalten für $\omega \rightarrow 0$ und $\omega \rightarrow \infty$ zu verdeutlichen}
         \label{fig:delta_2m_twisted_k0}
     \end{minipage}
 \end{figure}
@@ -195,7 +196,8 @@ Und mit Lorenz-Invarianz erhalten wir schließlich
 Wir bedienen uns wieder genau des selben Arguments, wie in \cref{eq:delta_m2_s>1} und dürfen direkt schreiben:
 
 \begin{equation}
-    \left\langle \rwhat{\Delta}_m^{\circledast 2}, \hat\psi_{ast}\right\rangle
+    \left\langle \rwhat{\Delta}_m^{\circledast 2}, \hat\psi_{ast}^{(3)}\right\rangle
+    = \left\langle \rwhat{\Delta}_m^{\circledast 2} (-\cdot), \hat\psi_{ast}\right\rangle
     = 0 \condition{für alle $a$ klein genug}
 \label{eq:delta_m2_twisted_s>1}
 \end{equation}
@@ -205,11 +207,13 @@ Wir bedienen uns wieder genau des selben Arguments, wie in \cref{eq:delta_m2_s>1
 Da
 $\rwhat\Delta_m^{\circledast 2} = \rwhat\Delta_m^{* 2} \cos(\dots)$ können wir direkt mit dem Ausdruck (\ref{eq:psi_ast_delta_m2_s<1}) $\cdot \cos$ weiter arbeiten und genau die selben Abschätzungen machen. $\cos(\phi)$ ist bekanntermaßen beschränkt.
 
-\begin{dmath}
-\label{eq:delta_m2_twisted_s<1}
-    \left\langle \rwhat{\Delta}_m^{\circledast 2}, \rwhat{\psi}_{ast}
+\begin{align}
+    \left\langle \rwhat{\Delta}_m^{\circledast 2}, \rwhat{\psi}_{ast}^{(3)}
     \right\rangle
-    =
+    &=
+    \left\langle \rwhat{\Delta}_m^{\circledast 2}(-\cdot), \rwhat{\psi}_{ast}
+    \right\rangle
+    \nonumber \\ &=
      2 a^{-\frac{3}{4}} \int \frac{
     \hat\psi_1(\omega)~ \hat\psi_2(k) \left(
     \omega^2 \left(\Delta s - 2 a^{\frac{1}{2}} k s - ak^2
@@ -221,19 +225,52 @@ $\rwhat\Delta_m^{\circledast 2} = \rwhat\Delta_m^{* 2} \cos(\dots)$ können wir 
             \sqrt{\Delta s \omega^2 -2a^{\frac{1}{2}} \omega^2 k s
                     - a\omega^2k^2-4 a^2 m^2}
      }
-     \cdot
+     \nonumber \\ &\kern 2em\cdot
      \Theta(\cdots)
      \cos(\varphi(\omega^2-k^2))
      e^{-i \omega \left(\frac{t'-sx'}{a}+k \frac{x'}{\sqrt{a}}\right)}
      \d \omega \d k
-     \leq
+     \nonumber \\ &\leq
      2 a^{-\frac{3}{4}} \int
      \omega \hat\psi_1(\omega)\, \hat\psi_2(k)
      e^{-i \omega \left(\frac{t'-sx'}{a}+k \frac{x'}{\sqrt{a}}\right)}
      \d \omega \d k
-     \sim O(a^k) ~~ \forall k \hiderel \in \mathbb{N}
+     \nonumber \\ &\sim
+     O(a^k) ~~ \forall k \hiderel \in \mathbb{N}
 \label{eq:delta_m2_twisted_s<1_x_neq_0}
-\end{dmath}
+\end{align}
+% \begin{dmath}
+% \label{eq:delta_m2_twisted_s<1}
+%     \left\langle \rwhat{\Delta}_m^{\circledast 2}, \rwhat{\psi}_{ast}^{(3)}
+%     \right\rangle
+%     =
+%     \left\langle \rwhat{\Delta}_m^{\circledast 2}(-\cdot), \rwhat{\psi}_{ast}
+%     \right\rangle
+%     =
+%      2 a^{-\frac{3}{4}} \int \frac{
+%     \hat\psi_1(\omega)~ \hat\psi_2(k) \left(
+%     \omega^2 \left(\Delta s - 2 a^{\frac{1}{2}} k s - ak^2
+%             \right) - 3a^2m^2
+%     \right)
+%      }
+%      {
+%         \sqrt{\Delta s -2a^{\frac{1}{2}}ks - ak^2}
+%             \sqrt{\Delta s \omega^2 -2a^{\frac{1}{2}} \omega^2 k s
+%                     - a\omega^2k^2-4 a^2 m^2}
+%      }
+%      \cdot
+%      \Theta(\cdots)
+%      \cos(\varphi(\omega^2-k^2))
+%      e^{-i \omega \left(\frac{t'-sx'}{a}+k \frac{x'}{\sqrt{a}}\right)}
+%      \d \omega \d k
+%      \leq
+%      2 a^{-\frac{3}{4}} \int
+%      \omega \hat\psi_1(\omega)\, \hat\psi_2(k)
+%      e^{-i \omega \left(\frac{t'-sx'}{a}+k \frac{x'}{\sqrt{a}}\right)}
+%      \d \omega \d k
+%      \sim O(a^k) ~~ \forall k \hiderel \in \mathbb{N}
+% \label{eq:delta_m2_twisted_s<1_x_neq_0}
+% \end{dmath}
 
 
 \subsubsection*{Fall $|s| < 1, (x,t) = 0$}
@@ -306,7 +343,7 @@ In diesem Fall lassen wir den $\cos$-Faktor in \cref{eq:delta_m2_twisted_s<1} in
 % \end{aligned}
 % \end{equation}
 \begin{dmath}
-    \left\langle \rwhat{\Delta}_m^{\circledast 2}, \rwhat{\psi}_{ast}
+    \left\langle \rwhat{\Delta}_m^{\circledast 2}(-\cdot), \rwhat{\psi}_{ast}
     \right\rangle
     =
     2 a^{-\frac{3}{4}} \int
@@ -379,7 +416,7 @@ Da $\rwhat\Delta_m^{\circledast 2} = \rwhat\Delta_m^{* 2} \cos(\dots)$ ist, habe
 \todo{ordentliche Formulierung und ordentliche Referenzen einfügen}
 
 \begin{dmath}
-    \left\langle \rwhat{\Delta}_m^{\circledast 2}, \rwhat{\psi}_{a-1t}
+    \left\langle \rwhat{\Delta}_m^{\circledast 2}(-\cdot), \rwhat{\psi}_{a-1t}
     \right\rangle
     =
     2 a^{-\frac{3}{4}} \int
@@ -481,7 +518,7 @@ Einsetzen von \cref{eq:delta_m2_twisted_s=-1_material_a,eq:delta_m2_twisted_s=-1
 
 \begin{dmath*}
     \lim_{a \to 0}
-    \left\langle \rwhat{\Delta}_m^{\circledast 2}, \rwhat{\psi}_{a-1t}
+    \left\langle \rwhat{\Delta}_m^{\circledast 2}(-\cdot), \rwhat{\psi}_{a-1t}
     \right\rangle
     =
     2 a^{-\frac{3}{4}}
