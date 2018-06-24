@@ -37,6 +37,8 @@
 \let\pgfimageWithoutPath\pgfimage
 \renewcommand{\pgfimage}[2][]{\pgfimageWithoutPath[#1]{images/#2}}
 
+\usepackage[margin=.5em]{caption}
+
 % -----------------------------------------------------------------------------
 % Feynman Diagramme
 % -----------------------------------------------------------------------------
@@ -75,8 +77,6 @@
 \newenvironment{AMS}{}{}
 \newenvironment{keywords}{}{}
 
-
-
 %Sectionnumber in Equation Number
 \numberwithin{equation}{section}
 
@@ -86,6 +86,18 @@
 
 % Sachen durchstreichen
 \usepackage{cancel}
+
+% nen schönes ditto- Symbol
+\newcommand*{\ditto}{--- \raisebox{-0.5ex}{''} ---}
+\newcommand{\dittotikz}{%
+    \tikz{
+        \draw [line width=0.12ex] (-0.2ex,0) -- +(0,0.8ex)
+            (0.2ex,0) -- +(0,0.8ex);
+        \draw [line width=0.08ex] (-0.6ex,0.4ex) -- +(-1.5em,0)
+            (0.6ex,0.4ex) -- +(1.5em,0);
+    }%
+}
+
 
 % hübsche große Hüte
 \usepackage{scalerel,stackengine}
@@ -132,15 +144,6 @@
 \makeatother
 
 % \raggedbottom
-
-% \let\emph\relax % there's no \RedeclareTextFontCommand
-% \DeclareTextFontCommand{\emph}{\itshape\em}
-
-% \makeatletter
-% \DeclareRobustCommand{\em}{%
-%   \@nomath\em \if b\expandafter\@car\f@series\@nil
-%   \normalfont \else \itshape \fi}
-% \makeatother
 
 % -----------------------------------------------------------------------------
 % % Other stuff

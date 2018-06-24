@@ -47,9 +47,9 @@ Der Feynman-Propagator in zwei Dimensionen kann geschrieben werden als zeitgeord
     \label{eq:feynman_propgator_as_product}
 \end{equation}
 
-Wobei $\Theta$ die Heaviside-Funktion bezeichnet. Also sind Potenzen des Feynman-Propagators gegeben durch Potenzen der Zweipunktfunktion und der Heaviside-Funktion. Um zu wissen, wo diese Produkte definiert werden können, muss man deren Wellenfrontmengen kennen; dann liefert \cref{thm:hoermanders_criterion} ein Kriterium für die Wohldefiniertheit.
+Wobei $\Theta$ die Heaviside-Funktion bezeichnet. Also sind Potenzen des Feynman-Propagators gegeben durch Potenzen der Zweipunktfunktion und der Heaviside-Funktion. Um zu wissen, wo diese Produkte definiert werden können, muss man deren Wellenfrontmengen kennen; dann liefert Hörmanders Kriterium \ref{thm:hoermanders_criterion} ein Kriterium für die Wohldefiniertheit.
 
-In all dem kann die Zweipunktfunktion geschrieben als Fouriertransformierte eines positiven Maßes auf der negativen Massenschale $H_m$ (vgl. \textcite{Schwartz2014}, 24.69):
+In all dem kann die Zweipunktfunktion $\Delta_m$ geschrieben werden als Fouriertransformierte eines positiven Maßes auf der positiven Massenschale $H_m$ (vgl. \textcite{Schwartz2014}, 24.69):
 
 \begin{equation}
     \Delta_m (t,x) = \int \delta (\omega^2-k^2-m^2)
@@ -58,21 +58,21 @@ In all dem kann die Zweipunktfunktion geschrieben als Fouriertransformierte eine
 \end{equation}
 
 \subsection{Sternprodukte und getwistete Faltungen}
-Die \emph{nicht kommutative Quantenfeldtheorie} beschäftigt sich mit Quantenfeldtheorien in der Größenordnung der \emph{Planck-Skala}. Bei diesen Größenordnungen wird erwartet, dass die Geometrie der Raumzeit nicht mehr kommutativ ist; sich also Ort und Zeit nicht mehr mit beliebiger Präzision messen lassen. Diese Schranken in der Messgenauigkeit lassen sich als Unschärferelation verstehen, ganz analog zur klassischen Unschärferelation zwischen Ort und Impuls.
+Die \emph{nicht kommutative Quantenfeldtheorie} beschäftigt sich mit Quantenfeldtheorien in der Größenordnung der \emph{Planck-Skala}. Bei diesen Größenordnungen wird erwartet, dass die Geometrie der Raumzeit nicht mehr kommutativ ist, sich also Ort und Zeit nicht mehr mit beliebiger Präzision messen lassen. Diese Schranken in der Messgenauigkeit lassen sich als Unschärferelation verstehen, ganz analog zur klassischen Unschärferelation zwischen Ort und Impuls.
 
-Bei der Deformationsquantisierung wird das kommutative punktweise Produkt von Funktionen auf dem Phasenraum ersetzt durch ein nicht-kommutatives Sternprodukt/Moyal-Produkt, um das nicht-kommutieren von Ort und Impuls zu implementieren.
+Bei der Deformationsquantisierung wird das kommutative punktweise Produkt von Funktionen auf dem Phasenraum ersetzt durch ein nicht-kommutatives \emph{Sternprodukt/Moyal-Produkt}, um das nicht-kommutieren von Ort und Impuls zu implementieren.
 Mehr Details finden sich in \textcite[Kap. 6]{Waldmann2007}.
 
-Analog zu dieser Konstruktion ersetzen \textcite{Doplicher1995} das kommutative Produkt von Funktionen auf der Raumzeit durch ein Sternprodukt $\star$ auf den Funktionen auf der Raumzeit, und erhalten damit eine nicht-kommutative Geometrie. Gemäß dem Faltungssatz für die Fouriertransformierte gibt es auch eine \emph{getwistete Faltung} $\circledast$, s.d. der Faltungssatz erfüllt ist. Also
+Analog zu dieser Konstruktion ersetzen \textcite{Doplicher1995} das kommutative Produkt von Funktionen auf der Raumzeit durch ein Sternprodukt $\star$ auf den Funktionen auf der Raumzeit und erhalten damit eine nicht-kommutative Geometrie. Gemäß dem Faltungssatz für die Fouriertransformierte gibt es auch eine \emph{getwistete Faltung} $\circledast$, s.d. der Faltungssatz erfüllt ist. Also
 \begin{equation*}
     \rwhat{f \star g} \, (k) = \hat f \circledast \hat g \, (k)
 \end{equation*}
 
-In zwei Dimensionen ist die getwistete Faltung definiert durch
+In zwei Dimensionen ist die getwistete Faltung definiert wie folgt:
 
 \begin{definition}[getwistete Faltung]
 \label{def:twisted_convolution}
-    Seien $f,g \in $ "`passender Funktionen/Distributionenraum"'. Sei $\Omega \in \mathbb{R}^{2 \times 2}$ eine symplektische Matrix. Dann ist die getwistete Faltung $(f \circledast g) (x)$ definiert als
+    Seien $f,g \in $ "`passender Funktionen-/Distributionenraum"'. Sei $\Omega \in \mathbb{R}^{2 \times 2}$ eine symplektische Matrix. Dann ist die getwistete Faltung $(f \circledast g) (x)$ definiert als
 
     \begin{equation}
         (f \circledast g) \,(x) \coloneqq
@@ -83,11 +83,11 @@ In zwei Dimensionen ist die getwistete Faltung definiert durch
 
     Wir verwenden die kanonische symplektische Matrix, also
     $\Omega = \left(\begin{smallmatrix}
-        0 & 1 \\ -1 & 0
+        0 & 1 \\ 1 & 0
     \end{smallmatrix}\right)$
 \end{definition}
 
-Durch formale Rechnung, Ausschreiben der $e$-Funktion als Potenzreihe und nutzen der Fourieridentitäten $\cdot x \leftrightarrow i \partial_k$ sieht man, dass das Sternprodukt die Form
+Durch formale Rechnung, Ausschreiben der $e$-Funktion als Potenzreihe und nutzen der Fourieridentitäten $x \cdot \leftrightarrow i \partial_k$ sieht man, dass das Sternprodukt die Form
 \todo[color=green]{Drin lassen oder nicht? Ich verwende es ja nicht, aber ohne fühlt sich unvollständig an}
 
 \begin{equation*}
