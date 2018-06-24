@@ -42,9 +42,9 @@ Das Faltungsintegral ist
     \end{minipage}
 \end{figure}
 
-Da $\Delta_m$ Lorenz-invariant ist, sind $\Delta_m^2$ und $\rwhat{\Delta}_m^{*2}$ es auch. Es genügt also $\rwhat{\Delta_m^{*2}}$ für $k=0$ und positive $\omega$ zu berechnen. Alle anderen Werte holen wir uns dann aus der Lorenz-Invarianz. An \cref{fig:mass_shell_convolution} sehen wir schon, dass das Faltungsintegral \cref{eq:mass_shell_convolution} nur dann ungleich null ist, wenn $(\omega, k)$ oberhalb oder auf der 2$m$-Massenschale liegen. Es ist also insbesondere $\omega > 0$.
+Da $\Delta_m$ Lorenz-invariant ist, sind $\Delta_m^2$ und $\rwhat{\Delta}_m^{*2}$ es auch. Es genügt also $\rwhat{\Delta_m^{*2}}$ für $k=0$ und positive $\omega$ zu berechnen. Alle anderen Werte holen wir uns dann aus der Lorenz-Invarianz. An \cref{fig:mass_shell_convolution} sehen wir schon, dass das Faltungsintegral \eqref{eq:mass_shell_convolution} nur dann ungleich null ist, wenn $(\omega, k)$ oberhalb oder auf der 2$m$-Massenschale liegen. Es ist also insbesondere $\omega > 0$.
 
-Um nun das Integral über zwei sich schneidende lineare\footnote{Linear in dem Sinne, dass die Distribution entlang einer Linie getragen ist. Nicht das es eine lineare Distribution ist} $\delta$-Distributionen zu berechnen bedienen wir uns eines Physikertricks und stellen uns die $\delta$-Distribution als Grenzwert ($h \rightarrow 0$) einer $\frac{1}{h}$-hohen und $h$-breiten Rechtecksfunktion vor. Dann ist das Integral über die sich schneidenden Rechteckfunktionen proportional zu der Schnittfläche und damit zu $l \cdot h$ in \cref{fig:schulgeometrie}. Außerdem schneiden sich die beiden Hyperbeln für $\omega \rightarrow +\infty$ in einem rechten Winkel, das Faltungsintegral ergibt hier also 2 da es zwei Schnittpunkte gibt.
+Um nun das Integral über zwei sich schneidende lineare\footnote{Linear in dem Sinne, dass die Distribution entlang einer Linie getragen ist. Nicht das es eine lineare Distribution ist} $\delta$-Distributionen zu berechnen bedienen wir uns eines Physikertricks und stellen uns die $\delta$-Distribution als Grenzwert ($h \rightarrow 0$) einer $\frac{1}{h}$-hohen und $h$-breiten Rechtecksfunktion vor. Dann ist das Integral über die sich schneidenden Rechteckfunktionen proportional zu der Schnittfläche und damit zu $l \cdot h$ in \cref{fig:schulgeometrie}. Außerdem schneiden sich die beiden Hyperbeln für $\omega \rightarrow +\infty$ in einem rechten Winkel, das Faltungsintegral ergibt hier also 2, da es zwei Schnittpunkte gibt.
 
 Aus \cref{fig:schulgeometrie} lesen wir ab:
 
@@ -124,7 +124,7 @@ Wenn wir nun \cref{eq:schulgeometrie2,eq:schulgeometrie3} sowie die vorhergehend
 %     \nonumber
 % \end{dmath}
 
-Jetzt erhalten wir $\rwhat{\Delta}_m^{*2}(\omega, k)$ für beliebige $k$ noch aus der Lorenz-Invarianz:
+Jetzt erhalten wir $\rwhat{\Delta}_m^{*2}(\omega, k)$ für beliebige $k \neq 0$ noch aus der Lorenz-Invarianz:
 
 \begin{dmath}
     \rwhat{\Delta}_m^{*2}(\omega, k)
@@ -135,7 +135,7 @@ Jetzt erhalten wir $\rwhat{\Delta}_m^{*2}(\omega, k)$ für beliebige $k$ noch au
               \Theta(\omega^2-k^2-4m^2)
 \end{dmath}
 
-Es ist zu beachten, dass die Heaviside-Funktion genau bei der ersten Nullstelle der zweiten Wurzel im Nenner abschneidet und alle weiteren Nullstellen sowohl des Nenners als auch des Zählers außerhalb der $2m$-Massenschale und damit außerhalb des Trägers der Heaviside-Funktion liegen.
+Es ist zu beachten, dass die Heaviside-Funktion genau bei der ersten Nullstelle der zweiten Wurzel im Nenner abschneidet und alle weiteren Nullstellen sowohl des Nenners als auch des Zählers außerhalb der $2m$-Massenschale, und damit außerhalb des Trägers der Heaviside-Funktion, liegen.
 
 
 \begin{figure}
@@ -159,8 +159,6 @@ Es ist zu beachten, dass die Heaviside-Funktion genau bei der ersten Nullstelle 
 
 \todo[color=green]{$supp (\psi_{ast})$ einzeichnen oder nicht in \cref{fig:delta_2m}?}
 
-
-\todo{spacing der figures anpassen}
 
 \subsection{\dots und nun zur Wellenfrontmenge} % (fold)
 \label{sec:dots_und_nun_zur_wellenfrontmenge}
