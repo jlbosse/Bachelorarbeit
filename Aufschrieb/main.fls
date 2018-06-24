@@ -819,9 +819,6 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/mathpazo/fplmbb.tfm
-INPUT /usr/share/texmf/tex/latex/lm/t1lmtt.fd
-INPUT /usr/share/texmf/tex/latex/lm/t1lmtt.fd
-INPUT /usr/share/texmf/fonts/tfm/public/lm/ec-lmtt12.tfm
 INPUT /home/janlukas/Studium/BA/Aufschrieb/images/supp_psi_substitution1.pgf
 INPUT /home/janlukas/Studium/BA/Aufschrieb/images/supp_psi_substitution1.pgf
 INPUT /home/janlukas/Studium/BA/Aufschrieb/images/supp_psi_substitution2.pgf
@@ -870,6 +867,9 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplrc9e.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/palatino/pplrc9e.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplrc8r.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplr8r.tfm
+INPUT /usr/share/texmf/tex/latex/lm/t1lmtt.fd
+INPUT /usr/share/texmf/tex/latex/lm/t1lmtt.fd
+INPUT /usr/share/texmf/fonts/tfm/public/lm/ec-lmtt12.tfm
 OUTPUT /home/janlukas/Studium/BA/Aufschrieb/main.thm
 INPUT /home/janlukas/Studium/BA/Aufschrieb/main.aux
 INPUT /home/janlukas/Studium/BA/Aufschrieb/main.run.xml
