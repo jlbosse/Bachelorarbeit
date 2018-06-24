@@ -23,7 +23,7 @@ Wie in \cref{rem:shearlets_no_distributions} angesprochen, zeigt der Beweis von 
     \end{equation*}
     als distributionelle Ableitung
 
-    \emph{Beweis} \\[.5em]
+    \emph{Beweis} \\[.3em]
     Der Beweis findet sich in \textcite[S. 97]{Friedlander1998}.
 \end{theorem}
 
@@ -180,9 +180,9 @@ Ob eine analoge Konstruktion von Shearlets die kompakt getragen sind möglich is
 
 \subsection{Hörmanders Kriterium abschwächen}
 \label{sec:hoermanders_crit_abschwaechen}
-Um die Wellenfrontmenge einer Distribution zu bestimmen, muss man diese per Definition erst einmal mit einer kompakt getragenen Funktion lokalisieren, um eine kompakt getragene Distribution zu erhalten, deren Fouriertransformation sich berechnen lässt. Ist der Ansatz aus \cref{sec:ausdehnen_von_thm:main_theorem} erfolgreich, so zeigt dies, dass temperierte Distributionen mit \emph{nicht} kompakt getragenen Funktionen lokalisert werden können; Exponentieller Abfall ist genug, um die Wellenfrontmenge zu bestimmen.
+Um die Wellenfrontmenge einer Distribution zu bestimmen, muss man diese per Definition erst einmal mit einer kompakt getragenen Funktion lokalisieren, um eine kompakt getragene Distribution zu erhalten, deren Fouriertransformation sich berechnen lässt. Ist der Ansatz aus \cref{sec:ausdehnen_von_thm:main_theorem} erfolgreich, so zeigt dies, dass temperierte Distributionen mit \emph{nicht} kompakt getragenen Funktionen lokalisert werden können; exponentieller Abfall ist genug, um die Wellenfrontmenge zu bestimmen.
 
-Nach der Anschauung aus \cref{fig:faltung_strahlen} ist Hörmanders Kriterium zwar hinreichend, um das punktweise Produkt zweier Distributionen zu definieren über die Faltung ihrer Fouriertransformierten, aber nicht notwendig. Ein Beispiel dafür ist die Heaviside-Funktion. Offenbar existiert $\Theta(x)^2$, aber Hörmanders Kriterium wird an der $0$ verletzt, da $\hat \Theta (k) = \frac{i}{k} + \delta(k)$. Es ist ausreichend, wenn die lokalisierten Fouriertransformierten in entgegengesetzter im Produkt mit $|k|^{-d-\epsilon}$ abfallen, damit das Faltungsintegral existiert. Allerdings ist damit nur sicher gestellt, dass $f \cdot g \in \mathcal{D}'$, noch nicht $f\cdot g \in \mathcal{S}'$
+Nach der Anschauung aus \cref{fig:faltung_strahlen} ist Hörmanders Kriterium zwar hinreichend, um das punktweise Produkt zweier Distributionen zu definieren über die Faltung ihrer Fouriertransformierten, aber nicht notwendig. Ein Beispiel dafür ist die Heaviside-Funktion. Offenbar existiert $\Theta(x)^2$, aber Hörmanders Kriterium wird an der $0$ verletzt, da $\hat \Theta (k) = \frac{i}{k} + \delta(k)$. Es ist ausreichend, wenn die lokalisierten Fouriertransformierten in entgegengesetzter im Produkt mit $|k|^{-d-\epsilon}$ abfallen, damit das Faltungsintegral existiert. Allerdings ist damit nur sicher gestellt, dass $f \cdot g \in \mathcal{D}'$, noch nicht $f\cdot g \in \mathcal{S}'$.
 
 Die Hoffnung ist also, dass man an der $a$-Potenz mit der $\left\langle f, \psi_{ast} \right\rangle$ für $a \to 0$ skaliert ablesen kann, wie schnell
 	$\lim_{|k| \to \infty} \rwhat{\phi f} (k)$
@@ -227,6 +227,8 @@ Eine weitere Größe der mikrolokalen Analysis, die eventuell durch die Shearlet
 
     wobei $u_\lambda$ definiert ist über
     \begin{equation*}
+        \left\langle u_\lambda, \phi \right\rangle
+        =
         \lambda^{-n} \left\langle u, \phi\left(\tfrac{\cdot}{\lambda}\right)\right\rangle
     \end{equation*}
 

@@ -51,11 +51,11 @@ mit \cref{def:twisted_convolution,eq:material_fuer_delta_m2_twisted_a,eq:materia
     \d \omega' \d k'
 \end{dmath}
 
-und damit das selbe Integral wie in \cref{eq:mass_shell_convolution} bis auf einen zusätzlichen Phasenfaktor. Nachdem wir gezeigt haben, dass auch dieser Lorenz-Invariant ist, können wir das Integral mit dem selben Trick wie in \cref{sec:delta_m2_berechnen} berechnen.
+und damit das selbe Integral wie in \cref{eq:mass_shell_convolution} bis auf einen zusätzlichen Phasenfaktor. Nachdem wir gezeigt haben, dass auch dieser Lorentz-Invariant ist, können wir das Integral mit dem selben Trick wie in \cref{sec:delta_m2_berechnen} berechnen.
 
-\begin{proposition}[$\Omega_{std}$ ist Lorenz-invariant für $n=2$]
-\label{prop:omega_ist_lorenz_invariant}
-    $\Omega_{std}$ ist Lorenz-invariant für $n=2$
+\begin{proposition}[$\Omega_{std}$ ist Lorentz-invariant für $n=2$]
+\label{prop:omega_ist_Lorentz_invariant}
+    $\Omega_{std}$ ist Lorentz-invariant für $n=2$
 \\[1em]
 \emph{Beweis}\\
     Eine einfache Rechnung zeigt
@@ -74,10 +74,10 @@ und damit das selbe Integral wie in \cref{eq:mass_shell_convolution} bis auf ein
             0 & 1 \\ -1 & 0
         \end{pmatrix}
     \end{dmath*}
-    für alle $\beta \in \mathbb{R}$
+    für alle $\beta \in \mathbb{R}$.
 \end{proposition}
 
-Mit \cref{prop:omega_ist_lorenz_invariant} ist $\rwhat{\Delta}_m^{\circledast 2}$ Lorenz-Invariant und es reicht aus $\rwhat{\Delta}_m^{\circledast 2} (\omega, 0)$ zu berechnen.
+Mit \cref{prop:omega_ist_Lorentz_invariant} ist $\rwhat{\Delta}_m^{\circledast 2}$ Lorentz-Invariant und es reicht aus $\rwhat{\Delta}_m^{\circledast 2} (\omega, 0)$ zu berechnen.
 
 \todo{herausfinden, warum hier Satz statt Proposition geschrieben wird... Warum ist cleverref nicht so clever?}
 
@@ -92,7 +92,7 @@ Die "`Fläche"' der Kreuzungspunkte der $\delta$-Distributionen wurde in
  \cref{sec:delta_m2_berechnen} berechnet und ist
 
 \begin{equation*}
-A = \frac{\omega^2-3m^2}{\omega \sqrt{\omega^2-4m^2}}
+A = \frac{\omega^2-3m^2}{\omega \sqrt{\omega^2-4m^2}}.
 \end{equation*}
 
 Der Phasenfaktor nimmt bei den Kreuzungspunkten folgende Werte an:
@@ -119,7 +119,7 @@ Kombinieren wir also die vorhergehenden Resultate erhalten wir
     \Theta\left(\omega^2-4m^2\right)
     \\&=
     2 \frac{\omega^2 -3m^2}{\omega \sqrt{\omega^2-4m^2}}
-    \cos \left(\varphi(\omega^2)\right) \Theta\left(\omega^2-4m^2\right)
+    \cos \left(\varphi(\omega^2)\right) \Theta\left(\omega^2-4m^2\right),
 \end{align*}
 % \begin{dmath*}
 %     \rwhat{\Delta}_m^{\circledast 2} (\omega, 0)
@@ -139,7 +139,7 @@ Kombinieren wir also die vorhergehenden Resultate erhalten wir
 % \end{dmath*}
 
 wobei im letzten Schritt noch implizit $\varphi(\omega^2)$ definiert wurde.
-Und mit Lorenz-Invarianz erhalten wir schließlich
+Und mit Lorentz-Invarianz erhalten wir schließlich
 
 \begin{align}
     \rwhat{\Delta}_m^{\circledast 2} (-\omega, -k)
@@ -154,7 +154,7 @@ Und mit Lorenz-Invarianz erhalten wir schließlich
     \Theta \left(\omega^2-k^2-4m^2\right)
     \nonumber \\ &=
     \rwhat{\Delta}_m^{* 2}(\omega, k) \cos (\varphi(\omega^2-k^2))
-    \Theta\left(\omega^2-k^2-4m^2\right)
+    \Theta\left(\omega^2-k^2-4m^2\right),
 \end{align}
 % \begin{dmath}
 %     \rwhat{\Delta}_m^{\circledast 2} (\omega, k)
@@ -204,7 +204,7 @@ Wir bedienen uns wieder genau des selben Arguments, wie in \cref{eq:delta_m2_s>1
 
 \subsubsection*{Fall $|s| < 1, (x,t) \neq 0$}
 Da
-$\rwhat\Delta_m^{\circledast 2} = \rwhat\Delta_m^{* 2} \cos(\dots)$ können wir direkt mit dem Ausdruck (\ref{eq:psi_ast_delta_m2_s<1}) $\cdot \cos$ weiter arbeiten und genau die selben Abschätzungen machen. $\cos(\phi)$ ist bekanntermaßen beschränkt.
+$\rwhat\Delta_m^{\circledast 2} = \rwhat\Delta_m^{* 2} \cos(\dots)$ können wir direkt mit dem Ausdruck (\ref{eq:psi_ast_delta_m2_s<1}) $\cdot \cos$ weiter arbeiten und genau die selben Abschätzungen machen. $\cos(\varphi)$ ist bekanntermaßen beschränkt.
 
 \begin{align}
     \left\langle \rwhat{\Delta}_m^{\circledast 2}, \rwhat{\psi}_{ast}^{(3)}
@@ -273,7 +273,7 @@ $\rwhat\Delta_m^{\circledast 2} = \rwhat\Delta_m^{* 2} \cos(\dots)$ können wir 
 
 
 \subsubsection*{Fall $|s| < 1, (x,t) = 0$}
-In diesem Fall lassen wir den $\cos$-Faktor in \cref{eq:delta_m2_twisted_s<1} in der ersten Ungleichung nicht heraus fallen, dafür wird der $e^\cdots$-Faktor 1. Den $\cos$-Faktor schreiben wir als Summe von $e$-Funktionen und erhalten
+In diesem Fall lassen wir den $\cos$-Faktor in \cref{eq:delta_m2_twisted_s<1_x_neq_0} in der ersten Ungleichung nicht heraus fallen, dafür wird der $e^\cdots$-Faktor 1. Den $\cos$-Faktor schreiben wir als Summe von $e$-Funktionen und erhalten
 
 % \begin{equation}
 % \begin{aligned}
@@ -403,16 +403,12 @@ In diesem Fall lassen wir den $\cos$-Faktor in \cref{eq:delta_m2_twisted_s<1} in
 \label{eq:delta_m2_twisted_s<1_x=0}
 \end{dmath}
 
-\todo[color=red]{Schritt von dritte in die vierte Zeile rechtfertigen. Ist wieder die Geschichte vom "`halben Lebesgue"'}
-
 wobei bei der Substition $\omega \to \sqrt{\omega}$ in der zweiten Zeile wichtig ist, dass $0 \notin supp (\hat\psi_1)$, also auch nach der Substitution noch $\hat\psi_1 \in C_c^\infty (\mathbb{R})$ ist.
 
 
 \subsubsection*{Fall $s = -1$}
 
 Da $\rwhat\Delta_m^{\circledast 2} = \rwhat\Delta_m^{* 2} \cos(\dots)$ ist, haben wir bis auf den $\cos$-Faktor die selben Analysis zu betreiben, wie für $\rwhat\Delta_m^{*2}$.
-
-\todo{ordentliche Formulierung und ordentliche Referenzen einfügen}
 
 \begin{align}
     & \kern -2em\left\langle \rwhat{\Delta}_m^{\circledast 2}(-\cdot), \rwhat{\psi}_{a-1t}
@@ -483,7 +479,7 @@ Da $\rwhat\Delta_m^{\circledast 2} = \rwhat\Delta_m^{* 2} \cos(\dots)$ ist, habe
 % \label{eq:psi_a-1t_delta_m2_twisted}
 % \end{dmath}
 
-Genau wie in \cref{eq:lange_1/sqrt_abschaetzerei} können wir für $i)$ wieder Abschätzen\footnote{Da cos beschränkt ist, spielt er bei den Abschätzungen keine Rolle}
+Genau wie in \cref{eq:lange_1/sqrt_abschaetzerei} können wir für $i)$ wieder abschätzen\footnote{Da cos beschränkt ist, spielt er bei den Abschätzungen keine Rolle}
 
 \begin{dmath*}
     % \frac{
@@ -505,12 +501,12 @@ Genau wie in \cref{eq:lange_1/sqrt_abschaetzerei} können wir für $i)$ wieder A
 \end{dmath*}
 
 Damit dürfen wir wieder Lebesgue anwenden, um den Grenzwert $a \to 0$ des Integrals zu berechnen.
-Des weiteren ist analog zu \cref{eq:langer_sqrt_bruch_punktweise_konvergenz}
+Des Weiteren ist analog zu \cref{eq:langer_sqrt_bruch_punktweise_konvergenz}
 
 \begin{dmath}
     i)
     \stackrel{\textrm{\scriptsize punktweise f.ü.}}{\longrightarrow}
-    \omega\,\hat\psi_1(\omega) \,\hat\psi_2(k') \Theta(k')
+    \omega\,\hat\psi_1(\omega) \,\hat\psi_2(k') \Theta(k').
 \label{eq:delta_m2_twisted_s=-1_material_a}
 \end{dmath}
 
@@ -536,9 +532,8 @@ Widmen wir uns also dem Argument des Kosinus $ii)$:
     \frac{\omega^2 k' a^{-\frac{3}{2}}}{2}
 \end{dmath*}
 
-also
-
 \begin{dmath}
+\Longrightarrow ~~
     \cos\big(ii)\big)
     \stackrel{\textrm{\scriptsize punktweise, außer } k'=0}{\longrightarrow}
     \cos\left(\frac{\omega^2 k' a^{-\frac{3}{2}}}{2}\right)
@@ -546,8 +541,6 @@ also
 \end{dmath}
 
 Einsetzen von \cref{eq:delta_m2_twisted_s=-1_material_a,eq:delta_m2_twisted_s=-1_material_b} in \cref{eq:psi_a-1t_delta_m2_twisted} ergibt mit Lebesgue
-
-\todo{den Ausdruck hübscher machen. So ist das ja grauenhaft}
 
 \begin{dmath*}
     \lim_{a \to 0}
@@ -604,7 +597,7 @@ Nun betrachten wir $\hat f_a(\omega)$ und erhalten analog zu
      + \mathrm{c.c}
      \bigg]
      \\ &\sim
-    O\left(a^{\frac{3}{2}}\right)
+    O\left(a^{\frac{3}{2}}\right).
 \end{align*}
 % \begin{dmath*}
 %     \hat f_a(\omega)
@@ -668,7 +661,7 @@ Also dürfen wir für $a \to 0$ schreiben $\hat f_a(\omega) = C a^{\frac{3}{2}} 
 % \end{dmath}
 
 \subsection{Zusammenfassung und Vergleich der Ergebnisse}
-Fassen wir wie bisher schon die Ergebnisse aus \cref{eq:delta_m2_twisted_s>1,eq:delta_m2_twisted_s<1_x_neq_0,eq:delta_m2_twisted_s<1_x=0,eq:delta_m2_twisted_s=-1} wieder in einer Übersichtstabelle zusammen:
+Fassen wir die Ergebnisse aus \cref{eq:delta_m2_twisted_s>1,eq:delta_m2_twisted_s<1_x_neq_0,eq:delta_m2_twisted_s<1_x=0,eq:delta_m2_twisted_s=-1} wieder in einer Übersichtstabelle zusammen:
 
 \begin{table}[h]
 \centering
@@ -683,10 +676,10 @@ $|s|>1$ & $a^k$             & $a^k$             & $a^k$             & $a^k$
 \label{tab:wavefrontset_delta_m2_twisted}
 \end{table}
 
-Auch diesmal stimmen die Ergebnisse mit denen von \textcite[Prop. 3.72]{Schulz2014}\footnote{So weit sie gegeben wurden} überein, welcher für alle Potenzen des getwisteten Produkts $\Delta_+^{\star k}$ erhält:
+Auch diesmal stimmen die Ergebnisse mit denen von \textcite[Prop. 3.72]{Schulz2014}\footnote{So weit sie gegeben wurden} überein, welcher für alle Potenzen des getwisteten Produkts $\Delta_m^{\star k}$ erhält:
 
 \begin{equation*}
-\left\langle t,x; \omega, k \right\rangle \hiderel\in WF(\Delta_+^{\star k})
+\left\langle t,x; \omega, k \right\rangle \hiderel\in WF(\Delta_m^{\star k})
 \Rightarrow
 - \omega \geq |k|
 \end{equation*}
