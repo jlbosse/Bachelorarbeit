@@ -225,6 +225,10 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/import/import.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/import/import.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/placeins/placeins.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/placeins/placeins.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/caption.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/caption.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/tikz-feynman/tikz-feynman.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/tikz-feynman/tikz-feynman.sty
 INPUT /usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifluatex.sty
@@ -763,10 +767,10 @@ INPUT /home/janlukas/Studium/BA/Aufschrieb/images/quadrants.pgf
 INPUT /home/janlukas/Studium/BA/Aufschrieb/images/quadrants.pgf
 INPUT /home/janlukas/Studium/BA/Aufschrieb/proof_main_theorem.tex
 INPUT /home/janlukas/Studium/BA/Aufschrieb/proof_main_theorem.tex
-INPUT /home/janlukas/Studium/BA/Aufschrieb/images/smart_decomposition.pgf
-INPUT /home/janlukas/Studium/BA/Aufschrieb/images/smart_decomposition.pgf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplr9e.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/palatino/pplr9e.vf
+INPUT /home/janlukas/Studium/BA/Aufschrieb/images/smart_decomposition.pgf
+INPUT /home/janlukas/Studium/BA/Aufschrieb/images/smart_decomposition.pgf
 INPUT /home/janlukas/Studium/BA/Aufschrieb/substitutionen.tex
 INPUT /home/janlukas/Studium/BA/Aufschrieb/substitutionen.tex
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplr9t.tfm

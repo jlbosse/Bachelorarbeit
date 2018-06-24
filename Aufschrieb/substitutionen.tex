@@ -6,8 +6,6 @@
 \section{\texorpdfstring{Zwei nützliche Substitionen für  $\left<\psi_{ast}, f\right>$}{Zwei nützliche Substitutionen}}
 \label{sec:substitutionen}
 
-\todo[color=green]{mit $(\omega, k)$ als Variablennamen arbeiten, um zum Rest des Textes zu passen, oder mit $(\xi_1, \xi_2)$ um zu \textcite{Kutyniok2008} zu passen?}
-
 \begin{remark}[Notation]
     Da wir ab jetzt Distributionen aus der Physik betrachten, für die es üblich ist als Variablen $(t, x)$ und als Variablen im Fourierraum $(\omega, k)$ zu verwenden, schreiben wir statt $(x_1, x_2)$ ab jetzt $(t,x)$ und statt $(k_1, k_2)$ schreiben wir $(\omega, k)$. Außerdem verwenden wir das Minkowski-Skalarprodukt für die Fouriertransformation d.h.
     \begin{equation*}
@@ -18,7 +16,7 @@
     wieder um den Konventionen in der Physik gerecht zu werden.
 \end{remark}
 
-Zunächst werden wir zwei verschiedene Ausdrücke für $\left<\psi_{ast}, f\right>$
+Zunächst werden wir zwei verschiedene Ausdrücke für $\left< f, \psi_{ast} \right>$
 im Fourierraum herleiten, welche fast immer Ausgangspunkt für unsere Abschätzungen sein werden.
 
 Sei also $\psi$ ein Shearlet wie in \cref{cor:psi_hat}. Sei $f$ die zu
@@ -32,7 +30,6 @@ $\mathcal{S}' (\mathbb{R}^2)$. Dann ist $\mathcal{S}_f (ast)$ gegeben durch
     \hat f (\omega,k) \d \omega \d k
 \end{align*}
 
-\todo{entscheiden, was mit dem fehlenden Faktor $\frac{1}{(2 \pi)^n}$ geschieht}
 und nach "`entscheren"' und "`deskalieren"', also der Substitution
 
 \begin{equation}
@@ -67,7 +64,7 @@ ergibt sich folgendes für $\left<\psi_{ast}, f\right>$:
 \owntag[substitution1]{Substitution 1}
 \end{align}
 
-Wie man sieht, tauchen in den Argumente von $\hat\psi_1$ und $\hat\psi_2$ nun die Parameter $a,s,t$ gar nicht mehr auf, und wir können nun verwenden, was wir aus \ref{sec:shearlets} über deren Träger wissen.
+Wie man sieht, tauchen in den Argumente von $\hat\psi_1$ und $\hat\psi_2$ nun die Parameter $a,s,t$ gar nicht mehr auf, und wir können nun verwenden, was wir aus \eqref{sec:shearlets} über deren Träger wissen.
 Alternativ und mit ähnlichem Ergebnis kann auch folgende Substitution
 
 \begin{equation}
@@ -102,7 +99,7 @@ verschwinden und sich
 
 ergibt. Dabei ist zu beachten, dass diese Substitution zulässig ist, obwohl sie
 die Orientierung \emph{nicht} erhält und \emph{keine} Bijektion ist. Aber
-der kritische Bereich, nämlich $\xi_1 = 0$, liegt nicht im Träger von $\hat{\psi}$.
+der kritische Bereich, nämlich $\omega = 0$, liegt nicht im Träger von $\hat{\psi}$.
 
 Beiden Substitution gemein ist aber, dass danach
 $0=\omega \notin supp (\hat\psi)$ und dass $supp (\psi)$ sowohl in $k$ als auch in $\omega$ beschränkt ist. $\omega$ kann also sowohl nach unten als auch nach oben durch eine Konstante abgeschätzt werden, wann immer dies der Sache dienlich ist. Auch $k$ kann zumindest nach oben immer durch eine Konstante abgeschätzt werden.

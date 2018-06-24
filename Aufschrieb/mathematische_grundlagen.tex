@@ -2,13 +2,13 @@
 
 \section{Fouriertransformation, mikrolokale Analysis und all die Mathematik} % (fold)
 \label{sec:fouriertransformation_mikrolokale_analysis_und_all_die_mathematik}
-Im folgenden gehen wir davon aus, dass die grundlegenden Eigenschaften der Fouriertransformation (Faltungssatz, Parsevals Satz etc.) bekannt sind und führen nur die Begriffe ein, die über das Grundstudium hinaus gehen und nicht voraus gesetzt werden können.
+Im folgenden gehen wir davon aus, dass die grundlegenden Eigenschaften der Fouriertransformation (Faltungssatz, Parsevals Satz etc.) bekannt sind und führen nur die Begriffe ein, die über das Grundstudium hinaus gehen und nicht vorausgesetzt werden können.
 
-\subsection{\texorpdfstring{$2 \pi = 1$}{2 Pi = 1}}
+\subsection{Nomenklatur und \texorpdfstring{$2 \pi = 1$}{2 Pi = 1}}
 \todo[color=green]{Ist das so akzeptabel? Oder wird in einer BA doch erwartet, dass man etwas mehr sorgfalt walten lässt?}
-Da in der gesamten vorliegenden Arbeit so gut wie immer vor allem von Belang ist, wie schnell gewisse Integrale mit einem gewissen Parameter gegen 0 gehen, es dafür aber vollkommen unerheblich ist, ob in den Abschätzungen noch Faktoren von $2 \pi$ durch den Faltungssatz fehlen oder man für die richtige Abschätzung noch einmal mit 2 multiplizieren  sollten, sind wir in der gesamten Arbeit sehr großzügig damit, wie genau wir Buch führen mit solchen Vorfaktoren. Unser Faltungssatz liest sich also
+Da in der gesamten vorliegenden Arbeit so gut wie immer vor allem von Belang ist, wie schnell gewisse Integrale mit einem gewissen Parameter gegen 0 gehen, es dafür aber vollkommen unerheblich ist, ob in den Abschätzungen noch Faktoren von $2 \pi$ durch den Faltungssatz fehlen oder ob man für die richtige Abschätzung noch einmal mit 2 multiplizieren  sollten, sind wir in der gesamten Arbeit sehr großzügig damit, wie genau wir Buch führen mit solchen Vorfaktoren. Unser Faltungssatz liest sich also
 \begin{equation*}
-    \rwhat{fg} (k) = \hat f \ast \hat f (k)
+    \rwhat{fg} (k) = \hat f \ast \hat f (k),
 \end{equation*}
 obwohl wir die Fouriertransformation
 \begin{equation*}
@@ -24,9 +24,12 @@ verwenden. Des weiteren verwenden wir für die inverse Fouriertransformation den
 
 
 \subsection{Die Wellenfrontmenge}
+
+Anschaulich sagt uns die Wellenfrontmenge wo und in welche Richtungen eine Distribution singulär ist. So ist z.B. die Wellenfrontmenge der $\delta$-Distribution $\{(0, \mathbb{R}^n \setminus 0)\}$ oder die der 2-dimensionalen Heaviside-Funktion $1(x)\cdot\Theta(y)$ ist $\{((x,0),(0,1)\cdot \mathbb{R}\setminus 0)\}$
+
 \begin{definition}[high frequency set]
 \label{def:high_frequency_set}
-Sei $f \in \mathcal{E}'(\Omega), \Omega \subset \mathbb{R}^n$ ein kompakt getragene Distribution. Dann definieren wir die Richtungen hoher Frequenzen als
+Sei $f \in \mathcal{E}'(\Omega), \Omega \subset \mathbb{R}^n$ ein kompakt getragene Distribution. Dann definieren wir die \emph{Richtungen hoher Frequenzen} als
 \begin{dmath*}
 \Sigma (v) = \left\{k \hiderel \in \hat{\mathbb{R}}^n ~\big|~ k \textrm{ hat \emph{keine} kegelförmige Umgebung $U$ s.d. } \\ |\hat v (k')| \leq C_N(1+|k|)^{-N} \, \forall k \hiderel\in U,\, \forall N  \hiderel\in \mathbb{N} \right\}
 \end{dmath*}
@@ -34,7 +37,7 @@ und darauf basierend definieren wir noch eine punktweise Variante:
 
 Sei $f \in \mathcal{D}'(\Omega), \Omega \subset \mathbb{R}^n$ eine Distribution.
 Sei $\mathcal{D}_x$ die Menge der kompakt getragenen glatten Funktionen, die an $x$ nicht verschwinden.
-Dann ist die singuläre Faser von $f$ an $x$ definiert als
+Dann ist die \emph{singuläre Faser} von $f$ an $x$ definiert als
 \begin{dmath*}
 \Sigma_x (f) = \bigcap \limits_{\phi \in \mathcal{D}_x} \Sigma (\underbrace{\phi f}_{\in \mathcal{E}'(\mathbb{R}^n)})
 \end{dmath*}
@@ -44,26 +47,24 @@ Damit können wir die Wellenfrontmenge definieren:
 
 \begin{definition}[Wellenfrontmenge]
 \label{def:wavefrontset}
-Sei $f \in \mathcal{D}'(\Omega), ~\Omega \subset \mathbb{R}^n$ eine Distribution. Dann ist ihre Wellenfrontmenge definiert als
+Sei $f \in \mathcal{D}'(\Omega), ~\Omega \subset \mathbb{R}^n$ eine Distribution. Dann ist ihre \emph{Wellenfrontmenge} definiert als
 
 \begin{equation*}
 WF(f)  \coloneqq \left\{
 	(x,k) \in \Omega \times (\hat{\mathbb{R}}^n \setminus 0)
-	\Big | k \in \Sigma_x(f)
+	~\Big|~ k \in \Sigma_x(f)
 	\right\}
 \end{equation*}
 \end{definition}
-
-Anschaulich sagt uns die Wellenfrontmenge wo und in welche Richtungen eine Distribution singulär ist. So ist z.B. die Wellenfrontmenge der $\delta$-Distribution $\{(0, \mathbb{R}^n \setminus 0)\}$ oder die der 2-dimensionalen Heaviside-Funktion $1(x)\cdot\Theta(y)$ ist $\{((x,0),(0,1)\cdot \mathbb{R}\setminus 0)\}$
 
 Aber weshalb ist die Wellenfrontmenge interessant für uns? Unter anderem liefert sie ein Kriterium, wann das Produkt zweier Distributionen wohldefiniert ist. Und zwar mittels folgendem Satz:
 
 \begin{theorem}[Hörmanders Kriterium]
 \label{thm:hoermanders_criterion}
     Sei $\Omega \subset \mathbb{R}^n$ offen.
-    Seien $f,g \in \mathcal{D}(\Omega)$ Distributionen und es gelte $(x,k) \in WF(f) \Rightarrow (x,-k) \notin WF(g)$. Es sei außerdem $\delta : \Omega \rightarrow \Omega \times \Omega; ~x \mapsto (x,x)$. Dann kann das Produkt von $f$ und $g$ definiert werden über den Pullpack mit $\delta$, also
+    Seien $f,g \in \mathcal{D}(\Omega)$ Distributionen und es gelte $(x,k) \in WF(f) \Rightarrow (x,-k) \notin WF(g)$. Es sei außerdem $\mathrm{diag} : \Omega \rightarrow \Omega \times \Omega; ~x \mapsto (x,x)$. Dann kann das Produkt von $f$ und $g$ definiert werden über den Pullback mit $\mathrm{diag}$, also
     \begin{equation*}
-        f g \coloneqq \delta^* (f \otimes g)
+        f g \coloneqq \mathrm{diag}^* (f \otimes g)
     \end{equation*}
     und es gilt
     \begin{dmath*}
