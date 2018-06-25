@@ -281,7 +281,7 @@ Und insbesondere ist $C_N = \frac{15}{2}\frac{\sqrt{a} + s}{a^2}\left(\Vert \hat
 
 
 Wer bis hier aufmerksam mitgelesen hat und sich \cref{fig:supp_psi_hat} genau angeschaut hat, wird bemerkt haben, dass $supp(\hat\psi_{ast})$ für alle $a$ und $s$ quasi nur im Quadranten $x_1^2 \geq x_2^2$ und $x_2 \geq 0$ liegt.
-Mit den Namen der Physik $(k_1, k_2) = (\omega, k)$ entspricht das dem "`Vorwärtslichtkegel"'. Glücklicherweise liegen alle analysierten Distributionen im gleich definierten $L(C)^\vee$
+Mit den Namen der Physik $(k_1, k_2) = (\omega, k)$ entspricht das dem "`Vorwärtslichtkegel"'. Glücklicherweise liegen alle analysierten Distributionen im gleich definierten $L(C)^\vee$.
 Wie der folgende Satz zeigt, erzeugt $\psi$ auch nur für solche $f$ ein reproduzierendes System.
 
 \begin{theorem}[$\psi$ reproduziert $L^2(C)^\vee$]
@@ -309,12 +309,7 @@ Wie der folgende Satz zeigt, erzeugt $\psi$ auch nur für solche $f$ ein reprodu
 
 Um nun nicht nur ein reproduzierendes System für $L^2(C)^\vee$, sondern für ganz $L^2(\mathbb{R}^2)$ zu erhalten, muss $\hat \psi_{ast}$ noch in den rechten, linken und rückwärts liegenden Kegel gedreht und geschoben werden. Zusätzlich muss noch eine weitere Funktion $W$ gefunden werden, welche die groben Skalen (also $|k_1|, |k_2| \leq 2$) auflöst.
 
-\begin{figure}[ht]
-\centering
-\input{images/quadrants.pgf}
-\caption{Aufteilung des Fourierraums in vier Quadranten plus einen Teil für die groben Skalen. Die Quadranten $C^{(i)}$ entsprechen den Unterräumen von $L^2(\hat{\mathbb{R}}^2)$ die von $\hat \psi_{ast}^{(i)}$ reproduziert werden.}
-\label{fig:quadrants}
-\end{figure}
+\todo{hier ne eigene Definition draus machen?}
 
 Wir definieren also
 \begin{align}
@@ -340,35 +335,18 @@ Des Weiteren gibt es ein $W(x)$ s.d. $\hat W(k) \in C^\infty (\hat{\mathbb{R}}^2
 und somit erhalten wir (dank Parseval) ein reproduzierendes System für ganz $L^2$, da ja
 $L^2 (\mathbb{R}^2) = L^2 (\textrm{grobe Skalen})^\vee \oplus \sum_{i=1}^4 L^2 \left(C^{(i)}\right)^\vee$ ist. Mehr Details dazu finden sich in \cite[S. 28 ff]{Kutyniok2008}.
 
-
-% Wer bisher aufmerksam mitgelesen hat und sich \cref{fig:supp_psi_hat} genau angeschaut hat, wird bemerkt haben, dass $supp(\hat\psi_{ast})$ für alle $a,s$ quasi nur im Quadranten positiver Energie und Masse (also $\omega \geq 0, \omega^2 \geq k^2$) liegt. Also wird $\mathcal{S}_f(a,s,t)$ auch nur für solche $f$ von Nutzen sein. Diesen Mangel wollen wir nun durch "`Drehen und Spiegeln"' von $\hat \psi$ und Einführen einer weiteren Analysefunktion $W$ für die groben Skalen beheben. Mehr der Vollständigkeit halber, als aus wirklicher Notwendigkeit, denn in den späteren Kapiteln betrachten wir doch nur Distributionen deren Träger komplett im Vorwärtsquadranten(?) liegt. Und die groben Skalen interessieren beim Bestimmen der Wellenfrontmenge ohnehin nicht.
-
-% \begin{definition}[Shearlettransformation, Fortsetzung]
-% Seien $\psi_1$ und $\psi_2$ wie in \cref{def:shearletttransformationI} und
-
-% \begin{equation}
-%     G^{(v)} = \left\{M_{as} \in \mathrm{GL}(2,\mathbb{R}) \Big | M_{as} = \left(\begin{smallmatrix}
-%         \sqrt a & 0 \\ -\sqrt a s &  a
-%     \end{smallmatrix}\right)
-%     , a \in [0,1], s \in [-2,2]
-%     \right\}
-% \end{equation}
-
-
-% \end{definition}
-
-% \begin{theorem}[$\{\psi(i), W\}$ sind ein reproduzierendes System]
-
-% \end{theorem}
-
-% section konstruktion_und_eigenschaften_der_shearlets (end)
-
+\begin{figure}[ht]
+\centering
+\input{images/quadrants.pgf}
+\caption{Aufteilung des Fourierraums in vier Quadranten plus einen Teil für die groben Skalen. Die Quadranten $C^{(i)}$ entsprechen den Unterräumen von $L^2(\hat{\mathbb{R}}^2)$ die von $\hat \psi_{ast}^{(i)}$ reproduziert werden.}
+\label{fig:quadrants}
+\end{figure}
 
 Das große Versprechen der Shearlettransformation war ja, dass sie in der Lage ist nicht nur Position, sondern auch Orientierung der Singularitäten aufzulösen. Dass dem auch so ist, ist Aussage des folgenden Satzes:
 
 \begin{theorem}[$\mathcal{S}_f(a,s,t)$ misst $WF(f)$]
 \label{thm:main_theorem}
-    Sei $f \in \mathcal{S}'(C)^\vee \cap B(\mathbb{R}^2)$ (wobei $\mathcal{S}(C)^\vee$ analog zu $L^2(C)^\vee$ definiert ist).
+    Sei $f \in \mathcal{S}'(C)^\vee \cap B(C)^\vee$ (wobei $\mathcal{S}(C)^\vee$ analog zu $L^2(C)^\vee$ definiert ist).
     Sei $\mathcal{D}$ die Menge der $(s, t)$ s.d. $\mathcal{S}(a,s,t)$ schnell verschwindet. Genauer
 
     \begin{dmath*}
@@ -384,7 +362,7 @@ Das große Versprechen der Shearlettransformation war ja, dass sie in der Lage i
 
 \begin{remark}
 \label{rem:shearlets_no_distributions}
-    Die Einschränkung $f \in B(\mathbb{R}^2)$ ist gravierend und bedeutet zunächst, dass die Shearlettransformation nur bedingt geeignet ist, um Wellenfrontmengen auszurechnen. In \cref{sec:ausblick} soll aber ein Ansatz gegeben werden, wie der Beweis von \cref{thm:main_theorem} hoffentlich auf ganz $\mathcal{S}'(C)^\vee$ ausgedehnt werden kann. Des Weiteren zeigen ja auch die konkreten Rechnungen an Distributionen mit bereits bekannter Wellefrontmenge, dass die Shearlettransformation diese korrekt erkennt.
+    Die Einschränkung, dass $f$ beschränkt ist ($f \in B(\mathbb{R}^2)$) ist gravierend und bedeutet zunächst, dass die Shearlettransformation nur bedingt geeignet ist, um Wellenfrontmengen auszurechnen. In \cref{sec:ausblick} soll aber ein Ansatz gegeben werden, wie der Beweis von \cref{thm:main_theorem} hoffentlich auf ganz $\mathcal{S}'(C)^\vee$ ausgedehnt werden kann. Des Weiteren zeigen ja auch die konkreten Rechnungen an Distributionen mit bereits bekannter Wellefrontmenge, dass die Shearlettransformation diese korrekt erkennt.
 \end{remark}
 Wenn wir die Wellenfrontmenge einer Distribution kennen, kennen wir auch ihren singulären Träger:
 
