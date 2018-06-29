@@ -1,0 +1,89 @@
+%!TEX root = main.tex
+% !TEX spellcheck=de_DE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % Der Heaviside-Function
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{\texorpdfstring{Die Wellenfrontmenge von $\Theta$}
+        {Die Wellenfrontmenge der Heaviside-Funktion}} % (fold)
+\label{sec:die_wellenfrontmenge_der_heaviside_function}
+
+Wie in \cref{sec:die_zweipunktfunktionen_und_warum_wir_sie_potenzieren_wollen} erklärt, sind Potenzen des Feynmanpropagators gegeben durch Potenzen der Zweipunktfunktion $\Delta_m$ und der Heaviside-Funktion $\Theta$. Dementsprechend, muss auch die Wellenfrontmenge von $\Theta$ berechnet werden, aber dies ist glücklicherweise auch mit unseren Shearlet-Methoden relativ einfach.
+
+Da $\Theta$ die Stammfunktion von $\delta$ (im distributionellen Sinne) ist, können wir die Fouriertransformierte dank der üblichen Fourierrechenregeln direkt hinschreiben:\footnote{Wieder nur korrekt bis auf Vorfaktoren von $2\pi$}
+
+\begin{equation}
+    \rwhat{\Theta(t)\otimes 1(x)}(\omega,k) = \rwhat{\Theta}(\omega) \otimes \rwhat{\delta}(k) = \left(\delta(\omega) + \frac{i}\omega{}\right) \delta (k)
+    \label{eq:heaviside_fourier_transform}
+\end{equation}.
+
+\subsubsection*{Fall $s \neq 0$}
+
+\begin{equation*}
+supp (\rwhat{\Theta(t)\otimes 1(x)}) = \{(\omega, k) \in \hat{\mathbb{R}} | k = 0\}
+\end{equation*}
+
+ und nach \cref{eq:supp_psi}
+
+\begin{equation*}
+    supp(\hat \psi) \subset \left\{k \in  \hat{\mathbb{R}}^2 ~\Big| ~k_1 \in \left[\frac{1}{2 a} , \frac{2}{a}\right], \left|\frac{k_2}{k_1} - s\right| \leq \sqrt{a} \right\}
+\end{equation*}.
+
+Also gilt für hinreichend große $a$:
+
+\begin{equation}
+ supp (\hat\psi_{ast}) \cap supp (\rwhat{\Theta(t)\otimes 1(x)}) = \varnothing
+ ~~\Longrightarrow~~
+\left\langle \rwhat{\Theta(t)\otimes 1(x)},  \hat\psi_{ast}\right\rangle = 0
+\label{eq:heaviside_s_neq_0}
+\end{equation}
+
+\subsubsection*{Fall $s = 0$}
+Mit \cref{eq:heaviside_fourier_transform} können $\left<\hat \Theta \otimes \hat 1, \hat \psi_{ast}\right>$ direkt berechnen mit dem Ausdruck für $\hat \psi_{ast}$ aus \cref{rem:psi_hat}:
+
+\begin{align}
+    \left\langle \hat\Theta \otimes \hat 1, \hat \psi_{ast} \right\rangle
+    &=
+    a^{\frac{3}{4}} \int \hat \psi_1(a \omega) \hat \psi_2\left(
+                a^{-\frac{1}{2}}\left(\tfrac{k}{\omega}\right)\right)
+    \left(\delta(\omega) + \frac{i}{\omega}\right) \delta(k)
+    e^{-i\omega t' + i kx'}
+    \d \omega \d k
+    \nonumber \\ &=
+    \underbrace{a^{\frac{3}{4}} \hat\psi_1(0) \hat\psi_2(0)
+    }_{=0, \textrm{ da } \hat\psi_1(0) = 0}
+    +
+    i a^{\frac{3}{4}}
+    \int \frac{\hat\psi_1(\omega) \hat\psi_2(0)}
+        {\omega} e^{-i \omega t'} \d \omega
+    \nonumber \\ &=
+    i a^{\frac{3}{4}} \hat\psi_2(0) \int
+    \underbrace{\frac{\psi_1(\omega)}{\omega}}_{\in C_c^\infty}
+    e^{-i\omega\frac{t'}{a}} \d \omega
+    \nonumber \\ &=
+    O\left(a^{\frac{3}{4}}\right) \condition{falls $t=0$}
+    \nonumber \\ &=
+    O\left(a^{k}\right) ~ \forall k \in \mathbb{N} \condition{falls $t\neq0$}.
+    \label{eq:heaviside_s=0}
+\end{align}
+
+Wobei im letzten Schritt genutzt wurde, dass $\hat\psi_1(0) = 0$, $\frac{\hat\psi_1(\omega)}{\omega}$ also glatt ist und somit eine schnell fallende Fouriertransformierte hat.
+
+
+\subsection{Zusammenfassung und Vergleich der Ergebnisse}
+Und einmal der vollständig halber, die Ergebnisse aus \cref{eq:heaviside_s=0,eq:heaviside_s_neq_0} tabellarisch dargestellt:
+
+\begin{table}[h]
+\centering
+\begin{tabular}{l|cc}
+           & \multicolumn{1}{l}{$t'=0$} & \multicolumn{1}{l}{$t' \neq 0$} \\ \hline
+$s = 0$    & $a^{\frac{3}{4}}$          & $a^k$                           \\
+$s \neq 0$ & $a^k$                      & $a^k$
+\end{tabular}
+\caption{Konvergenzordnung von $\mathcal{S}_{\Theta \otimes 1} (a,s,(t',x'))$ im Limit $a \rightarrow 0$ für alle interessanten Kombinationen von $s$ und $(t',x')$}
+\label{tab:wavefront_set_heaviside}
+\end{table}
+
+
+
+% section die_wellenfrontmenge_von_ (end)
