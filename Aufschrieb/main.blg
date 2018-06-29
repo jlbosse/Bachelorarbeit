@@ -1,20 +1,20 @@
-[0] Config.pm:302> INFO - This is Biber 2.11
-[0] Config.pm:305> INFO - Logfile is 'main.blg'
-[58] biber:313> INFO - === Mo Jun 25, 2018, 10:12:03
-[91] Biber.pm:371> INFO - Reading 'main.bcf'
-[196] Biber.pm:857> INFO - Found 12 citekeys in bib section 0
-[217] Biber.pm:3976> INFO - Processing section 0
-[235] Biber.pm:4136> INFO - Looking for bibtex format file 'literature.bib' for section 0
-[237] bibtex.pm:1500> INFO - LaTeX decoding ...
-[279] bibtex.pm:1316> INFO - Found BibTeX data source 'literature.bib'
-[282] Utils.pm:193> WARN - month field 'mar' in entry 'Guo2006' is not an integer - this will probably not sort properly.
-[341] Utils.pm:193> WARN - ISBN '10635203' in entry 'Candes2005' is invalid - run biber with '--validate_datamodel' for details.
-[353] Utils.pm:193> WARN - ISBN '9780125850025,0125850026' in entry 'ReedSimon' is invalid - run biber with '--validate_datamodel' for details.
-[367] Utils.pm:193> WARN - month field 'aug' in entry 'Doplicher1995' is not an integer - this will probably not sort properly.
-[436] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[436] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
-[436] Biber.pm:3804> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'de-DE'
-[436] Biber.pm:3810> INFO - No sort tailoring available for locale 'de-DE'
-[462] bbl.pm:617> INFO - Writing 'main.bbl' with encoding 'UTF-8'
-[471] bbl.pm:720> INFO - Output to main.bbl
-[471] Biber.pm:110> INFO - WARNINGS: 4
+[0] Config.pm:354> INFO - This is Biber 2.7 (beta)
+[0] Config.pm:357> INFO - Logfile is 'main.blg'
+[36] biber:303> INFO - === Do Jun 28, 2018, 21:15:32
+[51] Biber.pm:360> INFO - Reading 'main.bcf'
+[136] Biber.pm:836> INFO - Found 12 citekeys in bib section 0
+[155] Biber.pm:3671> INFO - Processing section 0
+[171] Biber.pm:3841> INFO - Looking for bibtex format file 'literature.bib' for section 0
+[173] bibtex.pm:1424> INFO - Decoding LaTeX character macros into UTF-8
+[181] bibtex.pm:1281> INFO - Found BibTeX data source 'literature.bib'
+[188] Utils.pm:164> WARN - month field 'mar' in entry 'Guo2006' is not an integer - this will probably not sort properly.
+[213] Utils.pm:164> WARN - ISBN '10635203' in entry 'Candes2005' is invalid - run biber with '--validate_datamodel' for details.
+[216] Utils.pm:164> WARN - ISBN '9780125850025,0125850026' in entry 'ReedSimon' is invalid - run biber with '--validate_datamodel' for details.
+[221] Utils.pm:164> WARN - month field 'aug' in entry 'Doplicher1995' is not an integer - this will probably not sort properly.
+[253] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[253] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
+[254] Biber.pm:3500> INFO - Sorting list 'nty/global/' of type 'entry' with scheme 'nty' and locale 'de-DE'
+[254] Biber.pm:3506> INFO - No sort tailoring available for locale 'de-DE'
+[270] bbl.pm:608> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[273] bbl.pm:712> INFO - Output to main.bbl
+[273] Biber.pm:110> INFO - WARNINGS: 4
