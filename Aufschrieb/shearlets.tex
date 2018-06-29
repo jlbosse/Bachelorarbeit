@@ -143,7 +143,7 @@ Jetzt aber mehr Details zur Konstruktion der Shearlets und deren Eigenschaften:
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % % Die Shearlets
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Konstruktion, Eigenschaften der Shearlets und ein wichtiger Satz} % (fold)
+\subsection{Konstruktion und Eigenschaften der Shearlets} % (fold)
 \label{sec:konstruktion_und_eigenschaften_der_shearlets}
 
 Der folgende Abschnitt basiert größtenteils auf der Arbeit von \textcite{Kutyniok2008}.
@@ -341,38 +341,3 @@ $L^2 (\mathbb{R}^2) = L^2 (\textrm{grobe Skalen})^\vee \oplus \sum_{i=1}^4 L^2 \
 \label{fig:quadrants}
 \end{figure}
 
-Das große Versprechen der Shearlettransformation war ja, dass sie in der Lage ist nicht nur Position, sondern auch Orientierung der Singularitäten aufzulösen. Dass dem auch so ist, ist Aussage des folgenden Satzes:
-
-\begin{theorem}[$\mathcal{S}_f(a,s,t)$ misst $WF(f)$]
-\label{thm:main_theorem}
-    Sei $f \in \mathcal{S}'(C)^\vee \cap B(C)^\vee$ (wobei $\mathcal{S}(C)^\vee$ analog zu $L^2(C)^\vee$ definiert ist).
-    Sei $\mathcal{D}$ die Menge der $(s, t)$ s.d. $\mathcal{S}(a,s,t)$ schnell verschwindet. Genauer
-
-    \begin{dmath*}
-        \mathcal{D} = \left\{
-        (s_0, t_0) \hiderel \in \mathbb{R}^2 \times [-1,1]~ \Big| ~\textrm{ für  $(s,t)$ in einer Umgebung $U$ von } (t_0,s_0) \hiderel :\\
-        |S_f (a,s,t)| = O(a^k) \textrm{ für } a \hiderel \to 0, \forall k \hiderel \in \mathbb{N}  \textrm{ mit $O(\cdot)$ gleichmäßig über } (s,t) \hiderel \in U
-        \right\}
-    \end{dmath*}
-
-    Dann gilt $WF(f)^c = \mathcal{D}$
-\end{theorem}
-
-
-\begin{remark}
-\label{rem:shearlets_no_distributions}
-    Die Einschränkung, dass $f$ beschränkt ist ($f \in B(\mathbb{R}^2)$) ist gravierend und bedeutet zunächst, dass die Shearlettransformation nur bedingt geeignet ist, um Wellenfrontmengen auszurechnen. In \cref{sec:ausblick} soll aber ein Ansatz gegeben werden, wie der Beweis von \cref{thm:main_theorem} hoffentlich auf ganz $\mathcal{S}'(C)^\vee$ ausgedehnt werden kann. Des Weiteren zeigen ja auch die konkreten Rechnungen an Distributionen mit bereits bekannter Wellefrontmenge, dass die Shearlettransformation diese korrekt erkennt.
-\end{remark}
-Wenn wir die Wellenfrontmenge einer Distribution kennen, kennen wir auch ihren singulären Träger:
-
-\begin{corollary}[$\mathcal{S}_f(a,s,t)$ misst $sing ~supp (\psi)$]
-\label{cor:psi_ast_misst_sing_supp}
-Sei $f$ wie eben und $\mathcal{R}$ die Projektion von $\mathcal{D}$ auf die  Ortskomponente. Also
-
-\begin{equation*}
-    \mathcal{R} = \pi (\mathcal{D})~~;~~~~
-    \pi : (t,s) \mapsto t
-\end{equation*}
-
-Dann gilt $sing ~supp (f)^c = \mathcal{R}$
-\end{corollary}

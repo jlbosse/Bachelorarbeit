@@ -33,9 +33,9 @@
 \DeclareOption{englishpreamble}%
 {\@preamblelangdeftrue\@englishpreambletrue}
 \DeclareOption{german}%
-{\PassOptionsToClass{\CurrentOption}{scrartcl}\@germanopttrue}
+{\PassOptionsToClass{\CurrentOption}{scrbook}\@germanopttrue}
 \DeclareOption{ngerman}%
-{\PassOptionsToClass{\CurrentOption}{scrartcl}\@ngermanopttrue}
+{\PassOptionsToClass{\CurrentOption}{scrbook}\@ngermanopttrue}
 \newif\if@diplom\@diplomfalse
 \newif\if@bachelor\@bachelortrue
 \newif\if@master\@masterfalse
@@ -44,7 +44,7 @@
 {\@diplomfalse\@bachelortrue\@masterfalse\h@snothesistypefalse}
 \DeclareOption{master}%
 {\@diplomfalse\@bachelorfalse\@mastertrue\h@snothesistypefalse}
-\DeclareOption*{\PassOptionsToClass{\CurrentOption}{scrartcl}}
+\DeclareOption*{\PassOptionsToClass{\CurrentOption}{scrbook}}
 \ProcessOptions\relax
 \ifh@snothesistype
 \@latex@warning@no@line{%
@@ -52,7 +52,7 @@
   \MessageBreak muss angegeben werden. Nehme bachelor.%
 }%
 \fi
-\LoadClass[12pt,a4paper,pagesize,parskip=half]{scrartcl}
+\LoadClass[12pt,a4paper,pagesize,parskip=half]{scrbook}
 \AtBeginDocument{\RequirePackage{graphicx}\RequirePackage{datenumber}}
 \RequirePackage{calc}
 \def\nomname{Nomenclature}
