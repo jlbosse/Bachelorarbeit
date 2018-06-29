@@ -123,7 +123,7 @@
 \pgftext[x=0.554779in,y=0.988464in,left,base]{\rmfamily\fontsize{10.000000}{12.000000}\selectfont 1}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgfpathrectangle{\pgfqpoint{0.500000in}{0.275000in}}{\pgfqpoint{3.100000in}{1.661000in}} %
+\pgfpathrectangle{\pgfqpoint{0.500000in}{0.275000in}}{\pgfqpoint{3.100000in}{1.661000in}}%
 \pgfusepath{clip}%
 \pgfsetbuttcap%
 \pgfsetroundjoin%
@@ -136,7 +136,7 @@
 \pgfusepath{stroke}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgfpathrectangle{\pgfqpoint{0.500000in}{0.275000in}}{\pgfqpoint{3.100000in}{1.661000in}} %
+\pgfpathrectangle{\pgfqpoint{0.500000in}{0.275000in}}{\pgfqpoint{3.100000in}{1.661000in}}%
 \pgfusepath{clip}%
 \pgfsetrectcap%
 \pgfsetroundjoin%
@@ -200,7 +200,7 @@
 \pgfusepath{stroke}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgfpathrectangle{\pgfqpoint{0.500000in}{0.275000in}}{\pgfqpoint{3.100000in}{1.661000in}} %
+\pgfpathrectangle{\pgfqpoint{0.500000in}{0.275000in}}{\pgfqpoint{3.100000in}{1.661000in}}%
 \pgfusepath{clip}%
 \pgfsetrectcap%
 \pgfsetroundjoin%
@@ -250,7 +250,7 @@
 \pgfusepath{stroke}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgfpathrectangle{\pgfqpoint{0.500000in}{0.275000in}}{\pgfqpoint{3.100000in}{1.661000in}} %
+\pgfpathrectangle{\pgfqpoint{0.500000in}{0.275000in}}{\pgfqpoint{3.100000in}{1.661000in}}%
 \pgfusepath{clip}%
 \pgfsetrectcap%
 \pgfsetroundjoin%

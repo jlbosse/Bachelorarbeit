@@ -1,10 +1,10 @@
 %!TEX root = main.tex
-\section{Einleitung für Mathematiker} % (fold)
+\chapter{Einleitung} % (fold)
 \label{sec:einleitung_mathematik}
 
 Ursprünglich in der Bildbearbeitung und -kompression wurde erkannt und genutzt, dass die (stetige) Wavelettransformationen einer Funktion $f$ schnell abfällt an Punkten, an denen $f$ glatt ist und langsam an den Singularitäten. Bekanntestes Beispiel dafür ist die JPEG-Kompression, welche auf der Wavelettransformation basiert.
 
-Allerdings ist die klassische Wavelettransformation mit gleichmäßiger Skalierung in alle Richtungen nicht in der Lage, die Orientierung der Singularitäten zu erkennen. Deshalb wurden verschiedene Verallgemeinerungen von Wavelets mit anisotroper Skalierung entwickelt (\cite{Guo2006} \cite{Kutyniok2008} \cite{Candes2005}), die in der Lage sind auch die Orientierung der Singularitäten zu erkennen. Im Fourierraum bedeutet anisotrope Skalierung, dass der Träger der Wavelets mit feiner werdendem Skalenparameter in immer engeren Kegeln liegt. Im Realraum entspricht dies immer flacher werdenden `"Wellenpaketen"' als Testfunktionen. Bei isotroper Skalierung hingegen wird der Träger im Realraum in alle Richtungen gleichmäßig kleiner.
+Allerdings ist die klassische Wavelettransformation mit gleichmäßiger Skalierung in alle Richtungen nicht in der Lage, die Orientierung der Singularitäten zu erkennen. Deshalb wurden verschiedene Verallgemeinerungen von Wavelets mit anisotroper Skalierung entwickelt (\cite{Guo2006} \cite{Kutyniok2008} \cite{Candes2005}), die in der Lage sind auch die Orientierung der Singularitäten zu erkennen. Im Fourierraum bedeutet anisotrope Skalierung, dass der Träger der Wavelets mit feiner werdendem Skalenparameter in immer engeren Kegeln liegt. Im Realraum entspricht dies immer flacher werdenden "`Wellenpaketen"' als Testfunktionen. Bei isotroper Skalierung hingegen wird der Träger im Realraum in alle Richtungen gleichmäßig kleiner.
 
 Dies ist eng verwandt mit dem Konzept der \emph{Wellenfrontmenge} aus der \emph{mikrolokalen Analysis}. Die Wellenfrontmenge misst, vereinfacht gesagt, die Lage und Orientierung der Singularitäten von nicht nur Funktionen, sondern auch Distributionen. Das Versprechen in \cite{Kutyniok2008} ist, dass es mit anisotrop skalierenden Wavelettransformationen möglich ist Wellenfrontmengen zu berechnen.
 
