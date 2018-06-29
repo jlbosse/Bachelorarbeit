@@ -20,12 +20,14 @@ mit der, konsequenterweise nur bis auf einen Faktor $2 \pi$, Inversen
 \begin{equation*}
     f (x) \coloneqq \int \hat f(k)e^{ikx} \d x
 \end{equation*}
-verwenden. Des weiteren verwenden wir für die inverse Fouriertransformation den inversen Hut, also $\mathcal{F}^{-1}(f)(x) \eqqcolon f^\vee (x)$.
+verwenden. Des weiteren verwenden wir für die inverse Fouriertransformation den inversen Hut, also $\mathcal{F}^{-1}(f)(x) \eqqcolon f^\vee (x)$. Alternativ kann man sich statt jedes $\d k$ auch stattdessen $\frac{\d k}{2 \pi}$ denken.
 
+Wie üblichen in derartigen Arbeiten, arbeiten wir in natürlichen Einheiten, also $\hbar = c = 1$.
 
 \subsection{Die Wellenfrontmenge}
+\label{sec:wavefrontset}
 
-Anschaulich sagt uns die Wellenfrontmenge wo und in welche Richtungen eine Distribution singulär ist. So ist z.B. die Wellenfrontmenge der $\delta$-Distribution $\{(0, \mathbb{R}^n \setminus 0)\}$ oder die der 2-dimensionalen Heaviside-Funktion $1(x)\cdot\Theta(y)$ ist $\{((x,0),(0,1)\cdot \mathbb{R}\setminus 0)\}$
+Anschaulich sagt uns die Wellenfrontmenge wo und in welche Richtungen eine Distribution singulär ist. So ist z.B. die Wellenfrontmenge der $\delta$-Distribution $\{(0, \mathbb{R}^n \setminus 0)\}$ oder die der 2-dimensionalen Heaviside-Funktion $1(x)\cdot\Theta(y)$ ist $\{((x,0),(0,1)\cdot \mathbb{R}\setminus 0)\}$.
 
 \begin{definition}[high frequency set]
 \label{def:high_frequency_set}
@@ -80,10 +82,5 @@ Eine gute Anschauung, warum es dieses Kriterium tut, sowie auch dafür warum es 
 \end{equation*}
 für alle $k$ existiert. "`Schnell genug"' ist aber nicht nur exponentieller Abfall, sondern sogar schon $o(k^{\prime -n})$. Mehr dazu in \cref{sec:hoermanders_crit_abschwaechen}.
 
-
-\begin{figure}
-\caption{so ne tolle Faltung}
-\label{fig:faltung_strahlen}
-\end{figure}
 
 % section fouriertransformation_mikrolokale_analysis_und_all_das (end)
