@@ -87,16 +87,16 @@ Wenn wir nun \cref{eq:schulgeometrie2,eq:schulgeometrie3} sowie die vorhergehend
     C \frac{
         \sqrt{k_0^{\prime 2}+m^2}(2 k_0^{\prime 2}+m^2)
     }{
-        2 k'_0 (k_0^2+m^2)
+        k'_0 (k_0^2+m^2)
     }\Theta(\dots)
     \nonumber \\ &=
-    C \frac{\sqrt{\frac{1}{4} \omega^2 -m^2+m^2} (\omega^2-4m^2+m^2)}
+    C \frac{\sqrt{\frac{1}{4} \omega^2 -m^2+m^2} (\omega^2-3m^2+m^2)}
     {\sqrt{\omega^2-4m^2}(\frac{1}{4}\omega^2-m^2+m^2)}
     \Theta(\dots)
     \nonumber \\ &=
-    C \frac{\omega^2-3m^2}{\omega \sqrt{\omega^2-4m^2}}\Theta(\dots)
+    C \frac{\omega^2-2m^2}{\omega \sqrt{\omega^2-4m^2}}\Theta(\dots)
     \stackrel{C=2}{=}
-    2 \frac{\omega^2-3m^2}{\omega \sqrt{\omega^2-4m^2}}\Theta(\dots)
+    2 \frac{\omega^2-2m^2}{\omega \sqrt{\omega^2-4m^2}}\Theta(\dots)
 \end{align}
 % \begin{dmath}
 %     \rwhat{\Delta_m}^{*2} (\omega, 0) =
@@ -132,7 +132,7 @@ Jetzt erhalten wir $\rwhat{\Delta}_m^{*2}(\omega, k)$ für beliebige $k \neq 0$ 
     \rwhat{\Delta}_m^{*2}(-\omega, -k)
     \stackrel{(\omega,k) \sim (\sqrt{\omega^2-k^2},0)}{=}
     \rwhat{\Delta}_m^{*2}(\sqrt{\omega^2-k^2},0)
-    = 2 \frac{\omega^2-k^2-3m^2}
+    = 2 \frac{\omega^2-k^2-2m^2}
               {\sqrt{\omega^2-k^2}\sqrt{\omega^2-k^2-4m^2}}
               \Theta(\omega^2-k^2-4m^2)
 \end{dmath}
@@ -190,7 +190,7 @@ Hier bedienen wir uns direkt bei \ref{eq:substitution2} und schreiben
     2 a^{-\frac{3}{4}} \int \frac{
     \hat\psi_1(\omega)~\hat\psi_2(k) \left(
         \omega^2 a^{-2} - \omega^2\left(a^{-\frac{1}{2}}k+sa^{-1}\right)^2
-            -3m^2
+            -2m^2
             \right)
     }
     {
@@ -209,7 +209,7 @@ Hier bedienen wir uns direkt bei \ref{eq:substitution2} und schreiben
      2 a^{-\frac{3}{4}} \int \frac{
         \hat\psi_1(\omega)~ \hat\psi_2(k) \cancel{a^{-2}} \left(
         \omega^2 \left(\Delta s - 2 a^{\frac{1}{2}} k s - ak^2
-                \right) - 3a^2m^2
+                \right) - 2a^2m^2
         \right)
      e^{\dots} \Theta(\dots) \cancel{\omega}
      }
@@ -275,7 +275,7 @@ Für hinreichend kleine $a$ können wir den Integranden nun majorisieren
     \frac{
         \hat\psi_1(\omega)~ \hat\psi_2(k) \left(
         \omega^2 \left(\Delta s - 2 a^{\frac{1}{2}} k s - ak^2
-                \right) - 3a^2m^2
+                \right) - 2a^2m^2
         \right)
          \Theta(\dots)
      }
@@ -356,7 +356,7 @@ Und da Shearlets nach \cref{prop:shearlets_decay_rapidly} schnell abfallen erhal
         \left(\omega^2\left(
             a^{-2}\cancel{(1-s^2)}-2a^{-\frac{3}{2}} k s -a^{-1}k^2
             \right)
-            -3m^2
+            -2m^2
         \right)
     }
     {
@@ -379,7 +379,7 @@ Und da Shearlets nach \cref{prop:shearlets_decay_rapidly} schnell abfallen erhal
     \frac{
         \hat\psi_1(\omega)\,\hat\psi_2(k)\,\cancel{a^{-\frac{3}{2}}}
         \left(
-            2 \omega^2k-a^{\frac{1}{2}}\omega^2k^2-a^{\frac{3}{2}}3m^2
+            2 \omega^2k-a^{\frac{1}{2}}\omega^2k^2-a^{\frac{3}{2}}2m^2
         \right)
     }
     {
@@ -400,7 +400,7 @@ Und da Shearlets nach \cref{prop:shearlets_decay_rapidly} schnell abfallen erhal
         \int \frac{
             \hat\psi_2(k)\
             \left(
-                2 \omega^2k-a^{\frac{1}{2}}\omega^2k^2-a^{\frac{3}{2}}3m^2
+                2 \omega^2k-a^{\frac{1}{2}}\omega^2k^2-a^{\frac{3}{2}}2m^2
             \right)
             \Theta(\dots)
             e^{-i\omega k \frac{x'}{\sqrt a}}
@@ -514,15 +514,15 @@ und mit $k'=k-k_0$ gelten folgende Ausdrücke für den Nenner und den Zähler:
 \subparagraph*{Zähler}
 
 \begin{dmath*}
-    2 \omega^2k-a^{\frac{1}{2}}\omega^2k^2-a^{\frac{3}{2}}3m^2
+    2 \omega^2k-a^{\frac{1}{2}}\omega^2k^2-a^{\frac{3}{2}}2m^2
     =
-    2\omega^2(k'+k_0)-a^{\frac{1}{2}}\omega^2(k'+k_0)^2-a^{\frac{3}{2}}3m^2
+    2\omega^2(k'+k_0)-a^{\frac{1}{2}}\omega^2(k'+k_0)^2-a^{\frac{3}{2}}2m^2
     =
     2 \omega^2 k' + 2 \omega^2 \frac{2m^2}{\omega^2} a^{\frac{3}{2}}
         + 2 \omega^2 O\left(a^{\frac{7}{2}}\right) - a^{\frac{1}{2}} \omega^2(k'+k_0)^2
-        -a^{\frac{3}{2}}3m^2
+        -a^{\frac{3}{2}}2m^2
     =
-    2 \omega^2k'+a^{\frac{3}{2}}m^2-a^{\frac{1}{2}}\omega^2(k'+k_0)^2
+    2 \omega^2k'+2a^{\frac{3}{2}}m^2-a^{\frac{1}{2}}\omega^2(k'+k_0)^2
         + O\left(a^{\frac{7}{2}}\right)
 \end{dmath*}
 
@@ -549,7 +549,7 @@ Nun ist es an der Zeit für das alte Spiel von "`finde eine integrierbare Majora
     \left|
     \frac{
         \hat\psi_2(k'+k_0) \left(
-        2 \omega^2 k' + a^{\frac{3}{2}}m^2-a^{-\frac{1}{2}}(k'+k_0)^2
+        2 \omega^2 k' + 2a^{\frac{3}{2}}m^2-a^{-\frac{1}{2}}(k'+k_0)^2
             + O \left(a^{\frac{7}{2}}\right)
         \right)
     }
@@ -562,7 +562,7 @@ Nun ist es an der Zeit für das alte Spiel von "`finde eine integrierbare Majora
     \nonumber \\ &\leq
     \frac{\textrm{const}}{\sqrt{k'}}
     \frac{
-        \cancel{2}\omega^2 k' + a^{\frac{3}{2}}m^2
+        \cancel{2}\omega^2 k' + 2a^{\frac{3}{2}}m^2
         -a^{\frac{1}{2}} \omega^2 (k'+k_0)^2 + O\left(a^{\frac{7}{2}}\right)
     }
     {
@@ -573,14 +573,14 @@ Nun ist es an der Zeit für das alte Spiel von "`finde eine integrierbare Majora
     \left(
         \frac{\omega^2 k'}{\sqrt{k'}}
         - \frac{a^{\frac{1}{2}}\omega^2(k'+k_0)^2}{\sqrt{k'+k_0}}
-        + \frac{a^{\frac{3}{2}}m^2}{\sqrt{k'+k_0}}
+        + \frac{2a^{\frac{3}{2}}m^2}{\sqrt{k'+k_0}}
         + \frac{O\left(a^{\frac{7}{2}}\right)}{\sqrt{k_0}}
     \right)\Theta(k')
     \nonumber \\ &=
     \frac{\textrm{const}}{\sqrt{k'}}
     \Bigg(
         \omega^2 \sqrt{k'} - a^{\frac{1}{2}}\omega^2 (k'+k_0)^{\frac{3}{2}}
-        + \underbrace{\frac{a^{\frac{3}{2}}m^2}
+        + \underbrace{\frac{2a^{\frac{3}{2}}m^2}
                     {\sqrt{\frac{2m^2}{\omega^2}a^{\frac{3}{2}}+O(a^{\frac{7}{2}})}}}_{O\left(a^{\frac{3}{4}}\right)}
         + \dots
     \Bigg)\Theta(k')
@@ -640,7 +640,7 @@ Der Integrand für $\hat f_a$ konvergiert punktweise (vgl. \eqref{eq:psi_ast_del
 \frac{
         \hat\psi_2(k)\
         \left(
-            2 \omega^2k-a^{\frac{1}{2}}\omega^2k^2-a^{\frac{3}{2}}3m^2
+            2 \omega^2k-a^{\frac{1}{2}}\omega^2k^2-a^{\frac{3}{2}2m^2
         \right)
         \Theta(\dots)
         e^{-i\omega k \frac{x'}{\sqrt a}}
