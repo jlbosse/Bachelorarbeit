@@ -374,7 +374,7 @@ Und da Shearlets nach \cref{prop:shearlets_decay_rapidly} schnell abfallen erhal
     \frac{
         \hat\psi_1(\omega)\,\hat\psi_2(k)\,\cancel{a^{-\frac{3}{2}}}
         \left(
-            2 \omega^2k-a^{\frac{1}{2}}\omega^2k^2-a^{\frac{3}{2}}2m^2
+            2 \omega^2k-a^{\frac{1}{2}}\omega^2k^2-a^{\frac{3}{2}} 2m^2
         \right)
     }
     {
@@ -395,7 +395,7 @@ Und da Shearlets nach \cref{prop:shearlets_decay_rapidly} schnell abfallen erhal
         \int \frac{
             \hat\psi_2(k)\
             \left(
-                2 \omega^2k-a^{\frac{1}{2}}\omega^2k^2-a^{\frac{3}{2}}2m^2
+                2 \omega^2 k-a^{\frac{1}{2}}\omega^2k^2-a^{\frac{3}{2}}2m^2
             \right)
             \Theta(\dots)
             e^{-i\omega k \frac{x'}{\sqrt a}}
@@ -508,18 +508,19 @@ und mit $k'=k-k_0$ gelten folgende Ausdrücke für den Nenner und den Zähler:
 
 \subparagraph*{Zähler}
 
-\begin{dmath*}
-    2 \omega^2k-a^{\frac{1}{2}}\omega^2k^2-a^{\frac{3}{2}}2m^2
-    =
+\begin{align*}
+    2 \omega^2k-a^{\frac{1}{2}} \omega^2 k^2-a^{\frac{3}{2}}2m^2
+    &=
     2\omega^2(k'+k_0)-a^{\frac{1}{2}}\omega^2(k'+k_0)^2-a^{\frac{3}{2}}2m^2
-    =
+    \\ &=
     2 \omega^2 k' + 2 \omega^2 \frac{2m^2}{\omega^2} a^{\frac{3}{2}}
-        + 2 \omega^2 O\left(a^{\frac{7}{2}}\right) - a^{\frac{1}{2}} \omega^2(k'+k_0)^2
+        + 2 \omega^2 O\left(a^{\frac{7}{2}}\right)
+        \\  &\kern 2em-  a^{\frac{1}{2}} \omega^2(k'+k_0)^2
         -a^{\frac{3}{2}}2m^2
-    =
+    \\ &=
     2 \omega^2k'+2a^{\frac{3}{2}}m^2-a^{\frac{1}{2}}\omega^2(k'+k_0)^2
         + O\left(a^{\frac{7}{2}}\right)
-\end{dmath*}
+\end{align*}
 
 \subparagraph*{Nenner}
 \begin{dmath*}
@@ -635,7 +636,7 @@ Der Integrand für $\hat f_a$ konvergiert punktweise (vgl. \eqref{eq:psi_ast_del
 \frac{
         \hat\psi_2(k)\
         \left(
-            2 \omega^2k-a^{\frac{1}{2}}\omega^2k^2-a^{\frac{3}{2}2m^2
+            2 \omega^2k-a^{\frac{1}{2}}\omega^2k^2-a^{\frac{3}{2}}2m^2
         \right)
         \Theta(\dots)
         e^{-i\omega k \frac{x'}{\sqrt a}}
