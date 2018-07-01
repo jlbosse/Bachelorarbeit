@@ -60,6 +60,20 @@ Bevor wir mit dem Beweis beginnen können, benötigen wir noch ein paar technisc
 
 Der Beweist findet sich in \cite{Kutyniok2008} und verwendet die selben Tricks, wie wir bei unserem Beweis von \cref{lemm:ruecktrafo_fourier_faellt_schnell_ab}.
 
+Das nächste Lemma ist im wesentlichen nur eine Umformulierung von \cref{prop:shearlets_decay_rapidly}:
+
+\begin{lemma}
+\label{lemm:lemma52}
+    Sei $g \in L^2(\mathbb{R}^2)$ mit $\Vert g\Vert_\infty < \infty$. Nehme an, dass $supp (g) \subset U$ für ein $U \subset \mathbb{R}^2$.
+    Dann gilt für alle \(N \in \mathbb{N}\):
+
+    \begin{equation*}
+    |\left\langle f, \psi_{ast}\right\rangle| \leq C_N\, C(s)^2 \Vert g\Vert_\infty a^{\frac{1}{4}} \left(1+C(s) a^{-1} d(t,U)^2\right)^{-N}
+    \end{equation*}
+
+    mit \( C(s) = \left(1+\frac{s^2}{2} + \left(s^2+\frac{s^2}{4}\right)\right)\).
+\end{lemma}
+
 Das nächste Lemma ist eine Verfeinerung von Lemma 5.5 in \textcite{Kutyniok2008}, der Beweis wird deshalb erbracht.
 \begin{lemma}
 \label{lemm:ruecktrafo_fourier_faellt_schnell_ab}
@@ -257,7 +271,7 @@ Wir nehmen also einen gerichteten regulären Punkt $(s_0,t_0) \in WF(f)^c$ und z
 \label{fig:smart_decomposition}
 \end{figure}
 
-Da $(1-\phi)f$ in einer Umgebung von $t_0$ verschwindet und nach \cref{prop:shearlets_decay_rapidly} Shearlets außerhalb von $t$ schnell abfallen für $a \to 0$ fällt auch der zweite Term von \cref{eq:schlaue sache}
+Da $(1-\phi)f$ in einer Umgebung von $t_0$ verschwindet und nach \cref{lemm:lemma52} Shearlets außerhalb von $t$ schnell abfallen für $a \to 0$ fällt auch der zweite Term von \cref{eq:schlaue sache}
 für $t \neq t_0$ schnell ab. Für den ersten Term überzeugen wir uns anhand von \cref{fig:supp_psi_hat,eq:supp_psi}, dass für $a$ klein genug $supp(\hat\psi_{ast})$ schließlich in jedem noch so kleinen Kegel um $s$ liegt. In einem solchen um $s_0$ fällt aber $\rwhat{\phi f}$ rapide ab nach Vorraussetzung und damit auch der erste Term in \eqref{eq:schlaue sache}.
 
 Die beiden entscheidenden Zutaten waren hier also die Tatsache, dass die Shearlets außerhalb von $t$ rapide abfallen und damit bei immer feineren Skalen $a$ immer besser lokalisiert werden sowie die Tatsache, dass für $a \to 0$ der Träger im Frequenzbereich in immer engeren Kegeln liegt.
