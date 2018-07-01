@@ -8,17 +8,17 @@
          {Die Wellenfrontmenge der getwisteten Zweipunktfunktion}} % (fold)
 \label{sec:die_wellenfrontmenge_von_delta_m2_twisted}
 
-Bevor wir uns aber der Wellenfrontmenge widmen können, brauchen wir einen Ausdruck für die Fouriertransformierte $\rwhat{\Delta}_m^{\circledast 2}$ von $\Delta_m^{\star 2}$.
+Bevor wir uns aber der Wellenfrontmenge widmen können, brauchen wir einen Ausdruck für die Fouriertransformierte $\rwhat{\Delta}_m^{\ast_\Omega 2}$ von $\Delta_m^{\star 2}$.
 
-\subsection{\texorpdfstring{$\hat\Delta_m^{\circledast 2}$ berechnen}
+\subsection{\texorpdfstring{$\hat\Delta_m^{\ast_\Omega 2}$ berechnen}
             {Die getwistete Zweipunktfunktion berechnen}} % (fold)
 \label{sec:delta_m2_twisted_berechnen}
 
 Auch für die getwistete Faltung ist schnell nachgerechnet, dass
 \begin{equation*}
-    \rwhat{\Delta_m} \circledast \rwhat{\Delta_m} (-\omega,-k)
+    \rwhat{\Delta_m} \ast_\Omega \rwhat{\Delta_m} (-\omega,-k)
      =
-    \overline{ \left(\rwhat{\Delta_m} (-\cdot) \circledast \rwhat{\Delta_m} (-\cdot)\right)}
+    \overline{ \left(\rwhat{\Delta_m} (-\cdot) \ast_\Omega \rwhat{\Delta_m} (-\cdot)\right)}
      (\omega,k).
 \end{equation*}
 Wie wir später sehen werden, ist die komplexe Konjugation irrelevant, da alles reell.
@@ -41,7 +41,7 @@ Wie wir später sehen werden, ist die komplexe Konjugation irrelevant, da alles 
 mit \cref{def:twisted_convolution,eq:material_fuer_delta_m2_twisted_a,eq:material_fuer_delta_m2_twisted_b} erhalten wir also
 
 \begin{dmath}
-    \rwhat{\Delta}_m^{\circledast 2} (-\omega, -k)
+    \rwhat{\Delta}_m^{\ast_\Omega 2} (-\omega, -k)
     = \int
     \delta(\omega^{\prime 2}-k^{\prime 2}-m^2)
     \delta((\omega' - \omega)^2 - (k-k')^2 -m^2)
@@ -77,7 +77,7 @@ und damit das selbe Integral wie in \cref{eq:mass_shell_convolution} bis auf ein
     für alle $\beta \in \mathbb{R}$.
 \end{proposition}
 
-Mit \cref{prop:omega_ist_Lorentz_invariant} ist $\rwhat{\Delta}_m^{\circledast 2}$ Lorentz-Invariant und es reicht aus $\rwhat{\Delta}_m^{\circledast 2} (\omega, 0)$ zu berechnen.
+Mit \cref{prop:omega_ist_Lorentz_invariant} ist $\rwhat{\Delta}_m^{\ast_\Omega 2}$ Lorentz-Invariant und es reicht aus $\rwhat{\Delta}_m^{\ast_\Omega 2} (\omega, 0)$ zu berechnen.
 
 Die beiden Kreuzungspunkte der $\delta$-Distributionen liegen bei (vgl. \cref{fig:mass_shell_convolution})
 
@@ -104,7 +104,7 @@ Der Phasenfaktor nimmt bei den Kreuzungspunkten folgende Werte an:
 Kombinieren wir also die vorhergehenden Resultate erhalten wir
 
 \begin{align*}
-    \rwhat{\Delta}_m^{\circledast 2} (-\omega, 0)
+    \rwhat{\Delta}_m^{\ast_\Omega 2} (-\omega, 0)
     &=
     A e^{\frac{i}{2}\Omega \left((\omega, k),(\omega'_0,k'_{0+})\right)}
     + A e^{\frac{i}{2}\Omega \left((\omega, k),(\omega'_0,k'_{0-})\right)}
@@ -120,7 +120,7 @@ Kombinieren wir also die vorhergehenden Resultate erhalten wir
     \cos \left(\varphi(\omega^2)\right) \Theta\left(\omega^2-4m^2\right),
 \end{align*}
 % \begin{dmath*}
-%     \rwhat{\Delta}_m^{\circledast 2} (\omega, 0)
+%     \rwhat{\Delta}_m^{\ast_\Omega 2} (\omega, 0)
 %     =
 %     A e^{\frac{i}{2}\Omega \left((\omega, k),(\omega'_0,k'_{0+})\right)}
 %     + A e^{\frac{i}{2}\Omega \left((\omega, k),(\omega'_0,k'_{0-})\right)}
@@ -140,9 +140,9 @@ wobei im letzten Schritt noch implizit $\varphi(\omega^2)$ definiert wurde.
 Und mit Lorentz-Invarianz erhalten wir schließlich
 
 \begin{align}
-    \rwhat{\Delta}_m^{\circledast 2} (-\omega, -k)
+    \rwhat{\Delta}_m^{\ast_\Omega 2} (-\omega, -k)
     &=
-    \rwhat{\Delta}_m^{\circledast 2} (-\sqrt{\omega^2-k^2}, 0)
+    \rwhat{\Delta}_m^{\ast_\Omega 2} (-\sqrt{\omega^2-k^2}, 0)
     \nonumber \\ &=
     2\frac{\omega^2-k^2-3m^2}{\sqrt{\omega^2-k^2} \sqrt{\omega^2-k^2-4m^2}}
     \cos \left(\frac{k^2-\omega^2}{2}
@@ -155,9 +155,9 @@ Und mit Lorentz-Invarianz erhalten wir schließlich
     \Theta\left(\omega^2-k^2-4m^2\right),
 \end{align}
 % \begin{dmath}
-%     \rwhat{\Delta}_m^{\circledast 2} (\omega, k)
+%     \rwhat{\Delta}_m^{\ast_\Omega 2} (\omega, k)
 %     =
-%     \rwhat{\Delta}_m^{\circledast 2} (\sqrt{\omega^2-k^2}, 0)
+%     \rwhat{\Delta}_m^{\ast_\Omega 2} (\sqrt{\omega^2-k^2}, 0)
 %     =
 %     2\frac{\omega^2-k^2-3m^2}{\sqrt{\omega^2-k^2} \sqrt{\omega^2-k^2-4m^2}}
 %     \cos \left(\frac{k^2-\omega^2}{2}
@@ -169,7 +169,7 @@ Und mit Lorentz-Invarianz erhalten wir schließlich
 % \end{dmath}
 
 \subsection{
-\texorpdfstring{\dots und nun zur Wellenfrontmenge von $\hat{\Delta}_m^{\circledast 2}$}{... und nun zur Wellenfrontmenge der getwisteten Zweipunktfunktion}} % (fold)
+\texorpdfstring{\dots und nun zur Wellenfrontmenge von $\hat{\Delta}_m^{\ast_\Omega 2}$}{... und nun zur Wellenfrontmenge der getwisteten Zweipunktfunktion}} % (fold)
 \label{sec:dots_und_nun_zur_wellenfrontmenge_von_delta_m2_twisted}
 
 \begin{figure}
@@ -177,14 +177,14 @@ Und mit Lorentz-Invarianz erhalten wir schließlich
     \begin{minipage}{0.55\textwidth}
         \centering
         \resizebox{\textwidth}{!}{\input{images/delta_m2_twisted.pgf}} %
-        \caption{Plot von $\hat\Delta_m^{\circledast 2}(-\cdot)$ und $\hat\Delta_m(-\cdot)$. Wieder liegt der Träger von $\hat\Delta_m^{\circledast 2}(-\cdot)$ oberhalb der $2m$-Massenschale.
+        \caption{Plot von $\hat\Delta_m^{\ast_\Omega 2}(-\cdot)$ und $\hat\Delta_m(-\cdot)$. Wieder liegt der Träger von $\hat\Delta_m^{\ast_\Omega 2}(-\cdot)$ oberhalb der $2m$-Massenschale.
         }
         \label{fig:delta_2m_twisted}
     \end{minipage}\hfill
     \begin{minipage}{0.45\textwidth}
         \centering
         \resizebox{\textwidth}{!}{\input{images/delta_m2_twisted_k0.pgf}}
-        \caption{Plot von $\left.\hat{\Delta}_m^{\circledast 2}\right|_{k=0}(-\cdot)$ um das asymptotische Verhalten für $\omega \rightarrow 0$ und $\omega \rightarrow \infty$ zu verdeutlichen}
+        \caption{Plot von $\left.\hat{\Delta}_m^{\ast_\Omega 2}\right|_{k=0}(-\cdot)$ um das asymptotische Verhalten für $\omega \rightarrow 0$ und $\omega \rightarrow \infty$ zu verdeutlichen}
         \label{fig:delta_2m_twisted_k0}
     \end{minipage}
 \end{figure}
@@ -193,8 +193,8 @@ Und mit Lorentz-Invarianz erhalten wir schließlich
 Wir bedienen uns wieder genau des selben Arguments, wie in \cref{eq:delta_m2_s>1} und dürfen direkt schreiben:
 
 \begin{equation}
-    \left\langle \rwhat{\Delta}_m^{\circledast 2}, \hat\psi_{ast}^{(3)}\right\rangle
-    = \left\langle \rwhat{\Delta}_m^{\circledast 2} (-\cdot), \hat\psi_{ast}\right\rangle
+    \left\langle \rwhat{\Delta}_m^{\ast_\Omega 2}, \hat\psi_{ast}^{(3)}\right\rangle
+    = \left\langle \rwhat{\Delta}_m^{\ast_\Omega 2} (-\cdot), \hat\psi_{ast}\right\rangle
     = 0 \condition{für alle $a$ klein genug}
 \label{eq:delta_m2_twisted_s>1}
 \end{equation}
@@ -202,13 +202,13 @@ Wir bedienen uns wieder genau des selben Arguments, wie in \cref{eq:delta_m2_s>1
 
 \subsubsection*{Fall $|s| < 1, (x,t) \neq 0$}
 Da
-$\rwhat\Delta_m^{\circledast 2} = \rwhat\Delta_m^{* 2} \cos(\dots)$ können wir direkt mit dem Ausdruck (\ref{eq:psi_ast_delta_m2_s<1}) $\cdot \cos$ weiter arbeiten und genau die selben Abschätzungen machen. $\cos(\varphi)$ ist bekanntermaßen beschränkt.
+$\rwhat\Delta_m^{\ast_\Omega 2} = \rwhat\Delta_m^{* 2} \cos(\dots)$ können wir direkt mit dem Ausdruck (\ref{eq:psi_ast_delta_m2_s<1}) $\cdot \cos$ weiter arbeiten und genau die selben Abschätzungen machen. $\cos(\varphi)$ ist bekanntermaßen beschränkt.
 
 \begin{align}
-    \left\langle \rwhat{\Delta}_m^{\circledast 2}, \rwhat{\psi}_{ast}^{(3)}
+    \left\langle \rwhat{\Delta}_m^{\ast_\Omega 2}, \rwhat{\psi}_{ast}^{(3)}
     \right\rangle
     &=
-    \left\langle \rwhat{\Delta}_m^{\circledast 2}(-\cdot), \rwhat{\psi}_{ast}
+    \left\langle \rwhat{\Delta}_m^{\ast_\Omega 2}(-\cdot), \rwhat{\psi}_{ast}
     \right\rangle
     \nonumber \\ &=
      2 a^{-\frac{3}{4}} \int \frac{
@@ -238,10 +238,10 @@ $\rwhat\Delta_m^{\circledast 2} = \rwhat\Delta_m^{* 2} \cos(\dots)$ können wir 
 \end{align}
 % \begin{dmath}
 % \label{eq:delta_m2_twisted_s<1}
-%     \left\langle \rwhat{\Delta}_m^{\circledast 2}, \rwhat{\psi}_{ast}^{(3)}
+%     \left\langle \rwhat{\Delta}_m^{\ast_\Omega 2}, \rwhat{\psi}_{ast}^{(3)}
 %     \right\rangle
 %     =
-%     \left\langle \rwhat{\Delta}_m^{\circledast 2}(-\cdot), \rwhat{\psi}_{ast}
+%     \left\langle \rwhat{\Delta}_m^{\ast_\Omega 2}(-\cdot), \rwhat{\psi}_{ast}
 %     \right\rangle
 %     =
 %      2 a^{-\frac{3}{4}} \int \frac{
@@ -275,7 +275,7 @@ In diesem Fall lassen wir den $\cos$-Faktor in \cref{eq:delta_m2_twisted_s<1_x_n
 
 % \begin{equation}
 % \begin{aligned}
-%     \left\langle \rwhat{\Delta}_m^{\circledast 2}, \rwhat{\psi}_{ast}
+%     \left\langle \rwhat{\Delta}_m^{\ast_\Omega 2}, \rwhat{\psi}_{ast}
 %     \right\rangle
 %     \\&=
 %     2 a^{-\frac{3}{4}} \int
@@ -340,7 +340,7 @@ In diesem Fall lassen wir den $\cos$-Faktor in \cref{eq:delta_m2_twisted_s<1_x_n
 % \end{aligned}
 % \end{equation}
 \begin{dmath}
-    \left\langle \rwhat{\Delta}_m^{\circledast 2}(-\cdot), \rwhat{\psi}_{ast}
+    \left\langle \rwhat{\Delta}_m^{\ast_\Omega 2}(-\cdot), \rwhat{\psi}_{ast}
     \right\rangle
     =
     2 a^{-\frac{3}{4}} \bigint
@@ -406,10 +406,10 @@ wobei bei der Substition $\omega \to \sqrt{\omega}$ in der zweiten Zeile wichtig
 
 \subsubsection*{Fall $s = -1$}
 
-Da $\rwhat\Delta_m^{\circledast 2} = \rwhat\Delta_m^{* 2} \cos(\dots)$ ist, haben wir bis auf den $\cos$-Faktor die selben Analysis zu betreiben, wie für $\rwhat\Delta_m^{*2}$.
+Da $\rwhat\Delta_m^{\ast_\Omega 2} = \rwhat\Delta_m^{* 2} \cos(\dots)$ ist, haben wir bis auf den $\cos$-Faktor die selben Analysis zu betreiben, wie für $\rwhat\Delta_m^{*2}$.
 
 \begin{align}
-    & \kern -2em\left\langle \rwhat{\Delta}_m^{\circledast 2}(-\cdot), \rwhat{\psi}_{a-1t}
+    & \kern -2em\left\langle \rwhat{\Delta}_m^{\ast_\Omega 2}(-\cdot), \rwhat{\psi}_{a-1t}
     \right\rangle
     \nonumber \\ &=
     2 a^{-\frac{3}{4}} \bigint
@@ -443,7 +443,7 @@ Da $\rwhat\Delta_m^{\circledast 2} = \rwhat\Delta_m^{* 2} \cos(\dots)$ ist, habe
 \label{eq:psi_a-1t_delta_m2_twisted}
 \end{align}
 % \begin{dmath}
-%     \left\langle \rwhat{\Delta}_m^{\circledast 2}, \rwhat{\psi}_{a-1t}
+%     \left\langle \rwhat{\Delta}_m^{\ast_\Omega 2}, \rwhat{\psi}_{a-1t}
 %     \right\rangle
 %     =
 %     2 a^{-\frac{3}{4}} \int
@@ -542,7 +542,7 @@ Einsetzen von \cref{eq:delta_m2_twisted_s=-1_material_a,eq:delta_m2_twisted_s=-1
 
 \begin{dmath*}
     \lim_{a \to 0}
-    \left\langle \rwhat{\Delta}_m^{\circledast 2}(-\cdot), \rwhat{\psi}_{a-1t}
+    \left\langle \rwhat{\Delta}_m^{\ast_\Omega 2}(-\cdot), \rwhat{\psi}_{a-1t}
     \right\rangle
     =
     2 a^{-\frac{3}{4}}
@@ -633,7 +633,7 @@ Also dürfen wir für $a \to 0$ schreiben $\hat f_a(\omega) = C a^{\frac{3}{2}} 
 
 \begin{align}
     \lim_{a \to 0}
-    \left\langle \rwhat{\Delta}_m^{\circledast 2}, \rwhat{\psi}_{a-1t}^{(3)}
+    \left\langle \rwhat{\Delta}_m^{\ast_\Omega 2}, \rwhat{\psi}_{a-1t}^{(3)}
     \right\rangle
     &=
     a^{-\frac{3}{4}} \int C a^{\frac{3}{2}} \omega \hat\psi_1(\omega)
@@ -646,7 +646,7 @@ Also dürfen wir für $a \to 0$ schreiben $\hat f_a(\omega) = C a^{\frac{3}{2}} 
 \end{align}
 % \begin{dmath}
 %     \lim_{a \to 0}
-%     \left\langle \rwhat{\Delta}_m^{\circledast 2}, \rwhat{\psi}_{a-1t}
+%     \left\langle \rwhat{\Delta}_m^{\ast_\Omega 2}, \rwhat{\psi}_{a-1t}
 %     \right\rangle
 %     =
 %     a^{-\frac{3}{4}} \int C a^{\frac{3}{2}} \omega \hat\psi_1(\omega)

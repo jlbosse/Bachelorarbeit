@@ -28,9 +28,9 @@ Wie in \cref{rem:shearlets_no_distributions} angesprochen, zeigt der Beweis von 
 \end{theorem}
 
 
-Leider fehlt aufgrund des stetigen Studienfortschritts die Zeit, diesen Beweis komplett auszuarbeiten. Der Beweis der auf temperierte Distributionen ausgeweiteten \cref{prop:shearlets_decay_rapidly} und wie der Struktursatz eingeht soll hier aber beispielhaft skizziert werden.  Mit ähnlichen Tricks lassen sich hoffentlich auch alle anderen Hilfslemmata auf temperierte Distributionen ausweiten.
+Leider fehlt aufgrund des stetigen Studienfortschritts die Zeit, diesen Beweis komplett auszuarbeiten. Der Beweis der auf temperierte Distributionen ausgeweiteten \cref{lemm:lemma52} und wie der Struktursatz eingeht soll hier aber beispielhaft skizziert werden.  Mit ähnlichen Tricks lassen sich hoffentlich auch alle anderen Hilfslemmata auf temperierte Distributionen ausweiten.
 
-\begin{lemma}[Verfeinerung von \cref{prop:shearlets_decay_rapidly}]
+\begin{lemma}[Verfeinerung von \cref{lemm:lemma52}]
     \label{lemm:shearlets_decay_quickly_schwartz}
     Sei $f \in \mathcal{S}'(\mathbb{R}^2)$ und $supp(f) \subset U$. Sei $t \notin U$. Dann gilt für alle $k \in \mathbb{N}$
     \begin{equation*}
@@ -222,6 +222,7 @@ Eine weitere Größe der mikrolokalen Analysis, die eventuell durch die Shearlet
 \label{def:skalengrad}
     Sei $u \in \mathcal{D}'(\Omega),~ \Omega \subset \mathbb{R}^n ~$ offen. Dann ist der Skalengrad $sd(u)$ definiert als
     \begin{equation*}
+        sd(u) \coloneqq
         \inf_{\omega} \left\{\lambda^\omega \left\langle u_\lambda, \phi \right\rangle
         \stackrel{\lambda \to 0}{\to} 0 \condition{für alle $\phi$} \right\}
     \end{equation*}
@@ -230,7 +231,7 @@ Eine weitere Größe der mikrolokalen Analysis, die eventuell durch die Shearlet
     \begin{equation*}
         \left\langle u_\lambda, \phi \right\rangle
         =
-        \lambda^{-n} \left\langle u, \phi\left(\tfrac{\cdot}{\lambda}\right)\right\rangle
+        \lambda^{-n} \left\langle u, \phi\left(\tfrac{\cdot}{\lambda}\right)\right\rangle,
     \end{equation*}
 
     also falls $u \in C^\infty$:
