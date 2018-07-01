@@ -66,7 +66,7 @@
 \theorembodyfont{\normalfont}
 \theoremindent2em
 
-\newtheorem{theorem}{Satz}[section]
+\newtheorem{theorem}{Satz}[chapter]
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{corollary}[theorem]{Korollar}
 \newtheorem{proposition}[theorem]{Proposition}
@@ -116,6 +116,14 @@
 % ordentlicher Laplace operator
 \newcommand*\Laplace{\mathop{}\!\mathbin\bigtriangleup}
 \newcommand*\DAlambert{\mathop{}\!\mathbin\Box}
+
+
+% bigger integral signs
+\usepackage{scalerel,relsize,exscale}
+\def\stretchint#1{\vcenter{\hbox{\stretchto[440]{\displaystyle\int}{#1}}}}
+\def\scaleint#1{\vcenter{\hbox{\scaleto[3ex]{\displaystyle\int}{#1}}}}
+% \newcommand*\bigint{\mathop{}\!\mathlarger{\mathlarger{\int}}}
+\newcommand*\bigint{\stretchint{9ex}}
 
 \allowdisplaybreaks
 

@@ -14,16 +14,14 @@ Bevor wir die Wellenfrontmenge von $\Delta_m^2$ berechnen können benötigen wir
     {Die massive Zweipunktfunktion quadrieren}}
 \label{sec:delta_m2_berechnen}
 
- Gemäß dem Faltungssatz gilt $\rwhat{\Delta_m^2} = \rwhat{\Delta_m} * \rwhat{\Delta_m} = \rwhat{\Delta_m}^{*2}$. Wir müssen also die Faltung von $\rwhat \Delta_m$ mit sich selber ausrechnen. Dabei gilt (kurze Rechnung):
- $$\rwhat{\Delta}_m * \rwhat{\Delta}_m (-\omega,-k)
- =
- \left(\rwhat{\Delta}_m (-\cdot) * \rwhat{\Delta}_m (-\cdot)\right) (\omega,k)$$ und wir berechnen also letzteren Ausdruck.
-\todo[color=green]{noch schnell sage, warum wir hier Faltungsssatz für Distributionen anwenden? (Also das Hörmander "jup" sagt?)}
+ Gemäß dem Faltungssatz gilt $\rwhat{\Delta_m^2} = \rwhat \Delta_m * \rwhat \Delta_m = \rwhat\Delta_m^{*2}$. Wir müssen also die Faltung von $\rwhat \Delta_m$ mit sich selber ausrechnen.
+
+
 Das Faltungsintegral ist
 
 \begin{equation}
-    \rwhat{\Delta}_m^{* 2} (-\omega, -k)
-    = \int \Theta(\omega') \delta(\omega^{\prime 2}-k^{\prime 2}-m^2)\Theta(\omega-\omega')
+    \rwhat{\Delta}_m^{* 2} (\omega, k)
+    = \int \Theta(\omega') \delta(\omega^{\prime 2}-k^{\prime2}-m^2)\Theta(\omega-\omega')
       \delta((\omega-\omega')^2-(k-k')^2-m^2) \d \omega' \d k'
 \label{eq:mass_shell_convolution}
 \end{equation}
@@ -73,7 +71,7 @@ außerdem gilt
 Wenn wir nun \cref{eq:schulgeometrie2,eq:schulgeometrie3} sowie die vorhergehenden Gedanken kombinieren erhalten wir
 
 \begin{align}
-    \rwhat{\Delta_m}^{*2} (-\omega, 0) &=
+    \rwhat{\Delta_m}^{*2} (\omega, 0) &=
     \eqref{eq:mass_shell_convolution}
     \nonumber \\ &=
     C \frac{
@@ -87,16 +85,16 @@ Wenn wir nun \cref{eq:schulgeometrie2,eq:schulgeometrie3} sowie die vorhergehend
     C \frac{
         \sqrt{k_0^{\prime 2}+m^2}(2 k_0^{\prime 2}+m^2)
     }{
-        2 k'_0 (k_0^2+m^2)
+        k'_0 (k_0^2+m^2)
     }\Theta(\dots)
     \nonumber \\ &=
-    C \frac{\sqrt{\frac{1}{4} \omega^2 -m^2+m^2} (\omega^2-4m^2+m^2)}
+    C \frac{\sqrt{\frac{1}{4} \omega^2 -m^2+m^2} (\omega^2-3m^2+m^2)}
     {\sqrt{\omega^2-4m^2}(\frac{1}{4}\omega^2-m^2+m^2)}
     \Theta(\dots)
     \nonumber \\ &=
-    C \frac{\omega^2-3m^2}{\omega \sqrt{\omega^2-4m^2}}\Theta(\dots)
+    C \frac{\omega^2-2m^2}{\omega \sqrt{\omega^2-4m^2}}\Theta(\dots)
     \stackrel{C=2}{=}
-    2 \frac{\omega^2-3m^2}{\omega \sqrt{\omega^2-4m^2}}\Theta(\dots)
+    2 \frac{\omega^2-2m^2}{\omega \sqrt{\omega^2-4m^2}}\Theta(\dots)
 \end{align}
 % \begin{dmath}
 %     \rwhat{\Delta_m}^{*2} (\omega, 0) =
@@ -129,10 +127,10 @@ Wenn wir nun \cref{eq:schulgeometrie2,eq:schulgeometrie3} sowie die vorhergehend
 Jetzt erhalten wir $\rwhat{\Delta}_m^{*2}(\omega, k)$ für beliebige $k \neq 0$ noch aus der Lorenz-Invarianz:
 
 \begin{dmath}
-    \rwhat{\Delta}_m^{*2}(-\omega, -k)
+    \rwhat{\Delta}_m^{*2}(\omega, k)
     \stackrel{(\omega,k) \sim (\sqrt{\omega^2-k^2},0)}{=}
     \rwhat{\Delta}_m^{*2}(\sqrt{\omega^2-k^2},0)
-    = 2 \frac{\omega^2-k^2-3m^2}
+    = 2 \frac{\omega^2-k^2-2m^2}
               {\sqrt{\omega^2-k^2}\sqrt{\omega^2-k^2-4m^2}}
               \Theta(\omega^2-k^2-4m^2)
 \end{dmath}
@@ -145,16 +143,15 @@ Es ist zu beachten, dass die Heaviside-Funktion genau bei der ersten Nullstelle 
     \begin{minipage}{0.55\textwidth}
         \centering
         \resizebox{\textwidth}{!}{\input{images/delta_m2.pgf}} %
-        \caption{Plot von $\hat{\Delta}_m^{*2}(-\cdot)$ und $\hat{\Delta}_m(-\cdot)$.
+        \caption{Plot von $\hat{\Delta}_m^{*2}$ und $\hat{\Delta}_m$.
         Je weiter wir uns von der 2m-Massenschale wegbewegen, desto konstanter
-        wird $\hat{\Delta}_m^{*2}(-\cdot)$ und ist singulär genau auf der
-        $2m$-Massenschale}
+        wird $\hat{\Delta_m}^{*2}$ und ist singulär genau auf der $2m$-Massenschale}
         \label{fig:delta_2m}
     \end{minipage}\hfill
     \begin{minipage}{0.45\textwidth}
         \centering
         \resizebox{\textwidth}{!}{\input{images/delta_m2_k0.pgf}}
-        \caption{Plot von $\left.\hat{\Delta}_m^{*2}(-\cdot)\right|_{k=0}$ um das asymptotische Verhalten für $\omega \rightarrow 0$ und $\omega \rightarrow \infty$ zu verdeutlichen}
+        \caption{Plot von $\left.\hat{\Delta_m}^{*2}\right|_{k=0}$ um das asymptotische Verhalten für $\omega \rightarrow 0$ und $\omega \rightarrow \infty$ zu verdeutlichen}
         \label{fig:delta_2m_k0}
     \end{minipage}
 \end{figure}
@@ -169,9 +166,9 @@ Mit diesem Ausdruck für $\rwhat{\Delta}_m^{*2}$ können wir uns nun der Wellenf
 Genau wie im Fall $s \neq 1$ bei der massiven Zweipunktfunktion (vgl. \cref{sec:die_wellenfrontmenge_von_delta_m}) ist hier nichts zu tun, da für $a$ klein genug wieder
 
 \begin{align}
-    supp (\hat\psi_{ast}^{(3)}) \cap supp (\rwhat{\Delta}_m^{*2}) = \varnothing
+    supp (\hat\psi_{ast}) \cap supp (\rwhat{\Delta}_m^{*2}) = \varnothing
     ~~\Longrightarrow~~
-    \left\langle \rwhat{\Delta}_m^{*2}, \hat\psi_{ast}^{(3)}\right\rangle = 0
+    \left\langle\hat\psi_{ast}, \rwhat{\Delta}_m^{*2}\right\rangle = 0
 \label{eq:delta_m2_s>1}
 \end{align}
 
@@ -182,15 +179,13 @@ Hier bedienen wir uns direkt bei \ref{eq:substitution2} und schreiben
 
 \begin{align}
     & \kern -.5em
-    \left\langle \rwhat{\Delta}_m^{*2}, \rwhat{\psi}_{ast}^{(3)} \right\rangle
-    =
-    \left\langle \rwhat{\Delta}_m^{*2}(-\cdot), \rwhat{\psi}_{ast} \right\rangle
+    \left\langle \rwhat{\Delta}_m^{*2}, \rwhat{\psi}_{ast} \right\rangle
     \label{eq:psi_ast_delta_m2_s<1}
     \\ &=
-    2 a^{-\frac{3}{4}} \int \frac{
+    2 a^{-\frac{3}{4}} \bigint \frac{
     \hat\psi_1(\omega)~\hat\psi_2(k) \left(
         \omega^2 a^{-2} - \omega^2\left(a^{-\frac{1}{2}}k+sa^{-1}\right)^2
-            -3m^2
+            -2m^2
             \right)
     }
     {
@@ -201,15 +196,17 @@ Hier bedienen wir uns direkt bei \ref{eq:substitution2} und schreiben
              }
     }
     \nonumber \\ & \kern 2em\cdot
-    \Theta \left(\omega^2-k^2-4m^2\right)
+    \Theta \left(\omega^2 a^{-2}-\omega^2\left(
+            a^{-\frac{1}{2}} k +sa^{-1}\right)^2
+            -4m^2\right)
       e^{-i \omega \left(\frac{t'-sx'}{a}+k \frac{x'}{\sqrt{a}}\right)}
     \omega \d \omega \d k
 %    =
     \nonumber \\ &\kern -2em \underset{\Delta s := 1-s^2 > 0}{=} \kern -1.5em
-     2 a^{-\frac{3}{4}} \int \frac{
+     2 a^{-\frac{3}{4}} \bigint \frac{
         \hat\psi_1(\omega)~ \hat\psi_2(k) \cancel{a^{-2}} \left(
         \omega^2 \left(\Delta s - 2 a^{\frac{1}{2}} k s - ak^2
-                \right) - 3a^2m^2
+                \right) - 2a^2m^2
         \right)
      e^{\dots} \Theta(\dots) \cancel{\omega}
      }
@@ -219,7 +216,7 @@ Hier bedienen wir uns direkt bei \ref{eq:substitution2} und schreiben
             \sqrt{\Delta s \omega^2 -2a^{\frac{1}{2}} \omega^2 k s
                     - a\omega^2k^2-4 a^2 m^2}
      }
-     \d \omega \d k \nonumber
+     \d \omega \d k
 \end{align}
 % \begin{dmath}
 %     \left\langle \rwhat{\psi}_{ast},\rwhat{\Delta}_m^{*2}\right\rangle
@@ -275,7 +272,7 @@ Für hinreichend kleine $a$ können wir den Integranden nun majorisieren
     \frac{
         \hat\psi_1(\omega)~ \hat\psi_2(k) \left(
         \omega^2 \left(\Delta s - 2 a^{\frac{1}{2}} k s - ak^2
-                \right) - 3a^2m^2
+                \right) - 2a^2m^2
         \right)
          \Theta(\dots)
      }
@@ -335,7 +332,7 @@ und dürfen also Lebesgue verwenden und schreiben
 Und da Shearlets nach \cref{prop:shearlets_decay_rapidly} schnell abfallen erhalten wir schließlich
 
 \begin{dmath}
-    \left\langle \Delta_m^{2}, \psi_{ast}^{(3)}\right\rangle
+    \left\langle \Delta_m^{2}, \psi_{ast}\right\rangle
     = 2 a^{-\frac{3}{4}} \psi \left(\frac{t'-sx'}{a}, \frac{x'}{a}\right)
     \sim O(a^k) ~\forall k \hiderel \in \mathbb{N} \condition{falls $(t',x') \neq 0$}
     \sim O(a^{-\frac{3}{4}}) \condition{falls $(t',x') = 0$}
@@ -348,15 +345,15 @@ Und da Shearlets nach \cref{prop:shearlets_decay_rapidly} schnell abfallen erhal
 \begin{align}
 \label{eq:psi_ast_delta_m2}
     &\kern -1em
-    \left\langle \rwhat{\Delta}_m^{*2}(-\cdot), \hat\psi_{ast} \right\rangle
+    \left\langle \rwhat{\Delta}_m^{*2}, \hat\psi_{ast} \right\rangle
     \\ &=
-    2 a^{-\frac{3}{4}} \int
+    2 a^{-\frac{3}{4}} \bigint
     \frac{
         \hat\psi_1(\omega)\,\hat\psi_2(k)
         \left(\omega^2\left(
             a^{-2}\cancel{(1-s^2)}-2a^{-\frac{3}{2}} k s -a^{-1}k^2
             \right)
-            -3m^2
+            -2m^2
         \right)
     }
     {
@@ -375,11 +372,11 @@ Und da Shearlets nach \cref{prop:shearlets_decay_rapidly} schnell abfallen erhal
     \cdot
     \omega \d \omega \d k
     \nonumber \\ &=
-    2 a^{-\frac{3}{4}} \int
+    2 a^{-\frac{3}{4}} \bigint
     \frac{
         \hat\psi_1(\omega)\,\hat\psi_2(k)\,\cancel{a^{-\frac{3}{2}}}
         \left(
-            2 \omega^2k-a^{\frac{1}{2}}\omega^2k^2-a^{\frac{3}{2}}3m^2
+            2 \omega^2k-a^{\frac{1}{2}}\omega^2k^2-a^{\frac{3}{2}} 2m^2
         \right)
     }
     {
@@ -394,13 +391,13 @@ Und da Shearlets nach \cref{prop:shearlets_decay_rapidly} schnell abfallen erhal
     e^{-i\omega\left(\frac{t'+x'}{a}+k \frac{x'}{\sqrt a}\right)}
     \cancel{\omega} \d \omega \d k
     \nonumber \\ &=
-    2 a^{-\frac{3}{4}} \int
+    2 a^{-\frac{3}{4}} \bigint
     \underbrace{
     \left\{
         \int \frac{
             \hat\psi_2(k)\
             \left(
-                2 \omega^2k-a^{\frac{1}{2}}\omega^2k^2-a^{\frac{3}{2}}3m^2
+                2 \omega^2 k-a^{\frac{1}{2}}\omega^2k^2-a^{\frac{3}{2}}2m^2
             \right)
             \Theta(\dots)
             e^{-i\omega k \frac{x'}{\sqrt a}}
@@ -513,18 +510,19 @@ und mit $k'=k-k_0$ gelten folgende Ausdrücke für den Nenner und den Zähler:
 
 \subparagraph*{Zähler}
 
-\begin{dmath*}
-    2 \omega^2k-a^{\frac{1}{2}}\omega^2k^2-a^{\frac{3}{2}}3m^2
-    =
-    2\omega^2(k'+k_0)-a^{\frac{1}{2}}\omega^2(k'+k_0)^2-a^{\frac{3}{2}}3m^2
-    =
+\begin{align*}
+    2 \omega^2k-a^{\frac{1}{2}} \omega^2 k^2-a^{\frac{3}{2}}2m^2
+    &=
+    2\omega^2(k'+k_0)-a^{\frac{1}{2}}\omega^2(k'+k_0)^2-a^{\frac{3}{2}}2m^2
+    \\ &=
     2 \omega^2 k' + 2 \omega^2 \frac{2m^2}{\omega^2} a^{\frac{3}{2}}
-        + 2 \omega^2 O\left(a^{\frac{7}{2}}\right) - a^{\frac{1}{2}} \omega^2(k'+k_0)^2
-        -a^{\frac{3}{2}}3m^2
-    =
-    2 \omega^2k'+a^{\frac{3}{2}}m^2-a^{\frac{1}{2}}\omega^2(k'+k_0)^2
+        + 2 \omega^2 O\left(a^{\frac{7}{2}}\right)
+        \\  &\kern 2em-  a^{\frac{1}{2}} \omega^2(k'+k_0)^2
+        -a^{\frac{3}{2}}2m^2
+    \\ &=
+    2 \omega^2k'+2a^{\frac{3}{2}}m^2-a^{\frac{1}{2}}\omega^2(k'+k_0)^2
         + O\left(a^{\frac{7}{2}}\right)
-\end{dmath*}
+\end{align*}
 
 \subparagraph*{Nenner}
 \begin{dmath*}
@@ -549,7 +547,7 @@ Nun ist es an der Zeit für das alte Spiel von "`finde eine integrierbare Majora
     \left|
     \frac{
         \hat\psi_2(k'+k_0) \left(
-        2 \omega^2 k' + a^{\frac{3}{2}}m^2-a^{-\frac{1}{2}}(k'+k_0)^2
+        2 \omega^2 k' + 2a^{\frac{3}{2}}m^2-a^{-\frac{1}{2}}(k'+k_0)^2
             + O \left(a^{\frac{7}{2}}\right)
         \right)
     }
@@ -562,7 +560,7 @@ Nun ist es an der Zeit für das alte Spiel von "`finde eine integrierbare Majora
     \nonumber \\ &\leq
     \frac{\textrm{const}}{\sqrt{k'}}
     \frac{
-        \cancel{2}\omega^2 k' + a^{\frac{3}{2}}m^2
+        \cancel{2}\omega^2 k' + 2a^{\frac{3}{2}}m^2
         -a^{\frac{1}{2}} \omega^2 (k'+k_0)^2 + O\left(a^{\frac{7}{2}}\right)
     }
     {
@@ -573,14 +571,14 @@ Nun ist es an der Zeit für das alte Spiel von "`finde eine integrierbare Majora
     \left(
         \frac{\omega^2 k'}{\sqrt{k'}}
         - \frac{a^{\frac{1}{2}}\omega^2(k'+k_0)^2}{\sqrt{k'+k_0}}
-        + \frac{a^{\frac{3}{2}}m^2}{\sqrt{k'+k_0}}
+        + \frac{2a^{\frac{3}{2}}m^2}{\sqrt{k'+k_0}}
         + \frac{O\left(a^{\frac{7}{2}}\right)}{\sqrt{k_0}}
     \right)\Theta(k')
     \nonumber \\ &=
     \frac{\textrm{const}}{\sqrt{k'}}
     \Bigg(
         \omega^2 \sqrt{k'} - a^{\frac{1}{2}}\omega^2 (k'+k_0)^{\frac{3}{2}}
-        + \underbrace{\frac{a^{\frac{3}{2}}m^2}
+        + \underbrace{\frac{2a^{\frac{3}{2}}m^2}
                     {\sqrt{\frac{2m^2}{\omega^2}a^{\frac{3}{2}}+O(a^{\frac{7}{2}})}}}_{O\left(a^{\frac{3}{4}}\right)}
         + \dots
     \Bigg)\Theta(k')
@@ -640,7 +638,7 @@ Der Integrand für $\hat f_a$ konvergiert punktweise (vgl. \eqref{eq:psi_ast_del
 \frac{
         \hat\psi_2(k)\
         \left(
-            2 \omega^2k-a^{\frac{1}{2}}\omega^2k^2-a^{\frac{3}{2}}3m^2
+            2 \omega^2k-a^{\frac{1}{2}}\omega^2k^2-a^{\frac{3}{2}}2m^2
         \right)
         \Theta(\dots)
         e^{-i\omega k \frac{x'}{\sqrt a}}
@@ -722,7 +720,7 @@ $s=-1$  & $a^{-\frac{3}{4}}$ & $a^k$              & $a^{-\frac{1}{4}}$ & $a^k$  
 $|s|<1$ & $a^{-\frac{3}{4}}$ & $a^k$              & $a^k$              & $a^k$            \\
 $|s|>1$ & $a^k$              & $a^k$              & $a^k$              & $a^k$
 \end{tabular}
-\caption{Konvergenzordnung von $\left<\Delta_m^2, \psi_{as(t',x')}^{(3)}\right>$ im Limit $a \to 0$ für alle interessanten Kombinationen von $s$ und $(t',x')$}
+\caption{Konvergenzordnung von $\mathcal{S}_{\Delta_m^2}(a,s,(t',x'))$ im Limit $a \to 0$ für alle interessanten Kombinationen von $s$ und $(t',x')$}
 \end{table}
 
 Erfreulicherweise deckt sich dies wieder mit den Ergebnissen von \textcite[Cor. 3.70]{Schulz2014}, welcher für allgemeine Potenzen von $\Delta_m$ folgendes erhält:
@@ -734,12 +732,5 @@ Erfreulicherweise deckt sich dies wieder mit den Ergebnissen von \textcite[Cor. 
 \end{equation*}
 
 % section dots_und_nun_zur_wellenfrontmenge (end)
-
-
-
-
-
-
-
 
 % section die_wellenfrontmenge_von_delta_m_2_ (end)

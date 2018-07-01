@@ -42,7 +42,7 @@ da nach \cref{eq:psi(i)} gilt $\hat\psi_{ast}^{(3)}(\omega,k) = \hat\psi_{ast}^{
 % % Teil 2
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection*{Fall $s \neq \pm 1$}
-Hier gibt es nicht viel zu tun, denn für a klein genug gilt
+Hier gibt es nicht viel zu tun, denn für $a$ klein genug gilt
 $supp (\hat \Delta_m (- \cdot)) \cap supp (\hat \psi_{ast}) = \varnothing$ wie man \cref{fig:delta_m} entnehmen kann.
 Also gilt
 
@@ -65,7 +65,7 @@ Für $s=1$ schneidet die Diagonale $\{\omega = k\}$ den Träger $supp (\hat \psi
 
 \subparagraph*{Fleißige Analysis}
 \begin{align}
-    \left<\hat \Delta_m, \hat \psi_{a1t}\right> &=
+    \left<\hat \Delta_m(-\cdot), \hat \psi_{a1t}\right> &=
         a^{\frac{3}{4}} \int \hat \psi_1(a\omega)
         \hat\psi_2\left(a^{-\frac{1}{2}} \left(\tfrac{k}{\omega}-1\right)\right)
         \delta (\omega^2 - k^2 - m^2) \theta(\omega)
@@ -85,7 +85,7 @@ Für $s=1$ schneidet die Diagonale $\{\omega = k\}$ den Träger $supp (\hat \psi
         \hat\psi_2
         \underbrace{
         \left(
-            a^{-\frac{1}{2}} \left(\tfrac{\sqrt{a\omega^2-m^2}}{\omega}-1\right)
+            a^{-\frac{1}{2}} \left(\tfrac{\sqrt{\omega^2-a^2m^2}}{\omega}-1\right)
         \right)}_{= \frac{a^{\frac{3}{2}}m^2}{2 \omega^2}
                   + O\left(a^{\frac{7}{2}}\right)}
         \frac{\omega}{\sqrt{\omega^2-a^2 m^2}}
@@ -96,7 +96,7 @@ Der Integrand lässt sich nun durch $\hat \psi_1(\omega) \cdot \left\lVert \hat\
 
 \begin{align}
 \lim_{a \to o}
-\left\langle\hat \psi_{a1t} ,\hat \Delta_m\right\rangle
+\left\langle \hat\Delta_m(-\cdot), \hat\psi_{a1t}\right\rangle
 &=
 a^{-\frac{1}{4}} \int \hat \psi_1(\omega) \hat \psi_2 (0)
     e^{-i\omega \left(\frac{t'-x'}{a}\right)} \nonumber
