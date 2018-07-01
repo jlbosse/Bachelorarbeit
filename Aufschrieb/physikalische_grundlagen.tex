@@ -66,12 +66,13 @@ Die \emph{nicht kommutative Quantenfeldtheorie} beschäftigt sich mit Quantenfel
 Es gibt verschiedene Möglichkeiten, solche nicht-kommutativen Raumzeiten zu konstruieren, ihnen allen ist gemein, dass das kommutative punktweise Produkt von Funktionen ersetzt wird durch ein nicht-kommutatives \emph{Sternrprodukt}.
 Auf der $\kappa$-Minkowski-Raumzeit (vgl. \textcite{kappaMinkowski}) wird es beispielsweise ersetzt durch
 
-\begin{equation*}
+\begin{equation}
     f \star_\kappa g (t,x) =
     \int \hat f(\omega,k) \hat g(\omega',k')
-    e^{i \left<k + e^{-\frac{k_0}{\kappa}}k',x\right> - i\left(\omega+\omega' \right)t}
+    e^{i \left<k + e^{-\frac{\omega}{\kappa}}k',x\right> - i\left(\omega+\omega' \right)t}
     \d \omega \d k \d \omega' \d k'.
-\end{equation*}
+    \label{eq:kappa-minkowski}
+\end{equation}
 
 was äquivalent zu den Vertauschungsrelationen
 
