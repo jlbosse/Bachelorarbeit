@@ -187,7 +187,7 @@ Hier bedienen wir uns direkt bei \ref{eq:substitution2} und schreiben
     \left\langle \rwhat{\Delta}_m^{*2}(-\cdot), \rwhat{\psi}_{ast} \right\rangle
     \label{eq:psi_ast_delta_m2_s<1}
     \\ &=
-    2 a^{-\frac{3}{4}} \int \frac{
+    2 a^{-\frac{3}{4}} \bigint \frac{
     \hat\psi_1(\omega)~\hat\psi_2(k) \left(
         \omega^2 a^{-2} - \omega^2\left(a^{-\frac{1}{2}}k+sa^{-1}\right)^2
             -2m^2
@@ -201,12 +201,14 @@ Hier bedienen wir uns direkt bei \ref{eq:substitution2} und schreiben
              }
     }
     \nonumber \\ & \kern 2em\cdot
-    \Theta \left(\omega^2-k^2-4m^2\right)
+    \Theta \left(\omega^2 a^{-2}-\omega^2\left(
+            a^{-\frac{1}{2}} k +sa^{-1}\right)^2
+            -4m^2\right)
       e^{-i \omega \left(\frac{t'-sx'}{a}+k \frac{x'}{\sqrt{a}}\right)}
     \omega \d \omega \d k
 %    =
     \nonumber \\ &\kern -2em \underset{\Delta s := 1-s^2 > 0}{=} \kern -1.5em
-     2 a^{-\frac{3}{4}} \int \frac{
+     2 a^{-\frac{3}{4}} \bigint \frac{
         \hat\psi_1(\omega)~ \hat\psi_2(k) \cancel{a^{-2}} \left(
         \omega^2 \left(\Delta s - 2 a^{\frac{1}{2}} k s - ak^2
                 \right) - 2a^2m^2
@@ -350,7 +352,7 @@ Und da Shearlets nach \cref{prop:shearlets_decay_rapidly} schnell abfallen erhal
     &\kern -1em
     \left\langle \rwhat{\Delta}_m^{*2}(-\cdot), \hat\psi_{ast} \right\rangle
     \\ &=
-    2 a^{-\frac{3}{4}} \int
+    2 a^{-\frac{3}{4}} \bigint
     \frac{
         \hat\psi_1(\omega)\,\hat\psi_2(k)
         \left(\omega^2\left(
@@ -375,7 +377,7 @@ Und da Shearlets nach \cref{prop:shearlets_decay_rapidly} schnell abfallen erhal
     \cdot
     \omega \d \omega \d k
     \nonumber \\ &=
-    2 a^{-\frac{3}{4}} \int
+    2 a^{-\frac{3}{4}} \bigint
     \frac{
         \hat\psi_1(\omega)\,\hat\psi_2(k)\,\cancel{a^{-\frac{3}{2}}}
         \left(
@@ -394,7 +396,7 @@ Und da Shearlets nach \cref{prop:shearlets_decay_rapidly} schnell abfallen erhal
     e^{-i\omega\left(\frac{t'+x'}{a}+k \frac{x'}{\sqrt a}\right)}
     \cancel{\omega} \d \omega \d k
     \nonumber \\ &=
-    2 a^{-\frac{3}{4}} \int
+    2 a^{-\frac{3}{4}} \bigint
     \underbrace{
     \left\{
         \int \frac{

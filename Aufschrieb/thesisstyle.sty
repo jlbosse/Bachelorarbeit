@@ -117,6 +117,14 @@
 \newcommand*\Laplace{\mathop{}\!\mathbin\bigtriangleup}
 \newcommand*\DAlambert{\mathop{}\!\mathbin\Box}
 
+
+% bigger integral signs
+\usepackage{scalerel,relsize,exscale}
+\def\stretchint#1{\vcenter{\hbox{\stretchto[440]{\displaystyle\int}{#1}}}}
+\def\scaleint#1{\vcenter{\hbox{\scaleto[3ex]{\displaystyle\int}{#1}}}}
+% \newcommand*\bigint{\mathop{}\!\mathlarger{\mathlarger{\int}}}
+\newcommand*\bigint{\stretchint{9ex}}
+
 \allowdisplaybreaks
 
 % -----------------------------------------------------------------------------
