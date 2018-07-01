@@ -38,6 +38,7 @@ Eine weitere Größe der mikrolokalen Analysis, die eventuell durch die Shearlet
 \label{def:skalengrad}
     Sei $u \in \mathcal{D}'(\Omega),~ \Omega \subset \mathbb{R}^n ~$ offen. Dann ist der Skalengrad $sd(u)$ definiert als
     \begin{equation*}
+        sd(u) \coloneqq
         \inf_{\omega} \left\{\lambda^\omega \left\langle u_\lambda, \phi \right\rangle
         \stackrel{\lambda \to 0}{\to} 0 \condition{für alle $\phi$} \right\}
     \end{equation*}
@@ -46,7 +47,7 @@ Eine weitere Größe der mikrolokalen Analysis, die eventuell durch die Shearlet
     \begin{equation*}
         \left\langle u_\lambda, \phi \right\rangle
         =
-        \lambda^{-n} \left\langle u, \phi\left(\tfrac{\cdot}{\lambda}\right)\right\rangle
+        \lambda^{-n} \left\langle u, \phi\left(\tfrac{\cdot}{\lambda}\right)\right\rangle,
     \end{equation*}
 
     also falls $u \in C^\infty$:
