@@ -14,11 +14,34 @@
     wieder um den Konventionen in der Physik gerecht zu werden.
 \end{remark}
 
-\section{\texorpdfstring{Zwei nützliche Substitionen für  $\left<\psi_{ast}, f\right>$}{Zwei nützliche Substitutionen}}
+\section{\texorpdfstring{Zwei nützliche Substitionen für  $\left<f, \psi_{ast}\right>$ und ein Lemma}{Zwei nützliche Substitutionen und ein Lemma}}
 \label{sec:substitutionen}
 
-Zunächst werden wir zwei verschiedene Ausdrücke für $\left< f, \psi_{ast} \right>$
-im Fourierraum herleiten, welche fast immer Ausgangspunkt für unsere Abschätzungen sein werden.
+Um die Shearlettransformation und damit Wellenfrontmengen auszurechnen, müssen wir Ausdrücke der Form \(\lim_{a \to 0} \int f (t,x) \psi_{ast}^ (t,x) \d t \d x\) abschätzen. Da kein expliziter Ausdruck für $\psi_{ast}(x)$ gegeben ist, aber zumindest der Träger der Fouriertransformierten \(\hat \psi_{ast} (\omega, k)\) bekannt ist, ist es einfacher \(\left<\hat f, \hat \psi_{ast}\right>\) statt \(\left< f, \psi_{ast} \right>\) zu berechnen. Das hat dann die Form
+\begin{equation}
+    \left< \hat f, \hat\psi_{ast}\right> \\
+    = \int a^{\frac{3}{4}} \hat \psi_1(a \omega)
+    \hat \psi_2 \left(a^{-\frac{1}{2}} \left(\frac{k}{\omega} - s\right)\right)
+    \hat f (\omega,k) e^{-i \omega t + ikx} \d \omega \d k.
+\end{equation}
+
+Punktweise konvergiert der Integrand gegen 0, da $\hat \psi$ kompakt getragen ist. Für $a \to 0$ wird aber der Träger des Integranden immer weiter "`nach außen"' verschoben (vgl. \cref{fig:supp_psi_hat}), ohne aber (notwendigerweise) im Betrag abzunehmen. Deshalb existiert auch keine integrierbare Majorante, die unabhängig von $a$ ist. Also verschieben wir den Integrationsbereich mittels Substitution so, dass der Integrationsbereich für $a \to 0$ immer der selbe bleibt und wir $\hat f$ "`immer weiter draußen"' anschauen. Diese Substituionen werden was immer Ausgangspunkt unserer Abschätzungen sein.
+
+\begin{figure}[h]
+    \centering
+    \begin{minipage}{0.5\textwidth}
+        \centering
+        \resizebox{\textwidth}{!}{\input{images/supp_psi_substitution1.pgf}} %
+        \caption{Der Träger von $\hat\psi$ vor und nach der Substitution aus \cref{eq:substitution1_coords}}
+        \label{fig:supp_psi_substitution1}
+    \end{minipage}\hfill
+    \begin{minipage}{0.5\textwidth}
+        \centering
+        \resizebox{\textwidth}{!}{\input{images/supp_psi_substitution2.pgf}}
+        \caption{Der Träger von $\hat\psi$ vor und nach der Substitution aus \cref{eq:substitution2_coords}}
+        \label{fig:supp_psi_substitution2}
+    \end{minipage}
+\end{figure}
 
 Sei also $\psi$ ein Shearlet wie in \cref{rem:psi_hat}. Sei $f$ die zu
 analysierende fouriertransformierbare Funktion (oder Distribution) in
@@ -105,20 +128,40 @@ die Orientierung \emph{nicht} erhält und \emph{keine} Bijektion ist. Aber
 der kritische Bereich, nämlich $\omega = 0$, liegt nicht im Träger von $\hat{\psi}$.
 
 Beiden Substitution gemein ist aber, dass danach
-$0=\omega \notin supp (\hat\psi)$ und dass $supp (\psi)$ sowohl in $k$ als auch in $\omega$ beschränkt ist. $\omega$ kann also sowohl nach unten als auch nach oben durch eine Konstante abgeschätzt werden, wann immer dies der Sache dienlich ist. Auch $k$ kann zumindest nach oben immer durch eine Konstante abgeschätzt werden.
+$0=\omega \notin supp (\hat\psi)$ und dass $supp (\psi)$ sowohl in $k$ als auch in $\omega$ beschränkt ist. $\omega$ kann also sowohl nach unten als auch nach oben durch eine Konstante abgeschätzt werden, wann immer dies der Sache dienlich ist. Auch $k$ kann, zumindest nach oben, immer durch eine Konstante abgeschätzt werden.
 
-\begin{figure}[h]
-    \centering
-    \begin{minipage}{0.5\textwidth}
-        \centering
-        \resizebox{\textwidth}{!}{\input{images/supp_psi_substitution1.pgf}} %
-        \caption{Der Träger von $\hat\psi$ vor und nach der Substitution aus \cref{eq:substitution1_coords}}
-        \label{fig:supp_psi_substitution1}
-    \end{minipage}\hfill
-    \begin{minipage}{0.5\textwidth}
-        \centering
-        \resizebox{\textwidth}{!}{\input{images/supp_psi_substitution2.pgf}}
-        \caption{Der Träger von $\hat\psi$ vor und nach der Substitution aus \cref{eq:substitution2_coords}}
-        \label{fig:supp_psi_substitution2}
-    \end{minipage}
-\end{figure}
+Wie man \cref{eq:substitution1,eq:substitution2} ansieht, haben wir schließlich einen Ausdruck der Form \(\lim_{a \to 0} \int \hat f(a,k) e^{ik \frac{x}{a}} \d k\) abzuschätzen. Eine Möglichkeit für diese Abschätzungen liefert das folgende Lemma:
+
+\begin{lemma}[$\int \hat f(a,k) e^{ik \frac{x}{a}} \d k$ abschätzen]
+\label{lemm:f_a_abschaetzen}
+ Sei \(\hat f:\mathbb{R} \times \hat{\mathbb{R}}^m \to \mathbb{C}; \quad (a,k) \mapsto \hat f(a,k)\) kompakt getragen in $k$ und s.d. \(\hat f(a,k) = \sum_{n=0}^\infty a^n \hat f_n(k) \) für alle hinreichend kleinen $a$ und $\hat f_n \in C^{N_n}_c (\hat{\mathbb{R}}^n)$. Die Potenzreihe sei punktweise absolut konvergent\footnote{Wie es z.B. innerhalb des Konvergenzradius von Taylorreihen gegeben ist.}. Sei $\delta > 0$ und $\mathbb{R}^n \ni x \neq 0$. Sei des weiteren \(p = \sup \{n+N_n \, \delta | n \in \mathbb{N}\}\). Dann gilt:
+ \begin{equation*}
+     \int \hat f(a,k) e^{ik\frac{x}{a^\delta}} \d k = O(a^p) \condition{für \(a \to 0\)}
+ \end{equation*}
+\end{lemma}
+
+\begin{proof}
+Da \(\hat f_n \in C^{N_n}_c (\hat{\mathbb{R}^n})\) ist, gilt auch \(f_n(x) = O(x^{-N_n})\) für $|x| \to \infty$, wobei wie erwartet \(f(x) = \hat f^\vee (x)\) ist. Dann können wir abschätzen:
+\begin{align*}
+    \lim_{a \to 0}
+    &= \int \hat f(a,k) e^{ik\frac{x}{a^\delta}} \d k
+    = \sum_n a^n \int \hat f_n(k)e^{ik \frac{x}{a^\delta}} \d k
+    \\ &=
+    \sum_n a^n\, \underbrace{f\left(\frac{x}{a^\delta}\right)}_{O\left(\left(\frac{x}{a^\delta}\right)^{-N_n}\right)}
+    = \sum_n O(a^n a^{N_n \,\delta}) = O(a^p)
+ \end{align*}
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
