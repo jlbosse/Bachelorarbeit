@@ -203,207 +203,78 @@ Wir bedienen uns wieder genau des selben Arguments, wie in \cref{eq:delta_m2_s>1
 Auch hier nutzen wir wieder \cref{lemm:wavefrontset_and_lorentz} um o.B.d.A nur \(s=0\) zu betrachten, und alle restlichen Fälle aus Lorentz-Invarianz zu erhalten.
 
 Da
-$\rwhat\Delta_m^{\ast_\Omega 2} = \rwhat\Delta_m^{* 2} \cos(\dots)$ können wir direkt mit dem Ausdruck (\ref{eq:psi_ast_delta_m2_s<1}) $\cdot \cos$ weiter arbeiten und genau die selben Abschätzungen machen. $\cos(\varphi)$ ist bekanntermaßen beschränkt.
-
-\begin{align}
-    \left\langle \rwhat{\Delta}_m^{\ast_\Omega 2}, \rwhat{\psi}_{ast}^{(3)}
+$\rwhat\Delta_m^{\ast_\Omega 2} = \rwhat\Delta_m^{* 2} \cos(\dots)$ können wir direkt mit dem Ausdruck (\ref{eq:psi_ast_delta_m2_s<1}) $\cdot \cos$ weiter arbeiten, haben jetzt aber eine kompliziertere Phase:
+\begin{align*}
+    \left\langle \rwhat{\Delta}_m^{\ast_\Omega 2}, \rwhat{\psi}_{a0t}^{(3)}
     \right\rangle
     &=
-    \left\langle \rwhat{\Delta}_m^{\ast_\Omega 2}(-\cdot), \rwhat{\psi}_{ast}
+    \left\langle \rwhat{\Delta}_m^{\ast_\Omega 2}(-\cdot), \rwhat{\psi}_{a0t}
     \right\rangle
     \nonumber \\ &=
-     2 a^{-\frac{3}{4}} \int \frac{
-    \hat\psi_1(\omega)~ \hat\psi_2(k) \left(
-    \omega^2 \left(\Delta s - 2 a^{\frac{1}{2}} k s - ak^2
-            \right) - 2a^2m^2
-    \right)
-     }
-     {
-        \sqrt{\Delta s -2a^{\frac{1}{2}}ks - ak^2}
-            \sqrt{\Delta s \omega^2 -2a^{\frac{1}{2}} \omega^2 k s
-                    - a\omega^2k^2-4 a^2 m^2}
-     }
-     \nonumber \\ &\kern 2em\cdot
-     \Theta(\cdots)
-     \cos(\varphi(\omega^2-k^2))
-     e^{-i \omega \left(\frac{t'-sx'}{a}+k \frac{x'}{\sqrt{a}}\right)}
-     \d \omega \d k
-     \nonumber \\ &\leq
      2 a^{-\frac{3}{4}} \int
-     \omega \hat\psi_1(\omega)\, \hat\psi_2(k)
-     e^{-i \omega \left(\frac{t'-sx'}{a}+k \frac{x'}{\sqrt{a}}\right)}
+     \underbrace{\frac{
+         \hat\psi_1(\omega)~ \hat\psi_2(k) \left(
+         \omega^2 \left(1 - ak^2
+                 \right) - 2a^2m^2
+         \right)
+          }
+          {
+             \sqrt{1 - ak^2}
+                 \sqrt{\omega^2 - a\omega^2k^2-4 a^2 m^2}
+          }
+          \Theta(\cdots)
+          }_{=: \, \hat f(a,\omega,k)}
+     \nonumber \\ &\kern 2em\cdot
+     \cos\left(\varphi\left(\frac{\omega^2}{a^2}-\frac{k^2}{a}\right)\right)
+     e^{-i \omega \left(\frac{t'}{a}+k \frac{x'}{\sqrt{a}}\right)}
      \d \omega \d k
-     \nonumber \\ &\sim
-     O(a^k) ~~ \forall k \hiderel \in \mathbb{N}
-\label{eq:delta_m2_twisted_s<1_x_neq_0}
+     \nonumber \\ &=
+     2 a^{-\frac{3}{4}} \int \hat f(a,\omega,k) \,
+     \left(e^{-i \tilde \varphi_1(a,\omega,k,t',x')}+e^{-i \tilde \varphi_2(a,\omega,k,t',x')}\right)
+     \d \omega \d k
+\end{align*}
+
+wobei \[\hat f(a,\omega,k) = \sum_{n \geq 0} a^n \hat f_n(\omega,k)\] nach den Argumenten vor \cref{eq:f(awk)} mit glatten \(\hat f_n\) und die Phasenfunktionen \(\tilde \varphi_1\) und \(\tilde \varphi_2\) durch Ausschreiben des cosinus als \(e\)-Funktionen und dann zusammenfassen mit \(e^{-i\omega\left(\frac{t'}{a} + k \frac{x'}{\sqrt{a}}\right)}\) entstehen. Wir betrachten im folgenden nur den \(\tilde \varphi_1\)-Term, für den anderen gelten analoge Überlegungen. Es ist
+
+\begin{align}
+    \tilde \varphi_1(a,\omega,k,t',x')
+    &=
+    \frac{1}{2}\left(\frac{\omega^2}{a^2}-\frac{k^2}{a}\right)
+    \sqrt{\frac{1}{4}+\frac{m^2}{a^{-1}k^2+a^{-2}\omega^2}}
+    +
+    \omega \left(\frac{t'}{a}+ k \frac{x'}{\sqrt{a}}\right)
+    \nonumber \\ &=
+    a^{-2} \left(\frac{1}{2}\left(\omega^2+ak^2\right)
+    \sqrt{\frac{1}{4}+\frac{a^2m^2}{ak^2-\omega^2}}
+    + a \omega\left(t' + k \sqrt{a} x'\right)\right).
+    \label{eq:phi_tilde}
 \end{align}
-% \begin{dmath}
-% \label{eq:delta_m2_twisted_s<1}
-%     \left\langle \rwhat{\Delta}_m^{\ast_\Omega 2}, \rwhat{\psi}_{ast}^{(3)}
-%     \right\rangle
-%     =
-%     \left\langle \rwhat{\Delta}_m^{\ast_\Omega 2}(-\cdot), \rwhat{\psi}_{ast}
-%     \right\rangle
-%     =
-%      2 a^{-\frac{3}{4}} \int \frac{
-%     \hat\psi_1(\omega)~ \hat\psi_2(k) \left(
-%     \omega^2 \left(\Delta s - 2 a^{\frac{1}{2}} k s - ak^2
-%             \right) - 3a^2m^2
-%     \right)
-%      }
-%      {
-%         \sqrt{\Delta s -2a^{\frac{1}{2}}ks - ak^2}
-%             \sqrt{\Delta s \omega^2 -2a^{\frac{1}{2}} \omega^2 k s
-%                     - a\omega^2k^2-4 a^2 m^2}
-%      }
-%      \cdot
-%      \Theta(\cdots)
-%      \cos(\varphi(\omega^2-k^2))
-%      e^{-i \omega \left(\frac{t'-sx'}{a}+k \frac{x'}{\sqrt{a}}\right)}
-%      \d \omega \d k
-%      \leq
-%      2 a^{-\frac{3}{4}} \int
-%      \omega \hat\psi_1(\omega)\, \hat\psi_2(k)
-%      e^{-i \omega \left(\frac{t'-sx'}{a}+k \frac{x'}{\sqrt{a}}\right)}
-%      \d \omega \d k
-%      \sim O(a^k) ~~ \forall k \hiderel \in \mathbb{N}
-% \label{eq:delta_m2_twisted_s<1_x_neq_0}
-% \end{dmath}
 
+Dieses \(\tilde \varphi_1(a,\omega,k,t',x')\) ist für \(a\) klein genug, alle
+\((t',x')\) und \((\omega,k) \in supp (\hat\psi_1(\omega) \cdot \hat \psi_2(k))\)
+glatt und streng monoton steigend in $\omega$. Also existiert eine glatte Reparametrisierung \(\tilde \omega\) von \(\omega\) mit streng positiver Ableitung \(\tilde \omega'\) s.d.
 
-\subsubsection*{Fall $|s| < 1, (x,t) = 0$}
-In diesem Fall lassen wir den $\cos$-Faktor in \cref{eq:delta_m2_twisted_s<1_x_neq_0} in der ersten Ungleichung nicht heraus fallen, dafür wird der $e^\cdots$-Faktor 1. Den $\cos$-Faktor schreiben wir als Summe von $e$-Funktionen und erhalten
+\begin{equation*}
+    \tilde \varphi_1(a,\omega(\tilde \omega),k,t',x')
+    = a^{-2} \,\tilde \omega  h(a,k,t',x')
+\end{equation*}
 
-% \begin{equation}
-% \begin{aligned}
-%     \left\langle \rwhat{\Delta}_m^{\ast_\Omega 2}, \rwhat{\psi}_{ast}
-%     \right\rangle
-%     \\&=
-%     2 a^{-\frac{3}{4}} \int
-%     \omega \hat\psi_1(\omega) \hat\psi_2(k)
-%     \left\{
-%         \exp\left(i a^{-2} \frac{
-%         \omega^2 (\Delta s - 2 a^{\frac{1}{2}} k s - a k^2)
-%         }{2}
-%         \sqrt{\frac{1}{4} - \frac{a^2 m^2}{\omega^2(
-%             \Delta s - 2 a^{\frac{1}{2}} k s - ak^2
-%         )}}
-%         \right)
-%         \\ &+
-%         \exp (-i \cdots)
-%     \right\}
-%     \d \omega \d k
-%     \\ &=
-%     2 a^{-\frac{3}{4}} \int
-%     \cancel{\sqrt{\omega}} \hat\psi_1(\sqrt{\omega}) \hat\psi_2(k)
-%     \left\{
-%         \exp\left(i a^{-2} \frac{
-%         \omega (\Delta s - 2 a^{\frac{1}{2}} k s - a k^2)
-%         }{2}
-%         \sqrt{\frac{1}{4} - \frac{a^2 m^2}{\omega(
-%             \Delta s - 2 a^{\frac{1}{2}} k s - ak^2
-%         )}}
-%         \right)
-%         \\ &+ \mathrm{c.c.}
-%     \right\}
-%     \frac{{\d \omega \d k}}{\cancel{\sqrt{\omega}}}
-%     \\ &=
-%     2 a^{-\frac{3}{4}} \int \left\{
-%         \int
-%         \hat\psi_1(\sqrt\omega)
-%         \left\{
-%             \exp
-%             \left(ia^{-2} \left(\frac{\omega \Delta s}{4}
-%                                 + O\left(a^{\frac{1}{2}}\right)\right)
-%             \right)
-%             \\ &+
-%             \mathrm{c.c.}
-%         \right\}
-%         \d \omega
-%     \right\}
-%     \hat \psi_2(k) \d k
-%     \\ &=
-%     2 a^{-\frac{3}{4}} \int
-%     \underbrace{
-%     \left\{
-%     (\hat\psi_1 \circ \sqrt{\cdot })^\vee
-%     \left(\frac{\Delta s}{4a^2}\right)
-%      + (\hat\psi_1 \circ \sqrt{\cdot })^\vee
-%     \left(-\frac{\Delta s}{4a^2}\right)
-%     + \mathrm{c.c.}
-%     \right\}}_{
-%     \sim O(a^k) ~\forall k \in \mathbb{N}
-%     }
-%     \psi_2(k) \d k
-%     \\ &
-%     \sim O(a^k) ~~ \forall k \hiderel \in \mathbb{N}
-% \label{eq:delta_m2_twisted_s<1_x=0}
-% \end{aligned}
-% \end{equation}
-\begin{dmath}
-    \left\langle \rwhat{\Delta}_m^{\ast_\Omega 2}(-\cdot), \rwhat{\psi}_{ast}
+mit glattem \(h\). Nach \cref{eq:phi_tilde} ist \(a^2 \tilde \varphi\) für \(a\) klein genug analytisch in \(a\), wir können also \(h\) wie in \cref{lemm:f_a_komplizierte_phase} als Potenzreihe in \(a\) schreiben: \(h(a,k,t',x') = \sum_{n=0} a^n h_n (k,t',x')\). In der Potenzreihenentwicklung von $\hat f$ sind alle $\hat f_n$ glatt, wir können also in \cref{lemm:f_a_komplizierte_phase} für \(\hat f\) nur den ersten Term \(\hat f_0\) verwenden.
+
+\begin{align}
+    \lim_{a \to 0}
+    \left\langle \rwhat{\Delta}_m^{\ast_\Omega 2}, \rwhat{\psi}_{a0t}^{(3)}
     \right\rangle
-    =
-    2 a^{-\frac{3}{4}} \bigint
-    \omega \hat\psi_1(\omega) \hat\psi_2(k)
-    \left\{
-        \exp\left(i a^{-2} \frac{
-        \omega^2 (\Delta s - 2 a^{\frac{1}{2}} k s - a k^2)
-        }{2}
-        \sqrt{\frac{1}{4} - \frac{a^2 m^2}{\omega^2(
-            \Delta s - 2 a^{\frac{1}{2}} k s - ak^2
-        )}}
-        \right)
-        +\exp (-i \cdots)
-    \right\}
-    \d \omega \d k
-    =
-    2 a^{-\frac{3}{4}} \bigint
-    \cancel{\sqrt{\omega}} \hat\psi_1(\sqrt{\omega}) \hat\psi_2(k)
-    \left\{
-        \exp\left(i a^{-2} \frac{
-        \omega (\Delta s - 2 a^{\frac{1}{2}} k s - a k^2)
-        }{2}
-        \sqrt{\frac{1}{4} - \frac{a^2 m^2}{\omega(
-            \Delta s - 2 a^{\frac{1}{2}} k s - ak^2
-        )}}
-        \right)
-        + \mathrm{c.c.}
-    \right\}
-    \frac{{\d \omega \d k}}{\cancel{\sqrt{\omega}}}
-    =
-    2 a^{-\frac{3}{4}} \bigint \left\{
-        \int
-        \hat\psi_1(\sqrt\omega)
-        \left\{
-            \exp
-            \left(ia^{-2} \left(\frac{\omega \Delta s}{4}
-                                + O\left(a^{\frac{1}{2}}\right)\right)
-            \right)
-            + \mathrm{c.c.}
-        \right\}
-        \d \omega
-    \right\}
-    \hat \psi_2(k) \d k
-    =
-    2 a^{-\frac{3}{4}} \bigint
-    \underbrace{
-    \left\{
-    (\hat\psi_1 \circ \sqrt{\cdot })^\vee
-    \left(\frac{\Delta s}{4a^2}\right)
-     + (\hat\psi_1 \circ \sqrt{\cdot })^\vee
-    \left(-\frac{\Delta s}{4a^2}\right)
-    + \mathrm{c.c.}
-    \right\}}_{
-    \sim O(a^k) ~\forall k \in \mathbb{N}
-    }
-    \psi_2(k) \d k
-    \sim O(a^k) ~~ \forall k \hiderel \in \mathbb{N}
-\label{eq:delta_m2_twisted_s<1_x=0}
-\end{dmath}
-
-wobei bei der Substition $\omega \to \sqrt{\omega}$ in der zweiten Zeile wichtig ist, dass $0 \notin supp (\hat\psi_1)$, also auch nach der Substitution noch $\hat\psi_1 \in C_c^\infty (\mathbb{R})$ ist.
-
+    &\sim
+    \lim_{a \to 0}
+    \int \underbrace{\int \hat f_0(\omega(\tilde \omega),k)
+        e^{i \tilde \omega a^{-2} h(a,t',x')}
+        \frac{\d{\tilde\omega}}{\tilde \omega'}}_{\sim O(a^\infty) \textrm{ nach \cref{lemm:f_a_komplizierte_phase}}}
+    \d k
+    \nonumber \\ &\sim
+    O\left(a^k\right) ~~ \forall k \in \mathbb{N}
+    \label{eq:delta_m2_twisted_s<1}
+\end{align}
 
 \subsubsection*{Fall $s = -1$}
 
@@ -426,10 +297,10 @@ Da $\rwhat\Delta_m^{\ast_\Omega 2} = \rwhat\Delta_m^{* 2} \cos(\dots)$ ist, habe
         \sqrt{2-a^{\frac{1}{2}}(k'+k_0)}
         \sqrt{-a^{\frac{1}{2}}\omega^2\left(k'-\tfrac{2\sqrt{\omega^2-4a^2m^2}}
                     {\sqrt a \omega}\right)}
-    }}_{i)}
+    }}_{=: \hat f(a,\omega,k)}
     \nonumber \\ & \kern 2em\cdot
     \cos
-    \underbrace{\left(
+    \left(
         \frac{2\omega^2(k'+k_0)-a^{\frac{1}{2}}\omega^2(k'+k_0)^2}
              {2 a^{\frac{3}{2}}}
         \sqrt{
@@ -437,10 +308,16 @@ Da $\rwhat\Delta_m^{\ast_\Omega 2} = \rwhat\Delta_m^{* 2} \cos(\dots)$ ist, habe
             + \frac{a^{\frac{3}{2}} m^2}
                    {2\omega^2(k'+k_0)-a^{\frac{1}{2}}\omega^2(k'+k_0)^2}
         }
-    \right)}_{ii)}
+    \right)
     \nonumber \\ & \kern 2em\cdot
     e^{-i\omega\left(\frac{t'+x'}{a}+\frac{(k'+k_0)x'}{\sqrt a}\right)}
     \d \omega \d k'
+    \nonumber \\ &=
+    2 a^{-\frac{3}{4}} \int \int \hat f(a,\omega,k')
+    \left(e^{i \tilde \varphi_1(a,\omega,k',x')}
+    + e^{i \tilde \varphi_2(a,\omega,k',x')}\right)
+    \d k'
+    e^{-i \omega \frac{t'+x'}{a}} \d \omega
 \label{eq:psi_a-1t_delta_m2_twisted}
 \end{align}
 % \begin{dmath}

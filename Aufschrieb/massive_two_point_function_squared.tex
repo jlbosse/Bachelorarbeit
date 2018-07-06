@@ -258,9 +258,10 @@ Für $a$ klein genug gilt \(supp(\hat\psi) \subset supp(\Theta(\dots))\),
 ausgeschlossen ist und \(a \mapsto \alpha a + \beta a^2 + \gamma\) sowie
 \(x \mapsto \frac{1}{\sqrt{\delta + x}}\) für $\delta > 0$ sowie Verknüpfungen und Produkte analytischer Funktionen analytisch sind.
 Also können wir für kleine $a$ schreiben
-\begin{equation*}
+\begin{equation}
     \hat f(a,\omega, k) = \sum_{n=0} a^n \hat f_n (\omega,k)
-\end{equation*}
+    \label{eq:f(awk)}
+\end{equation}
 mit glatten $\hat f_n$; also \(N_n = \infty\) für alle \(n\) und \(p = + \infty\) in \cref{lemm:f_a_abschaetzen}.
 
 Damit erhalten wir für \((t',x') \neq 0 \) und \(|s| < 1\)
@@ -598,7 +599,7 @@ und wir können nun eine integrierbare Majorante für den Integranden in \(\hat 
 
 Der letzte Ausdruck ist eine integrierbare Majorante und in den Abschätzungen wurde u.a. verwendet, das $\hat\psi_2$ kompakt getragen, glatt und beschränkt ist. In "`const"' wurden immer notwendige, aber letzten Endes irrelevante, Vorfaktoren gesammelt.
 
-Also haben wir dürfen wir Ableitung nach \(\omega\) und Integration nach \(k'\) vertauschen, um zu argumentieren, dass \(\hat g_{a,x'}(\omega)\) als Funktion von \(\omega\) im Bereich \(\omega \in \left[\frac{1}{2},2\right]\) für hinreichend kleine \(a\) glatt ist: Wir integrieren nur über ein Kompaktum und die Singularität des Integranden (\(\frac{1}{k'}\)) wird durch Ableiten nach \(\omega\) nicht schlimmer. Alle inneren Ableitungen \(\partial_\omega^N k_0(a,\omega)\) sind für kleine \(a\) und \(\omega \geq \frac{1}{2}\) beschränkt, genau so wie \(\partial_\omega^N \sqrt{k'+k_0(a,\omega)}\) und ohnehin \(\partial_\omega^N \sqrt{2-a^{\frac{1}{2}}(k'+k_0(a,\omega))}\) oder \(\partial_\omega^N \sqrt{2-a^{\frac{1}{2}}\omega^2 k' + O\left(a^{\frac{3}{2}}\right)}\). Damit existieren auch alle Ableitungen \(\partial_\omega^N \hat g_{a,\omega}(\omega)\), es ist also glatt. Somit können wir schließlich abschätzen:
+Also haben wir dürfen wir Ableitung nach \(\omega\) und Integration nach \(k'\) vertauschen, um zu argumentieren, dass \(\hat g_{a,x'}(\omega)\) als Funktion von \(\omega\) im Bereich \(\omega \in \left[\frac{1}{2},2\right]\) für hinreichend kleine \(a\) glatt ist: Wir integrieren nur über ein Kompaktum und die Singularität des Integranden \(\frac{1}{\sqrt{k'}}\) wird durch Ableiten nach \(\omega\) nicht schlimmer. Alle inneren Ableitungen \(\partial_\omega^N k_0(a,\omega)\) sind für kleine \(a\) und \(\omega \geq \frac{1}{2}\) beschränkt, genau so wie \(\partial_\omega^N \sqrt{k'+k_0(a,\omega)}\) und ohnehin \(\partial_\omega^N \sqrt{2-a^{\frac{1}{2}}(k'+k_0(a,\omega))}\) oder \(\partial_\omega^N \sqrt{2-a^{\frac{1}{2}}\omega^2 k' + O\left(a^{\frac{3}{2}}\right)}\). Damit existieren auch alle Ableitungen \(\partial_\omega^N \hat g_{a,\omega}(\omega)\), es ist also glatt. Somit können wir schließlich abschätzen:
 \begin{align}
     \lim_{a \to 0}
     \left\lvert
