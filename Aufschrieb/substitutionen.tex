@@ -147,14 +147,44 @@ Da \(\hat f_n \in C^{N_n}_c (\hat{\mathbb{R}^n})\) ist, gilt auch \(f_n(x) = O(x
     &= \int \hat f(a,k) e^{ik\frac{x}{a^\delta}} \d k
     = \sum_n a^n \int \hat f_n(k)e^{ik \frac{x}{a^\delta}} \d k
     \\ &=
-    \sum_n a^n\, \underbrace{f\left(\frac{x}{a^\delta}\right)}_{O\left(\left(\frac{x}{a^\delta}\right)^{-N_n}\right)}
+    \sum_n a^n\, \underbrace{\hat f_n\left(\frac{x}{a^\delta}\right)}_{O\left(\left(\frac{x}{a^\delta}\right)^{-N_n}\right)}
     = \sum_n O(a^n a^{N_n \,\delta}) = O(a^p)
  \end{align*}
 \end{proof}
 
+Bevor wir dann mit den konkreten Rechnungen beginnnen können, brauchen wir noch ein letztes Lemma über das Verhalten der Wellenfrontmengen Lorentz-invarianter Distributionen unter Lorentz-Transformationen.
 
+\begin{lemma}[Wellenfrontmengen Lorentz-invarianter Distributionen]
+\label{lemm:wavefrontset_and_lorentz}
+Sei \(f \in \mathcal{D}'(\mathbb{R}^{1+d})\) lorentz-invariant und \(\Lambda \in \mathrm{SO}(d,1)\). Sei des Weiteren \(\phi_{x_0}:\mathbb{R}^{1+d} \to \mathbb{R}\) eine bei \(x_0 \in \mathbb{R}^{1+d}\) lokalisierte Testfunktion im Sinne von \cref{def:high_frequency_set}.
 
+Dann ist \(\phi_{\Lambda x_0} (\cdot) \coloneqq\phi_{x_0} (\Lambda^{-1} \cdot)\) eine bei \(\Lambda x_o\) lokalisierte Testfunktion und es gilt für alle \(k \in \hat{\mathbb{R}}^{1+d}\)
+\begin{equation*}
+    \rwhat{f \phi_{x_0}} (k)  = \rwhat{f \phi_{\Lambda x_0}} (\Lambda k).
+\end{equation*}
+\end{lemma}
 
+\begin{corollary}
+\label{cor:wavefrontset_lorentz}
+Seien \(f, \Lambda, x_0, k\) wie eben. Dann gilt
+\begin{equation*}
+    (x_0, k) \in WF(f)
+    \quad \Longleftrightarrow \quad
+    (\Lambda x_0, \Lambda k) \in WF(f)
+\end{equation*}
+\end{corollary}
+
+\begin{proof}
+    Mit formaler Rechnung folgt:
+    \begin{align*}
+        \rwhat{f \phi_{x_0}} (k) &=
+        \int f(x) \, \phi_{x_0}(x)\, e^{-ik\cdot x} \d x
+        = \int f(\Lambda^{-1}x ) \, \phi_{x_0}(\Lambda^{-1} x) \, e^{-ik\cdot\Lambda^{-1}x} \d x
+        \\ &=
+        \int f(x)\, \phi_{\Lambda x_0}(x) \, e^{-i\Lambda k \cdot x} \d x
+        = \rwhat{f \phi_{\Lambda x_0}} (\Lambda k)
+    \end{align*}
+\end{proof}
 
 
 
