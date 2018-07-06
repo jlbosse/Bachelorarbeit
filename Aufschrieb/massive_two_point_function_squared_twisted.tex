@@ -21,8 +21,7 @@ Auch für die getwistete Faltung ist schnell nachgerechnet, dass
     \overline{ \left(\rwhat{\Delta_m} (-\cdot) \ast_\Omega \rwhat{\Delta_m} (-\cdot)\right)}
      (\omega,k).
 \end{equation*}
-Wie wir später sehen werden, ist die komplexe Konjugation irrelevant, da alles reell.
-
+Wie wir später sehen werden, ist die komplexe Konjugation irrelevant, da alles reell. Die Zutaten für die getwistete Faltung sind
 \begin{dgroup}
     \begin{dmath}
         \rwhat{\Delta}_m(-\cdot) = \delta(\omega^2-k^2-m^2)\Theta(\omega)\\
@@ -33,12 +32,12 @@ Wie wir später sehen werden, ist die komplexe Konjugation irrelevant, da alles 
         \Omega = \begin{pmatrix}
             0 & 1 \\ -1 & 1
         \end{pmatrix}
-        \\ \textrm{die kanonische symplektische Matrix auf } \mathbb{R}^n
+        \\ \textrm{die kanonische symplektische Matrix auf } \mathbb{R}^n.
     \label{eq:material_fuer_delta_m2_twisted_b}
     \end{dmath}
 \end{dgroup}
 
-mit \cref{def:twisted_convolution,eq:material_fuer_delta_m2_twisted_a,eq:material_fuer_delta_m2_twisted_b} erhalten wir also
+Mit \cref{def:twisted_convolution,eq:material_fuer_delta_m2_twisted_a,eq:material_fuer_delta_m2_twisted_b} erhalten wir also
 
 \begin{dmath}
     \rwhat{\Delta}_m^{\ast_\Omega 2} (-\omega, -k)
@@ -51,11 +50,11 @@ mit \cref{def:twisted_convolution,eq:material_fuer_delta_m2_twisted_a,eq:materia
     \d \omega' \d k'
 \end{dmath}
 
-und damit das selbe Integral wie in \cref{eq:mass_shell_convolution} bis auf einen zusätzlichen Phasenfaktor. Nachdem wir gezeigt haben, dass auch dieser Lorentz-Invariant ist, können wir das Integral mit dem selben Trick wie in \cref{sec:delta_m2_berechnen} berechnen.
+und damit das selbe Integral wie in \cref{eq:mass_shell_convolution} bis auf einen zusätzlichen Phasenfaktor. Nachdem wir gezeigt haben, dass auch dieser lorentz-invariant ist, können wir das Integral mit dem selben Trick wie in \cref{sec:delta_m2_berechnen} berechnen.
 
-\begin{proposition}[$\Omega_{std}$ ist Lorentz-invariant für $n=2$]
+\begin{proposition}[$\Omega_{std}$ ist lorentz-invariant für $n=2$]
 \label{prop:omega_ist_Lorentz_invariant}
-    $\Omega_{std}$ ist Lorentz-invariant für $n=2$
+    $\Omega_{std}$ ist lorentz-invariant für $n=2$
 \\[1em]
 \emph{Beweis}\\
     Eine einfache Rechnung zeigt
@@ -77,10 +76,9 @@ und damit das selbe Integral wie in \cref{eq:mass_shell_convolution} bis auf ein
     für alle $\beta \in \mathbb{R}$.
 \end{proposition}
 
-Mit \cref{prop:omega_ist_Lorentz_invariant} ist $\rwhat{\Delta}_m^{\ast_\Omega 2}$ Lorentz-Invariant und es reicht aus $\rwhat{\Delta}_m^{\ast_\Omega 2} (\omega, 0)$ zu berechnen.
+Mit \cref{prop:omega_ist_Lorentz_invariant} ist $\rwhat{\Delta}_m^{\ast_\Omega 2}$ lorentz-invariant und es reicht aus $\rwhat{\Delta}_m^{\ast_\Omega 2} (\omega, 0)$ zu berechnen.
 
 Die beiden Kreuzungspunkte der $\delta$-Distributionen liegen bei (vgl. \cref{fig:mass_shell_convolution})
-
 \begin{equation*}
     \left(\omega'_0,k'_{0\pm}\right) = \left(\frac{\omega}{2}, \pm \sqrt{\left(\frac{\omega}{2}\right)^2-m^2}\right)
 \end{equation*}
@@ -88,7 +86,6 @@ Die beiden Kreuzungspunkte der $\delta$-Distributionen liegen bei (vgl. \cref{fi
 
 Die "`Fläche"' der Kreuzungspunkte der $\delta$-Distributionen wurde in
  \cref{sec:delta_m2_berechnen} berechnet und ist
-
 \begin{equation*}
 A = \frac{\omega^2-m^2}{\omega \sqrt{\omega^2-4m^2}}.
 \end{equation*}
@@ -136,9 +133,11 @@ Kombinieren wir also die vorhergehenden Resultate erhalten wir
 %     \cos \left(\varphi(\omega^2)\right) \Theta\left(\omega^2-4m^2\right)
 % \end{dmath*}
 
-wobei im letzten Schritt noch implizit $\varphi(\omega^2)$ definiert wurde.
+wobei offenbar
+\begin{equation}
+\varphi(\omega) = \frac{\omega^2}{2} \sqrt{\frac{1}{4}-\frac{m^2}{\omega^2}}.
+\end{equation}
 Und mit Lorentz-Invarianz erhalten wir schließlich
-
 \begin{align}
     \rwhat{\Delta}_m^{\ast_\Omega 2} (-\omega, -k)
     &=
@@ -151,8 +150,7 @@ Und mit Lorentz-Invarianz erhalten wir schließlich
     \nonumber \\ & \kern 12em\cdot
     \Theta \left(\omega^2-k^2-4m^2\right)
     \nonumber \\ &=
-    \rwhat{\Delta}_m^{* 2}(\omega, k) \cos (\varphi(\omega^2-k^2))
-    \Theta\left(\omega^2-k^2-4m^2\right),
+    \rwhat{\Delta}_m^{* 2}(-\omega, -k) \cos (\varphi(\omega^2-k^2)).
 \end{align}
 % \begin{dmath}
 %     \rwhat{\Delta}_m^{\ast_\Omega 2} (\omega, k)
@@ -171,6 +169,7 @@ Und mit Lorentz-Invarianz erhalten wir schließlich
 \subsection{
 \texorpdfstring{\dots und nun zur Wellenfrontmenge von $\hat{\Delta}_m^{\ast_\Omega 2}$}{... und nun zur Wellenfrontmenge der getwisteten Zweipunktfunktion}} % (fold)
 \label{sec:dots_und_nun_zur_wellenfrontmenge_von_delta_m2_twisted}
+Da \(\rwhat{\Delta_m}^{*_\Omega 2} = \rwhat{\Delta_m}^{*2} \cdot \cos \) ist, sind viele der Abschätzungen genau analog zu \cref{sec:die_wellenfrontmenge_von_delta_m_2_}, und wir führen diese nicht noch einmal in aller Ausführlichkeit aus, sondern arbeiten nur heraus, wann der cos-Faktor wie einen Unterschied macht.
 
 \begin{figure}
     \centering
@@ -201,6 +200,8 @@ Wir bedienen uns wieder genau des selben Arguments, wie in \cref{eq:delta_m2_s>1
 
 
 \subsubsection*{Fall $|s| < 1, (x,t) \neq 0$}
+Auch hier nutzen wir wieder \cref{lemm:wavefrontset_and_lorentz} um o.B.d.A nur \(s=0\) zu betrachten, und alle restlichen Fälle aus Lorentz-Invarianz zu erhalten.
+
 Da
 $\rwhat\Delta_m^{\ast_\Omega 2} = \rwhat\Delta_m^{* 2} \cos(\dots)$ können wir direkt mit dem Ausdruck (\ref{eq:psi_ast_delta_m2_s<1}) $\cdot \cos$ weiter arbeiten und genau die selben Abschätzungen machen. $\cos(\varphi)$ ist bekanntermaßen beschränkt.
 
