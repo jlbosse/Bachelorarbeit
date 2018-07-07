@@ -14,7 +14,7 @@
     wieder um den Konventionen in der Physik gerecht zu werden.
 \end{remark}
 
-\section{\texorpdfstring{Zwei nützliche Substitionen für  $\left<f, \psi_{ast}\right>$ und ein Lemma}{Zwei nützliche Substitutionen und ein Lemma}}
+\section{\texorpdfstring{Zwei nützliche Substitionen für  $\left<f, \psi_{ast}\right>$ und ein Lemma}{Zwei nützliche Substitutionen und Lemmata}}
 \label{sec:substitutionen}
 
 Um die Shearlettransformation und damit Wellenfrontmengen auszurechnen, müssen wir Ausdrücke der Form \(\lim_{a \to 0} \int f (t,x) \psi_{ast}^ (t,x) \d t \d x\) abschätzen. Da kein expliziter Ausdruck für $\psi_{ast}(x)$ gegeben ist, aber zumindest der Träger der Fouriertransformierten \(\hat \psi_{ast} (\omega, k)\) bekannt ist, ist es einfacher \(\left<\hat f, \hat \psi_{ast}\right>\) statt \(\left< f, \psi_{ast} \right>\) zu berechnen. Das hat dann die Form
@@ -134,7 +134,7 @@ Wie man \cref{eq:substitution1,eq:substitution2} ansieht, haben wir schließlich
 
 \begin{lemma}[$\int \hat f(a,k) e^{ik \frac{x}{a}} \d k$ abschätzen]
 \label{lemm:f_a_abschaetzen}
- Sei \(\hat f:\mathbb{R} \times \hat{\mathbb{R}}^m \to \mathbb{C}; \quad (a,k) \mapsto \hat f(a,k)\) kompakt getragen in $k$ und s.d. \(\hat f(a,k) = \sum_{n=0}^\infty a^n \hat f_n(k) \) für alle hinreichend kleinen $a$ und $\hat f_n \in C^{N_n}_c (\hat{\mathbb{R}}^n)$. Die Potenzreihe sei punktweise absolut konvergent\footnote{Wie es z.B. innerhalb des Konvergenzradius von Taylorreihen gegeben ist.}. Sei $\delta > 0$ und $\mathbb{R}^n \ni x \neq 0$. Sei des weiteren \(p = \sup \{n+N_n \, \delta | n \in \mathbb{N}\}\). Dann gilt:
+ Sei \(\hat f:\mathbb{R} \times \hat{\mathbb{R}}^m \to \mathbb{C}; \quad (a,k) \mapsto \hat f(a,k)\) kompakt getragen in $k$ und s.d. \[\hat f(a,k) = \sum_{n=0}^\infty a^n \hat f_n(k) \] für alle hinreichend kleinen $a$ und $\hat f_n \in C^{N_n}_c (\hat{\mathbb{R}}^n)$. Die Potenzreihe sei punktweise absolut konvergent\footnote{Wie es z.B. innerhalb des Konvergenzradius von Taylorreihen gegeben ist.}. Sei $\delta > 0$ und $\mathbb{R}^n \ni x \neq 0$. Sei des weiteren \(p = \sup \{n+N_n \, \delta | n \in \mathbb{N}\}\). Dann gilt:
  \begin{equation*}
      \int \hat f(a,k) e^{ik\frac{x}{a^\delta}} \d k = O(a^p) \condition{für \(a \to 0\)}
  \end{equation*}
@@ -147,14 +147,87 @@ Da \(\hat f_n \in C^{N_n}_c (\hat{\mathbb{R}^n})\) ist, gilt auch \(f_n(x) = O(x
     &= \int \hat f(a,k) e^{ik\frac{x}{a^\delta}} \d k
     = \sum_n a^n \int \hat f_n(k)e^{ik \frac{x}{a^\delta}} \d k
     \\ &=
-    \sum_n a^n\, \underbrace{f\left(\frac{x}{a^\delta}\right)}_{O\left(\left(\frac{x}{a^\delta}\right)^{-N_n}\right)}
+    \sum_n a^n\, \underbrace{\hat f_n\left(\frac{x}{a^\delta}\right)}_{O\left(\left(\frac{x}{a^\delta}\right)^{-N_n}\right)}
     = \sum_n O(a^n a^{N_n \,\delta}) = O(a^p)
  \end{align*}
 \end{proof}
 
+Da in den späteren Rechnungen für die getwisteten Produkte die Phasenfunktion nicht einfach von der Form \(\frac{k x}{a^{\delta}}\) ist, zeigen wir noch Lemma für die Abschätzung solcher Integrale mit kompliziertere $a$-Abhängigkeit.
 
+\begin{lemma}[\(\int \hat f(k)e^{ikh(a,x)} \d k\) abschätzen]
+\label{lemm:f_a_komplizierte_phase}
+Sei \(\hat f:\hat{\mathbb{R}} \to \mathbb{C}\) kompakt getragen und \(C^N\).
+Sei \(h: \mathbb{R}_+ \times \mathbb{R} \to \mathbb{R}; \quad (a,x) \mapsto h(a,x)\) s.d.
+\begin{equation*}
+    h(a,x) = a^{-\delta} \sum_{n=0}^\infty a^n h_n(x)
+\end{equation*}
+für ein \(\delta > 0\), mit nicht-verschwindendem \(h_0\) und der Potenzreihe absolut konvergent für alle \(a\) klein genug. Dann gilt
+\begin{equation*}
+    \lim_{a \to 0} \int \hat f(k) e^{i h(a,x)\,k} \d k
+    \sim O(a^{N \delta})
+\end{equation*}
+\end{lemma}
 
+\begin{proof}
+Für \(a\) klein genug setzen wir die Potenzreihe für \(h\) ein und integrieren \(N\)-mal partiell, da \( \hat f \in C^N(\hat{\mathbb{R}})\):
+\begin{align*}
+    \lim_{a \to 0}
+    \left\lvert \int \hat f(k) e^{ikh(a,x)} \d k \right\rvert
+    &=
+    \lim
+    \left\lvert
+        \int  \hat f(k) e^{ia^{-\delta}k\sum a^n h_n(x)} \d k
+    \right\rvert
+    \\ &=
+    \lim
+    \left\lvert
+        (-1)^N \int \hat f^{(N)}(k) \frac{e^{ia^{-\delta}k\sum a^n h_n(x)}}
+        {a^{-\delta N}\underbrace{(i \sum a^n h_n(x))^N}_{\to h_0(x)^N \neq 0}}
+        \d k
+    \right\rvert
+    \\ &\leq \lim
+    a^{N \delta} \int \left\lvert \frac{\hat f^{(N)}(k)}{(i \sum a^n h_n(x))^N} \right\rvert \d k
+    \sim O (a^{N \delta})
+\end{align*}
+\end{proof}
 
+\begin{remark}
+
+\end{remark}
+
+Bevor wir dann mit den konkreten Rechnungen beginnnen können, brauchen wir noch ein letztes Lemma über das Verhalten der Wellenfrontmengen lorentz-invarianter Distributionen unter Lorentz-Transformationen.
+
+\begin{lemma}[Wellenfrontmengen Lorentz-invarianter Distributionen]
+\label{lemm:wavefrontset_and_lorentz}
+Sei \(f \in \mathcal{D}'(\mathbb{R}^{1+d})\) lorentz-invariant und \(\Lambda \in \mathrm{SO}(d,1)\). Sei des Weiteren \(\phi_{x_0}:\mathbb{R}^{1+d} \to \mathbb{R}\) eine bei \(x_0 \in \mathbb{R}^{1+d}\) lokalisierte Testfunktion im Sinne von \cref{def:high_frequency_set}.
+
+Dann ist \(\phi_{\Lambda x_0} (\cdot) \coloneqq\phi_{x_0} (\Lambda^{-1} \cdot)\) eine bei \(\Lambda x_o\) lokalisierte Testfunktion und es gilt für alle \(k \in \hat{\mathbb{R}}^{1+d}\)
+\begin{equation*}
+    \rwhat{f \phi_{x_0}} (k)  = \rwhat{f \phi_{\Lambda x_0}} (\Lambda k).
+\end{equation*}
+\end{lemma}
+
+\begin{corollary}
+\label{cor:wavefrontset_lorentz}
+Seien \(f, \Lambda, x_0, k\) wie eben. Dann gilt
+\begin{equation*}
+    (x_0, k) \in WF(f)
+    \quad \Longleftrightarrow \quad
+    (\Lambda x_0, \Lambda k) \in WF(f)
+\end{equation*}
+\end{corollary}
+
+\begin{proof}
+    Mit formaler Rechnung folgt:
+    \begin{align*}
+        \rwhat{f \phi_{x_0}} (k) &=
+        \int f(x) \, \phi_{x_0}(x)\, e^{-ik\cdot x} \d x
+        = \int f(\Lambda^{-1}x ) \, \phi_{x_0}(\Lambda^{-1} x) \, e^{-ik\cdot\Lambda^{-1}x} \d x
+        \\ &=
+        \int f(x)\, \phi_{\Lambda x_0}(x) \, e^{-i\Lambda k \cdot x} \d x
+        = \rwhat{f \phi_{\Lambda x_0}} (\Lambda k)
+    \end{align*}
+\end{proof}
 
 
 
