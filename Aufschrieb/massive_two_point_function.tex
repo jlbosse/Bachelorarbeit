@@ -63,7 +63,7 @@ Also gilt
 \subparagraph*{Intuition}
 Für $s=1$ schneidet die Diagonale $\{\omega = k\}$ den Träger $supp (\hat \psi_{ast})$ auf der ganzen Länge. Der Betrag von $\hat\psi_{ast}$ skaliert mit $a^{\frac{3}{4}}$ (vgl. \cref{eq:hat_psi_ast}) und die Länge von $supp (\hat \psi_{ast})$ entlang der Diagonalen mit $a^{-1}$ (vgl. \cref{eq:hat_psi_ast}). Also erwarten wir schlimmstenfalls $\left<\hat\Delta_m,  \hat \psi_{a1t}\right> = O\left(a^-{\frac{1}{4}}\right)$. Aber nur wenn die Wellenfronten von $e^{-i\omega t'+i k x'}$ parallel zu der Singularität und damit der Diagonalen liegen. Andernfalls erwarten wir, dass die immer schneller werdenden Oszillationen der Phase sich gegenseitig auslöschen.
 
-\subparagraph*{Fleißige Analysis}
+\subparagraph*{Rechnungen}
 \begin{align}
     \left<\hat \Delta_m(-\cdot), \hat \psi_{a1t}\right> &=
         a^{\frac{3}{4}} \int \hat \psi_1(a\omega)
@@ -81,24 +81,28 @@ Für $s=1$ schneidet die Diagonale $\{\omega = k\}$ den Träger $supp (\hat \psi
         \frac{\omega}{\sqrt{\omega^2-m^2}}
         e^{-i\omega t' + i \sqrt{\omega^2-m^2}x'}
         \d \omega \nonumber \\
-        &= a^{\frac{3}{4}} a^{-1} \int \hat\psi_1(\omega)
-        \hat\psi_2
-        \underbrace{
-        \left(
-            a^{-\frac{1}{2}} \left(\tfrac{\sqrt{\omega^2-a^2m^2}}{\omega}-1\right)
-        \right)}_{= \frac{a^{\frac{3}{2}}m^2}{2 \omega^2}
-                  + O\left(a^{\frac{7}{2}}\right)}
-        \frac{\omega}{\sqrt{\omega^2-a^2 m^2}}
-        e^{-i\frac{\omega}{a} t' + i \sqrt{\frac{\omega^2}{a^2}-m^2}x'}
+        &= a^{\frac{3}{4}} a^{-1} \int
+        \underbrace{\hat\psi_1(\omega)
+                \hat\psi_2
+                \underbrace{
+                \left(
+                    a^{-\frac{1}{2}} \left(\tfrac{\sqrt{\omega^2-a^2m^2}}{\omega}-1\right)
+                \right)}_{= \frac{a^{\frac{3}{2}}m^2}{2 \omega^2}
+                          + O\left(a^{\frac{7}{2}}\right)}
+                \frac{\omega}{\sqrt{\omega^2-a^2 m^2}}}_{=: \hat f(a, \omega)}
+                e^{-i\frac{\omega}{a} t' + i \sqrt{\frac{\omega^2}{a^2}-m^2}x'}
         \d \omega \nonumber
 \end{align}
-Der Integrand lässt sich nun durch $\hat \psi_1(\omega) \cdot \left\lVert \hat\psi_2\right\lVert_\infty$ majorisieren und wir dürfen Lebesgue verwenden um Integral und Grenzwert $a \rightarrow 0$ zu vertauschen:
+
+Der Integrand vor der Phase lässt sich nun wie in \cref{lemm:f_a_abschaetzen} schreiben als \[\hat f(a,\omega) = \sum_{n=0} a^n \hat f_n(\omega)\] mit glatten \(\hat f_n\) und die Phase als \[-\frac{\omega}{a}t' + \sqrt{\frac{\omega^2}{a^2} - m^2}x' = a^{-1} \omega (t'-x')  + O\left(a^{\frac{7}{2}}\right).\]
+Dann können wir \cref{lemm:f_a_abschaetzen} und \cref{lemm:f_a_komplizierte_phase} gleichzeitig anwenden und erhalten in führender Ordnung:
 
 \begin{align}
 \lim_{a \to o}
 \left\langle \hat\Delta_m(-\cdot), \hat\psi_{a1t}\right\rangle
 &=
-a^{-\frac{1}{4}} \int \hat \psi_1(\omega) \hat \psi_2 (0)
+a^{-\frac{1}{4}} \int
+\underbrace{{\hat \psi_1(\omega) \hat \psi_2 (0)}}_{= \hat f_0 (\omega)}
     e^{-i\omega \left(\frac{t'-x'}{a}\right)} \nonumber
 \\ \nonumber &=
 a^{-\frac{1}{4}} \hat \psi_2 (0) \psi_1\left(\frac{t'-x'}{a}\right)
@@ -109,7 +113,7 @@ O\left(a^{-\frac{1}{4}}\right) \condition{falls $x'=t'$}
 \label{eq:delta_m_s=1}
 \end{align}
 
-Das analoge Ergebnis erhält man mit gleicher Rechnung auch für $s=-1$ und $t' = -x'$
+Das analoge Ergebnis erhält man mit gleicher Rechnung auch für $s=-1$ und $t' = -x'$.
 Dies bestätigt das intuitiv erwartete Ergebnis.
 
 \subsection{Zusammenfassung und Vergleich der Ergebnisse}
@@ -132,7 +136,7 @@ $s \neq \pm 1$  & $a^k$         & $a^k$    & $a^k$               & $a^k$    \\
 Dies deckt sich auch mit den Ergebnissen von \textcite{Schulz2014} und \textcite{Hoermander1985}, welche jeweils erhalten:
 
 \begin{dmath*}
-    WF_{(SG)}(\Delta_m) =
+    WF(\Delta_m) =
     \{\left\langle 0,0; -|k|,k\right\rangle\ \big|\, k \hiderel\in \hat{\mathbb{R}}\}
     \cup
     \{\left\langle \pm |x|, x; -\lambda |k|,\mp k\right\rangle\ \big|\, k \hiderel\in \hat{\mathbb{R}}, \lambda \hiderel> 0\}
