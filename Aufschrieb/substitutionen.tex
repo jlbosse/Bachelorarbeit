@@ -17,7 +17,7 @@
 \section{\texorpdfstring{Zwei nützliche Substitionen für  $\left<f, \psi_{ast}\right>$ und Lemmata}{Zwei nützliche Substitutionen und Lemmata}}
 \label{sec:substitutionen}
 
-Um die Shearlettransformation und damit Wellenfrontmengen auszurechnen, müssen wir Ausdrücke der Form \(\lim_{a \to 0} \int f (t,x) \psi_{ast}^ (t,x) \d t \d x\) abschätzen. Da kein expliziter Ausdruck für $\psi_{ast}(x)$ gegeben ist, aber zumindest der Träger der Fouriertransformierten \(\hat \psi_{ast} (\omega, k)\) bekannt ist, ist es einfacher \(\left<\hat f, \hat \psi_{ast}\right>\) statt \(\left< f, \psi_{ast} \right>\) zu berechnen. Das hat dann die Form
+Um die Shearlettransformation und damit Wellenfrontmengen auszurechnen, müssen wir Ausdrücke der Form \(\lim_{a \to 0} \int f (t,x) \psi_{ast}(t,x) \d t \d x\) abschätzen. Da kein expliziter Ausdruck für $\psi_{ast}(x)$ gegeben ist, aber zumindest der Träger der Fouriertransformierten \(\hat \psi_{ast} (\omega, k)\) bekannt ist, ist es einfacher \(\left<\hat f, \hat \psi_{ast}\right>\) statt \(\left< f, \psi_{ast} \right>\) zu berechnen. Das hat dann die Form
 \begin{equation}
     \left< \hat f, \hat\psi_{ast}\right> \\
     = \int a^{\frac{3}{4}} \hat \psi_1(a \omega)
@@ -25,7 +25,7 @@ Um die Shearlettransformation und damit Wellenfrontmengen auszurechnen, müssen 
     \hat f (\omega,k) e^{-i \omega t + ikx} \d \omega \d k.
 \end{equation}
 
-Punktweise konvergiert der Integrand gegen 0, da $\hat \psi$ kompakt getragen ist. Für $a \to 0$ wird aber der Träger des Integranden immer weiter "`nach außen"' verschoben (vgl. \cref{fig:supp_psi_hat}), ohne aber (notwendigerweise) im Betrag abzunehmen. Deshalb existiert auch keine integrierbare Majorante, die unabhängig von $a$ ist. Also verschieben wir den Integrationsbereich mittels Substitution so, dass der Integrationsbereich für $a \to 0$ immer der selbe bleibt und wir $\hat f$ "`immer weiter draußen"' anschauen. Diese Substituionen werden was immer Ausgangspunkt unserer Abschätzungen sein.
+Punktweise konvergiert der Integrand gegen 0, da $\hat \psi$ kompakt getragen ist. Für $a \to 0$ wird aber der Träger des Integranden immer weiter "`nach außen"' verschoben (vgl. \cref{fig:supp_psi_hat}), ohne aber (notwendigerweise) im Betrag abzunehmen. Deshalb existiert auch keine integrierbare Majorante, die unabhängig von $a$ ist. Also verschieben wir den Integrationsbereich mittels Substitution so, dass der Integrationsbereich für $a \to 0$ immer der selbe bleibt und wir $\hat f$ "`immer weiter draußen"' anschauen. Diese Substituionen werden fast immer Ausgangspunkt unserer Abschätzungen sein.
 
 \begin{figure}[h]
     \centering
@@ -134,7 +134,7 @@ Wie man \cref{eq:substitution1,eq:substitution2} ansieht, haben wir schließlich
 
 \begin{lemma}[$\int \hat f(a,k) e^{ik \frac{x}{a}} \d k$ abschätzen]
 \label{lemm:f_a_abschaetzen}
- Sei \(\hat f:\mathbb{R} \times \hat{\mathbb{R}}^m \to \mathbb{C}; \quad (a,k) \mapsto \hat f(a,k)\) kompakt getragen in $k$ und s.d. \[\hat f(a,k) = \sum_{n=0}^\infty a^n \hat f_n(k) \] für alle hinreichend kleinen $a$ und $\hat f_n \in C^{N_n}_c (\hat{\mathbb{R}}^n)$. Die Potenzreihe sei punktweise absolut konvergent\footnote{Wie es z.B. innerhalb des Konvergenzradius von Taylorreihen gegeben ist.}. Sei $\delta > 0$ und $\mathbb{R}^n \ni x \neq 0$. Sei des weiteren \(p = \sup \{n+N_n \, \delta | n \in \mathbb{N}\}\). Dann gilt:
+ Sei \(\hat f:\mathbb{R} \times \hat{\mathbb{R}}^m \to \mathbb{C}; \quad (a,k) \mapsto \hat f(a,k)\) kompakt getragen in $k$ und s.d. \[\hat f(a,k) = \sum_{n=0}^\infty a^n \hat f_n(k) \] für alle hinreichend kleinen $a$ und $\hat f_n \in C^{N_n}_c (\hat{\mathbb{R}}^n)$. Die Potenzreihe sei punktweise absolut konvergent\footnote{Wie es z.B. innerhalb des Konvergenzradius von Taylorreihen gegeben ist.}. Sei $\delta > 0$ und $\mathbb{R}^n \ni x \neq 0$. Sei des weiteren \(p = \inf \{n+N_n \, \delta | n \in \mathbb{N}\}\). Dann gilt:
  \begin{equation*}
      \int \hat f(a,k) e^{ik\frac{x}{a^\delta}} \d k = O(a^p) \condition{für \(a \to 0\)}
  \end{equation*}
@@ -191,7 +191,17 @@ Für \(a\) klein genug setzen wir die Potenzreihe für \(h\) ein und integrieren
 \end{align*}
 \end{proof}
 
-Bevor wir dann mit den konkreten Rechnungen beginnnen können, brauchen wir noch ein letztes Lemma über das Verhalten der Wellenfrontmengen lorentz-invarianter Distributionen unter Lorentz-Transformationen.
+\begin{remark}
+    Offenbar kann man die beiden vorhergehenden Lemmata auch kombinieren. Um dann \[\lim_{a \to 0} \int \hat f(a,k) e^{i a^{-\delta}\, h (a,x) \,k} \d k\]
+    abzuschätzen, muss man bestimmen, welches \(\hat f_n\) in der Entwicklung von \(\hat f(a,k)\) nach \cref{lemm:f_a_abschaetzen} der dominierende Term ist, also für welches \(n_0\) der Exponent \(n+N_n \delta\) minimal wird. Dann ist
+    \[
+    \lim_{a \to 0} \int \hat f(a,k) e^{i a^{-\delta}\, h (a,x) \,k} \d k
+    \sim
+    O(a^{n_0+\delta \cdot N_{n_0}})
+    \]
+\end{remark}
+
+Bevor wir dann mit den konkreten Rechnungen beginnnen können, brauchen wir noch ein letztes Lemma über das Verhalten der Wellenfrontmengen lorentz-invarianter Distributionen unter Lorentz-Transformationen:
 
 \begin{lemma}[Wellenfrontmengen Lorentz-invarianter Distributionen]
 \label{lemm:wavefrontset_and_lorentz}
