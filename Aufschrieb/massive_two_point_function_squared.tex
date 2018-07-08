@@ -17,10 +17,7 @@ Bevor wir die Wellenfrontmenge von $\Delta_m^2$ berechnen können benötigen wir
  Gemäß dem Faltungssatz gilt $\rwhat{\Delta_m^2} = \rwhat{\Delta_m} * \rwhat{\Delta_m} = \rwhat{\Delta_m}^{*2}$. Wir müssen also die Faltung von $\rwhat \Delta_m$ mit sich selber ausrechnen. Dabei gilt (kurze Rechnung):
  $$\rwhat{\Delta}_m * \rwhat{\Delta}_m (-\omega,-k)
  =
- \left(\rwhat{\Delta}_m (-\cdot) * \rwhat{\Delta}_m (-\cdot)\right) (\omega,k)$$ und wir berechnen also letzteren Ausdruck.
-\todo[color=green]{noch schnell sage, warum wir hier Faltungsssatz für Distributionen anwenden? (Also das Hörmander "jup" sagt?)}
-Das Faltungsintegral ist
-
+ \left(\rwhat{\Delta}_m (-\cdot) * \rwhat{\Delta}_m (-\cdot)\right) (\omega,k)$$ und wir berechnen also letzteren Ausdruck. Das Faltungsintegral ist
 \begin{equation}
     \rwhat{\Delta}_m^{* 2} (-\omega, -k)
     = \int \Theta(\omega') \delta(\omega^{\prime 2}-k^{\prime 2}-m^2)\Theta(\omega-\omega')
@@ -44,12 +41,11 @@ Das Faltungsintegral ist
     \end{minipage}
 \end{figure}
 
-Da $\Delta_m$ Lorenz-invariant ist, sind $\Delta_m^2$ und $\rwhat{\Delta}_m^{*2}$ es auch. Es genügt also $\rwhat{\Delta_m^{*2}}$ für $k=0$ und positive $\omega$ zu berechnen. Alle anderen Werte holen wir uns dann aus der Lorenz-Invarianz. An \cref{fig:mass_shell_convolution} sehen wir schon, dass das Faltungsintegral \eqref{eq:mass_shell_convolution} nur dann ungleich null ist, wenn $(\omega, k)$ oberhalb oder auf der 2$m$-Massenschale liegen. Es ist also insbesondere $\omega > 0$.
+Da $\Delta_m$ Lorenz-invariant ist, sind $\Delta_m^2$ und $\rwhat{\Delta}_m^{*2}$ es auch. Es genügt also $\rwhat{\Delta_m^{*2}}$ für $k=0$ und positive $\omega$ zu berechnen. Alle anderen Werte erhalten wir dann aus der Lorentz-Invarianz. An \cref{fig:mass_shell_convolution} sehen wir schon, dass das Faltungsintegral \eqref{eq:mass_shell_convolution} nur dann ungleich null ist, wenn $(\omega, k)$ oberhalb oder auf der 2$m$-Massenschale liegen. Es ist also insbesondere $\omega > 0$.
 
 Um nun das Integral über zwei sich schneidende lineare\footnote{Linear in dem Sinne, dass die Distribution entlang einer Linie getragen ist. Nicht das es eine lineare Distribution ist} $\delta$-Distributionen zu berechnen bedienen wir uns eines Physikertricks und stellen uns die $\delta$-Distribution als Grenzwert ($h \rightarrow 0$) einer $\frac{1}{h}$-hohen und $h$-breiten Rechtecksfunktion vor. Dann ist das Integral über die sich schneidenden Rechteckfunktionen proportional zu der Schnittfläche und damit zu $l \cdot h$ in \cref{fig:schulgeometrie}. Außerdem schneiden sich die beiden Hyperbeln für $\omega \rightarrow +\infty$ in einem rechten Winkel, das Faltungsintegral ergibt hier also 2, da es zwei Schnittpunkte gibt.
 
 Aus \cref{fig:schulgeometrie} lesen wir ab:
-
 \begin{align}
     \tan(\alpha) &= \frac{\d \omega'}{\d k'}
     ~~\textrm{ und }~~
@@ -62,7 +58,6 @@ Aus \cref{fig:schulgeometrie} lesen wir ab:
 \end{align}
 
 außerdem gilt
-
 \begin{equation}
     \omega' = \sqrt{k^{\prime 2} + m^2}
     ~~\Longrightarrow~~
@@ -71,7 +66,6 @@ außerdem gilt
 \end{equation}
 
 Wenn wir nun \cref{eq:schulgeometrie2,eq:schulgeometrie3} sowie die vorhergehenden Gedanken kombinieren erhalten wir
-
 \begin{align}
     \rwhat{\Delta_m}^{*2} (-\omega, 0) &=
     \eqref{eq:mass_shell_convolution}
@@ -127,7 +121,6 @@ Wenn wir nun \cref{eq:schulgeometrie2,eq:schulgeometrie3} sowie die vorhergehend
 % \end{dmath}
 
 Jetzt erhalten wir $\rwhat{\Delta}_m^{*2}(\omega, k)$ für beliebige $k \neq 0$ noch aus der Lorenz-Invarianz:
-
 \begin{dmath}
     \rwhat{\Delta}_m^{*2}(-\omega, -k)
     \stackrel{(\omega,k) \sim (\sqrt{\omega^2-k^2},0)}{=}
@@ -138,7 +131,6 @@ Jetzt erhalten wir $\rwhat{\Delta}_m^{*2}(\omega, k)$ für beliebige $k \neq 0$ 
 \end{dmath}
 
 Es ist zu beachten, dass die Heaviside-Funktion genau bei der ersten Nullstelle der zweiten Wurzel im Nenner abschneidet und alle weiteren Nullstellen sowohl des Nenners als auch des Zählers außerhalb der $2m$-Massenschale, und damit außerhalb des Trägers der Heaviside-Funktion, liegen.
-
 
 \begin{figure}
     \centering
@@ -167,7 +159,6 @@ Mit diesem Ausdruck für $\rwhat{\Delta}_m^{*2}$ können wir uns nun der Wellenf
 
 \subsubsection*{\texorpdfstring{Fall $|s|>1$}{Fall s>1}}
 Genau wie im Fall $s \neq 1$ bei der massiven Zweipunktfunktion (vgl. \cref{sec:die_wellenfrontmenge_von_delta_m}) ist hier nichts zu tun, da für $a$ klein genug wieder
-
 \begin{align}
     supp (\hat\psi_{ast}^{(3)}) \cap supp (\rwhat{\Delta}_m^{*2}) = \varnothing
     ~~\Longrightarrow~~
@@ -181,7 +172,6 @@ gilt.
 
 Der Fall \(|s|<1\) entspricht \(k\) im Vorwärtslichtkegel, auf dessen Richtungen die Lorentz-Gruppe \(\mathrm{SO}(1,1)\) transitiv operiert. Wir können also dank \cref{lemm:wavefrontset_and_lorentz} o.B.d.A nur $s=0$ betrachten, und erhalten für allgemeines \(|s| < 1\) das selbe Ergebnis.
 Wir bedienen uns direkt bei \ref{eq:substitution2} und schreiben
-
 \begin{align}
     & \kern -.5em
     \left\langle \rwhat{\Delta}_m^{*2}, \rwhat{\psi}_{a0t}^{(3)} \right\rangle
@@ -292,7 +282,6 @@ Für hinreichend kleine $a$ können wir den Integranden nun majorisieren
 \end{dmath*}
 
 und dürfen also Lebesgue verwenden und schreiben
-
 \begin{align*}
     \lim_{a \rightarrow 0} \int \dots ~\d \omega \d k
     &=
@@ -512,11 +501,10 @@ Sei also $k_0 := \frac{\omega-\sqrt{\omega^2 - 4a^2m^2}}{\sqrt{a}\omega}$ die re
 % =
 %  -a^{\frac{1}{2}}\left(k-\frac{\omega-\sqrt{\omega^2-4a^2m^2}}{\sqrt a \omega}\right)\left(k-\frac{\omega+\sqrt{\omega^2-4a^2m^2}}{\sqrt a \omega}\right)
 % \end{equation*}).
-Dann ist die $a$-Abhängigkeit von $k_0$ in erster Näherung gegeben durch $0 < k_0 = \frac{2m^2}{\omega^2}a^{\frac{3}{2}} + O\left(a^{\frac{7}{2}}\right) =: c_\omega a^{\frac{3}{2}} + O\left(a^{\frac{7}{2}}\right)$
+Dann ist die $a$-Abhängigkeit von $k_0$ in erster Näherung gegeben durch $0 < k_0(a,\omega) = \frac{2m^2}{\omega^2}a^{\frac{3}{2}} + O\left(a^{\frac{7}{2}}\right)$
 und mit $k'=k-k_0$ gelten folgende Ausdrücke für den Nenner und den Zähler:
 
 \subparagraph*{Zähler}
-
 \begin{align*}
     2 \omega^2k-a^{\frac{1}{2}} \omega^2 k^2-a^{\frac{3}{2}}2m^2
     &=
@@ -548,7 +536,6 @@ und mit $k'=k-k_0$ gelten folgende Ausdrücke für den Nenner und den Zähler:
 \end{dmath*}
 
 Nun ist es an der Zeit für das alte Spiel von "`finde eine integrierbare Majorante, um Lebesgue verwenden und alle Terme mit positiver $a$-Potenz wegschmeißen zu dürfen\footnote{so lange sie in einer Summe mit mindestens einem Term \emph{ohne} positive $a$-Potenz auftauchen}"'
-
 \begin{align}
 &\kern -2em
     \left|
@@ -731,7 +718,6 @@ $|s|>1$ & $a^k$              & $a^k$              & $a^k$              & $a^k$
 \end{table}
 
 Erfreulicherweise deckt sich dies wieder mit den Ergebnissen von \textcite[Cor. 3.70]{Schulz2014}, welcher für allgemeine Potenzen von $\Delta_m$ folgendes erhält:
-
 \begin{equation*}
     WF_{SG}^\psi (\Delta_m^k) \subset
     WF_{SG}^\psi(\Delta_m) \cup
