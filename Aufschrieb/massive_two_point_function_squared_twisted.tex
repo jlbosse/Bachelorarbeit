@@ -399,7 +399,9 @@ Wie schon bei der ungetwisteten Zweipunktfunktion, haben wir bei unseren Abschä
     \left\langle \rwhat{\Delta}_m^{\ast_\Omega 2}, \rwhat{\psi}_{a-1t}^{(3)}
     \right\rangle
     &=
-    a^{-\frac{3}{4}} \int C a^{\frac{3}{2}} \omega \hat\psi_1(\omega)
+    a^{-\frac{3}{4}} \int
+    \underbrace{
+        \int \hat f_0(k',\omega) e^{-ia^{\frac{3}{2}}k' h(a,t',x')} \d k'}_{\sim O\left(a^{\frac{3}{2}}\right)}
     e^{-i\omega \frac{t'+x'}{a}}
     \d \omega
     \nonumber \\ &\sim O\left(a^{\frac{3}{4}}\right) \condition{falls $t'=-x'$}
