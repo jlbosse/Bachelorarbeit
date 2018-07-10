@@ -20,11 +20,9 @@ zerlegt eine Funktion in ihre verschiedenen Frequenzanteile und misst nach dem S
 Einen Schritt in die richtige Richtung, nämlich die Ortsauflösung der Singularitäten, macht die Wavelettransformation. Hier wird eine Familie von Basisfunktionen für $L^2(\mathbb{R}^n)$ erzeugt von einem \textit{Mutterwavelet} $\psi$. Anders als die ebenen Wellen ist $\psi$ aber lokalisiert -- häufig sogar kompakt getragen -- und die Basis wird erzeugt durch Verschieben \emph{und} Skalieren des Mutterwavelets.
 
 Eine Hamel-Basis für $L^2(\mathbb{R}^n)$ die aus Funktionen der Form
-
 \begin{equation*}
     \left\{\psi_{at}(x) = a^{-\frac{n}{2}}\psi\left(a^{-1}(x-t)\right)  |~ t \in \mathbb{R}^n,  ~a \in \mathbb{R}\right\}
 \end{equation*}
-
  mit einem \textit{Mutterwavelet} $\psi \in C^\infty (\mathbb{R}^n)$ besteht heißt \textit{stetige Waveletbasis} für $L^2(\mathbb{R}^n)$. Der Parameter $t$ heißt \textit{Verschiebungsparameter} und verschiebt das Wavelet an alle Orte des $\mathbb{R}^n$ während der \textit{Skalierungsparameter} $a$ für $a \to 0$ $\psi$ immer genauer lokalisiert. Der Faktor $a^{-\frac{n}{2}}$ sorgt dafür, dass die $L^2$-Norm aller $\psi_{at}$ gleich ist. In der Fourierdomäne wird die Verschiebung zum Phasenfaktor und der Träger mit verschwindendem $a$ immer \emph{größer}.
 % Noch einmal als Formel:
 
@@ -43,8 +41,6 @@ Analog zur Definition der Fouriertransformation ist die stetige Wavelettransform
 \end{equation}
 
 Ist $\psi$ eine glatte Funktion und $f$ bei $t$ glatt, so fällt $\mathcal{W}_f (a,t)$ schnell ab für $a \to 0$.
-% Dies ist schnell einzusehen, wenn man sich überlegt, dass $\psi \in C^k$ impliziert, dass $\hat\psi$ eine $k$-fache Nullstelle bei $0$ hat und $\int x^l \psi(x) \d x = (-i)^{l} \partial_k^l \hat\psi(0) = 0 ~~\textrm{falls}~ l<k $.
-\todo[color=green]{Kurze Plausibel machen, warum dem so ist?}
 Umgekehrt fällt auch $\mathcal{W}_f(a,t)$ \emph{genau dann} nicht schnell ab, wenn $f$ bei $t$ \emph{nicht} glatt ist. Also löst die Wavelettransformation die Lage der Singularitäten von $f$ auf. Allerdings sind die klassischen  Wavelettransformationen mit isotroper Skalierung (heißt: Skalierung in alle Richtungen gleich schnell) nicht in der Lage die  Orientierung der Singularitäten aufzulösen. Sie besitzen ja gar keinen Orientierungsparameter.
 
 Um auch die Orientierung aufzulösen, muss einerseits ein Richtungsparameter eingeführt werden und andererseits dafür gesorgt werden, dass die Basisfunktionen mit immer feinerer Skala immer orientierter werden. Deshalb gibt es
@@ -99,7 +95,6 @@ Um auch die Orientierung aufzulösen, muss einerseits ein Richtungsparameter ein
 Beide Ansätze sind in der Lage, die Wellenfrontmenge einer Distribution zu identifizieren. Allerdings sind die Rechnungen bei den \textit{Shearlets} in der praktischen Umsetzung einfacher, wenn auch von einem ästhetischen Standpunkt nicht ganz so befriedigend, da sie nicht inhärent rotationsinvariant sind, also nicht alle Symmetrien unseres Raumes abbilden. Aber nach allzu viel Ästhetik sollte man in dieser Arbeit, mit Hinblick auf die Rechnungen ab \cref{sec:die_wellenfrontmenge_von_delta_m}, ohnehin nicht fragen.
 
 Bevor wir die konkrete Konstruktion der Shearlets widmen, brauchen wir noch ein kleines bisschen Theorie, welche Möglichkeiten wir überhaupt haben, um die Konstruktion der Wavelets zu verallgemeinern. Die weitestgehende Verallgemeinerung von "`verschiebe und skaliere ein Mutterwavelet"' um ein reproduzierendes System zu erhalten ist "`verschiebe es und lasse eine beliebge invertierbare Matrix auf die Koordinaten wirken"'. Wir definieren also eine Wirkung der affinen Gruppe $\mathbb{A}^n$ auf Funktionen $\psi \in L^2(\mathbb{R}^n)$ via
-
 \begin{align*}
     \mathbb{A}^n \times L^2(\mathbb{R}^n) &\to L^2(\mathbb{R}^n)\\
    ((M,t) ,\psi (x)) &\mapsto |\det M ^{-\frac{1}{2}}|  \psi\left(M^{-1}(x-t)\right) \eqqcolon \psi_{M,t} (x)\\
@@ -117,10 +112,8 @@ Im Allgemeinen wird man aber nicht die ganze affine Gruppe benötigen, um ein re
         \Delta(\psi)(k) = \int_G |\hat\psi(M^t k)|^2 |\det M| \d \mu(M) = 1
     \label{eq:admissibility criterion}
     \end{equation}
-
     für fast alle $k \in \hat{\mathbb{R}}^2$.
     Dann ist $(\psi, G\ltimes \mathbb{R}^n)$ ein reproduzierendes System für $L^2(\mathbb{R}^n)$, also gilt für alle $f \in L^2(\mathbb{R}^n)$
-
     \begin{equation}
         f = \int_{\mathbb{R}^n} \int_G \left\langle \psi_{M,t},f\right\rangle
             \psi_{M,t} \d \mu (M) \d t
@@ -129,7 +122,6 @@ Im Allgemeinen wird man aber nicht die ganze affine Gruppe benötigen, um ein re
 In einer Dimension entspricht das Zulässigkeitskriterium genau Calderons Kriterium:
 \begin{remark}[\ref{thm:admissibility_criterion} ist Calderon]
     Für $n=1$ ist $\mathrm{GL}(1,\mathbb{R}) = (\mathbb{R}^*, \cdot)$ mit dem Haarmaß $\d \mu(a) = \frac{\d \lambda(a)}{a}$ und \cref{eq:admissibility criterion} wird zu
-
     \begin{equation}
         \int_0^\infty \left\lvert \hat\psi(a k) \right\rvert^2 \frac{\d \lambda(a)}{a} = 1 \condition{für fast alle $k \in \hat{\mathbb{R}}$}
         \label{eq:calderon}
@@ -147,12 +139,11 @@ Jetzt aber mehr Details zur Konstruktion der Shearlets und deren Eigenschaften:
 \label{sec:konstruktion_und_eigenschaften_der_shearlets}
 
 Der folgende Abschnitt basiert größtenteils auf der Arbeit von \textcite{Kutyniok2008}.
- Da wir später auch komplexwertige Distributionen analysieren wollen, deren Wellenfrontmenge nicht zwingend punktsymmetrisch um den Ursprung (in der Richtung, nicht im Ort) sind, werden wir Shearlets verwenden, deren Fouriertransformierte asymetrischen Träger hat, indem wir die Shearlets aus \cite{Kutyniok2008} jeweils in zwei Shearlets aufteilen, eines mit Träger im Frequenzbereich "`nach vorne"', und eines mit Träger "`nach hinten"'.
+Da wir später auch komplexwertige Distributionen analysieren wollen, deren Wellenfrontmenge nicht zwingend punktsymmetrisch um den Ursprung (in der Richtung, nicht im Ort) sind, werden wir -- anders als \textcite{Kutyniok2008} -- Shearlets verwenden, deren Fouriertransformierte asymetrischen Träger hat, indem wir die Shearlets aus \cite{Kutyniok2008} jeweils in zwei Shearlets aufteilen, eines mit Träger im Frequenzbereich "`nach vorne"', und eines mit Träger "`nach hinten"'.
 
 \begin{definition}[Shearlettransformation]
 \label{def:shearletttransformationI}
 Seien
-% \begin{dgroup*}
 \begin{equation}
     \psi_1 \in L^2(\mathbb{R})
             \textrm{ mit }supp(\hat\psi_1) \subseteq \left[\frac{1}{2},2\right]
@@ -166,15 +157,12 @@ Seien
             \textrm{ und } \left\Vert\psi_2 \right\Vert_2 = 1
 \label{eq:psi_2}
 \end{equation}
-% \end{dgroup*}
 und $\psi \in C^\infty(\mathbb{R}^2)$ implizit definiert durch
-
 \begin{equation}
     \hat \psi(k_1,k_2) = \hat\psi_1(k_1) \hat \psi_2 \left(\frac{k_2}{k_1}\right).
 \end{equation}
 
 Sei des weiteren
-
 \begin{equation}
     G = \left\{M_{as} \in \mathrm{GL}(2,\mathbb{R}) ~\Big|~ M_{as} = \left(\begin{smallmatrix}
         a & -\sqrt a s \\ 0 & \sqrt a
@@ -185,7 +173,6 @@ Sei des weiteren
 \end{equation}
 
 Dann ist für $t \in \mathbb{R}^n, M_{as} \in G$ die Shearlettransformation von $f$ bezüglich $\psi$ definiert als
-
 \begin{equation}
     \mathcal{S}_f(a,s,t)) =
     \left\langle D_{M_{as}}T_{t}\psi, f
@@ -308,8 +295,6 @@ Wie der folgende Satz zeigt, erzeugt $\psi$ auch nur für solche $f$ ein reprodu
 
 Um nun nicht nur ein reproduzierendes System für $L^2(C)^\vee$, sondern für ganz $L^2(\mathbb{R}^2)$ zu erhalten, muss $\hat \psi_{ast}$ noch in den rechten, linken und rückwärts liegenden Kegel gedreht und geschoben werden. Zusätzlich muss noch eine weitere Funktion $W$ gefunden werden, welche die groben Skalen (also $|k_1|, |k_2| \leq 2$) auflöst.
 
-\todo{hier ne eigene Definition draus machen?}
-
 Wir definieren also
 \begin{align}
     \hat \psi_{ast}^{(1)} (k_1, k_2) &\coloneqq \hat\psi_{ast} (k_1,k_2),
@@ -323,15 +308,13 @@ Wir definieren also
 \end{align}
 
 Des Weiteren gibt es ein $W(x)$ s.d. $\hat W(k) \in C^\infty (\hat{\mathbb{R}}^2)$ und
-
 \begin{align*}
     \Vert f \Vert^2 =
     \int_{\mathbb{R}^2} |\left\langle f, T_t W \right\rangle|^2 \d t
     + \sum_{i=1}^4 \int |\left\langle f, \psi_{ast} \right\rangle|
     \, \d \mu (a,s,t)
 \end{align*}
-
-und somit erhalten wir (dank Parseval) ein reproduzierendes System für ganz $L^2$, da ja
+und somit erhalten wir (dank Parseval und Polarisation) ein reproduzierendes System für ganz $L^2$, da ja
 $L^2 (\mathbb{R}^2) = L^2 (\textrm{grobe Skalen})^\vee \oplus \sum_{i=1}^4 L^2 \left(C^{(i)}\right)^\vee$ ist. Mehr Details dazu finden sich in \cite[S. 28 ff]{Kutyniok2008}.
 
 \begin{figure}[ht]
