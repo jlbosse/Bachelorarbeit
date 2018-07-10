@@ -4,32 +4,31 @@
 \label{sec:fouriertransformation_mikrolokale_analysis_und_all_die_mathematik}
 Im folgenden gehen wir davon aus, dass die grundlegenden Eigenschaften der Fouriertransformation (Faltungssatz, Parsevals Satz etc.) bekannt sind und führen nur die Begriffe ein, die über das Grundstudium hinaus gehen und nicht vorausgesetzt werden können.
 
-\subsection{Nomenklatur und \texorpdfstring{$2 \pi = 1$}{2 Pi = 1}}
-\todo[color=green]{Ist das so akzeptabel? Oder wird in einer BA doch erwartet, dass man etwas mehr sorgfalt walten lässt?}
-Da in der gesamten vorliegenden Arbeit so gut wie immer vor allem von Belang ist, wie schnell gewisse Integrale mit einem gewissen Parameter gegen 0 gehen, es dafür aber vollkommen unerheblich ist, ob in den Abschätzungen noch Faktoren von $2 \pi$ durch den Faltungssatz fehlen oder ob man für die richtige Abschätzung noch einmal mit 2 multiplizieren  sollten, sind wir in der gesamten Arbeit sehr großzügig damit, wie genau wir Buch führen mit solchen Vorfaktoren. Unser Faltungssatz liest sich also
+\subsection{Nomenklatur und Konventionen}
+Für die Fouriertransformation verwenden wir die Konvention
 \begin{equation*}
-    \rwhat{fg} (k) = \hat f \ast \hat f (k),
+    \hat f(k) = \int f(x) \, e^{-ikx} \d x
 \end{equation*}
-obwohl wir die Fouriertransformation
+mit der Inversen
 \begin{equation*}
-    \hat f (k) \coloneqq \int f(x)e^{-ikx} \d x
+    f^{\vee} (x) = \frac{1}{(2 \pi)^d} \int f(k) \, e^{ikx} \d k.
 \end{equation*}
 
-mit der, konsequenterweise nur bis auf einen Faktor $2 \pi$, Inversen
-
+Der Faltunssatz liest sich also
 \begin{equation*}
-    f (x) \coloneqq \int \hat f(k)e^{ikx} \d x
+    (2 \pi)^d \,\rwhat{f \cdot g}\,(k) = (\hat f * \hat g) \, (k)
 \end{equation*}
-verwenden. Des weiteren verwenden wir für die inverse Fouriertransformation den inversen Hut, also $\mathcal{F}^{-1}(f)(x) \eqqcolon f^\vee (x)$. Alternativ kann man sich statt jedes $\d k$ auch stattdessen $\frac{\d k}{2 \pi}$ denken.
 
-Wie üblichen in derartigen Arbeiten, arbeiten wir in natürlichen Einheiten, also $\hbar = c = 1$.
+Trotz aller Vorsicht kann es aber gut sein, dass an der ein oder anderen Stelle doch Vorfaktoren von \(2 \pi\) vergessen wurden, das ist aber nicht wirklich tragisch, da wir in der gesamten Arbeit doch vor allem an asymptotischen Proportionalitäten interessiert sind.
+
+Wie üblichen in derartigen Arbeiten, arbeiten wir in natürlichen Einheiten, also $\hbar = c = 1$, mit Ausnahme von \cref{sec:sternprodukte}; dort brauchen wir \(\hbar\) als Buchhaltungsparameter.
 
 \subsection{Die Wellenfrontmenge}
 \label{sec:wavefrontset}
 
 Anschaulich sagt uns die Wellenfrontmenge wo und in welche Richtungen eine Distribution singulär ist. So ist z.B. die Wellenfrontmenge der $\delta$-Distribution $\{(0, \mathbb{R}^n \setminus 0)\}$ oder die der 2-dimensionalen Heaviside-Funktion $1(x)\cdot\Theta(y)$ ist $\{((x,0),(0,1)\cdot \mathbb{R}\setminus 0)\}$.
 
-\begin{definition}[high frequency set]
+\begin{definition}[Richtungen hoher Frequenzen]
 \label{def:high_frequency_set}
 Sei $v \in \mathcal{E}'(\Omega), \Omega \subset \mathbb{R}^n$ ein kompakt getragene Distribution. Dann definieren wir die \emph{Richtungen hoher Frequenzen} als
 \begin{dmath*}
@@ -50,7 +49,6 @@ Damit können wir die Wellenfrontmenge definieren:
 \begin{definition}[Wellenfrontmenge]
 \label{def:wavefrontset}
 Sei $f \in \mathcal{D}'(\Omega), ~\Omega \subset \mathbb{R}^n$ eine Distribution. Dann ist ihre \emph{Wellenfrontmenge} definiert als
-
 \begin{equation*}
 WF(f)  \coloneqq \left\{
 	(x,k) \in \Omega \times (\hat{\mathbb{R}}^n \setminus 0)
@@ -78,7 +76,7 @@ Der Beweis findet sich in \textcite{Hoermander1985}.
 
 Eine gute Anschauung, warum es dieses Kriterium tut, sowie auch dafür warum es eigentlich zu scharf ist, erhält man, wenn man das Produkt (zumindest lokal) über die Faltung der Fouriertransformierten definiert. Dann muss dafür gesorgt werden, dass $\hat f(k') \hat g(k-k')$ für $|k'| \to \infty$ in alle Richtungen schnell genug abfällt, damit
 \begin{equation*}
-    \rwhat{fg}(k) = \int \hat f(k') \hat g(k-k') \d k'
+    (2 \pi)^d\,\rwhat{f\cdot g}\,(k) = \int \hat f(k') \hat g(k-k') \d k'
 \end{equation*}
 für alle $k$ existiert. "`Schnell genug"' ist aber nicht nur exponentieller Abfall, sondern sogar schon $o(k^{\prime -n})$. Mehr dazu in \cref{sec:hoermanders_crit_abschwaechen}.
 

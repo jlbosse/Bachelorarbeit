@@ -132,9 +132,9 @@ Kombinieren wir also die vorhergehenden Resultate erhalten wir
 % \end{dmath*}
 
 wobei offenbar
-\begin{equation}
-\varphi(\omega) = \frac{\omega^2}{2} \sqrt{\frac{1}{4}-\frac{m^2}{\omega^2}}.
-\end{equation}
+\begin{equation*}
+\varphi(\omega^2) = \frac{\omega^2}{2} \sqrt{\frac{1}{4}-\frac{m^2}{\omega^2}}.
+\end{equation*}
 Und mit Lorentz-Invarianz erhalten wir schließlich
 \begin{align}
     \rwhat{\Delta}_m^{\ast_\Omega 2} (-\omega, -k)
@@ -231,7 +231,11 @@ $\rwhat\Delta_m^{\ast_\Omega 2} = \rwhat\Delta_m^{* 2} \cos(\dots)$ können wir 
      \d \omega \d k
 \end{align*}
 
-wobei \[\hat f(a,\omega,k) = \sum_{n \geq 0} a^n \hat f_n(\omega,k)\] nach den Argumenten vor \cref{eq:f(awk)} mit glatten \(\hat f_n\) und die Phasenfunktionen \(\tilde \varphi_1\) und \(\tilde \varphi_2\) durch Ausschreiben des cosinus als \(e\)-Funktionen und dann zusammenfassen mit \(e^{-i\omega\left(\frac{t'}{a} + k \frac{x'}{\sqrt{a}}\right)}\) entstehen. Wir betrachten im folgenden nur den \(\tilde \varphi_1\)-Term, für den anderen gelten analoge Überlegungen. Es ist
+wobei
+\begin{equation}
+    \hat f(a,\omega,k) = \sum_{n \geq 0} a^n \hat f_n(\omega,k)
+    \label{eq:f_a_delta_m_2_twisted}
+\end{equation} nach den Argumenten vor \cref{eq:f(awk)} mit glatten \(\hat f_n\) und die Phasenfunktionen \(\tilde \varphi_1\) und \(\tilde \varphi_2\) durch Ausschreiben des cosinus als \(e\)-Funktionen und dann zusammenfassen mit \(e^{-i\omega\left(\frac{t'}{a} + k \frac{x'}{\sqrt{a}}\right)}\) entstehen. Wir betrachten im folgenden nur den \(\tilde \varphi_1\)-Term, für den anderen gelten analoge Überlegungen. Es ist
 \begin{align}
     \tilde \varphi_1(a,\omega,k,t',x')
     &=
@@ -248,14 +252,14 @@ wobei \[\hat f(a,\omega,k) = \sum_{n \geq 0} a^n \hat f_n(\omega,k)\] nach den A
 
 Dieses \(\tilde \varphi_1(a,\omega,k,t',x')\) ist für \(a\) klein genug, alle
 \((t',x')\) und \((\omega,k) \in supp (\hat\psi_1(\omega) \cdot \hat \psi_2(k))\)
-glatt und streng monoton steigend in $\omega$. Also existiert eine glatte Reparametrisierung \(\tilde \omega(\omega)\) von \(\omega\) mit streng positiver Ableitung \(\tilde \omega'\) s.d.
+glatt und streng monoton steigend in $\omega$. Also existiert für \(a\) klein genug, alle \((t',x')\) und \((\omega,k) \in supp (\hat\psi_1(\omega) \cdot \hat \psi_2(k))\) eine glatte Reparametrisierung \(\tilde \omega(\omega)\) von \(\omega\) mit streng positiver Ableitung \(\tilde \omega'\) s.d.
 \begin{equation}
     \tilde \varphi_1(a,\omega(\tilde \omega),k,t',x')
     = a^{-2} \,\tilde \omega \, h(a,k,t',x')
     \label{eq:phi_tilde_von_omega_tilde}
 \end{equation}
 
-mit glattem \(h\). Nach \cref{eq:phi_tilde} ist \(a^2 \tilde \varphi\) für \(a\) klein genug analytisch in \(a\), wir können also \(h\) wie in \cref{lemm:f_a_komplizierte_phase} als Potenzreihe in \(a\) schreiben: \(h(a,k,t',x') = \sum_{n=0} a^n h_n (k,t',x')\). In der Potenzreihenentwicklung von $\hat f$ wie in \cref{lemm:f_a_abschaetzen} sind alle $\hat f_n$ glatt, wir können also in \cref{lemm:f_a_komplizierte_phase} für \(\hat f\) nur den ersten Term \(\hat f_0\) verwenden.
+mit glattem \(h\). Nach \cref{eq:phi_tilde} ist \(a^2 \tilde \varphi\) für \(a\) klein genug analytisch in \(a\), wir können also \(h\) wie in \cref{lemm:f_a_komplizierte_phase} als Potenzreihe in \(a\) schreiben: \(h(a,k,t',x') = \sum_{n=0} a^n h_n (k,t',x')\). In der Potenzreihenentwicklung \cref{eq:f_a_delta_m_2_twisted} von $\hat f$ sind alle $\hat f_n$ glatt, wir können also in \cref{lemm:f_a_komplizierte_phase} für \(\hat f\) nur den ersten Term \(\hat f_0\) verwenden.
 \begin{align}
     \lim_{a \to 0}
     \left\langle \rwhat{\Delta}_m^{\ast_\Omega 2}, \rwhat{\psi}_{a0t}^{(3)}
@@ -389,9 +393,8 @@ Genau das analoge Ergebnis erhält man für \(s=1\) und \(t'=x'\).
 \subsubsection*{schärfere, nicht bewiesene Ergebnisse}
 Wie schon bei der ungetwisteten Zweipunktfunktion, haben wir bei unseren Abschätzungen für \(\hat g_a(\omega)\) nicht die in \(k'\) schnell oszillierende Phase genutzt. Führt man im \cref{eq:phi_tilde} eine Reparametrisierung \(\tilde k' (k')\) ein s.d.
 \begin{equation*}
-     \tilde \varphi_1 (a,\omega,\tilde k'(k'),x') = a^{-\frac{3}{2}} \, \tilde k' \, h(a,\omega,x')
+     \tilde \varphi_1 (a,\omega, k'(\tilde k'),x') = a^{-\frac{3}{2}} \, \tilde k' \, h(a,\omega,x')
  \end{equation*}
-
  mit \(h = \sum_{n=0} a^n h_n\) wie in \cref{lemm:f_a_komplizierte_phase}, entwickelt \(\hat f(a,\omega,k')\) wie in \cref{lemm:f_a_abschaetzen}
  und geht davon aus dass der dominierende Term in \cref{lemm:f_a_abschaetzen} durch \(\hat f_0\) gegeben ist, erhält man das schärfere Ergebnis:
 \begin{align}

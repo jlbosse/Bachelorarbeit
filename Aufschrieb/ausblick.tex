@@ -160,14 +160,12 @@ Vor dem Beweis zwei Worte zur Bedeutung des Lemmas: Der hauptsächliche Nutzen d
 \end{proof}
 
 Neben der Ausweitung der Hilfslemmata auf temperierte Distributionen muss auch noch erklärt werden, was die richtige Verallgemeinerung der Reproduktionseigenschaft in \cref{thm:shearlets_reproduzieren} ist. Die kanonische Verallgemeinerung ist
-
 \begin{equation*}
     \left\langle f,\phi\right\rangle = \int_{\mathbb{R}^2} \int_{\{a,s,t\}}
     \left\langle f,\psi_{ast}\right\rangle\, \psi_{ast}(x) \,\phi(x)
     \d \mu(a,s,t) \d x
-    .
 \end{equation*}
-Für alle Schwartzfunktionen $\phi$ und alle temperierten Distributionen $f \in \mathcal{S}'(C)^\vee$, wobei $\mathcal{S}'(C)^\vee$ analog zu \cref{eq:L2_cone} definiert ist.
+für alle Schwartzfunktionen $\phi$ und alle temperierten Distributionen $f \in \mathcal{S}'(C)^\vee$, wobei $\mathcal{S}'(C)^\vee$ analog zu \cref{eq:L2_cone} definiert ist.
 
 
 In den Beweis von \cref{lemm:shearlets_decay_quickly_schwartz} ging der Struktursatz für temperierte Distributionen entscheidend ein. Deshalb ist eine Ausweitung der Ergebnisse auf ganz $\mathcal{D}'(\mathbb{R}^n)$ nicht möglich. In der Tat sind die Shearlets $\psi_{ast}$ ja gar nicht kompakt getragen.
@@ -178,12 +176,9 @@ Ob eine analoge Konstruktion von Shearlets die kompakt getragen sind möglich is
 
 \subsection{Hörmanders Kriterium abschwächen}
 \label{sec:hoermanders_crit_abschwaechen}
-
-\todo[color=green]{raus nehmen, weil letzten Endes für temperierte Distributionen nicht ganz passend?}
-
 Um die Wellenfrontmenge einer Distribution zu bestimmen, muss man diese per Definition erst einmal mit einer kompakt getragenen Funktion lokalisieren, um eine kompakt getragene Distribution zu erhalten, deren Fouriertransformation sich berechnen lässt. Ist der Ansatz aus \cref{sec:ausdehnen_von_thm:main_theorem} erfolgreich, so zeigt dies, dass temperierte Distributionen mit \emph{nicht} kompakt getragenen Funktionen lokalisert werden können; exponentieller Abfall ist genug, um die Wellenfrontmenge zu bestimmen.
 
-Nach der Anschauung aus \cref{sec:wavefrontset} ist Hörmanders Kriterium zwar hinreichend, um das punktweise Produkt zweier Distributionen zu definieren über die Faltung ihrer Fouriertransformierten, aber nicht notwendig. Ein Beispiel dafür ist die Heaviside-Funktion. Offenbar existiert $\Theta(x)^2$, aber Hörmanders Kriterium wird an der $0$ verletzt, da $\hat \Theta (k) = \frac{i}{k} + \delta(k)$. Es ist ausreichend, wenn die lokalisierten Fouriertransformierten in entgegengesetzter im Produkt mit $|k|^{-d-\epsilon}$ abfallen, damit das Faltungsintegral existiert. Allerdings ist damit nur sicher gestellt, dass $f \cdot g \in \mathcal{D}'$, noch nicht $f\cdot g \in \mathcal{S}'$.
+Nach der Anschauung aus \cref{sec:wavefrontset} ist Hörmanders Kriterium zwar hinreichend, um das punktweise Produkt zweier Distributionen zu definieren über die Faltung ihrer Fouriertransformierten, aber nicht notwendig. Ein Beispiel dafür ist die Heaviside-Funktion. Offenbar existiert $\Theta(x)^2$, aber Hörmanders Kriterium wird an der $0$ verletzt, da $\hat \Theta (k) = \frac{i}{k} + \pi \,\delta(k)$. Es ist ausreichend, wenn die lokalisierten Fouriertransformierten in entgegengesetzter im Produkt mit $|k|^{-d-\epsilon}$ abfallen, damit das Faltungsintegral existiert. Allerdings ist damit nur sicher gestellt, dass $f \cdot g \in \mathcal{D}'$, noch nicht $f\cdot g \in \mathcal{S}'$.
 
 Die Hoffnung ist also, dass man an der $a$-Potenz mit der $\left\langle f, \psi_{ast} \right\rangle$ für $a \to 0$ skaliert ablesen kann, wie schnell
 	$\lim_{|k| \to \infty} \rwhat{\phi f} (k)$
@@ -195,7 +190,6 @@ Der Ansatz dabei wäre es, zunächst einmal diese $a$-Potenzen bei gut verstande
 Eine offensichtliche weitere Frage ist: Wie steht es denn damit, das ganze Geschäft der Shearlets mal auf höhere Dimensionen auszudehnen und auch dort eine Technik zum Berechnen von Wellenfrontmengen zu erhalten?
 
 \textcite{Guo2006} diskutieren Verallgemeinerungen der Schergruppe in höheren Dimensionen und entwickeln daraus auch diskrete Shearlets. Aus \cref{fig:delta_m} wird auch deutlich, was die richtige Verallgemeinerung der parabolischen Skalierung ist. Nämlich
-
 \begin{equation*}
 \begin{pmatrix}
 k_1 \\ k_2 \\ \vdots \\ k_n
@@ -211,29 +205,26 @@ k_1 \\ k_2 \\ \vdots \\ k_n
 k_1 \\ k_2 \\ \vdots \\ k_n
 \end{pmatrix},
 \end{equation*}
-
 denn diese sorgt wieder dafür, dass der Träger von $\psi_{ast}$ im Fourierraum für $a \to 0$ wieder einer immer spitzer werdenden Nadel gleicht. Die Wahl $\sqrt{a}$ statt $a^\delta$ für irgendein anderes $a<1$ ist ziemlich willkürlich. \textcite{Kutyniok2008} schreiben auch, dass sie für $\delta \neq \frac{1}{2}$ die Wellenfrontmenge an Beispielen genau so gut bestimmen konnten, wie für $\delta = \frac{1}{2}$. Tatsächlich geht $\delta = \frac{1}{2}$ nur bei dem Beweis von \cref{lemm:lemma57} explizit ein. Aber sicher lässt sich \cref{thm:main_theorem} auch mit einem \cref{lemm:lemma57} beweisen, das leicht andere Exponenten hat.\footnote{Stellt sich nur die Frage, warum man das überhaupt wollte. $\delta = \frac{1}{2}$ ist doch ein ziemlich schöne Wahl.}
 
 \subsection{Berechnung des Skalengrads mittels Shearlets}
 \label{sec:scaling_degree}
-Eine weitere Größe der mikrolokalen Analysis, die eventuell durch die Shearlettransformation bestimmt werden kann ist der Skalengrad. Er ist definiert wie folgt:
+Eine weitere Größe der mikrolokalen Analysis, die eventuell durch die Shearlettransformation bestimmt werden kann ist der Skalengrad. Er ist definiert wie folgt \cite{Steinman1971}:
 
 \begin{definition}[Skalengrad]
 \label{def:skalengrad}
-    Sei $u \in \mathcal{D}'(\Omega),~ \Omega \subset \mathbb{R}^n ~$ offen. Dann ist der Skalengrad $sd(u)$ definiert als
+    Sei $u \in \mathcal{D}'(\Omega),~ \Omega \subset \mathbb{R}^n ~$ offen. Dann ist der Skalengrad $\mathrm{s.d.}(u)$ definiert als
     \begin{equation*}
-        sd(u) \coloneqq
+        \mathrm{s.d.}(u) \coloneqq
         \inf_{\omega} \left\{\lambda^\omega \left\langle u_\lambda, \phi \right\rangle
         \stackrel{\lambda \to 0}{\to} 0 \condition{für alle $\phi$} \right\}
     \end{equation*}
-
     wobei $u_\lambda$ definiert ist über
     \begin{equation*}
         \left\langle u_\lambda, \phi \right\rangle
         =
         \lambda^{-n} \left\langle u, \phi\left(\tfrac{\cdot}{\lambda}\right)\right\rangle,
     \end{equation*}
-
     also falls $u \in C^\infty$:
     \begin{equation*}
         u_\lambda (x) = u(\lambda x)
@@ -241,14 +232,12 @@ Eine weitere Größe der mikrolokalen Analysis, die eventuell durch die Shearlet
 \end{definition}
 
 Eine einfache Rechnung zeigt z.B. für die $\delta$-Distribution und ihre Ableitungen, dass
-
 \begin{equation*}
-    sd(\delta^{(\alpha)}) = n + |\alpha|
+    \mathrm{s.d.}(\delta^{(\alpha)}) = n + |\alpha|
     .
 \end{equation*}
 
 Mit der Shearlettransformation erhalten wir aber
-
 \begin{dmath*}
     \left\langle \delta_{x_1}^{(\alpha)} \otimes \delta_{x_2}, \psi_{a00} \right\rangle
     =
@@ -257,10 +246,7 @@ Mit der Shearlettransformation erhalten wir aber
     a^{-\frac{3}{4}} a^{-\alpha} \partial_{x_1}^\alpha \psi(0)
     \hiderel \sim a^{ - \alpha-\frac{3}{4}}
 \end{dmath*}
-
 und bei Ableitung in die andere Richtung
-
-
 \begin{dmath*}
     \left\langle \delta_{x_1} \otimes \delta_{x_2}^{(\alpha)}, \psi_{a00} \right\rangle
     =
