@@ -20,7 +20,7 @@ ablesen lässt.
 \begin{figure}[h]
 \centering
 \input{images/delta_m.pgf}
-\caption{Die Träger von $\hat\Delta_m$ und $\hat\psi_{ast}$. Es ist zu sehen, dass für $a \rightarrow 0$ und $s \neq \pm 1$ die Träger schließlich disjunkt sind}
+\caption{Die Träger von $\hat\Delta_m (- \cdot)$ und $\hat\psi_{ast}$. Es ist zu sehen, dass für $a \rightarrow 0$ und $s \neq \pm 1$ die Träger schließlich disjunkt sind}
 \label{fig:delta_m}
 \end{figure}
 
@@ -47,7 +47,7 @@ $supp (\hat \Delta_m (- \cdot)) \cap supp (\hat \psi_{ast}) = \varnothing$ wie m
 Also gilt
 
 \begin{dmath}
-    \left\langle \Delta_m, \psi_{ast}^{(3)}\right\rangle
+    2 \pi \left\langle \Delta_m, \psi_{ast}^{(3)}\right\rangle
     = \left\langle \rwhat\Delta_m (-\cdot), \hat\psi_{ast}\right\rangle
     = 0 = O(a^k)~ \forall k  \condition{für $a$ klein genug}
     \label{eq:delta_m_s_neq1}
@@ -61,7 +61,7 @@ Also gilt
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection*{Fall $s=1$}
 \subparagraph*{Intuition}
-Für $s=1$ schneidet die Diagonale $\{\omega = k\}$ den Träger $supp (\hat \psi_{ast})$ auf der ganzen Länge. Der Betrag von $\hat\psi_{ast}$ skaliert mit $a^{\frac{3}{4}}$ (vgl. \cref{eq:hat_psi_ast}) und die Länge von $supp (\hat \psi_{ast})$ entlang der Diagonalen mit $a^{-1}$ (vgl. \cref{eq:hat_psi_ast}). Also erwarten wir schlimmstenfalls $\left<\hat\Delta_m,  \hat \psi_{a1t}\right> = O\left(a^-{\frac{1}{4}}\right)$. Aber nur wenn die Wellenfronten von $e^{-i\omega t'+i k x'}$ parallel zu der Singularität und damit der Diagonalen liegen. Andernfalls erwarten wir, dass die immer schneller werdenden Oszillationen der Phase sich gegenseitig auslöschen.
+Für $s=1$ schneidet die Diagonale $\{\omega = k\}$ den Träger $supp (\hat \psi_{ast})$ auf der ganzen Länge. Der Betrag von $\hat\psi_{ast}$ skaliert mit $a^{\frac{3}{4}}$ (vgl. \cref{eq:hat_psi_ast}) und die Länge von $supp (\hat \psi_{ast})$ entlang der Diagonalen mit $a^{-1}$ (vgl. \cref{eq:hat_psi_ast}). Also erwarten wir schlimmstenfalls $\left<\hat\Delta_m,  \hat \psi_{a1t}\right> = O\left(a^{-\frac{1}{4}}\right)$. Aber nur wenn die Wellenfronten von $e^{-i\omega t'+i k x'}$ parallel zu der Singularität und damit der Diagonalen liegen. Andernfalls erwarten wir, dass die immer schneller werdenden Oszillationen der Phase sich gegenseitig auslöschen.
 
 \subparagraph*{Rechnungen}
 \begin{align}
@@ -96,7 +96,6 @@ Für $s=1$ schneidet die Diagonale $\{\omega = k\}$ den Träger $supp (\hat \psi
 
 Der Integrand vor der Phase lässt sich nun wie in \cref{lemm:f_a_abschaetzen} schreiben als \[\hat f(a,\omega) = \sum_{n=0} a^n \hat f_n(\omega)\] mit glatten \(\hat f_n\) und die Phase als \[-\frac{\omega}{a}t' + \sqrt{\frac{\omega^2}{a^2} - m^2}x' = a^{-1} \omega (t'-x')  + O\left(a^{\frac{7}{2}}\right).\]
 Dann können wir \cref{lemm:f_a_abschaetzen} und \cref{lemm:f_a_komplizierte_phase} gleichzeitig anwenden und erhalten in führender Ordnung:
-
 \begin{align}
 \lim_{a \to o}
 \left\langle \hat\Delta_m(-\cdot), \hat\psi_{a1t}\right\rangle
@@ -134,7 +133,6 @@ $s \neq \pm 1$  & $a^k$         & $a^k$    & $a^k$               & $a^k$    \\
 
 
 Dies deckt sich auch mit den Ergebnissen von \textcite{Schulz2014} und \textcite{Hoermander1985}, welche jeweils erhalten:
-
 \begin{dmath*}
     WF(\Delta_m) =
     \{\left\langle 0,0; -|k|,k\right\rangle\ \big|\, k \hiderel\in \hat{\mathbb{R}}\}

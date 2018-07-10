@@ -40,27 +40,25 @@ c -- [fermion, edge label=\(p\)] d [particle=\(\phi\)],
 \end{figure}
 
 Der Feynman-Propagator in zwei Dimensionen kann geschrieben werden als zeitgeordnete Zweipunktfunktion (vgl. \textcite{ReedSimon}), also
-
 \begin{equation}
     G_F(t,x)
     =
     \Theta (t)\Delta_m(t,x) + \Theta(-t)\Delta_m(-t,-x)
     \label{eq:feynman_propgator_as_product}
 \end{equation}
-
-Wobei $\Theta$ die Heaviside-Funktion bezeichnet und als $\Theta(t) \cdot 1(x)$ zu verstehen ist. Also sind Potenzen des Feynman-Propagators gegeben durch Potenzen der Zweipunktfunktion und der Heaviside-Funktion. Um zu wissen, wo diese Produkte definiert werden können, muss man deren Wellenfrontmengen kennen; dann liefert Hörmanders Kriterium \ref{thm:hoermanders_criterion} ein Kriterium für die Wohldefiniertheit.
+wobei $\Theta$ die Heaviside-Funktion bezeichnet und als $\Theta(t) \cdot 1(x)$ zu verstehen ist. Also sind Potenzen des Feynman-Propagators gegeben durch Potenzen der Zweipunktfunktion und der Heaviside-Funktion. Um zu wissen, wo diese Produkte definiert werden können, muss man deren Wellenfrontmengen kennen; dann liefert Hörmanders Kriterium \ref{thm:hoermanders_criterion} ein Kriterium für die Wohldefiniertheit.
 
 In all dem kann die Zweipunktfunktion $\Delta_m$ geschrieben werden als Fouriertransformierte eines positiven Maßes auf der negativen Massenschale $H_m$ (vgl. \textcite{Schwartz2014}, 24.69):
-
 \begin{equation}
     \Delta_m (t,x) = \int \delta (\omega^2-k^2-m^2)
                     \Theta(-\omega)e^{-i\omega t + i k x} \d \omega \d k
 \label{eq:delta_m}
 \end{equation}
 
-Deshalb ist $\Delta_m$ und seine (getwisteten) Potenzen das Hauptbeispiel, an welchem wir untersuchen, inwiefern die Shearlettransformation praktikabel ist um Wellenfrontmengen zu berechnen.
+Deshalb sind $\Delta_m$ und seine (getwisteten) Potenzen das Hauptbeispiel, an welchem wir untersuchen, inwiefern die Shearlettransformation praktikabel ist um Wellenfrontmengen zu berechnen.
 
 \subsection{Sternprodukte und getwistete Faltungen}
+\label{sec:sternprodukte}
 Die \emph{nicht kommutative Quantenfeldtheorie} beschäftigt sich mit Quantenfeldtheorien in der Größenordnung der \emph{Planck-Skala}. Bei diesen Größenordnungen wird erwartet, dass die Geometrie der Raumzeit nicht mehr kommutativ ist, sich also Ort und Zeit nicht mehr mit beliebiger Präzision messen lassen. Das physikalische Argument (nach \textcite{Doplicher1995}) für diese \emph{Raumzeitunschärferelation} basiert auf Einsteins allgemeiner Relativitätstheorie und Heisenbergs Unschärferelation: Wenn wir ein Raumzeit-Ereignis mit Genauigkeit $a$ messen, haben wir eine Impuls-Unschärfe von der Größenordnung $\frac{1}{a}$. Also wurde Energie der Größenordnung $\frac{1}{a}$ auf das System übertragen und zu einem Zeitpunkt in der gemessenen Ortsregion konzentriert. Diese Energie erzeugt ein Gravitationsfeld, welches um so stärker ist, je kleiner die Region in der die Energie konzentriert ist. Sobald dieses so stark ist, dass kein Licht mehr die Region verlassen kann (wir also ein schwarzes Loch erzeugt haben), erhalten wir keine Information aus der Raumzeitregion, eine Messung ist also nicht möglich. Das bedeutet, dass die Genauigkeit mit der wir die Lokalisation eines Ereignisses in der Raumzeit messen können beschränkt ist durch die Energiedichte, ab der wir ein schwarzes Loch erzeugen. Diese Schranken in der Messgenauigkeit lassen sich als Unschärferelation zwischen Zeit und Ort verstehen, ganz analog zur klassischen Unschärferelation zwischen Ort und Impuls.
 
 Es gibt verschiedene Möglichkeiten, solche nicht-kommutativen Raumzeiten zu konstruieren. Ihnen allen ist gemein, dass das kommutative punktweise Produkt von Funktionen ersetzt wird durch ein nicht-kommutatives \emph{Sternrprodukt}.
@@ -69,31 +67,27 @@ Auf der $\kappa$-Minkowski-Raumzeit (vgl. \textcite{kappaMinkowski}) wird es bei
 \begin{equation}
     f \star_\kappa g (t,x) =
     \int \hat f(\omega,k) \hat g(\omega',k')
-    e^{i \left<k + e^{-\frac{\omega}{\kappa}}k',x\right> - i\left(\omega+\omega' \right)t}
+    e^{i \hbar \left<k + e^{-\frac{\omega}{\kappa}}k',x\right> - i \hbar \left(\omega+\omega' \right)t}
     \d \omega \d k \d \omega' \d k'.
     \label{eq:kappa-minkowski}
 \end{equation}
 
-Dieses Produkt ist äquivalent zu den Vertauschungsrelationen
-
+Dieses Produkt ist in erster Ordnung in \(\hbar\) äquivalent zu den Vertauschungsrelationen
 \begin{equation*}
-    \left[t,x_i\right] = -\frac{i}{\kappa} x_i.
+    \left[t,x_i\right] = -\frac{i \hbar }{\kappa} x_i.
 \end{equation*}
 
 
 Ein anderer Ansatz verwendet das Moyal-Produkt \cite{MoyalProduct} aus der Deformationsquantisierung. Hier wird das kommutative Produkt von Funktionen auf dem Phasenraum so deformiert, dass es danach die kanonischen Vertauschungsrelationen aus der Quantenmechanik erfüllt, also
-
 \begin{equation*}
-    \left[x_k, p_l\right] = i\delta_{kl}.
+    \left[x_k, p_l\right] = i \hbar \delta_{kl}.
 \end{equation*}
 
-Diese Vertauschungsrelationen sind äquivalent zu dem Moyal-Produkt für Funktionen auf dem flachen Phasenraum:
-
-
+Diese Vertauschungsrelationen sind in erster Ordnung in \(\hbar\) äquivalent zu dem Moyal-Produkt für Funktionen auf dem flachen Phasenraum:
 \begin{equation}
-    f \star_M g(x) =
+    f \star_M g\,(x) =
     \int  \hat f(k) \, \hat g(k')\,
-    e^{\frac{i}{2}\left(k,\Omega_{\mathrm{can}} k'\right)}
+    e^{\frac{i\hbar}{2}\left(k,\Omega_{\mathrm{can}} k'\right)}
     \, e^{ikx}\, e^{ik'x}
     \d k \d k'.
     \label{eq:moyal-product}
@@ -101,26 +95,24 @@ Diese Vertauschungsrelationen sind äquivalent zu dem Moyal-Produkt für Funktio
 
 Dabei ist $\Omega_{can}$ die kanonische symplektische Form auf $\mathbb{R}^{2n}$ und $x \in \mathbb{R}^{2n}$, also ein Punkt im Phasenraum und \emph{nicht} nur die Ortskoordinate.
 
-Da das Moyalprodukt als Fourier-Multiplikator geschrieben werden kann, korrespondiert es auch zu einer getwisteten Faltung $\ast_\Omega$ für die Fouriertransformierten, s.d. der Faltungssatz $$\rwhat{f \star_M g} (k) = \rwhat{f} \ast_\Omega \rwhat{g} (k)$$ gilt.
+Da das Moyalprodukt als Fourier-Multiplikator geschrieben werden kann, korrespondiert es auch zu einer getwisteten Faltung $\ast_\Omega$ für die Fouriertransformierten, s.d. der Faltungssatz $$ 2 \pi \,\rwhat{f \star_M g} (k) = \rwhat{f} \ast_\Omega \rwhat{g} (k)$$ gilt.
 
 \begin{definition}[getwistete Faltung]
 \label{def:twisted_convolution}
-    Seien $\hat f,\hat g \in $ "`passender Funktionen-/Distributionenraum"'. Sei $\Omega \in \mathbb{R}^{2n \times 2n}$ die kanonische symplektische Matrix. Dann ist die getwistete Faltung $(\hat f \ast_\Omega \hat g) (k)$ definiert als
+    Seien $\hat f,\hat g \in \mathcal{D}'$ s.d. die Summenabbildung \(\Sigma(k,k') = k + k'\) eigentlich \cite{Bourbaki1998} ist, wenn eingeschränkt auf \(supp (\hat f) \times supp(\hat g)\). Sei $\Omega \in \mathbb{R}^{2n \times 2n}$ die kanonische symplektische Matrix. Dann ist die getwistete Faltung $(\hat f \ast_\Omega \hat g) (k)$ definiert als
 
     \begin{equation}
-        (f \ast_\Omega g) \,(k) \coloneqq
-        \int f(k') g(k-k')e^{\frac{i}{2} (k,\Omega_{\mathrm{can}} k')} \d k'
+        (\hat f \ast_\Omega \hat g) \,(k) \coloneqq
+        \int \hat f(k') \hat g(k-k')e^{\frac{i}{2} (k,\,\Omega_{\mathrm{can}} k')} \d k'
     \end{equation}
 
     Die getwistete Faltung ist also einfach die gewöhnliche Faltung, die noch mit einem ortsabhängigen Phasenfaktor verziert wurde.
 \end{definition}
 
 Ganz analog dazu ersetzen \textcite{Doplicher1995} das kommutative Produkt auf der Raumzeit durch das Moyal-Produkt. Zeit und Ort erfüllen also die Vertauschungsrelation
-
 \begin{equation*}
     \left[t,x\right] = i
 \end{equation*}
-
 und man erhält als Produkt das selbe wie in \cref{eq:moyal-product}, nur dass jetzt $x$ kein Punkt im Phasenraum ist, sondern einer in der Raumzeit.
 
 

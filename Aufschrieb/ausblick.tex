@@ -7,6 +7,190 @@
 \section{Ausblick} % (fold)
 \label{sec:ausblick}
 
+\subsection{\texorpdfstring{Ausdehnen von \cref{thm:main_theorem} auf $\mathcal{S}'$}{Ausdehnen auf Distributionen}} % (fold)
+\label{sec:ausdehnen_von_thm:main_theorem}
+Wie in \cref{rem:shearlets_no_distributions} angesprochen, zeigt der Beweis von \textcite{Kutyniok2008} \cref{thm:main_theorem} nur für beschränkte Funtkionen und nicht für allgemeine temperierte Distributionen. So werden alle Hilfslemmata für den Beweis von \cref{thm:main_theorem} nur für solche Funktionen bewiesen. Wir glauben aber, dass sich der Beweis auf alle temperierten Distributionen ausdehnen lässt, dank der Tatsache dass "`temperierte Distributionen polynomiell beschränkt sind"':
+
+\begin{theorem}[Struktursatz für temperierte Distributionen]
+\label{thm:struktursatz}
+    Sei $\Omega \subset \mathbb{R}^n$ offen. Sei $f \in \mathcal{S}'(\Omega)$. Dann gibt es ein $F \in C(\Omega)$ und $C \in \mathbb{R}, N \in \mathbb{N}$ s.d. für alle $x \in \Omega$
+    \begin{equation*}
+        |F(x)| \leq C (1+|x| )^N
+    \end{equation*}
+    (also F polynomiell beschränkt ist) und
+    \begin{equation*}
+        f = \partial^\alpha F
+    \end{equation*}
+    als distributionelle Ableitung
+
+    \emph{Beweis} \\[.3em]
+    Der Beweis findet sich in \textcite[S. 97]{Friedlander1998}.
+\end{theorem}
+
+
+Leider fehlt aufgrund des stetigen Studienfortschritts die Zeit, diesen Beweis komplett auszuarbeiten. Der Beweis der auf temperierte Distributionen ausgeweiteten \cref{lemm:lemma52} und wie der Struktursatz eingeht soll hier aber beispielhaft skizziert werden.  Mit ähnlichen Tricks lassen sich hoffentlich auch alle anderen Hilfslemmata auf temperierte Distributionen ausweiten.
+
+\begin{lemma}[Verfeinerung von \cref{lemm:lemma52}]
+    \label{lemm:shearlets_decay_quickly_schwartz}
+    Sei $f \in \mathcal{S}'(\mathbb{R}^2)$ und $supp(f) \subset U$. Sei $t \notin U$. Dann gilt für alle $k \in \mathbb{N}$
+    \begin{equation*}
+        |\left\langle f, \psi_{ast}\right\rangle| \leq C_k \left(1+a^{-1} d(t,U)\right)^{-k}
+    \end{equation*}
+    ab einem hinreichend kleinen $a$.
+\end{lemma}
+
+Vor dem Beweis zwei Worte zur Bedeutung des Lemmas: Der hauptsächliche Nutzen des Lemmas ist die Aussage, dass wir mit Shearlets, also Schwartzfunktionen und damit \emph{nicht zwingend kompakt getragenen}  Funktionen, die lokalen Eigenschaften von temperierten Distributionen untersuchen können, da wir alles was $\delta$-weit von $t$ entfernt geschieht exponentiell schnell (in $a$) nicht mehr sehen. Dies ist möglich, da temperierte Distributionen in einem geeigneten Sinn nur polynomiell schnell wachsen.
+
+\begin{proof}
+    Nach \cref{thm:struktursatz} gibt es ein polynomiell beschränktes $F \in C(\mathbb{R}^2)$ s.d. $f = \partial^\alpha F$. O.B.d.A können wir annehmen, dass $f$ auf $B(0,\delta)$ verschwindet (im distributionellen Sinne) und damit o.B.d.A auch $F$. Dann zeigen wir die Aussage für $t=0$:
+
+    \begin{align*}
+        |\left \langle f, \psi_{as0} \right\rangle|
+        &\stackrel{\textrm{formal}}{=}
+        \left\lvert
+        \int f(x) \psi\left(\left(\begin{smallmatrix}
+            a & -\sqrt{a}s \\ 0 & \sqrt a
+        \end{smallmatrix}
+        \right)^{-1}\left(x-0\right)\right)
+        \d x \right\rvert
+        \\&=
+        \left\lvert \int F(x) \partial^{\alpha}\left[
+        \psi\left(\left(\begin{smallmatrix}
+            a^{-1} & \frac{s}{\sqrt a} \\ 0 & a^{-\frac{1}{2}}
+        \end{smallmatrix}
+        \right)^{-1}x\right)\right]
+        \d x \right\rvert
+        \\ &\leq
+        \int \limits_{|x| \geq \delta}
+        C (1+|x|)^N
+        a^{-|\alpha|}
+        \underbrace{
+        \left[
+            \left\lvert \partial_{x_1}^{|\alpha|} \right\rvert
+            + \left\lvert \partial^\alpha \psi \right\rvert
+        \right]
+        }_{=: \phi \in \mathcal{S}}
+        \left(\begin{smallmatrix}
+            a^{-1} & \frac{s}{\sqrt{a}} \\ 0 & a^{-\frac{1}{2}}
+        \end{smallmatrix}\right) x \d x\\
+        \\ &\leq
+        \int \limits_{|x| \geq \delta}
+        C (1+|x|)^N
+        a^{-|\alpha|}
+        C_k \left(
+        1+ \left\lvert \left( \begin{smallmatrix}
+            a^{-1} & \frac{s}{\sqrt{a}} \\ 0 & a^{-\frac{1}{2}}
+        \end{smallmatrix}\right) x \right\rvert
+        \right)^{-k}
+        \d x
+        \\ &\leq
+        \int \limits_{|x| \geq \delta}
+        C C_k a^{-|\alpha|} (1+|x|)^N (1+a^{-1}|x|)^{-k} \d x\\
+        \\ &\leq
+        C C_k a^{-|\alpha|}
+        \int \limits_{|x| \geq \delta}
+        (1+a^{-1}|x|)^{N-k} \d x
+        \\ &=
+        C C_k a^{-|\alpha|} 2 \pi
+        \int\limits_\delta^\infty
+        (1+a^{-1}r)^{N-k} \d r
+        \\ &=
+        C C_k a^{-|\alpha|} 2 \pi
+        \frac{(a+\delta)\left(1+\frac{\delta}{a}\right)^{N-k}(a+(k-N-1)\delta)}{(k-N-1)(k-N-2)}\\
+        \\ &\leq
+        C'_k\left(1+\frac{\delta}{a}\right)^{N-k-|\alpha|}
+    \end{align*}
+    % \begin{dmath*}
+    %     |\left \langle f, \psi_{as0} \right\rangle|
+    %     \stackrel{\textrm{formal}}{=}
+    %     \left\lvert
+    %     \int f(x) \psi\left(\left(\begin{smallmatrix}
+    %         a & -\sqrt{a}s \\ 0 & \sqrt a
+    %     \end{smallmatrix}
+    %     \right)^{-1}\left(x-0\right)\right)
+    %     \d x \right\rvert \\
+    %     =
+    %     \left\lvert \int F(x) \partial^{\alpha}\left[
+    %     \psi\left(\left(\begin{smallmatrix}
+    %         a^{-1} & \frac{s}{\sqrt a} \\ 0 & a^{-\frac{1}{2}}
+    %     \end{smallmatrix}
+    %     \right)^{-1}x\right)\right]
+    %     \d x \right\rvert\\
+    %     \leq
+    %     \int \limits_{|x| \geq \delta}
+    %     C (1+|x|)^N
+    %     a^{-|\alpha|}
+    %     \underbrace{
+    %     \left[
+    %         \left\lvert \partial_{x_1}^{|\alpha|} \right\rvert
+    %         + \left\lvert \partial^\alpha \psi \right\rvert
+    %     \right]
+    %     }_{=: \phi \in \mathcal{S}}
+    %     \left(\begin{smallmatrix}
+    %         a^{-1} & \frac{s}{\sqrt{a}} \\ 0 & a^{-\frac{1}{2}}
+    %     \end{smallmatrix}\right) x \d x\\
+    %     \leq
+    %     \int \limits_{|x| \geq \delta}
+    %     C (1+|x|)^N
+    %     a^{-|\alpha|}
+    %     C_k \left(
+    %     1+ \left\lvert \left( \begin{smallmatrix}
+    %         a^{-1} & \frac{s}{\sqrt{a}} \\ 0 & a^{-\frac{1}{2}}
+    %     \end{smallmatrix}\right) x \right\rvert
+    %     \right)^{-k}
+    %     \d x\\
+    %     \leq
+    %     \int \limits_{|x| \geq \delta}
+    %     C C_k a^{-|\alpha|} (1+|x|)^N (1+a^{-1}|x|)^{-k} \d x\\
+    %     \leq
+    %     C C_k a^{-|\alpha|}
+    %     \int \limits_{|x| \geq \delta}
+    %     (1+a^{-1}|x|)^{N-k} \d x\\
+    %     =
+    %     C C_k a^{-|\alpha|} 2 \pi
+    %     \int\limits_\delta^\infty
+    %     (1+a^{-1}r)^{N-k} \d r\\
+    %     =
+    %     C C_k a^{-|\alpha|} 2 \pi
+    %     \frac{(a+\delta)\left(1+\frac{\delta}{a}\right)^{N-k}(a+(k-N-1)\delta)}{(k-N-1)(k-N-2)}\\
+    %     \leq
+    %     C'_k\left(1+\frac{\delta}{a}\right)^{N-k-|\alpha|}
+    % \end{dmath*}
+    Was die Aussage für $N-k-|\alpha|$ und damit auch für alle $k$ zeigt.
+\end{proof}
+
+Neben der Ausweitung der Hilfslemmata auf temperierte Distributionen muss auch noch erklärt werden, was die richtige Verallgemeinerung der Reproduktionseigenschaft in \cref{thm:shearlets_reproduzieren} ist. Die kanonische Verallgemeinerung ist
+
+\begin{equation*}
+    \left\langle f,\phi\right\rangle = \int_{\mathbb{R}^2} \int_{\{a,s,t\}}
+    \left\langle f,\psi_{ast}\right\rangle\, \psi_{ast}(x) \,\phi(x)
+    \d \mu(a,s,t) \d x
+    .
+\end{equation*}
+Für alle Schwartzfunktionen $\phi$ und alle temperierten Distributionen $f \in \mathcal{S}'(C)^\vee$, wobei $\mathcal{S}'(C)^\vee$ analog zu \cref{eq:L2_cone} definiert ist.
+
+
+In den Beweis von \cref{lemm:shearlets_decay_quickly_schwartz} ging der Struktursatz für temperierte Distributionen entscheidend ein. Deshalb ist eine Ausweitung der Ergebnisse auf ganz $\mathcal{D}'(\mathbb{R}^n)$ nicht möglich. In der Tat sind die Shearlets $\psi_{ast}$ ja gar nicht kompakt getragen.
+Ob eine analoge Konstruktion von Shearlets die kompakt getragen sind möglich ist, ist a priori nicht klar.
+% Die entscheidende Aussage des Lemmas ist, dass die Shearlettransformation Eigenschaften von $f$, die mindestens $delta$-weit von $t$ entfernt sind "`exponentiell schnell nicht mehr sieht"'. Obwohl die Shearlets nicht getragen sind!
+
+% section ausdehnen_von_thm:main_theorem (end)
+
+\subsection{Hörmanders Kriterium abschwächen}
+\label{sec:hoermanders_crit_abschwaechen}
+
+\todo[color=green]{raus nehmen, weil letzten Endes für temperierte Distributionen nicht ganz passend?}
+
+Um die Wellenfrontmenge einer Distribution zu bestimmen, muss man diese per Definition erst einmal mit einer kompakt getragenen Funktion lokalisieren, um eine kompakt getragene Distribution zu erhalten, deren Fouriertransformation sich berechnen lässt. Ist der Ansatz aus \cref{sec:ausdehnen_von_thm:main_theorem} erfolgreich, so zeigt dies, dass temperierte Distributionen mit \emph{nicht} kompakt getragenen Funktionen lokalisert werden können; exponentieller Abfall ist genug, um die Wellenfrontmenge zu bestimmen.
+
+Nach der Anschauung aus \cref{sec:wavefrontset} ist Hörmanders Kriterium zwar hinreichend, um das punktweise Produkt zweier Distributionen zu definieren über die Faltung ihrer Fouriertransformierten, aber nicht notwendig. Ein Beispiel dafür ist die Heaviside-Funktion. Offenbar existiert $\Theta(x)^2$, aber Hörmanders Kriterium wird an der $0$ verletzt, da $\hat \Theta (k) = \frac{i}{k} + \delta(k)$. Es ist ausreichend, wenn die lokalisierten Fouriertransformierten in entgegengesetzter im Produkt mit $|k|^{-d-\epsilon}$ abfallen, damit das Faltungsintegral existiert. Allerdings ist damit nur sicher gestellt, dass $f \cdot g \in \mathcal{D}'$, noch nicht $f\cdot g \in \mathcal{S}'$.
+
+Die Hoffnung ist also, dass man an der $a$-Potenz mit der $\left\langle f, \psi_{ast} \right\rangle$ für $a \to 0$ skaliert ablesen kann, wie schnell
+	$\lim_{|k| \to \infty} \rwhat{\phi f} (k)$
+abfällt für $\frac{k_2}{k_1} = s$ und $\phi$ beliebig nah um $t$ lokalisiert.
+
+Der Ansatz dabei wäre es, zunächst einmal diese $a$-Potenzen bei gut verstandenen Distributionen, z.B. Polynomen oder Ableitungen der $\delta$-Distribution auszurechnen und mit dem Abfallverhalten der lokalisierten Fouriertransformierten zu vergleichen, um dann den genauen Zusammenhang zu raten. Dann wird man versuchen diesen mit den Techniken und Lemmata aus \cref{sec:beweis_von_thm:main_theorem} zu beweisen.
+
 \subsection{Höherdimensionale Shearlets}
 Eine offensichtliche weitere Frage ist: Wie steht es denn damit, das ganze Geschäft der Shearlets mal auf höhere Dimensionen auszudehnen und auch dort eine Technik zum Berechnen von Wellenfrontmengen zu erhalten?
 
