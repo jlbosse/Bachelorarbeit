@@ -13,24 +13,21 @@ Wie in \cref{sec:die_zweipunktfunktionen_und_warum_wir_sie_potenzieren_wollen} e
 Da $\Theta$ die Stammfunktion von $\delta$ (im distributionellen Sinne) ist, können wir die Fouriertransformierte dank der üblichen Fourierrechenregeln direkt hinschreiben:\footnote{Wieder nur korrekt bis auf Vorfaktoren von $2\pi$}
 
 \begin{equation}
-    \rwhat{\Theta(t)\otimes 1(x)}(\omega,k) = \rwhat{\Theta}(\omega) \otimes \rwhat{\delta}(k) = \left(\delta(\omega) + \frac{i}\omega{}\right) \otimes \delta (k)
+    \rwhat{\Theta(t)\otimes 1(x)}(\omega,k) = \rwhat{\Theta}(\omega) \otimes \rwhat{\delta}(k) = \left(\pi\, \delta(\omega) + \frac{i}\omega{}\right) \otimes 2 \pi\, \delta (k)
     \label{eq:heaviside_fourier_transform}
 \end{equation}.
 
 \subsubsection*{Fall $s \neq 0$}
-
 \begin{equation*}
 supp (\rwhat{\Theta(t)\otimes 1(x)}) = \{(\omega, k) \in \hat{\mathbb{R}} | k = 0\}
 \end{equation*}
 
  und nach \cref{eq:supp_psi}
-
 \begin{equation*}
     supp(\hat \psi) \subset \left\{k \in  \hat{\mathbb{R}}^2 ~\Big| ~k_1 \in \left[\frac{1}{2 a} , \frac{2}{a}\right], \left|\frac{k_2}{k_1} - s\right| \leq \sqrt{a} \right\}
 \end{equation*}.
 
 Also gilt für hinreichend große $a$:
-
 \begin{equation}
  supp (\hat\psi_{ast}) \cap supp (\rwhat{\Theta(t)\otimes 1(x)}) = \varnothing
  ~~\Longrightarrow~~
@@ -40,17 +37,16 @@ Also gilt für hinreichend große $a$:
 
 \subsubsection*{Fall $s = 0$}
 Mit \cref{eq:heaviside_fourier_transform} können $\left<\hat \Theta \otimes \hat 1, \hat \psi_{ast}\right>$ direkt berechnen mit dem Ausdruck für $\hat \psi_{ast}$ aus \cref{rem:psi_hat}:
-
 \begin{align}
     \left\langle \hat\Theta \otimes \hat 1, \hat \psi_{ast} \right\rangle
-    &=
+    &\propto
     a^{\frac{3}{4}} \int \hat \psi_1(a \omega) \hat \psi_2\left(
                 a^{-\frac{1}{2}}\left(\tfrac{k}{\omega}\right)\right)
-    \left(\delta(\omega) + \frac{i}{\omega}\right) \delta(k)
+    \left(\pi \,\delta(\omega) + \frac{i}{\omega}\right) \delta(k)
     e^{-i\omega t' + i kx'}
     \d \omega \d k
     \nonumber \\ &=
-    \underbrace{a^{\frac{3}{4}} \hat\psi_1(0) \hat\psi_2(0)
+    \underbrace{a^{\frac{3}{4}} \pi\, \hat\psi_1(0) \hat\psi_2(0)
     }_{=0, \textrm{ da } \hat\psi_1(0) = 0}
     +
     i a^{\frac{3}{4}}
@@ -73,7 +69,6 @@ Genau die selben Ergebnisse erhält man mit beinahe genau den selben Rechnungen 
 
 \subsection{Zusammenfassung und Vergleich der Ergebnisse}
 Und einmal der vollständig halber, die Ergebnisse aus \cref{eq:heaviside_s=0,eq:heaviside_s_neq_0} tabellarisch dargestellt:
-
 \begin{table}[h]
 \centering
 \begin{tabular}{l|cc}
